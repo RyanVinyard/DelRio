@@ -1,0 +1,87 @@
+<!-- jolee section 8 -->
+
+<div class="jolee_section_8">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="images_flow_jolee2">
+          <img src="{{section.settings.joleepage_sec8_img1 | img_url:'master'}}{{'jolee_img_14.png' | asset_url }}" alt="">
+          <img src="{{section.settings.joleepage_sec8_img2 | img_url:'master'}}{{'jolee_img_13.png' | asset_url }}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-5 col-sm-12">
+        <div class="images_flow_jolee3 text-center">
+          <img src="{{section.settings.joleepage_sec8_img3 | img_url:'master'}}{{'jolee_img_11.png' | asset_url }}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="images_flow_jolee4">
+        <img src="{{section.settings.joleepage_sec8_img4 | img_url:'master'}}{{'jolee_img_12.png' | asset_url }}" alt="">
+        <img src="{{section.settings.joleepage_sec8_img5 | img_url:'master'}}{{'jolee_img_14.png' | asset_url }}" alt="">
+      </div>
+      </div>
+    </div>
+
+    <div class="images-flowe_hat_lady">
+      <h1>{{section.settings.joleepage_sec8_Heading}}</h1>
+      <p>{{section.settings.joleepage_sec8_desc}}<strong>{{section.settings.joleepage_sec8_hashtag}}</strong> </p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "joleepage eight section",
+    "settings": [
+        {
+          "id":"joleepage_sec8_img1",
+          "type":"image_picker",
+          "label":"Image 1"
+        },
+        {
+          "id":"joleepage_sec8_img2",
+          "type":"image_picker",
+          "label":"Image 2"
+        },
+        {
+          "id":"joleepage_sec8_img3",
+          "type":"image_picker",
+          "label":"Image 3"
+        },
+        {
+          "id":"joleepage_sec8_img4",
+          "type":"image_picker",
+          "label":"Image 4"
+        },
+        {
+          "id":"joleepage_sec8_img5",
+          "type":"image_picker",
+          "label":"Image 5"
+         },
+        {
+          "id":"joleepage_sec8_Heading",
+          "type":"textarea",
+          "label":"Heading",
+          "default":"Title"
+
+         },
+        {
+          "id":"joleepage_sec8_desc",
+          "type":"textarea",
+          "label":"Description",
+          "default":"Add text"
+         },
+        {
+          "id":"joleepage_sec8_hashtag",
+          "type":"text",
+          "label":"Hashtag"
+         }
+        ]
+  }
+{% endschema %}

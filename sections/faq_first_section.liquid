@@ -1,0 +1,45 @@
+<div class="h1_faq_ques h1_faq_ques_margin_bottom">
+  <h1> {{ section.settings.faq_sec1_heading }} </h1>
+  <p class="We-are-dedicated-to_faq_tx">  {{ section.settings.Faq_description-info }}</p>
+</div>
+
+<!-- <div class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>{{section.settings.Faq_Contact_Info}}</h1>
+  <p>Need to get in touch with us?</p>
+  <p>e-mail <a href="mailto:{{section.settings.Faq_Email_Info}}">{{section.settings.Faq_Email_Info}}</a> or call us at <a href="tel: {{section.settings.Faq_Phone_Info}}"> {{section.settings.Faq_Phone_Info}}</a></p>
+</div>
+ -->
+{% schema %}  
+  {
+    "name": "Faq First Section",
+    "settings": [ 
+    {
+       "id":"faq_sec1_heading",
+       "type":"text",
+       "label":"Enter Title"
+    },
+ {
+       "id":"Faq_description-info",
+       "type":"textarea",
+       "label":"Enter Description"
+    },
+{
+       "id":"Faq_Contact_Info",
+       "type":"text",
+       "label":"Enter Contact Info Title"
+    },
+{
+       "id":"Faq_Email_Info",
+       "type":"text",
+       "label":"Enter Email"
+    },
+{
+       "id":"Faq_Phone_Info",
+       "type":"text",
+       "label":"Enter Phone No"
+    }
+
+
+]
+  }
+{% endschema %}

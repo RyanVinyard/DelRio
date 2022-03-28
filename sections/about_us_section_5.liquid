@@ -1,0 +1,60 @@
+<div class="section_4_about">
+        <div class="container">
+            <div class="Who-we-are_about text-center">
+                <h1>{{section.settings.Aboutus_section5_heading}}</h1>
+              <a href="javascript:void(0)"  id="video_button">  <img class="img_222" src="{{'vineyard_about_us_11.png' | asset_url }}" alt=""></a>
+                <img class="img_1278" src="{{section.settings.Aboutus_section5_image | img_url:'master' }}" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- popup video -->
+
+ <div class="modal fade" id="videopopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog-video" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" id="checkout_close" data-dismiss="modal" aria-label="Close">            
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/492272640" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% schema %}
+  {
+    "name": "Fifth name",
+    "settings": [
+{
+	"id": "Aboutus_section5_heading",
+	"type": "text",
+	"label": "Enter Heading"
+},
+ 
+{
+	"id": "Aboutus_section5_image",
+	"type": "image_picker",
+	"label": "Section 5 Image" 
+}
+
+]
+  }
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

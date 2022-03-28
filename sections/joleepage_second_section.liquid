@@ -1,0 +1,44 @@
+<!-- jolee section 2 -->
+
+<div class="jolee_section_2"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <div class="jolee_merge_up">
+                    <img src="{{section.settings.Jolee_sec2_Image1 | img_url:'master'}}" alt="">
+                    <img src="{{section.settings.Jolee_sec2_Image2 | img_url:'master'}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="Jolee-wines-are-full_pg">
+                    <p>{{section.settings.Jolee_sec2_text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "joleepage Second Section",
+    "settings": [
+     {
+      "id":"Jolee_sec2_Image1",
+      "type":"image_picker",
+      "label":"First Image"
+     },
+     {
+      "id":"Jolee_sec2_Image2",
+      "type":"image_picker",
+      "label":"Second Image"
+     },
+     {
+      "id":"Jolee_sec2_text",
+      "type":"textarea",
+      "label":"Description"
+     }
+   ]
+  }
+{% endschema %}

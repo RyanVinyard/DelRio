@@ -1,0 +1,83 @@
+   <div class="contact_us_page_section_1">
+        <div class="container">
+            <div class="text_about_contact_sec_1">
+                <h1 class="Wed-love-to-hear-fr_contact_us">{{section.settings.contactusec1heading}}</h1>
+
+                <div class="contact_title_text_about_us">
+                    <p class="General-Questions_contact_us">General Questions</p>
+                  <a class="text-decoration_none_as_homepage_123" href="mailto:{{ section.settings.contactusec1email}}.com"><p class="hellodelriovineyard_contact_us">{{ section.settings.contactusec1email}}</p> </a>
+                </div>
+<!--                 <div class="contact_title_text_about_us">
+                    <p class="General-Questions_contact_us">Order Inquiries</p>
+                   <a class="text-decoration_none_as_homepage_123" href="mailto:myorder@delriovineyards.com"><p class="hellodelriovineyard_contact_us">myorder@delriovineyards.com</p> </a>
+                </div>
+                <div class="contact_title_text_about_us">
+                    <p class="General-Questions_contact_us">Business Partnerships + Sales</p>
+                  <a class="text-decoration_none_as_homepage_123" href="mailto:sales@delriovineyards.com"><p class="hellodelriovineyard_contact_us">sales@delriovineyards.com</p></a>
+                </div> 
+-->
+
+
+                <div class="contact_us_page_lady_img text-center">
+                    <img src="{{'contact_us_page_img_1.png' | asset_url }}" alt="">
+                    <div class="like_follow_share_contact_us">
+                        <p class="Like-Follow-Share_contact_us">Like, Follow, Share!</p>
+       
+                        <div class="social_icons_contact_us">
+                           <a href="{{section.settings.contactusec1url1}}"><i class="fa fa-instagram"></i></a>   
+                           <a href="{{section.settings.contactusec1url2}}"><i class="fa fa-facebook"></i></a> 
+                           <a href="{{section.settings.contactusec1url3}}"><i class="fa fa-twitter"></i></a>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% schema %}
+  {
+    "name": "contactus first section",
+    "settings": [
+{
+      "id": "contactusec1heading",
+      "type": "text",
+      "label": "Heading"
+},
+    {
+      "id": "contactusec1email",
+      "type": "text",
+      "label": "Enter Email"
+},
+{
+      "id": "contactusec1image",
+      "type": "image_picker",
+      "label": "Add Image"
+},
+{
+      "id": "contactusec1url1",
+      "type": "url",
+      "label": "Enter Url"
+},
+{
+      "id": "contactusec1url2",
+      "type": "url",
+      "label": "Enter Url"
+},
+{
+      "id": "contactusec1url3",
+      "type": "url",
+      "label": "Enter Url"
+}
+
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

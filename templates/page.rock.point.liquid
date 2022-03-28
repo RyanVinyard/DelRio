@@ -1,0 +1,1314 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+<style>
+  
+  
+/* rock point */
+
+.rp_section {
+  background-color: #dbe7e9 !important;
+  background: url({{ 'RP_img2_bg.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+/*   position: relative; */
+  z-index: -2;
+  padding: 160px 45px 15px 45px;
+  background-size: 54%;
+}
+.Created-for-adventur {
+  font-family: Apercu Pro;
+  font-size: 49px;
+  font-weight: bold;
+  line-height: 1.14;
+  letter-spacing: -1.75px;
+  color: #1f3647;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+.With-every-bottle-of {
+  font-family: Apercu;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #291f1f;
+  width: 74%;
+}
+.rp_LEARN-MORE {
+  color: #1f3647;
+  border: solid 1px #1f3647;
+  background-color: #ffffff;
+  margin-top: 50px;
+  font-size: 11px;
+}
+.rp_header_text {
+/*   padding-top:75px; */
+  width: 95%;
+}
+.rp_img_3 {
+  position: absolute;
+  left: 76.5%;
+  z-index: 3;
+  top: 5%;
+  width: 22%;
+}
+  
+/* rock point section 2 */
+
+.rp_section_1 {
+  padding: 80px 45px;
+  background-image: url({{ 'Group_s7.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: 154% 113%;
+  background-position: 5% 100%;
+}
+
+.Rock-Point-wines-are_rp {
+  font-family: Apercu Pro;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.17;
+  letter-spacing: -1.5px;
+  color: #1f3647;
+  padding:60px 0 45px;
+}
+.They-are-perfect-after_rp p {
+  font-family: Apercu;
+  font-size: 20px;
+  line-height: 1.33;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #1f3647;
+}
+.They-are-perfect-after_rp {
+  padding-top: 65px;
+}
+.img_heas img {
+  z-index: 1;
+  width: 87%;
+  height: auto;
+}
+.rp_created {
+  width: 64%;
+  margin: 0 auto;
+  margin-right: 10%;
+}
+.rp_img_5 img {
+  width: 100%;
+}
+.rp_created_65 {
+  width: 64%;
+}
+.d_none_rp_desktop {
+  display: none;
+}
+
+/* rock point section 3 */
+
+.rp_our_wine h1 {
+  font-family: Apercu Pro;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.14;
+  letter-spacing: -1.75px;
+  color: #296170;
+}
+.rp_our_wine p {
+  font-family: Apercu Pro;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #1f3647;
+  width: 43%;
+}
+.rp_section_2 {
+  padding:45px;
+}
+.rp_width_100 img {
+  width: 100%;
+  height:391px;
+}
+.padding_rp {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align:center;
+}
+.Chardonnay_rp {
+  font-family: Apercu Pro;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.33;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #1f3647;
+  margin: 0;
+}
+.Bright-Elegant_rp {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgba(31, 54, 71, 0.87);
+  margin-bottom: 9px;
+}
+.stars_rating_rp {
+  width: 84px;
+  height: 16px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  color: #00767c;
+  text-align: center;
+}
+.Reviews_rp {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #00767c;
+}
+.ADD-TO-CART_rp {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #2e4433;
+  width: 100%;
+  border: solid 1px #2e4433;
+  padding: 10px;
+  margin: 0;
+  background-color: white;
+}
+  
+@media screen and (max-width:500px)
+  {
+    .ADD-TO-CART_rp {
+         width: fit-content;
+    margin: auto;
+    font-size: 12px;
+
+    }
+  }
+  
+.abs_rp {
+  position: absolute;
+  width: 82%;
+  top: 63%;
+  left: 26px;
+}
+.bg_rp_rating {
+  background-image:
+  linear-gradient(to bottom, rgba(235, 245, 246, 0.8), rgba(235, 245, 246, 0.8)),
+    url({{ 'RP_img7.png' | asset_url }});
+  /* background-image: url(images/RP_img7.png); */
+  background-size: cover;
+  padding: 10px;
+}
+.Primary-Flavors_rp {
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #07272d;
+  margin: 0;
+  padding-top: 20px;
+}
+.padd_4p_rp {
+  padding:5px 0
+}
+.rp_ss_end {
+  /* opacity: 0.8; */
+  border: solid 1px #296170;
+  background-color: #ebf5f6;  
+}
+.Strawberry_rp_icon {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #07272d;
+}
+.Light-Body_acidity span {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #07272d;
+}
+.ABV-137_rp {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  font-weight: bold;
+  color: #07272d;
+}
+.rp_middle {
+  margin-bottom: 8px;
+  width:100%;
+}
+.bar-container_rp {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+.bar-4_rp,.bar-4_rp_2,.bar-4_rp_3,.bar-4_rp_4 {
+  width: 34%;
+  height: 8px;
+  background-color: #2e4433;
+}
+.bar-4_rp_2 {
+  width: 58%;
+}
+.bar-4_rp_3 {
+  width: 75%;
+}
+.bar-4_rp_4 {
+  width: 65%;
+}
+.margin_25_rp_rgt {
+  margin-right: 36px;
+}
+.rp_our_wine {
+  margin-bottom: 45px;
+}
+.add_wine_rp {
+  border: solid 1px #1f3647;
+  background-color: #1f3647;
+  color: white !important;
+}
+
+
+/* rock point section 4 */ 
+
+.rp_section_3 {
+    padding: 45px;
+  background-image: url({{ 'RP_img8.png' | asset_url }});
+/* grant*/   /*  background-size: cover; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.Roguishly-good-thes_rp p {
+  font-family: Apercu Pro;
+  font-size: 37px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -1.25px;
+  color: #ffffff;
+  width: 98%;
+  background: rgba(0,0,0,0.4);
+  padding: 15px;
+}
+.Roguishly-good-thes_rp {
+  padding-top: 300px;
+}
+.Jean-Michel-Jussiaum_rp {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.71;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+.play_btn_rp_flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+/* rock point section 5 css */
+
+.rp_section_4 {
+  padding: 80px 45px 120px;
+  background-image: url({{ 'Group_8.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-position: 59% -53%;
+}
+.A-relaxing-and-invit_rpr {
+  font-family: Apercu Pro;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  color: #1f3647;
+}
+.star_5_rp {
+  color: rgba(31, 54, 71, 0.87);
+  text-align: left;
+}
+.Meghann-Erickson_rp {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #07272d;
+}
+.Purchased_2019_rp {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(31, 54, 71, 0.87);
+}
+.Meghann-Erickson_rp {
+  margin-bottom: 0;
+}
+.Purchased_2019_rp a {
+  color: #00767c;
+  text-decoration: underline;
+}
+.margin_rp_2019_z {
+  margin: 0 auto;
+  width: 86%;
+  margin-right: 0%;  
+  padding-top: 50px;
+}
+.owl_rp {
+  position: absolute;
+  right: 34px;
+  top:91%;
+}
+.owl_rp1 {
+  position: absolute;
+  right: 0;
+  top:91%;
+}
+
+/* 2-9-2020 */
+
+.rp_section_5 {
+  padding: 45px;
+}
+.Exploring-with-Rock_rp {
+  font-family: Apercu Pro;
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1.14;
+  letter-spacing: -1px;
+  text-align: center;
+  color: #296170;
+}
+.We-love-this-wild-an_rp {
+  font-family: Apercu;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(31, 54, 71, 0.87);
+  padding: 30px 0;
+  width: 51%;
+  margin: 0 auto;
+}
+
+.Explore-Rogue-River_rp {
+  font-family: Apercu Pro;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.33;
+  letter-spacing: -0.5px;
+  color: #1f3647;
+  margin-top: 15px;
+}
+.This-is-a-trail-that_rp {
+  font-family: Apercu;
+  font-size: 13px;
+  line-height: 1.43;
+  color: #07272d;
+}
+.rp_LEARN-MORE1 {
+  color: #1f3647;
+  border: solid 1px #1f3647;
+  background-color: #ffffff;
+  font-size: 11px;
+}
+.width_set_rp {
+  width: 86%;
+  margin: 0 auto;
+  margin-right: 20px;
+}
+.width_set_rp img,.dash_width_rp img {
+  width: 100%;
+}
+.dash_width_rp {
+    width: 86%;
+    margin: 0 auto;
+    margin-left: 15px;
+}
+.p_mm_rp {
+  width:87%;
+}
+.zerp_10_mar_rp {
+  margin-bottom: 0;
+}
+.padding_set_text_rp {
+  text-align: center;
+  margin-top: 35px;  
+}
+.padding_set_text_rp img {
+  height: 290px;
+}
+.padd-30_rr_rp {
+  padding-top: 30px;
+}
+
+@media screen and (max-width:1200px) {
+  .padding_set_text_rp img {
+    height: 190px;
+   }
+  }
+
+/* pock point section 6 */
+
+.rp_section_6 {
+  padding: 45px;
+}
+
+.Sustainability-Res_rp {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #00767c;
+}
+.Preserving-the-Wilde_rp {
+  font-family: 'Butler';
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #07272d;
+}
+.top_suatsain_rp {
+  padding:30px 0;
+}
+.Rock-Point-wines-are_rp_pbg p {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #1f3647;
+  width: 69%;
+  margin: 0 auto;
+}
+.img_one_first_rp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+/*   Grant_change */
+/* .img_one_first_rp img:first-child {
+  margin-right: 8%;
+} */
+.bag_man_rp_1 img {
+  width:100%;
+}
+.rp_section_7 {
+  padding: 45px;
+}
+.Rock-Point-wines-are_rpp {
+  font-family: Apercu Pro;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  text-align: center;
+  color: #1f3647;
+  width: 81%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.With-a-rich-history_rp_pbg {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #1f3647;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+.mm_30_1_rp {
+  padding-top: 30px;
+}
+
+
+
+@media screen and (min-width:1600px) {
+  .rp_section {
+    background-position: 60% 100%;
+    background-size:30%;
+}
+/* rock point section 4 css */
+.rp_section_3 {
+  background-position: center;
+}
+.rp_section_1 {
+    background-size: contain;
+    background-position: 66%;
+}
+}
+@media screen and (min-width:1300px) and (max-width:1500px) {
+  .rp_section {
+    background-size: 50.8%;
+}
+}
+@media screen and (min-width:768px) {
+  .img_heas img {
+    left: 61px !important;
+}
+}
+  @media screen and (max-width:1200px) {
+  .abs_rp {
+    top: 55%;
+    left: 22px;
+   }
+  } 
+@media screen and (max-width:1100px) {
+  .Created-for-adventur {
+    font-size: 39px;
+    padding-bottom: 0;
+}
+  .With-every-bottle-of {
+    font-size: 12px;
+  }
+  .rp_LEARN-MORE {
+    margin-top: 12px;
+    font-size: 8px;
+}
+.rp_img_3 {
+
+    left: 79.7%;
+  top: 4%;
+  width: 22%;
+}
+.rp_section {
+  background-size: 55%;
+}
+/* .rp_header_text {
+  padding-top: 50px;
+} */
+/* rp_2 css */
+
+.Rock-Point-wines-are_rp {
+  font-size: 33px;
+  padding: 45px 0 45px;
+}
+.They-are-perfect-after_rp p {
+  font-size: 17px;
+}
+.They-are-perfect-after_rp {
+  padding-top: 45px;
+}
+
+/* rock point section 3 */
+.Roguishly-good-thes_rp p {
+  font-size: 30px;
+}
+.A-relaxing-and-invit_rpr {
+  font-size: 29px;
+}
+.margin_rp_2019_z {
+    margin: 0 auto;
+    width: 86%;
+    margin-right: -2%;
+    padding-top: 30px;
+}
+
+}
+
+@media screen and (max-width:1100px) and (min-width:1000px) {
+  /* rock point section 3 css */
+.rp_our_wine p {
+  font-size: 15px;
+}
+.abs_rp {
+    width: 82%;
+    top: 53%;
+    left: 21px;
+}
+.Strawberry_rp_icon {
+  font-size: 10px;
+}
+.margin_25_rp_rgt {
+  margin-right: 26px;
+}
+.Primary-Flavors_rp {
+  font-size: 14px;
+  padding-top: 18px;
+}
+.Light-Body_acidity span {
+  font-size: 9px;
+}
+.bar-4_rp, .bar-4_rp_2, .bar-4_rp_3, .bar-4_rp_4 {
+  height: 4px;
+}
+.rp_middle {
+  margin-bottom: 6px;
+}
+.ABV-137_rp {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.We-love-this-wild-an_rp {
+  padding: 20px 0;
+  font-size: 16px;
+}
+.Exploring-with-Rock_rp {
+  font-size: 46px;
+}
+.padding_set_text_rp img {
+    height: 235px;
+}
+.Explore-Rogue-River_rp {
+  font-size: 19px;
+}
+.padding_set_text_rp {
+  margin-top: 29px;
+}
+.This-is-a-trail-that_rp {
+  font-size: 11px;
+}
+.Preserving-the-Wilde_rp {
+  font-size: 45px;
+}
+.Rock-Point-wines-are_rp_pbg p {
+  font-size: 14px;
+  width: 75%;
+}
+.top_suatsain_rp {
+  padding: 15px 0;
+}
+.Rock-Point-wines-are_rpp {
+  font-family: Apercu Pro;
+  font-size: 31px;
+}
+.With-a-rich-history_rp_pbg {
+  font-size: 14px;
+  width: 76%;
+}
+
+
+}
+@media screen and (max-width:991px) {
+  .rp_header_text {
+/*     padding-top: 33px; */
+    width: 100%;
+  }
+  .Created-for-adventur {
+    font-size: 28px;
+    width: 90%;
+}
+.With-every-bottle-of {
+  font-size: 9px;
+  margin-top: 0;
+}
+.rp_LEARN-MORE {
+  margin-top: 19px;
+}
+.rp_header_text img {
+  width: 50%;
+}
+
+/* rp_2 css */
+.rp_section {
+  padding-top: 100px;
+}
+.Rock-Point-wines-are_rp {
+  font-size: 28px;
+  padding: 30px 0 15px;
+}
+.They-are-perfect-after_rp {
+  padding-top: 30px;
+}
+.They-are-perfect-after_rp p {
+  font-size: 12px;
+}
+/* rock point section 3 css  */
+.abs_rp {
+  width: 82%;
+  top: 69%;
+  left: 31px;
+}
+.rp_middle {
+  margin-bottom: 15px;
+}
+.Primary-Flavors_rp {
+  font-size: 24px;
+  padding: 17.5px 0;
+}
+.Light-Body_acidity span {
+  font-size: 17px;
+}
+
+/* rock point section 3 css */
+.Roguishly-good-thes_rp p {
+  font-size: 22px;
+}
+.rp_img_3 {
+  left: 84.7%;
+}
+/* rock point section 5 */
+.rp_our_wine p {
+  width: 75%;
+}
+.rp_our_wine h1 {
+  font-size: 30px;
+}
+.A-relaxing-and-invit_rpr {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.margin_rp_2019_z {
+  padding-top: 15px;
+}
+.Purchased_2019_rp {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.Meghann-Erickson_rp {
+  font-size: 12px;
+}
+.star_5_rp {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.owl_rp,.owl_rp1 {
+  top: 83%;
+}
+.Exploring-with-Rock_rp {
+  font-size: 37px;
+}
+.We-love-this-wild-an_rp {
+    font-size: 13px;
+    width: 58%;
+    padding: 15px 0;
+}
+.Explore-Rogue-River_rp {
+  font-size: 14px;
+}
+.p_mm_rp {
+    width: 100%;
+}
+.This-is-a-trail-that_rp {
+    font-size: 12px;
+
+}
+.rp_LEARN-MORE1 {
+  font-size: 9px;
+  font-size: 12px;
+    font-weight: bold;
+    padding: 2% 9%;
+  text-align:center;
+}
+.This-is-a-trail-that_rp {
+  font-size: 10px;
+  padding-top: 2px;
+  margin-bottom: 5px;
+
+}
+.padding_set_text_rp {
+   margin-top: 0px;
+}
+.padding_set_text_rp img {
+    height: 160px;
+}
+.padding_set_text_rp {
+  margin-top: 23px;
+}
+.ss_16_mar_rp {
+  margin-bottom: 16px;
+}
+.rp_section_4 {
+    background-position: 73% 12%;
+}
+.top_suatsain_rp {
+  padding: 15px 0;
+}
+.Preserving-the-Wilde_rp {
+  font-size: 41px;
+}
+.Rock-Point-wines-are_rp_pbg p {
+  font-size: 11.9px;
+  width: 88%;
+}
+.Rock-Point-wines-are_rpp {
+  font-size: 25px;
+  width: 90%;
+}
+.With-a-rich-history_rp_pbg {
+  font-size: 13px;
+  width: 98%;
+}
+}
+  
+@media screen and (max-width: 800px) {
+.abs_rp {
+    top: 61%;
+    width: 71%;
+    /*left: 15%;*/
+  margin:auto!important;
+}
+  .rp_width_100 img {
+    height: 325px;
+    width: 85%;
+}
+  div.rp_width_100 {
+    text-align:center;
+  }
+.padding_set_text_rp img {
+    height: 130px;
+}
+}
+  @media screen and (max-width:767px) {
+  .rp_section_3 {
+    background-size: cover;
+  }
+    .Rock-Point-wines-are_rp {
+      width: 100%;
+   }
+.abs_rp {
+    top: 62%;
+    /*left: 25px;*/
+    margin:auto;
+}
+ .dash_width_rp {
+    width: 100%;
+    margin-left: 0;
+}
+    .width_set_rp {
+    width: 100%;
+    margin-right: 0;
+}
+.padding_set_text_rp img {
+    height: auto;
+    width: 100%;
+}
+.padding_set_text_rp {
+  text-align: left;
+}
+    .mar_top_30_for_mobile {
+      margin-top:30px;
+    }
+    .mar_top_30_for_mobile:first-child {
+      margin-top:0px;
+    }
+  }
+@media screen and (max-width:580px) {
+ .abs_rp {
+   top: 59.5%;
+    left: 29%;
+    width: 42%;
+}
+  .rp_width_100 img {
+    height: 300px;
+}
+  }
+  @media screen and (max-width:550px) {
+  .rp_width_100 img {
+    height: 350px;
+    width: 75%;
+}
+    div.rp_width_100 {
+      margin:auto;
+      text-align:center;
+    }
+.abs_rp {
+    top: 66.5%;
+    left: 24%;
+    width: 52%;
+}
+  }
+@media screen and (max-width:450px) {
+  .rp_section {
+    padding: 80px 15px 25px;
+    background-position: 100% 100%;
+    background-size: 93%;
+}
+.img_heas {
+  margin-top: 30px;
+}
+.img_heas img {
+  width: 100%;
+  height: 100%;
+}
+.rp_img_3 {
+  left: 75.7%;
+  top: 10%;
+  width: 26%;
+}
+.With-every-bottle-of {
+  font-size: 11px;
+  margin-top: 0;
+  width: 75%;
+}
+.rp_header_text img {
+   width: 50%;
+}
+
+/* rp_2 css */
+
+.rp_section_1 {
+  padding: 45px 15px;
+}
+.rp_created {
+  width: 100%;
+}
+.Rock-Point-wines-are_rp {
+  width: 100%;
+}
+.rp_img_5 img {
+    height: 292px;
+    width: auto;
+}
+.rp_img_5 {
+  display: flex;
+  justify-content: center;
+}
+.rp_created_65 {
+  width:100%;
+}
+.They-are-perfect-after_rp p {
+  font-size: 21px;
+}
+.d_none_rp_mbl {
+  display: none;
+}
+
+/* rock point section 3 css */
+.rp_section_2 {
+  padding: 45px 15px;
+}
+.rp_our_wine p {
+  font-size: 15px;
+  width: 100%;
+}
+.abs_rp {
+    top: 67%;
+    left: 18%;
+}
+.rp_our_wine h1 {
+  font-family: Apercu Pro;
+  font-size: 42px;
+}
+.rp_section_3 {
+  padding: 45px 15px;
+}
+.Roguishly-good-thes_rp {
+  padding-top: 100px;
+}
+.rp_section_3 {
+  background-position: 10%;
+}
+.Roguishly-good-thes_rp p {
+  font-size: 20px;
+  width: 88%;
+}
+.Created-for-adventur {
+  width: 100%;
+}
+.margin_rp_2019_z {
+  padding-top: 45px;
+  margin: 0 auto;
+  width: 94%;
+}
+.rp_section_4 {
+  padding: 45px 25px;
+}
+.A-relaxing-and-invit_rpr {
+  font-size: 20px;
+}
+.rp_section_5 {
+  padding: 45px 15px;
+}
+.Explore-Rogue-River_rp {
+  font-size: 20px;
+}
+.This-is-a-trail-that_rp {
+  font-size: 13px;
+}
+.We-love-this-wild-an_rp {
+  font-size: 14px;
+  width: 100%;
+}
+.Exploring-with-Rock_rp {
+  font-size: 30px;
+}
+.rp_section_6,.rp_section_7 {
+  padding: 45px 15px;
+}
+.Preserving-the-Wilde_rp {
+  font-size: 28px;
+}
+.Rock-Point-wines-are_rp_pbg p {
+  font-size: 12px;
+  width: 100%;
+}
+/* .img_one_first_rp {
+  justify-content: space-between;
+} */
+.img_one_first_rp img {
+  width:50%;
+}
+.Rock-Point-wines-are_rpp {
+  font-size: 21px;
+  width: 100%;
+}
+.With-a-rich-history_rp_pbg {
+  font-size: 12px;
+  width: 98%;
+}
+  .rp_width_100 img {
+    height: 320px;
+    width: 85%;
+}
+.owl_rp {
+    right: 22px;
+}
+  .owl_rp1 {
+    right: -34px;
+  }
+
+}
+  @media screen and (max-width:430px) {
+ .abs_rp {
+    top: 63%;
+    left: 23%;
+    width: 54%;
+}
+  }
+@media screen and (max-width:400px) {
+  .Created-for-adventur {
+    font-size: 32px;
+    width: 100%;
+}
+.With-every-bottle-of {
+  width: 90%;
+}
+/* rp_2 css */
+.They-are-perfect-after_rp p {
+  font-size: 19px;
+}
+/* rock point section 3 css */
+.abs_rp {
+    top: 62%;
+    left: 20%;
+    width: 61%;
+}
+.rp_our_wine p {
+  font-size: 13px;
+  width: 100%;
+}
+.Roguishly-good-thes_rp p {
+  font-size: 18px;
+  width: 88%;
+}
+.rp_section_3 {
+  background-position: 17%;
+}
+.A-relaxing-and-invit_rpr {
+  font-size: 17px;
+}
+.margin_rp_2019_z {
+    width: 93%;
+}
+.Exploring-with-Rock_rp {
+  font-size: 22px;
+}
+.We-love-this-wild-an_rp {
+  font-size: 12px;
+}
+.We-love-this-wild-an_rp {
+  font-size: 13px;
+}
+.Preserving-the-Wilde_rp {
+  font-size: 25px;
+}
+.Rock-Point-wines-are_rpp {
+  font-size: 19px;
+}
+  .owl-prev, .owl-next {
+    top: 32%;
+}
+}
+@media screen and (max-width:350px) {
+  .Created-for-adventur {
+    font-size: 28px;
+}
+.With-every-bottle-of {
+  width: 100%;
+  font-size: 10px;
+}
+.rp_img_3 {
+  left: 75.7%;
+  top: 12%;
+  width: 26%;
+}
+.Rock-Point-wines-are_rp {
+  width: 78%;
+}
+/* rp_2 css */
+.They-are-perfect-after_rp p {
+  font-size: 16px;
+}
+/* rock point section 3 css */
+.abs_rp {
+    top: 55%;
+    left: 18.5%;
+    width: 63%;
+}
+.bg_rp_rating {
+  background-size: contain;
+}
+.Primary-Flavors_rp {
+  font-size: 18px;
+}
+.Light-Body_acidity span {
+  font-size: 13px;
+}
+
+.Roguishly-good-thes_rp p {
+  font-size: 15.5px;
+  width: 90%;
+}
+.Jean-Michel-Jussiaum_rp {
+  font-size: 9px;
+}
+.play_btn_rp_flex img {
+  width: 72%;
+}
+.rp_our_wine h1 {
+  font-size: 33px;
+}
+.A-relaxing-and-invit_rpr {
+  font-size: 15px;
+}
+.margin_rp_2019_z {
+  width: 100%;
+  margin-left: 0;
+}
+.Preserving-the-Wilde_rp {
+  font-size: 22px;
+}
+.Rock-Point-wines-are_rp_pbg p {
+  font-size: 11px;
+}
+.Sustainability-Res_rp {
+  font-size: 9px;
+}
+  .rp_width_100 img {
+    height: 270px;
+    width: 85%;
+}
+}
+
+ @media screen and (max-width: 450px) {
+.rp_img_3 {
+    left: 74.7%;
+    top: 8%;
+    width: 27%;
+}
+   .img_heas {
+    margin-top: 80px;
+}
+   .rp_header_text {
+   text-align:center;
+   }
+   .With-every-bottle-of {
+    margin: 0 auto;
+}
+   .rp_LEARN-MORE {
+    margin: 0 auto;
+    margin-top: 20px;
+     font-size: 12px;
+    font-weight: bold;
+     padding: 2% 9%;
+}
+  }
+  
+  
+   @media screen and (max-width: 600px) {
+
+   .img_heas {
+    margin-top: 80px;
+}
+.rp_header_text {
+    text-align: center !important;
+}
+     .Created-for-adventur {
+    font-size: 28px;
+    width: 100%;
+}
+   .With-every-bottle-of {
+    margin: 0 auto;
+}
+   .rp_LEARN-MORE {
+    margin: 0 auto;
+    margin-top: 20px;
+     font-size: 12px;
+    font-weight: bold;
+     padding: 2% 9%;
+}
+     .rp_img_3 {
+    left: 61.7%;
+    top: 5%;
+    width: 27%;
+}
+     .rp_created {
+    width: 80%;
+    margin: 0 auto;
+}
+     .rp_img_5 {
+    text-align:center;
+}
+     .rp_created_65 {
+    margin: 0 auto;
+       margin-top:40px;
+
+     }
+     .navtext.owl_rp {
+       display:none;
+     }
+  }
+  
+ @media screen and (max-width:600px)
+   {
+    .justify-content-center .rp_LEARN-MORE1{
+      font-size: 12px;
+    font-weight: bold;
+    width: 124px;
+    padding: 8% 9%;
+    text-align: center;
+    }
+     .abs_rp{
+      left: 21%;
+    width: fit-content;
+    top: 70%;
+}
+   }
+  
+  
+  
+</style>
+<script>
+  console.log({{all_products['2018-rock-point-pinot-gris'] | json}});
+</script>
+
+{% section 'rockpoint-section1'%}
+{% section 'rockpoint-section2'%}
+{% section 'rockpoint-section3'%}
+{% section 'rockpoint-section4'%}
+{% section 'rockpoint-section5'%}
+{% section 'rockpointsection6'%}
+{% section 'rockpoint-section7'%}
+{% section 'rockpoint-section8'%}
+

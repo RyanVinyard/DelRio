@@ -1,0 +1,69 @@
+<div class="rp_section_7">
+    <div class="container">
+  <p class="Sustainability-Res_rp">{{section.settings.Section8_banner}}</p>
+  <div class="text-center mm_30_1_rp">
+    <img src="{{section.settings.Section8_logo | img_url:'master'}}" alt="">
+  </div>
+  <p class="Rock-Point-wines-are_rpp">{{section.settings.Section8_heading}}</p>
+
+  <p class="With-a-rich-history_rp_pbg">{{section.settings.Section8_text}}</p>
+
+  <div class="d-flex justify-content-center">
+    <a href="{{section.settings.Section8_buttonurl}}"><p class="LEARN-MORE rp_LEARN-MORE1">{{section.settings.Section8_buttontext}}</p></a>
+  </div>
+
+    </div>
+ </div>
+{% schema %}
+  {
+    "name": "Rockpoint-Eight Section",
+    "settings": [
+{
+	"id":"Section8_banner",
+	"type":"text",
+	"label":"Enter Banner Text"
+
+},
+{
+	"id":"Section8_logo",
+	"type":"image_picker",
+	"label":"Logo Image"
+
+},
+{
+	"id":"Section8_heading",
+	"type":"text",
+	"label":"Enter Section Heading"
+
+},
+{
+	"id":"Section8_text",
+	"type":"textarea",
+	"label":"Enter Description"
+
+},
+{
+        "id":"Section8_buttontext",
+        "type":"text",
+        "label":"Enter Button Text"
+},
+{
+        "id":"Section8_buttonurl",
+        "type":"url",
+        "label":"Button Url"
+}
+
+
+]
+  }
+
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+

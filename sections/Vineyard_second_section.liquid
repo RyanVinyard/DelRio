@@ -1,0 +1,57 @@
+<div class="vineyard_section_2">
+  <div class="container">
+    <p class="variant_vineyard_1">{{section.settings.vineyard_pg_title_sec_2}}</p>
+    <div class="row_sec_1_vineyard__mar">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="premium_estate_winemaker_vineyards_txt">
+            <h1>{{section.settings.vineyard_pg_desc_sec_2}}</h1>
+            <div class="premium_estate_winemaker_vineyards_img">
+              <img src="{{section.settings.vineyard_pg_img_sec_2  |  img_url:'master'}}" alt="">
+            </div>
+            <p class="grape_facing_south_vineyard">{{section.settings.vineyard_pg_img_desc_sec_2}}</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="premium_estate_winemaker_vineyards_img_2">
+            <img src="{{section.settings.vineyard_pg_img_1_sec_2  |  img_url:'master'}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Vineyard second section",
+    "settings": [
+        {
+          "id": "vineyard_pg_title_sec_2",
+          "type": "text",
+       	  "label": "Title"
+        },
+        {
+          "id": "vineyard_pg_desc_sec_2",
+          "type": "textarea",
+       	  "label": "Description"
+        },
+        {
+          "id": "vineyard_pg_img_sec_2",
+          "type": "image_picker",
+       	  "label": "Image 1"
+        },
+        {
+          "id": "vineyard_pg_img_desc_sec_2",
+          "type": "textarea",
+       	  "label": "Image 1 Description"
+        },
+        {
+          "id": "vineyard_pg_img_1_sec_2",
+          "type": "image_picker",
+       	  "label": "Image 2"
+        }
+]
+  }
+{% endschema %}

@@ -1,0 +1,102 @@
+<div class="tour_section_5">
+    <div class="container">
+<!--         <h1 class="Select-a-Tour_tors">{{section.settings.visitpage_sec5_Heading}}</h1> -->
+        <div class="row">
+         
+          
+          
+          {% for block in section.blocks %}
+          
+          <div class="col-lg-4 col-md-4 col-sm-12">
+                <div>
+                    <div class="girls_tour_3">
+                        <img src="{{block.settings.visitpage_sec5_img | img_url:'master'}}" alt="">
+                    </div>
+
+                    <div class="p_bold_tour">
+                        <p>{{block.settings.visitpage_sec5_tour_type}}</p>
+                        <p class="small_ss_tour">{{block.settings.visitpage_sec5_Price_per_person}}
+                            <br>
+                            <span>{{block.settings.visitpage_sec5_Reservation}}</span></p>
+                            <p class="Our-guide-will-take_tour">{{block.settings.visitpage_sec5_tour_description}}<span> <a href="{{block.settings.visitpage_sec5_Read_more_url}}">{{block.settings.visitpage_sec5_Read_more_text}}</a> </span> </p>
+                    </div>
+                    <div class="book_a_tour_20 LEARN-MORE_apercu_tour"><a href="{{block.settings.visitpage_sec5_btn_link}}">{{block.settings.visitpage_sec5_btn_text}}</a></div>
+                </div>
+
+            </div>
+          
+          {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Visitpage five Section",
+    "settings": [
+      
+    ],
+      "blocks":[
+    {
+      "type": "select",
+      "name": "Book  A Tour",
+      "settings": [
+        {
+        "id":"visitpage_sec5_img",
+        "type":"image_picker",
+        "label":"Image"
+        },
+        {
+        "id":"visitpage_sec5_tour_type",
+        "type":"textarea",
+        "label":"Tour type"
+        },
+        {
+        "id":"visitpage_sec5_Price_per_person",
+        "type":"textarea",
+        "label":"Price Description"
+        },
+        {
+        "id":"visitpage_sec5_Reservation",
+        "type":"textarea",
+        "label":"Reservations"
+        },
+        {
+        "id":"visitpage_sec5_tour_description",
+        "type":"textarea",
+        "label":"Tour Description"
+        },
+        {
+        "id":"visitpage_sec5_Read_more_text",
+        "type":"text",
+        "label":"Read more"
+        },
+        {
+        "id":"visitpage_sec5_Read_more_url",
+        "type":"url",
+        "label":"Read more Link"
+        },
+        {
+        "id":"visitpage_sec5_btn_text",
+        "type":"textarea",
+        "label":"Button Text"
+        },
+        {
+        "id":"visitpage_sec5_btn_link",
+        "type":"url",
+        "label":"button Link"
+        }
+     ]
+    }
+  ]
+}
+{% endschema %}
+
+
+

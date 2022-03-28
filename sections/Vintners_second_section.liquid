@@ -1,0 +1,132 @@
+
+<!-- section 2 -->
+
+        <div class="vintners_s_section_2">
+            <div class="container">
+      
+                <div class="alluvial_fans_rolling_hill">
+                    <h1>{{section.settings.vintner_pag_heading_sec_2}}</h1>
+                </div>
+      
+                <div class="pading-160_vintners">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="text_left_vintners_sec_2">
+                                <h1>{{section.settings.vintner_pag_Client_sec_2}}</h1>
+                                <p class="about_content_vintners">{{section.settings.vintner_pag_occupation_sec_2}}</p>
+                                <div class="description_txt_vintners">
+                                    <p>{{section.settings.vintner_pag_desc_1_sec_2}}</p>
+                                    <p>{{section.settings.vintner_pag_desc_2_sec_2}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="img_right_vintners_sec_2">
+                                <img src="{{section.settings.vintner_pag_img_sec_2 | img_url:'master'}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">  
+                    <div class="col-lg-6 col-md-6 col-sm-12 d_none_vintners_1">
+                        <div class="img_right_vintners_sec_2 text-left">
+                            <img src="{{section.settings.vintner_pag_img_1_sec_2 | img_url:'master'}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="h-100 d-flex align-items-center">
+                            <div class="text_left_vintners_sec_2 w-100">
+                                <h1>{{section.settings.vintner_pag_Client_1_sec_2}}</h1>
+                                <p class="about_content_vintners">{{section.settings.vintner_pag_occupation_1_sec_2}}</p>
+                                <div class="description_txt_vintners for_fnt_vintners">
+                                    <p>{{section.settings.vintner_pag_desc_3_sec_2}}</p>
+                                    <p>{{section.settings.vintner_pag_desc_4_sec_2}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 d_none_vintners_2">
+                        <div class="img_right_vintners_sec_2">
+                            <img src="{{section.settings.vintner_pag_img_1_sec_2 | img_url:'master'}}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+{% schema %}
+{
+  "name": "Vintners Second section",
+  "settings": [
+
+     {
+      "id": "vintner_pag_heading_sec_2",
+      "type": "textarea",
+      "label": "Heading"
+       },
+{
+   "type": "header",
+   "content": "First Person info"
+},
+     {
+      "id": "vintner_pag_Client_sec_2",
+      "type": "text",
+      "label": "Name 1"
+      },
+     {
+      "id": "vintner_pag_occupation_sec_2",
+      "type": "text",
+      "label": "Occupation"
+      },
+     {
+       "id": "vintner_pag_desc_1_sec_2",
+       "type": "textarea",
+       "label": "Description 1"
+       },
+     {
+       "id": "vintner_pag_desc_2_sec_2",
+       "type": "textarea",
+       "label": "Description 2"
+       },
+     {
+      "id": "vintner_pag_img_sec_2",
+      "type": "image_picker",
+      "label": "Image 1"
+      },
+{
+   "type": "header",
+   "content": "Second Person info"
+},
+     {
+      "id": "vintner_pag_Client_1_sec_2",
+      "type": "text",
+      "label": "Name 2"
+      },
+     {
+      "id": "vintner_pag_occupation_1_sec_2",
+      "type": "text",
+      "label": "Occupation"
+      },
+     {
+       "id": "vintner_pag_desc_3_sec_2",
+       "type": "textarea",
+       "label": "Description 1"
+       },
+     {
+       "id": "vintner_pag_desc_4_sec_2",
+       "type": "textarea",
+       "label": "Description 2"
+       },
+     {
+      "id": "vintner_pag_img_1_sec_2",
+      "type": "image_picker",
+      "label": "Image 2"
+      }
+    ]
+}
+{% endschema %}
+

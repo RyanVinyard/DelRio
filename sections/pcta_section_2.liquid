@@ -1,0 +1,53 @@
+<div class="outer-content">
+  <div class="container">
+    <div class="ptca-main-content">
+      <div class="ptca-video">
+        <iframe src="{{ section.settings.video_link }}" width="100%" height="338" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <!--             <video width="320" height="240" controls>
+<source src="{{ 'Rock_Point_partnership_with_PCTA.mov.mp4' | asset_url }}" type="video/mp4">
+</video> -->
+      </div>
+      <div class="ptca-text">
+        <div class="ptca-text">
+          <p>
+            {{ section.settings.pcta_text }}
+            <a class="org_lin" href="{{ section.settings.pcta_link }}">{{ section.settings.pcta_link_text }}</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "settings": [
+        {
+          "id": "video_link",
+          "type": "url",
+       		"label": "Video link"
+        },
+        {
+          "id": "pcta_text",
+          "type": "textarea",
+          "label": "Pcta Text"
+        },
+        {
+          "id": "pcta_link",
+          "type": "url",
+          "label": "Pcta Link"
+        },
+        {
+          "id": "pcta_link_text",
+          "type": "text",
+          "label": "Pcta Link Text"
+        }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

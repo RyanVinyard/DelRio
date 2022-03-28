@@ -1,0 +1,91 @@
+<div class="bg-white padding_15_bg_wine">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="image_tom_wine_making">
+                <img src="{{section.settings.Winemaking_Section5_Image | img_url:'master' }}" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 classforcenteritemsallpagesflex">
+            <div class="Winemaking_Philosph_tour">
+                <div>
+                    <h1 class="i_believe_wine">{{section.settings.Winemaking_Section5_heading}}</h1>
+                    <div class="I-believe-that-most_wine_making">
+<!--                         <img class="i_believe_wine2" src="{{section.settings.Winemaking_Section5_Logo| img_url:'grande' }}" alt=""> -->
+                     {% for block in section.blocks%}
+                      <p>{{block.settings.Winemaking_Section5__text1}}</p>
+                      {% endfor%}
+                        <p>{{section.settings.Winemaking_Section5__email}}
+                          <a  href="mailto:{{section.settings.Section5_emailtext}}"><strong>{{section.settings.Section5_emailtext}}</strong></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="Our-soil-rolling-hi_win_making">{{section.settings.Winemaking_Section5__Footer}}</h1>
+
+{% schema %}
+  {
+    "name": "Fifth Section",
+    "settings": [
+ 	  {
+        "id": "Winemaking_Section5_Image",
+        "type": "image_picker",
+        "label": "Section 5 image"
+        
+      },     
+	  {
+        "id": "Winemaking_Section5_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },
+ 	  {
+        "id": "Winemaking_Section5_Logo",
+        "type": "image_picker",
+        "label": "Section 5 Logo"
+        
+      },{
+        "id": "Winemaking_Section5__email",
+        "type": "textarea",
+        "label": "Add contact text ",
+		"default": "Enter text here"
+      },
+	  {
+      "id": "Section5_emailtext",
+      "type": "text",
+      "label": "Enter Email",
+      "default": "xya@email.com"
+      }
+      ,{
+        "id": "Winemaking_Section5__Footer",
+        "type": "textarea",
+        "label": "Add footer text below",
+		"default": "Enter text here"
+      }
+
+],
+"blocks": [
+    		{
+      			"type": "select",
+      			"name": "text",
+      			"settings": [
+        			{
+        "id": "Winemaking_Section5__text1",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+    		  ]
+    	}
+  	]
+	  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

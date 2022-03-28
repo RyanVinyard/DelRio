@@ -1,0 +1,156 @@
+{% if request.path contains product.url %}
+
+<div data-bloom-custom-product-subscription-snippet-product-id="{{ product_id }}"></div>
+
+<script>
+  (function init() {
+    function closestAncestor(el, sel) {
+      function checkMatch(el) {
+        return (el.matches || el.matchesSelector || el.msMatchesSelector).call(el,sel)
+      }
+      if (checkMatch(el)) return el
+      while ((el = el.parentElement) && !checkMatch(el));
+      return el;
+    };
+
+    function groupBy(arr, criteria) {
+      return arr.reduce(function (obj, item) {
+        var key = typeof criteria === 'function' ? criteria(item) : item[criteria];
+        if (!obj.hasOwnProperty(key)) {
+          obj[key] = [];
+        }
+        obj[key].push(item);
+        return obj;
+      }, {});
+    };
+
+    function removeNode(node) {
+      node.parentNode && node.parentNode.removeChild(node);
+    };
+    
+    var PURCHASE_TERM_LABELS = {
+      subscription: "Subscribe",
+      buy_one_time: "One-time purchase"
+    };
+    
+    var productId = '{{ product_id }}';
+    var productData = Bloom.storefront.data.products.find(function(p) { return p.id === productId });
+    var groupedPurchaseTerms = groupBy(productData.purchase_terms, "type")
+    Object.keys(groupedPurchaseTerms).forEach(function(type) {
+      if (type === 'subscription') {
+        groupedPurchaseTerms[type].forEach(function(subscriptionTerm) {
+          subscriptionTerm.frequency_label = subscriptionTerm.frequency_label || (subscriptionTerm.frequency_value + " " + subscriptionTerm.frequency_unit)
+        })
+        groupedPurchaseTerms[type] = groupedPurchaseTerms[type].sort(function(a, b) { return a.frequency_value - b.frequency_value })
+        groupedPurchaseTerms[type] = groupBy(groupedPurchaseTerms[type], 'frequency_label')
+      }
+    });
+    var purchaseTermTypes = Object.keys(groupedPurchaseTerms);
+    var productAnchor = document.querySelector('[data-bloom-custom-product-subscription-snippet-product-id="' + productId + '"]')
+    var productForm = closestAncestor(productAnchor, 'form');
+    var quantityInputContainer = productForm.querySelector('[name="quantity"]').parentNode;
+    var quantityInputContainerStyles = window.getComputedStyle(quantityInputContainer)
+    var hasSubscription = purchaseTermTypes && purchaseTermTypes.length > 1;
+    var quantityFields = document.querySelectorAll('[name="quantity"]');
+    
+    if (!!hasSubscription) {
+      var termsSelect = document.createElement('select');
+      termsSelect.style.backgroundColor = "inherit";
+      var termsLabel = document.createElement('label');
+      termsLabel.innerHTML = "Options";
+      var quantitySelect = document.createElement('select');
+      quantitySelect.style.backgroundColor = "inherit";
+      var quantityReadOnly = document.createElement('p');
+      var quantityLabel = document.createElement('label');
+      quantityLabel.innerHTML = "Quantity";
+      var frequencySelect = document.createElement('select');
+      frequencySelect.style.backgroundColor = "inherit";
+      var frequencyReadOnly = document.createElement('p');
+      var frequencyLabel = document.createElement('label');
+      frequencyLabel.innerHTML = "Frequency";
+      
+      function renderPurchaseTermsSelect() {
+        purchaseTermTypes.forEach(function(pTT) {
+          var option = document.createElement('option');
+          option.value = pTT;
+          option.text = PURCHASE_TERM_LABELS[pTT];
+          termsSelect.appendChild(option);
+        });
+        productForm.insertBefore(termsSelect, productForm.firstChild);
+        productForm.insertBefore(termsLabel, termsSelect);
+      }
+      
+      function renderFrequenciesSelect(purchaseTermType) {
+        quantityInputContainer.style.display = "none";
+        frequencySelect.innerHTML = "";
+        var purchaseTermName = purchaseTermType.charAt(0).toUpperCase() + purchaseTermType.slice(1);
+        frequencySelect.setAttribute('name', 'properties[' + purchaseTermName + ']');
+        var frequencies = groupedPurchaseTerms[purchaseTermType] && Object.keys(groupedPurchaseTerms[purchaseTermType])
+        frequencies.forEach(function(sF) {
+          var option = document.createElement('option');
+          option.value = sF;
+          option.text = sF;
+          frequencySelect.appendChild(option);
+        })
+        termsSelect.insertAdjacentElement('afterend', frequencyLabel)
+        frequencyLabel.insertAdjacentElement('afterend', frequencySelect)
+        if (frequencies && frequencies.length === 1) {
+          frequencySelect.style.display = "none";
+          frequencyReadOnly.innerHTML = (frequencies && frequencies[0]) || "";
+          frequencyLabel.insertAdjacentElement('afterend', frequencyReadOnly)
+        } else {
+          frequencySelect.style.display = "";
+        }
+        renderQuantitiesSelect(frequencies[0]);
+      }
+      
+      function renderQuantitiesSelect(frequencyLabel) {
+        quantitySelect.innerHTML = "";
+        var quantities = groupedPurchaseTerms['subscription'][frequencyLabel].map(function(sT) { return sT.quantity });
+        quantities.forEach(function(sQ) {
+          var option = document.createElement('option');
+          option.value = sQ;
+          option.text = sQ;
+          quantitySelect.appendChild(option);
+        })
+        frequencySelect.insertAdjacentElement('afterend', quantityLabel)
+        quantityLabel.insertAdjacentElement('afterend', quantitySelect)
+        if (quantities && quantities.length === 1) {
+          quantitySelect.style.display = "none";
+          quantityReadOnly.innerHTML = (quantities && quantities[0]) || "";
+          quantityLabel.insertAdjacentElement('afterend', quantityReadOnly)
+        } else {
+          quantitySelect.style.display = "";
+        }
+        updateQuantityInput(quantities[0]);
+      }
+      
+      function updateQuantityInput(value) {
+        for (var i = 0; i < quantityFields.length; i++) {
+          quantityFields[i].value = value;
+        }
+      }
+      
+      termsSelect.addEventListener('change', function(event) {
+        if (event.target.value === "buy_one_time") {
+          quantityInputContainer.style.display = "";
+          removeNode(quantitySelect);
+          removeNode(quantityReadOnly);
+          removeNode(quantityLabel);
+          removeNode(frequencySelect);
+          removeNode(frequencyReadOnly);
+          removeNode(frequencyLabel);
+          updateQuantityInput(1);
+        } else {
+          renderFrequenciesSelect(event.target.value);
+        }
+      })
+      frequencySelect.addEventListener('change', function(event) { renderQuantitiesSelect(event.target.value) });
+      quantitySelect.addEventListener('change', function(event) { updateQuantityInput(event.target.value) });
+      
+      renderPurchaseTermsSelect();
+    }
+  })()
+</script>
+
+{% endif %}

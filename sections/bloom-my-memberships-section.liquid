@@ -1,0 +1,31 @@
+{% comment %}
+This shop uses Bloom, a growth platform for modern wineries.
+You SHOULD NOT modify the contents of this file.
+It is automatically generated and your changes will be overwritten.
+These features and content can be managed within the Bloom app or the Shopify customizer.
+
+Bloom (www.bloom.wine)
+{% endcomment %}
+
+<div id="my-memberships-initial-loader" >
+  <div class="uk-flex uk-flex-column uk-flex-middle uk-margin-xlarge-top">
+    <div class="uk-width-1-1 uk-flex uk-flex-center">
+      <div uk-spinner="ratio: 3"></div>
+    </div>
+    <div class="uk-margin-top">
+      <p>Preparing your membership data...</p>
+    </div>
+  </div>
+</div>
+<div id="my-memberships-container" {% if customer %} data-customer='{"id": "{{ customer.id }}","firstName": "{{ customer.first_name }}","lastName": "{{ customer.last_name }}","phone": "{{ customer.phone }}","email": "{{ customer.email }}"}' {% endif %} ></div>
+<style>
+  #my-memberships-container {
+    min-height: 100vh;
+  }
+  #my-memberships-container a {
+    cursor: pointer;
+  }
+</style>
+{% schema %}
+{"name":"Bloom My Memberships page","settings":[]}
+{% endschema %}

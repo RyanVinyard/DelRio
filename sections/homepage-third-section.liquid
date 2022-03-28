@@ -1,0 +1,27 @@
+<div class="section_3">
+  <div class="container">
+    <div class="bottle_2">
+      <h1 class="Our-Wine">{{ section.settings.Wineheading}}</h1>
+      <p class="With-every-bottle">{{ section.settings.Winetext}}</p>
+    </div>
+  </div>     
+</div>
+{% schema %}
+  {
+    "name": "Homepage Three Section",
+    "settings": [
+      {
+        "id": "Wineheading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "id": "Winetext",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+    ]
+  }
+{% endschema %}

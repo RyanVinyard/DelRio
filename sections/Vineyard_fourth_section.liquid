@@ -1,0 +1,63 @@
+        <div class="vineyard_section_4">
+            <div class="container">
+                <p class="variant_vineyard_1">{{section.settings.vineyard_crew_title_sec_4}}</p>
+                <div class="row_sec_1_vineyard__mar">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="premium_estate_winemaker_vineyards_txt drop_mari_0_vineyard_pg">
+                                <h1>{{section.settings.vineyard_crew_heading_sec_4}}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="premium_estate_winemaker_vineyards_txt">
+                                <p class="grape_facing_south_vineyard_11">{{section.settings.vineyard_crew_desc_sec_4}}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="premium_estate_winemaker_vineyards_img_3">
+                                <img src="{{section.settings.vineyard_crew_img_sec_4 | img_url:'master'}}{{'vineyard-crew.jpg' | asset_url }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="solid_border_litish_pinkish_vineyards">
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Vineyard Fourth section",
+    "settings": [
+        {
+          "id": "vineyard_crew_title_sec_4",
+          "type": "text",
+       	  "label": "Title"
+          },
+        {
+          "id": "vineyard_crew_heading_sec_4",
+          "type": "textarea",
+       	  "label": "Heading"
+          },
+        {
+          "id": "vineyard_crew_desc_sec_4",
+          "type": "textarea",
+       	  "label": "Description"
+          },
+        {
+          "id": "vineyard_crew_img_sec_4",
+          "type": "image_picker",
+       	  "label": "Image"
+          }
+
+]
+  }
+{% endschema %}

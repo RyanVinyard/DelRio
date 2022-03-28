@@ -1,0 +1,702 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+
+<style>
+  
+  .section_1_join {
+background-color: #fcfcf5;
+padding: 45px;
+padding-bottom: 120px;
+}
+.Join-The-Rio-Club {
+font-family: 'Butler';
+font-size: 48px;
+font-weight: 300;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.17;
+letter-spacing: normal;
+text-align: center;
+color: #291f1f;
+padding: 80px 0 40px;
+}
+.border_one_pix {
+border: solid 1px #2e4433;
+padding: 50px 30px;
+}
+.Create-an-Account_join {
+font-family: 'Butler';
+font-size: 32px;
+font-weight: 300;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.25;
+letter-spacing: normal;
+color: #171f15;
+}
+.Already-have-an-acco {
+    font-family: Apercu;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Already-have-an-acco .text-style-1 {
+    font-weight: bold;
+    font-family: Apercu Pro;
+  }  
+  .FIRST-NAME_join label {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: #171f15;
+  }  
+  .Callie input {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #171f15;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #2e4433;
+    padding-left: 15px;
+    background: transparent;
+}
+.pad_3_club_form {
+    padding-bottom: 30px;
+}
+.Choose-a-Club {
+    font-family: 'Butler';
+    font-size: 32px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #171f15;
+    margin: 0;
+    padding-top: 25px;
+  }
+  .Welcome-to-our-club_16 {
+    font-family: Apercu;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .wine_with_food_club {
+    padding: 10px 10px 10px 20px;
+    border: solid 1px #2e4433;
+    margin-bottom: 20px;
+}
+  .RIO-CLUB_login_club p {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: #171f15;
+  }
+  .The-Rio-Club-provide_log_club {
+    font-family: Apercu;
+    font-size: 12.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    width: 95%;
+}
+.z_noir_club {
+    border: solid 1px #2e4433;
+    background-color: #2e4433;
+}
+.z_noir_club p { 
+color:white;
+}
+
+.I-have-read-and-agre {
+    font-family: Apercu;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    padding-left: 10px;
+    margin-left: 30px;
+  }
+  .I-have-read-and-agre a {
+    font-weight: bold;
+    color: #2e4433;
+  }  
+  .SHOP-WINES_continue_club {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2e4433;
+    padding: 5px 7%;
+    margin-top: 20px;
+}
+.Rock-Point-Case_club_join h1 {
+  font-family: 'Butler';
+  font-size: 40px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.72px;
+  color: #47657a;
+  text-transform: capitalize;
+ }
+ .case_login_join {
+   background-color: white;
+   width: min-content;
+    padding: 15px 0 15px 15px;
+ }
+ .p_rok_pnt_join {
+   padding: 15px 15px 0 0;
+ }
+.p_rok_pnt_join p {
+    font-family: Apercu Pro;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+}
+.Complimentary-tastin_join_club li {
+  font-family: Apercu;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #171f15;
+}
+.Complimentary-tastin_join_club ul {
+  padding: 0;
+  padding-left: 20px;
+}
+ul.b_square {
+  list-style-type: square;
+}
+ul.b_square li {
+  padding-bottom: 10px;
+}
+.Rock-Point-Case_club_join img {
+  height: 350px;
+}
+
+.grey_bg_join_club {
+  background-color: #f3f5eb;
+  padding: 60px 45px;
+}
+.Privacy-Policy-Terms_join_club p,.Privacy-Policy-Terms_join_club a {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #2e4433;
+}
+.Privacy-Policy-Terms_join_club a {
+  margin-right: 45px;
+}
+input:checked ~ .checkmark {
+  background-color: red;
+}
+
+
+/* checkbox css */
+
+
+/* The container */
+.container_check_mark {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container_check_mark input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0px;
+  left: 7px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 1px solid;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container_check_mark input:checked ~ .checkmark {
+  background-color: white;
+  border:1px solid;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container_check_mark input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container_check_mark .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #2e4433;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.d_none_club_dsk {
+  display: none;
+}
+@media screen and (max-width:1100px) and (min-width:1000px) {
+  .The-Rio-Club-provide_log_club {
+    font-size: 10px;
+  }
+  .Create-an-Account_join {
+    font-size: 26px;
+  }
+  .FIRST-NAME_join label {
+    font-size: 9px;
+  }
+  .Callie input {
+    font-size: 12px;
+  }
+}
+
+    
+    .bf_blur_ship {
+    background-color: #CAE6F4;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    right: 25%;
+    top: 8%;
+}
+
+@media screen and (max-width:1200px) {
+  .bf_blur_ship {
+    right: 9%;
+    top: 8%;
+}
+}
+@media screen and (max-width:991px) {
+  .bf_blur_ship {
+    right: -19%;
+    top: 7%;
+}
+}
+  
+  
+  
+@media screen and (max-width:800px) {
+  .Join-The-Rio-Club {
+    font-size: 40px;
+  }
+  .FIRST-NAME_join label {
+    font-size: 10px;
+  }
+  .Callie input {
+    font-size: 10px;
+  }
+.border_one_pix {
+    padding: 40px 15px;
+}
+.Welcome-to-our-club_16 {
+  font-size: 12px;
+}
+.The-Rio-Club-provide_log_club {
+  font-size: 10px;
+}
+.I-have-read-and-agre {
+  font-size: 11px;
+}
+.SHOP-WINES_continue_club {
+  font-size: 9px;
+}
+.pad_3_club_form {
+  padding-bottom: 15px;
+}
+.Rock-Point-Case_club_join img {
+  height: 270px;
+}
+.p_rok_pnt_join p {
+  font-size: 10px;
+}
+.Complimentary-tastin_join_club li {
+  font-size: 11px;
+}
+
+.Rock-Point-Case_club_join h1 {
+    font-family: 'Butler';
+    font-size: 34px;
+}
+.Privacy-Policy-Terms_join_club p, .Privacy-Policy-Terms_join_club a {
+  font-family: Apercu;
+  font-size: 11px;
+  margin: 0;
+}
+.Privacy-Policy-Terms_join_club a {
+  margin-right: 30px;
+}
+ .bf_blur_ship {
+    right: 0%;
+    top: 7%;
+    height: 65px;
+    width: 65px;
+}
+
+  }
+
+
+  @media screen and (max-width:500px) {
+    .section_1_join {
+      padding: 45px 15px;
+    }
+    .wine_with_food_club {
+      padding: 10px 10px 10px 10px;
+    }
+    .border_one_pix {
+      margin-bottom: 50px;
+    }
+    .Rock-Point-Case_club_join img {
+      height: 360px;
+  }
+  .d_none_club {
+    display: none !important;
+  }
+  .d_none_club_dsk {
+    display: unset;
+  }
+  .grey_bg_join_club {
+    padding: 60px 15px;
+}
+.Privacy-Policy-Terms_join_club1 p, .Privacy-Policy-Terms_join_club1 a {
+  font-family: Apercu;
+  font-size: 11px;
+  margin: 0;
+  padding-top: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #2e4433;
+
+}
+.Privacy-Policy-Terms_join_club1 a {
+  margin-right: 0;
+}
+ .bf_blur_ship {
+    right: 8%;
+    top: 11%;
+    height: 80px;
+    width: 80px;
+}
+}
+  @media screen and (max-width:400px) {
+    .Rock-Point-Case_club_join img {
+        height: 310px;
+    }
+  .bf_blur_ship {
+    right: 9%;
+    top: 11%;
+    height: 70px;
+    width: 70px;
+}
+  }
+
+  @media screen and (max-width:350px) {
+    .Create-an-Account_join {
+      font-size: 23px;
+      }
+      .Already-have-an-acco {
+        font-size: 14px;
+      }
+    .Choose-a-Club {
+        font-family: 'Butler';
+        font-size: 28px;
+    }
+    .I-have-read-and-agre {
+      font-size: 8px;
+  }
+  .Rock-Point-Case_club_join img {
+    height: 250px;
+}
+.Join-The-Rio-Club {
+  font-size: 28px;
+  padding: 40px 0;
+}  
+   .bf_blur_ship {
+    right: 9%;
+    top: 10%;
+    height: 60px;
+    width: 60px;
+}
+  }
+
+
+
+
+  @media screen and (max-width: 700px) and (min-width:501px) {
+.Rock-Point-Case_club_join img {
+    height: 429px;
+}
+    .case_login_join {
+    margin: 0 auto;
+    margin-top: 35px;
+}
+.bf_blur_ship {
+    right: 12%;
+    top: 15%;
+    height: 95px;
+    width: 95px;
+}
+
+  }
+      @media screen and (max-width: 550px) and (min-width:501px) {
+  .bf_blur_ship {
+    right: 4%;
+    top: 15%;
+  }      
+      
+      }
+
+
+</style>  
+
+
+
+
+    <div class="section_1_join">
+        <div class="container">
+
+            <h1 class="Join-The-Rio-Club">Join The Rio Club</h1>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="border_one_pix">
+                        <h1 class="Create-an-Account_join">Create an Account</h1>
+                        <p class="Already-have-an-acco">Already have an account? <span class="text-style-1">Sign In</span></p>
+
+                        <div class="login_dorm_club">
+                            <form action="" method="POST">
+                                <div class="Callie FIRST-NAME_join">
+                                <div class="pad_3_club_form">
+                                    <div class="row">
+                                       <div class="col-lg-6 col-md-6">
+                                    <label for="callie">FIRST NAME</label>
+                                    <br>
+                                    <input type="text" name="" id="callie" placeholder="Callie">
+                                </div>
+                                <div class="col-lg-6 col-md-6 input_form_join FIRST-NAME_join Callie">
+                                    <label for="last_name">LAST NAME</label>
+                                    <br>
+                                    <input type="text" name="" id="last_name" placeholder="Last name">
+                                </div>
+                               </div>
+                               </div>
+                            <div class="pad_3_club_form">
+                                <label for="email">EMAIL</label>
+                                <br>
+                                <input type="text" name="" id="email" placeholder="Email">
+                            </div>
+                            <div class="pad_3_club_form">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <label for="callie">PASSWORD</label>
+                                    <br>
+                                    <input type="password" name="" id="callie" placeholder="Password">
+                                </div>
+                                <div class="col-lg-6 col-md-6 input_form_join FIRST-NAME_join Callie">
+                                    <label for="last_name">CONFIRM PASSWORD</label>
+                                    <br>
+                                    <input type="password" name="" id="last_name" placeholder="Confirm">
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                            <h1 class="Choose-a-Club">Choose a Club</h1>
+                            <p class="Welcome-to-our-club_16">Welcome to our club! Please introduce yourself.</p>
+                       
+                            <div class="wine_with_food_club">
+                                <div class="RIO-CLUB_login_club d-flex justify-content-between">
+                                    <p>RIO CLUB</p>
+                                    <label class="container_check_mark">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p class="The-Rio-Club-provide_log_club">The Rio Club provides Del Rio’s friends and loyal customers our best wines at the best price. Each quarter members will receive three bottles of Del Rio red wine and an informative newsletter with recommendations for pairing the wines with food.</p>
+                            </div>
+
+                            <div class="wine_with_food_club">
+                                <div class="RIO-CLUB_login_club d-flex justify-content-between">
+                                    <p>REDS ONLY</p>
+                                    <label class="container_check_mark">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                 </div>
+                                <p class="The-Rio-Club-provide_log_club">The Reds Only club provides Del Rio’s friends and loyal customers our best wines at the best price. Each quarter members will receive three bottles of Del Rio red wine and an informative newsletter with recommendations for pairing the wines with food.</p>
+                            </div>
+
+                            <div class="wine_with_food_club z_noir_club">
+                                <div class="RIO-CLUB_login_club d-flex justify-content-between">
+                                    <p>RIO CLUB</p>
+                                    <label class="container_check_mark">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                <p class="The-Rio-Club-provide_log_club">Enjoy twelve bottles of Rock Point wine delivered biannually in April and October. Shipments included three of each: River Rock Red, River Rock White, Pinot Noir, and Pinot Grigio. Each order is $110 plus shipping. For those who are dual members of both Rock Point and Rio Club orders are only $75 plus shipping. Also enjoy 20% off all additional Rock Point wine purchases.</p>
+                            </div>
+
+                            <div>
+                                <label class="container_check_mark">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    <span class="I-have-read-and-agre">I have read and agree to the <a href="#">Terms and Conditions</a></span>
+                            </div>
+
+                            <input class="SHOP-WINES_continue_club" type="submit" value="CONTINUE TO SHIPPING">
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="case_login_join">
+
+                        <div class="Rock-Point-Case_club_join">
+                            <h1>Rock Point Case</h1>
+                            <div class="bf_blur_ship">
+
+                            </div>            
+                            <img src="{{'join_club_rectangle_wine.jpg' | asset_url }}" alt="">
+                        </div>
+
+                        <div class="p_rok_pnt_join">
+                            <p>Enjoy twelve bottles of Rock Point wine delivered biannually in April and October. Shipments included three of each: River Rock Red, River Rock White, Pinot Noir, and Pinot Grigio. </p>
+                            <div class="Complimentary-tastin_join_club">
+                                <ul class="b_square">
+                                    <li>20% discount off of retail three bottles of Del Rio wine selected specifically for our wine club members.</li>
+                                    <li>V.I.P. invitation to winery events including wine dinners, preview tasting, and pick up parties. </li>
+                                    <li> Free winery tour and tastings to club members and guest.</li>
+                                    <li>Complimentary tasting for up to six guests, including wine club member (member must be present).</li>
+                                    <li>Club members receive 15% off shipping costs. </li>
+                                    <li>No membership fee to join!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="grey_bg_join_club">
+        <div class="container">
+
+
+        <div class="d-flex justify-content-between align-items-center d_none_club">
+            <div>
+                <img src="{{'wines-landing-delrio-fit_join_clb.png' | asset_url }}" alt="">
+            </div>
+            <div class="Privacy-Policy-Terms_join_club">
+                <p class="Shipping-Delivery"> 
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Condition</a>
+                    © Copyright 2020 Del Rio Vineyards</p>
+            </div>
+        </div>
+
+        <div class="d_none_club_dsk">
+            <div class="text-center">
+                <img src="{{'wines-landing-delrio-fit_join_clb.png' | asset_url }}" alt="">
+            </div>
+            <div class="Privacy-Policy-Terms_join_club1 text-center">
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Terms & Condition</a></p>
+                    <p>© Copyright 2020 Del Rio Vineyards</p>
+            </div>
+        </div>
+        </div>
+
+        
+
+
+    </div>
+
+    </div>
+

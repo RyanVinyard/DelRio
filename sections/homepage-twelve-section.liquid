@@ -1,0 +1,86 @@
+<div class="section_12">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 accolades_8_bg_del_home">
+        <img class="behind_scene" src="{{section.settings.Section12_img |  img_url:'master' }}" alt="background_image">
+        <div class="scene_at_del">
+          <p class="the-scenes">{{section.settings.Section12_heading}}</p>
+          <p class="We-are-so-lucky">{{section.settings.Section12_desc}}</p>    
+          <a href="{{section.settings.Section12_Blog_link}}"><button class="rio_wines2">{{section.settings.Section12_Button_text}}</button></a> 
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 accolades_8_bg_del_home">
+        <img class="badge1" src="{{section.settings.Section12_event_badge_img |  img_url:'master' }}" alt="">
+        <img class="behind_scene up_scene" src="{{section.settings.Section12_event_img |  img_url:'master' }}" alt="background_image">
+        <div class="scene_at_del1 scene_at_del">
+          <p class="the-scenes">{{section.settings.Section12_event_heading}}</p>
+          <p class="We-are-so-lucky We-are-so-lucky_ss3 d_none_mble_del_del">{{section.settings.Section12_event_desc}}</p>    
+          <p class="We-are-so-lucky We-are-so-lucky_ss3 d_none_desk_del_delss1">{{section.settings.Section12_event_desc}}</p>   
+          <a href="{{section.settings.Section12_event_link}}"><button class="rio_wines2">{{section.settings.Section12_event_Button_text}}</button></a> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Homepage Twelve Section",
+    "settings": [
+        {
+          "id": "Section12_img",
+          "type": "image_picker",
+       	  "label": "Blog Image"
+        },
+      {
+        "id": "Section12_heading",
+        "type": "textarea",
+        "label": "Blog Heading"
+      },
+    	{
+          "id": "Section12_desc",
+          "type": "textarea",
+       		"label": "Blog description"
+        },
+    	{
+          "id": "Section12_Button_text",
+          "type": "text",
+       		"label": "Blog Button Text"
+        },
+        {
+          "id": "Section12_Blog_link",
+          "type": "url",
+       		"label": "Blog Url"
+        },
+        {
+          "id": "Section12_event_badge_img",
+          "type": "image_picker",
+       	  "label": "Event Badge logo"
+        },       
+        {
+          "id": "Section12_event_img",
+          "type": "image_picker",
+       	  "label": "Event Image"
+        },
+      {
+        "id": "Section12_event_heading",
+        "type": "textarea",
+        "label": "Event Heading"
+      },
+    	{
+          "id": "Section12_event_desc",
+          "type": "textarea",
+       		"label": "Event description"
+        },
+    	{
+          "id": "Section12_event_Button_text",
+          "type": "text",
+       		"label": "Event Button Text"
+        },
+        {
+          "id": "Section12_event_link",
+          "type": "url",
+       		"label": "Event Url"
+        }
+      ]
+    }
+{% endschema %}

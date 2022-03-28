@@ -1,0 +1,78 @@
+<style>
+  .border0fortopleftac {
+    text-transform:uppercase;
+  }
+  .nav-link.theme-link-color.border0fortopleftac.addre {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+  .odersnavcustomacclangua_1:hover ~ span ,.odersnavcustomacclangua_2:hover ~ span {
+  	border-bottom: 2px solid;
+    padding-bottom: 4px;
+  }
+/*   .theme-link-color.border0fortopleftac.navigiable_custom {
+  	    border-right: 1px solid rgba(0,0,0,.1);
+  } */
+    .nav-link.theme-link-color.border0fortopleftac.navigiable_custom {
+  	    border-color: #e9ecef #e9ecef #dee2e6;
+  }
+</style>
+
+{% include 'bloom' %}
+
+<ul class="nav nav-tabs justify-content-center nabartab21accbloomc">   
+  <div class="row w-100">
+    <div class="odersnavcustomacclangua p-0 {% if is_member == true or customer.orders.size == 0 %} col-lg-4 col-md-4 col-12 col-sm-12 {% else %} col-lg-6 col-md-6 col-12 col-sm-12 {% endif %}">
+      <li class="nav-item text-left">
+        <a class="nav-link {% if selectedIndex == 0 %}active{% endif %} theme-link-color border0fortopleftac acc_add_nav" href="/account"><span>My {{ 'customer.account.nav.orders' | t }}</span></a>
+      </li>    
+    </div>
+    {% comment %}
+    <div class="odersnavcustomacclangua_1 p-0 {% if is_member == true or customer.orders.size == 0 %} col-lg-4 col-md-4 col-12 col-sm-12 {% else %} col-lg-6 col-md-6 col-12 col-sm-12 {% endif %} ">
+      <li class="nav-item text-left">
+        <a class="nav-link {% if selectedIndex == 1 %}active{% endif %} theme-link-color border0fortopleftac addre" href="/account/addresses"><span>{{ 'customer.account.nav.addresses' | t }} ({{ customer.addresses_count }})</span></a>
+      </li>    
+    </div>
+    {% endcomment %}
+
+    <div class="odersnavcustomacclangua_2 p-0 {% if is_member == true or customer.orders.size == 0%} col-lg-4 col-md-4 col-12 col-sm-12 {% else %} col-lg-6 col-md-6 col-12 col-sm-12 {% endif %} ">
+      <li class="nav-item text-left">
+        <a class="nav-link {% if selectedIndex == 2 %}active{% endif %} theme-link-color  border0fortopleftac navigiable_custom" href="/apps/wine-club/account/customers/{{ customer.id }}"><span>Membership</span></a>
+      </li>
+    </div>    
+
+    {% comment %}
+    {% if customer.orders.size == 0 %}
+    <div class="p-0 col-lg-4 col-md-4 col-12 col-sm-12">
+      <a class="newnaclgoutbutton nav-link theme-link-color" href="/account/logout">
+        <p class="descriptioncustomerwelcome">
+          {{ 'customer.account.nav.logout' | t }}
+        </p>
+      </a>
+    </div> 
+    <style>
+      .descriptioncustomerwelcome {
+        margin-bottom:0px;
+        margin-top:35px;
+      }
+    </style> 
+    {% endif %}
+    {% endcomment %}
+
+  </div>
+</ul>
+
+<script>
+  $( ".odersnavcustomacclangua_1" ).hover(function() {
+    $( ".theme-link-color.border0fortopleftac.addre span" ).attr( "style","border-bottom: 2px solid;padding-bottom: 4px;" );
+  }, function() {
+        $( ".theme-link-color.border0fortopleftac.addre span" ).attr( "style","border-bottom: 0px solid;padding-bottom: 0px;" );
+  }
+);
+    $( ".odersnavcustomacclangua_2" ).hover(function() {
+    $( ".theme-link-color.border0fortopleftac.navigiable_custom span" ).attr( "style","border-bottom: 2px solid;padding-bottom: 4px;" );
+  }, function() {
+    $( ".theme-link-color.border0fortopleftac.navigiable_custom span" ).attr( "style","border-bottom: 0px solid;padding-bottom: 0px;" );
+  }
+);
+</script>

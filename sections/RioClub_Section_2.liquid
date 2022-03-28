@@ -1,0 +1,95 @@
+<div class="perl_section_2">
+  <div class="container">
+    <h1 class="Wine-Clubs_perk_pg">{{ section.settings.Rioclub_Sec2_heading }}</h1>
+
+    <div class="cabrener_pad pad_cab">
+      <div class="row">
+        {% for block in section.blocks%}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="png_club la_car">
+            <h1 class="RIO-CLUB_pic">{{block.settings.Rioclub_Sec2_ImageName}}</h1>
+            <img  class="chardo_rio" src="{{block.settings.Rioclub_Sec2_Image | img_url:'grande' }}" alt="">
+            <p class="own-wor own-jolee">{{block.settings.Rioclub_Sec2_ImageText}}</p>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="text-center shop_perk_22">
+      <a href="{{section.settings.Rioclub_Sec2_Buttonurl}}" class="SHOP-WINES_continue_club_perk">{{section.settings.Rioclub_Sec2_Buttontext}}</a>
+    </div>
+    <!--          Toggle button  -->
+    <button onclick="myFunction()">Click Me</button>
+
+    <div id="myDIV">
+      This is my DIV element.
+    </div>
+    <!--               end toggle -->
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": " Rioclub-Second Section",
+    "settings": [
+      {
+        "id":"Rioclub_Sec2_heading",
+        "type":"text",
+        "label":"Enter Heading"
+      },
+        {
+        "id":"Rioclub_Sec2_Buttontext",
+        "type":"text",
+        "label":"Button Text"
+        },
+        {
+        "id":"Rioclub_Sec2_Buttonurl",
+        "type":"url",
+        "label":"Button Url"
+        }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Wine Club",
+      "settings": [
+       {
+        "id":"Rioclub_Sec2_ImageName",
+        "type":"text",
+        "label":"Wine Club Name"
+        }, 
+		{
+        "id":"Rioclub_Sec2_Image",
+        "type":"image_picker",
+        "label":"image"
+        },
+        {
+        "id":"Rioclub_Sec2_ImageText",
+        "type":"textarea",
+        "label":"Description"
+        }
+     ]
+}
+]
+  }
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+{% endjavascript %}

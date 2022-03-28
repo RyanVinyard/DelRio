@@ -1,0 +1,178 @@
+<style>
+
+.tour_section_1_awards {
+    padding: 110px 15px 32px;
+    background-color: #f3f5eb;
+}
+.tour_nav_awards ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.tour_nav_awards li {
+    padding: 30px;
+}
+    .btn_awards {
+    border-bottom: 2px solid #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+    display: none;
+}
+.btn_awards {
+    display: flex;
+}
+
+.btn33_awards {
+    margin-left: -75px;
+}
+.Events__tour_text_awards li a {
+    font-family: Apercu pro;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: 1.71px;
+    text-align: center;
+    color: #2e4433;
+    text-decoration: none;
+    padding-bottom: 3px;
+}
+.btn_awards::after {
+    width: 200px;
+    height: 50px;
+    right: -1px;
+}
+.btn_awards::before {
+    height: 50px;
+    width: 200px;
+    left: 0;
+    margin-left: -1px;
+}
+.btn_awards::before, .btn_awards::after {
+    position: absolute;
+    background: #f3f5eb;
+    z-index: -1;
+    transition: 0.3s;
+    content: '';
+    border-radius: 0;
+}
+/* .btn_awards:hover::after, .btn_awards:hover::before {
+    width: 110px;
+    margin-left: -1px;
+} */
+.btn2_awards:hover::before, .btn2_awards:hover::after {
+    width: 25px;
+}
+.btn1_awards:hover::before {
+    width: 70px;
+    left: -1 !important;
+}
+.btn1_awards:hover::after {
+    width: 70px;
+    margin-right: -1px;
+}
+.tour_event_awards li a {
+    text-transform: uppercase;
+    color: rgba(46, 68, 51, 0.6);
+}
+.tour_event_awards li a:hover {
+    color: rgba(46, 68, 51, 1);
+}
+.Events__tour_text_awards li {
+    padding: 0 45px;
+}
+
+
+@media screen and (max-width:991px) {
+    .Events__tour_text_awards li {
+        padding: 0px 37px;
+    }
+    .Events__tour_text_awards li a {
+        font-size: 11px;
+    }
+    .btn_awards::after {
+        width: 165px;
+    }
+    .btn1_awards:hover::before,.btn1_awards:hover::after {
+        width: 60px;
+    }  
+/*     .btn_awards:hover::after, .btn_awards:hover::before {
+        width: 110px;
+    } */
+}
+
+@media screen and (max-width:767px) {
+    .tour_nav_awards ul {
+        display: block;
+    }
+    .btn_awards::before, .btn_awards::after {
+        margin-left: -1px;
+    }
+    .Events__tour_text_awards li {
+        padding: 7.9px 37px;
+    }
+    .btn_awards::before, .btn_awards::after {
+        height: 39px;
+        margin-top: 2px;
+    }
+    .btn_awards::after,.btn_awards::before {
+        width: 51%;
+    }
+/*     .btn_awards:hover::after, .btn_awards:hover::before {
+        width: 40%;
+    } */
+    .btn1_awards:hover::after, .btn1_awards:hover::before {
+        width: 38%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+/* .btn_awards:hover::after, .btn_awards:hover::before {
+    width: 34%;
+} */
+.btn1_awards:hover::after, .btn1_awards:hover::before {
+    width: 36%;
+}
+}
+
+
+@media screen and (max-width: 350px)  {
+    .btn1_awards:hover::after, .btn1_awards:hover::before {
+        width: 30%;
+}
+}
+
+/* section 1 css end */
+
+
+  
+</style>  
+
+
+
+    <div class="tour_section_1_awards">
+            <div class="container">
+                <div class="tour_nav_awards">
+                    <ul class="Events__tour_text_awards">
+                        <div class="tour_event_awards">
+                            <li class="btn_awards btn1_99"> <a class="noselect" href="/pages/vineyard">Vineyard</a> </li>
+                        </div>
+                        <div class="tour_event_awards">
+                            <li class="btn_awards sm_btn_awrd_vinemak"> <a class="noselect" href="/pages/wine-making">Winemaking Philosophy</a> </li>
+                        </div>
+                        <div class="tour_event_awards">
+                            <li class="btn_awards btn1_8"> <a class="noselect" href="/pages/vintners">Vintners</a> </li>
+                         </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+

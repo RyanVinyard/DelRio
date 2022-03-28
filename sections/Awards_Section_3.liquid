@@ -1,0 +1,126 @@
+       <div class="displat_wrapper_11">
+		{% for block in section.blocks %}
+          <div class="magazine_awards_desc">
+            <h1>{{ block.settings.Heading }}</h1>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_1 }}</p>
+              <p>{{ block.settings.Wine_desc_1 }}</p>
+            </div>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_2 }}</p>
+              <p>{{ block.settings.Wine_desc_2 }}</p>
+            </div>  
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_3 }}</p>
+              <p>{{ block.settings.Wine_desc_3 }}</p>
+            </div>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_4 }}</p>
+              <p>{{ block.settings.Wine_desc_4 }}</p>
+            </div>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_5 }}</p>
+              <p>{{ block.settings.Wine_desc_5 }}</p>
+            </div>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_6 }}</p>
+              <p>{{ block.settings.Wine_desc_6 }}</p>
+            </div>
+            <div class="wine_with_those_compant_got_awards">
+              <p class="wine_name_got_awards">{{ block.settings.Wine_Title_7 }}</p>
+              <p>{{ block.settings.Wine_desc_7 }}</p>
+            </div>
+          </div>
+        {% endfor %}
+	</div>
+
+
+{% schema %}
+{
+  "name": "AWARD COLUMN 1",
+  "settings": [],
+  "blocks": [
+		{
+			"name": "Awards Heading",
+			"type": "Heading",
+			"settings": [
+				{
+					"type": "text",
+					"id": "Heading",
+					"label": "Title"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_1",
+					"label": "Wine Title 1"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_1",
+					"label": "Wine Description 1"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_2",
+					"label": "Wine Title 2"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_2",
+					"label": "Wine Description 2"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_3",
+					"label": "Wine Title 3"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_3",
+					"label": "Wine Description 3"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_4",
+					"label": "Wine Title 4"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_4",
+					"label": "Wine Description 4"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_5",
+					"label": "Wine Title 5"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_5",
+					"label": "Wine Description 5"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_6",
+					"label": "Wine Title 6"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_6",
+					"label": "Wine Description 6"
+				},
+				{
+					"type": "text",
+					"id": "Wine_Title_7",
+					"label": "Wine Title 7"
+				},
+				{
+					"type": "textarea",
+					"id": "Wine_desc_7",
+					"label": "Wine Description 7"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

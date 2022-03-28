@@ -1,0 +1,1183 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+<style>
+
+/* tour class css */
+
+.tour_nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+.tour_section_1 {
+    padding: 95px 15px 24px;
+    background-color: #f3f5eb;
+}
+.Events__tour_text li a {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #2e4433;
+    text-decoration: none;
+  }
+  .Events__tour_text li a:hover {
+    color: #2e4433;    
+  }
+  .accolades_tour_2 {
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    width: 27%;
+    display: inline-block;
+    display: flex;
+    margin: 0;
+    margin: 0 auto;
+    margin-top: 9px;
+}
+.accolades_tour_3 {
+    width:50%;
+}
+
+.btn {
+    border-bottom: 2px solid #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+    display: none;
+  } 
+  
+  .btn {
+      display: flex;
+  }
+  .btn::before, .btn::after {
+    position: absolute;
+    background: #f3f5eb;
+    z-index: -1;
+    transition: 0.3s;
+    content: '';
+    border-radius: 0;
+  }
+  .btn::before {
+    height: 50px;
+    width: 152px;
+    left: 0;
+  }
+  .btn::after {
+    width: 152px;
+    height: 50px;
+    right: 0;
+  }
+  .btn:hover::before {
+    width: 50px; 
+}  
+.btn:hover::after {
+width: 50px;
+}
+.btn1:hover::after {
+    width: 16px;
+}
+.btn1:hover::before {
+    width: 16px;
+    left:-1 !important;
+}
+.btn2:hover::before,.btn2:hover::after {
+    width: 85px;
+}
+/* section 2 */
+.tour_section_2 {
+    padding: 45px;
+/*     background-image: url({{'testing_room_1.png' | asset_url }}); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 703px;
+}
+.testing_tour_2 {
+    padding: 45px;
+    width: 61.9%;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-top: -29.5%;
+}
+.Tasting-Room_tour {
+    font-family: 'Butler';
+    font-size: 45px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #291f1f;
+  }
+  .Located-at-the-entra_tour p {
+    font-family: Apercu;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Our-tasting-room-wil_tor {
+    font-family: Apercu pro;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+.covid_19_your p {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #0c6782;
+    margin: 0;
+}
+.covid_19_your {
+    background-color: #f0f8fa;
+    border: 1px solid #53768f;
+    padding: 10px 0px 10px 25px;
+    margin-bottom: 24px;
+}
+.visitor_mm_to {
+    padding-top: 30px;
+    font-size: 33px;
+}
+.maxi_visitor_tour ul {
+    padding: 0;
+    list-style-type: square;
+    padding-left: 12px;
+}
+.maxi_visitor_tour ul li {
+    font-family: Apercu;
+    font-size: 13.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .solid_tour_s {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  
+  .solid_tour_s span {
+    font-weight: 500;
+    font-family: Apercu;
+  }
+  .solid_tour_s span a:hover {
+    color: #171f15;
+  } 
+  .tour_section_3 {
+      padding: 45px;
+      background-color:   #fcfcf5;
+  }
+
+  /* scetion 4 */
+  .tour_section_4 {
+    padding: 45px;
+/*     background-image: url({{'testing_room_2.png' | asset_url }}); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 703px;
+}
+span.call_us_please_tour {
+    font-family: apercu pro;
+}
+.testing_tour_3 {
+    margin-top: -27.5%;   
+}
+.at-the-entra_tour_4 p {
+    font-size: 15.6px;
+}
+/* section 5 */
+h1.Select-a-Tour_tors {
+    font-family: 'Butler';
+    font-size: 48px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: #291f1f;
+    padding-bottom: 40px;
+  }
+  .tour_section_5 {
+      padding: 45px;
+      background-color:   #fcfcf5;
+  }
+  .girls_tour_3 img {
+      width: 100%;
+  }
+
+  .p_bold_tour p {
+    font-family: Apercu Pro;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #171f15;
+    padding-top: 15px;
+    margin: 0;
+}
+  .p_bold_tour p.small_ss_tour {
+    font-family: Apercu Pro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    font-weight: bold;
+    color: #171f15;
+}
+  
+  .p_bold_tour p.small_ss_tour span {
+    color: rgba(23, 31, 21, 0.6);
+  }
+
+  p.Our-guide-will-take_tour {
+    font-family: Apercu;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Our-guide-will-take_tour span {
+    font-weight: 500;
+    color: #2e4433;
+    font-family: apercu pro;
+  }
+  .Our-guide-will-take_tour span a {
+      color: black;
+  }
+  .book_a_tour_20 {
+      background-color: #2e4433;
+  }
+  .book_a_tour_20 a {
+      color: white;
+  }
+  .book_a_tour_20 a:hover {
+      color: white;
+}      
+.LEARN-MORE_apercu_tour {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f5f5f3;
+    padding: 10px;
+    width: 67%;
+    margin: 15px 0;
+}
+.top_mar_50_tour {
+    margin-top: 51px;
+}
+.top_mar_33_tour {
+    margin-top: 33px;
+}
+.tour_section_6 {
+    background-color: #fcfcf5;
+    padding: 45px;
+}
+
+.border_tour_sec_7 {
+    height: 60px;
+    border-top: 1px solid rgba(23, 31, 21, 0.4);
+}
+.border_tour_sec_8 {
+    height: 48px;
+    border-bottom: 1px solid rgba(23, 31, 21, 0.4);
+}
+.border_007 {
+    border-right: 1px solid rgba(23, 31, 21, 0.4);
+    padding-left: 0;
+}
+.border_tour_sec_6 {
+    border-top: 1px solid rgba(23, 31, 21, 0.4);
+    border-bottom: 1px solid rgba(23, 31, 21, 0.4);
+    padding: 60px 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.solid_tour_s a:hover {
+    text-decoration: underline;
+}
+.lady_wine_img_blonde img.blonde_winr_tast {
+    width: 92%;
+}
+img.ss_abso_center_tour  {
+    position: absolute;
+    right: 13px;
+    top: -39px;
+}
+.Upcoming-Events-at-D_tour1 h1 {
+    font-family: 'Butler';
+    font-size: 40px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #171f15;
+  }
+  .Upcoming-Events-at-D_tour {
+    padding-left: 0px;
+    border-bottom: 1px solid rgba(23, 31, 21, 0.4);
+}
+.padd_0_tour {
+    padding-left:0;
+}
+.Upcoming-Events-at-D_tour1 h1:first-child {
+    padding-left:40px;
+}
+  .d_flex_used_tour {
+    padding: 30px 0;
+    padding-left: 40px;
+}
+.so_me_tour {
+    padding: 12px 0;
+}
+.bf_graditour {
+    background-color: rgba(23, 31, 21, 0.08);
+    width: 19%;
+    padding: 5px 33px;
+    border: 1px solid #2e4433;
+    margin-right: 25px;
+}
+  .bf_graditour h1 {
+      margin: 0;
+  }
+  p.JUL_tour {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #2e4433;
+  }
+  .bold_under_star_tour p {
+    font-family: Apercu Pro;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #171f15;
+    margin: 0;
+}
+  p.th-annual-winemake_tour {
+    font-size: 14px;
+    line-height: 1.43;
+    margin-bottom: 15px;
+  }
+  p.Join-the-Del-Rio-tea_tours {
+    font-family: Apercu;
+    font-size: 12.7px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  p.sold_out_tours {
+    background-color:#f5f5f3;
+    color: white;
+    padding: 10px;
+  }
+  .so_me_tour a {
+      margin-right: 24px;
+  }
+  p.Join-our-waiting-lis_tour {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2e4433;
+  }
+  p.Join-our-waiting-lis_tour:hover {
+  text-decoration:underline;  
+  }
+  .so_me_tour1 a {
+    margin-right: 24px;
+    margin: 0;
+}
+.top_mar_33_tour1 {
+    /* margin-top: 33px; */
+    margin: 0;
+}
+.LEARN-MORE_apercu_tour1 {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f5f5f3;
+    padding: 10px 15px;
+    width: 100%;
+    margin: 0;
+}
+.Sunday-Slowdowns-S p {
+    font-family: Apercu Pro;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Sunday-Slowdowns-S p:first-child {
+      margin: 0;
+  }
+  p.Due-to-COVID-19-we-a_tourr {
+    font-family: Apercu;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #8f334f;
+    background-color: #fff5f0;
+    border: 1px solid #e7b8bf;
+    padding: 10px;
+    margin: 0;
+}
+.Sunday-Slowdowns-S {
+    padding-bottom: 0;
+}
+/* section 7 css */
+.tour_section_7 {
+  background-color: #fcfcf5;
+  padding: 45px;
+}
+
+.come_visit_us_tour h1 {
+  font-family: 'Butler';
+  font-size: 40px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #171f15;
+}
+
+.come_visit_us_tour p {
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #171f15;
+}
+p.-N-River-Road-Gol_tors {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #171f15;
+}
+p.Winter-Hours-11-5PM_tour {
+  font-family: Apercu;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: rgba(23, 31, 21, 0.6);
+}
+
+
+/* map css */
+#map {
+  height: 400px; 
+  width: 100%;  
+ }
+.map_before_tour {
+  margin-top: 20px;
+}
+.vine_crates_tour img {
+  width: 100%;
+}
+
+
+
+@media screen and (min-width:1300px) {
+    .tour_section_2 {
+        background-size: cover;
+        background-position: inherit;
+    }
+    .tour_section_4 {
+        background-size: cover;
+        background-position: center;
+    }
+    
+}
+@media screen and (max-width:1100px) and (min-width:800px) {
+    .Located-at-the-entra_tour p {
+        font-size: 12px;
+    }
+    .testing_tour_2 {
+        width: 62.9%;
+        margin-top: -32.5%;
+    }
+    .Tasting-Room_tour {
+        font-family: 'Butler';
+        font-size: 35px;
+    }
+    .tour_section_2 {
+        height: 569px;
+    }
+    .Our-tasting-room-wil_tor {
+        font-size: 10px;
+    }    
+    .maxi_visitor_tour ul li {
+        font-size: 10.9px;
+    }
+    .testing_tour_3 {
+        width: 62.9%;
+        margin-top: -27.5%;
+    }
+    .at-the-entra_tour_4 p {
+        font-size: 11.8px;
+    } 
+    .covid_19_your p {
+        font-size: 12px;
+    }    
+    .tour_section_4 {
+        height: 569px;
+    }
+    .p_bold_tour p {
+        font-size: 14px;
+    }
+    .p_bold_tour p.small_ss_tour {
+        font-size: 12px;
+    }
+    p.Our-guide-will-take_tour {
+        font-size: 11px;
+    }
+    .LEARN-MORE_apercu_tour {
+        font-size: 8px;
+    }   
+    .top_mar_50_tour {
+        margin-top: 46px;
+    }
+
+
+    /* section_6 css */
+    img.ss_abso_center_tour {
+      right: 17px;
+      top: -26px;
+      width: 19%;
+  }
+  .Upcoming-Events-at-D_tour1 h1 {
+    font-size: 29px;
+  }
+  .bf_graditour {
+    padding: 5px 25px;
+  }
+  p.Join-the-Del-Rio-tea_tours {
+    font-size: 10.6px !important;
+}
+.bold_under_star_tour p {
+  font-size: 16px;
+}
+p.th-annual-winemake_tour {
+  font-size: 11px;
+}
+p.Join-our-waiting-lis_tour {
+  font-size: 11px;
+}
+.d_flex_used_tour {
+  padding: 19px 0;
+  padding-left: 40px;
+}
+.Sunday-Slowdowns-S p {
+  font-size: 14px;
+}
+p.Due-to-COVID-19-we-a_tourr {
+  font-size: 10.4px;
+}
+.Sunday-Slowdowns-S.d_flex_used_tour {
+  padding-bottom: 0;
+}
+.border_tour_sec_7 {
+  height: 45px;
+}
+
+  }
+
+
+@media screen and (max-width: 991px) and (min-width: 800px) {
+  .btn33 {
+    margin-left: 0 !important;
+}
+.Upcoming-Events-at-D_tour1 h1 {
+  font-size: 24px;
+}
+.d_flex_used_tour {
+  padding-left: 30px;
+}
+.Upcoming-Events-at-D_tour1 h1:first-child {
+  padding-left: 30px;
+}
+p.Join-the-Del-Rio-tea_tours {
+  font-size: 9px !important;
+}
+.bf_graditour {
+    padding: 5px 19px;
+}
+.bf_graditour {
+  width: 20%;
+  padding: 5px 19px;
+  margin-right: 17px;
+}
+p.JUL_tour {
+  font-size: 10px;
+}
+.bf_graditour h1.text-center {
+  font-size: 19px;
+}
+.bold_under_star_tour p {
+  font-size: 10px;
+}
+p.sold_out_tours {
+  padding: 5px;
+}
+.LEARN-MORE_apercu_tour1 {
+  font-family: Apercu Pro;
+  font-size: 7px;
+}
+p.Due-to-COVID-19-we-a_tourr {
+  font-size: 9px !important;
+}
+.Sunday-Slowdowns-S p {
+  font-size: 12px;
+}
+.so_me_tour {
+  padding: 12px 0;
+  padding-bottom: 0;
+}
+.lady_wine_img_blonde img.blonde_winr_tast {
+  width: 96%;
+}
+}
+
+@media screen and (max-width:800px) and (min-width:700px) {
+  .btn33 {
+    margin-left: -49px !important;
+}
+    .tour_section_2 {
+        height: 427px;
+    }
+    .testing_tour_2 {
+        width: 100%;
+    }
+    .Located-at-the-entra_tour p {
+        font-size: 14px;
+    }
+    .tour_section_4 {
+        height: 428px;
+    }
+    .Located-at-the-entra_tour p {
+        font-size: 13.9px;
+    }
+    .p_bold_tour p {
+        font-size: 10px;
+    }
+    .p_bold_tour p.small_ss_tour {
+        font-size: 10px;
+    }
+    .p_bold_tour p {
+        padding-top: 8px;
+    }
+    p.Our-guide-will-take_tour {
+        font-size: 9px;
+    }
+    .LEARN-MORE_apercu_tour {
+        font-size: 7px;
+        width: 84%;
+        margin: 15px 0;
+    }
+    .top_mar_50_tour {
+        margin-top: 40px;
+    }
+    .top_mar_33_tour {
+        margin-top: 27px;
+    }
+    .Events__tour_text li a {
+        font-size: 12px;
+    }
+    .tour_section_1 {
+        padding: 75px 15px 15px;
+    }
+
+    /* section 6 css */
+.border_007 {
+  border: 0;
+  padding: unset;
+}
+.testing_room_6_png11 {
+  margin: 0 auto;
+}
+.lady_wine_img_blonde img.blonde_winr_tast {
+  width: 100%;
+}
+.testing_room_6_png11 {
+  margin: 0 auto;
+  width: 87%;
+}
+img.ss_abso_center_tour {
+  right: 12px;
+  top: -28px;
+  width: 17%;
+}
+.Upcoming-Events-at-D_tour1 h1:first-child {
+  padding-left: 0px;
+  text-align: center;
+  margin-top: 40px;
+}
+.btn::after {
+  width: 89px;
+}
+.btn2:hover::before, .btn2:hover::after {
+  width: 74px;
+}
+.tour_section_7 {
+  padding: 45px 15px;
+}
+.come_visit_us_tour h1 {
+  font-size: 34px;
+}
+.come_visit_us_tour p {
+  font-size: 15px;
+}
+p.-N-River-Road-Gol_tors {
+  font-size: 12px;
+}
+p.Winter-Hours-11-5PM_tour {
+  font-size: 12px;
+}
+#map {
+  height: 350px; 
+ }
+}
+@media screen and (max-width:767px) {
+  #map {
+    margin-top: 50px;
+}
+    .btn33 {
+    margin-left: 0 !important;
+}
+}
+@media screen and (max-width:700px) {
+    .btn33 {
+    margin-left: 0 !important;
+}
+  .tour_section_2,.tour_section_4 {
+    height: 378px;
+}
+.testing_tour_2 {
+  width: 100%;
+}
+.Upcoming-Events-at-D_tour1 h1:first-child {
+  padding-left: 0px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.testing_room_6_png11 {
+  margin: 0 auto;
+}
+.lady_wine_img_blonde img.blonde_winr_tast {
+  width: 100%;
+}
+.testing_room_6_png11 {
+  margin: 0 auto;
+  width: 87%;
+}
+.border_007 {
+  border: 0;
+  padding: unset;
+}
+.btn::after,.btn::before {
+  width: 89px;
+}
+.btn2::after, .btn2::before {
+  width: 114px;
+}
+.Upcoming-Events-at-D_tour1 h1 {
+  font-family: 'Butler';
+  font-size: 30px;
+}
+.d_flex_used_tour {
+  padding: 30px 0;
+  padding-left: 0;
+}
+.bold_under_star_tour p {
+  font-size: 17px;
+}
+p.Join-the-Del-Rio-tea_tours {
+  font-size: 11px !important;
+}
+}
+@media screen and (max-width:500px) {
+    .btn33 {
+    margin-left: 0 !important;
+}
+    .tour_section_1 {
+        padding: 75px 0px 15px;
+    }
+    .Events__tour_text li a {
+        font-size: 10px;
+    }   
+    .btn::before,.btn::after {
+        width: 70px;
+    } 
+    .btn2::before ,   .btn2::after{
+        width: 83px;
+    }
+    .btn:hover::before,.btn:hover::after {
+        width: 15px;
+    }
+    .btn2:hover::before,.btn2:hover::after {
+        width: 30px;
+    }
+
+    .tour_event li {
+        padding: 5px 7px;
+    }
+    .tour_nav ul {
+        justify-content: space-between;
+    }
+    .tour_section_2 {
+        height: 236px;
+    }
+    .tour_section_3 {
+        padding: 45px 15px;
+    }
+    .testing_tour_2 {
+        padding: 30px 15px;
+        width: 100%;
+        margin-top: -26.5%;
+    }
+    .Tasting-Room_tour {
+        font-size: 38px;
+    }
+    .Located-at-the-entra_tour p {
+        font-size: 13px;
+    }
+    .visitor_mm_to {
+        padding-top: 15px;
+    }
+    .covid_19_your p {
+        font-size: 11px;
+    }
+    .Our-tasting-room-wil_tor {
+        font-size: 10px;
+    }
+    .maxi_visitor_tour ul li {
+        font-size: 13px;
+    }
+    .tour_section_4 {
+        height: 236px;
+    }
+    .testing_tour_3 h1.Tasting-Room_tour {
+        font-size: 30px;
+    }
+    h1.Select-a-Tour_tors {
+        font-size: 38px;
+        padding-bottom: 30px;
+    }
+    .tour_section_5 {
+        padding: 45px 15px;
+    }
+    .LEARN-MORE_apercu_tour {
+        margin-bottom: 40px;
+    }
+    .top_mar_50_tour {
+        margin-top: 20px;
+    }
+    .top_mar_33_tour {
+        margin-top: 20px;
+    }
+    .btn2::before, .btn2::after {
+        width: 170px;
+    }
+    /* section 6 css */
+
+    .tour_section_6 {
+      background-color: #fcfcf5;
+      padding: 45px 15px;
+      padding-top: 0;
+  }
+  
+.testing_room_6_png11 {
+  margin: 0 auto;
+}
+.lady_wine_img_blonde img.blonde_winr_tast {
+  width: 100%;
+}
+.testing_room_6_png11 {
+  margin: 0 auto;
+  width: 87%;
+}
+.border_007 {
+  border: 0;
+  padding: unset;
+}
+.Upcoming-Events-at-D_tour1 h1:first-child {
+  padding-left: 0px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+}
+.padd_0_tour {
+  padding-left: 15px;
+}
+p.Join-the-Del-Rio-tea_tours {
+  font-size: 10px !important;
+}
+.bf_graditour {
+    width: 19%;
+    padding: 5px 20px;
+}
+.bold_under_star_tour p {
+  font-size: 12px;
+}
+p.sold_out_tours {
+  background-color: #f5f5f3;
+  color: white;
+  padding: 7px;
+}
+.Sunday-Slowdowns-S p {
+  font-size: 14px;
+}
+p.Due-to-COVID-19-we-a_tourr {
+  font-size: 11px;
+}
+img.ss_abso_center_tour {
+  right: -4px;
+  top: -28px;
+  width: 20%;
+}   
+.tour_section_7 {
+  padding: 45px 15px;
+}
+.come_visit_us_tour h1 {
+  font-size: 35px;
+}
+.come_visit_us_tour p {
+  font-size: 15px;
+}
+p.-N-River-Road-Gol_tors {
+  font-size: 12px;
+}
+p.Winter-Hours-11-5PM_tour {
+  font-size: 12px;
+}
+.vine_crates_tour img {
+  height: 150px;
+}
+
+
+
+}
+@media screen and (max-width:400px) {
+    .btn2::before, .btn2::after {
+        width: 170px;
+    }    
+    .btn2:hover::before,.btn2:hover::after {
+        width: 50px;
+    }
+    .Located-at-the-entra_tour p {
+        font-size: 12px;
+    }
+    .tour_section_4,.tour_section_2 {
+        height: 209px;
+    }
+    p.Our-guide-will-take_tour,.p_bold_tour p.small_ss_tour {
+        font-size: 12px;
+    }
+
+
+    /* section 6 css */
+    p.Join-the-Del-Rio-tea_tours {
+      font-size: 9px !important;
+  }
+  .Upcoming-Events-at-D_tour1 h1 {
+    font-size: 17px;
+}
+p.JUL_tour {
+  font-size: 9px;
+}
+.bf_graditour {
+  margin-right: 12px;
+}
+.bold_under_star_tour p {
+  font-size: 11px;
+}
+.border_tour_sec_8 {
+  height: 20px;
+  border-bottom: 1px solid rgba(23, 31, 21, 0.4);
+}
+}
+@media screen and (max-width:350px) {
+    .Events__tour_text li a {
+        font-size: 8px;
+    }
+    /* .btn:hover::before, .btn:hover::after {
+        width: 12px;
+    } */
+    .tour_event li {
+        padding: 5px 0px;
+    }
+
+    .Tasting-Room_tour {
+        font-size: 29px;
+    }
+    .Located-at-the-entra_tour p {
+        font-size: 11px;
+    }
+    .maxi_visitor_tour ul li {
+        font-size: 11px;
+    }
+    .btn::before, .btn::after {
+        width: 43px;
+    }
+    .btn1:hover::before, .btn1:hover::after {
+        width: 6px;
+    }
+    .btn1::after {
+        width: 53px;
+    }
+    .btn2::before, .btn2::after {
+        width: 142px;
+    }
+    .btn2:hover::before, .btn2:hover::after {
+        width: 23px;
+    }
+    .p_bold_tour p {
+        font-size: 12px;
+    }
+    .LEARN-MORE_apercu_tour {
+        font-size: 8px;
+        padding: 10px 5px;
+        width: 74%;
+    }
+    img.ss_abso_center_tour {
+      right: -4px;
+      top: -20px;
+      width: 20%;
+  }
+ /* map css */
+  p.-N-River-Road-Gol_tors {
+    font-size: 10px;
+}
+p.Winter-Hours-11-5PM_tour {
+  font-size: 10px;
+}
+.come_visit_us_tour p {
+  font-size: 13px;
+}
+.come_visit_us_tour h1 {
+  font-size: 26px;
+}
+
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.solid_tour_s a:hover {
+    text-decoration: underline;
+
+}
+  .btn33 {
+    margin-left :-75px;
+  }
+
+  html{
+  scroll-behavior: smooth;
+  }
+</style>
+
+
+
+{% section 'visitpage_section_1' %}
+{% section 'visitpage_section_2' %}
+{% section 'visitpage_section_3' %}
+{% section 'visitpage_section_4' %}
+{% comment %}
+{% section 'visitpage_section_5' %}
+{% section 'visitpage_section_6' %}
+{% endcomment %}
+{% section 'visitpage_section_7' %}
+{% section 'visitpage_eight_section' %}
+

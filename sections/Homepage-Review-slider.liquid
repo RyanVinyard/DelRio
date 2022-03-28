@@ -1,0 +1,291 @@
+
+<style>
+
+  @media screen and (max-width: 768px)
+  {
+    .customer_review-sec p{
+      font-family: 'Lato', sans-serif;
+      font-size:18px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .customer_review-sec p{
+    font-family: 'Lato', sans-serif;
+    font-size:18px;
+    width: 54%;
+    padding-left: 84px;
+  }
+
+  .customer_review-sec .slide-image{
+    width: 100%;
+  }
+  .customer_review-sec .owl-theme .owl-dots .owl-dot span {
+    width: 15px !important;
+    height: 15px !important;
+    background: #364f52;
+  }
+
+  .customer_review-sec .owl-theme .owl-nav {
+    position: relative;
+    bottom: 54%;
+
+  }
+  .review_slide .slide-text {
+    position: absolute;
+    bottom: 76px;
+    width: 100%;
+  }
+  .review_slide .slide-text #review{
+    font-family: 'Butler';
+    font-size: 32px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #ffffff!important;
+  }
+  .review_slide .slide-text p{
+    font-family: Apercu Pro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff!important;
+  }
+  .review_slide {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: inherit;
+    height: 574px;
+  }
+  .customer_review-sec .container-fluid Z{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+
+  .customer_review-sec button.owl-prev{
+    font-size: 30px !important;
+    float: left;
+  }
+
+  @media screen and (max-width: 768px)
+  {
+    .customer_review-sec button.owl-prev{
+      font-size: 30px !important;
+      float: left;
+      margin-left: 0%!important;
+    }
+    .review_slide{
+      height: 474px;
+    }
+    .customer_review-sec p{
+      width: 68%;
+      padding-left: 0px;
+      margin: auto;
+      text-align: center;
+    }
+    #new_carousel_design_homepage .owl-dots{
+      float: none!important;
+    }
+  }
+
+  #new_carousel_design_homepage .owl-dots{
+    float: left;
+    position: relative;
+    padding-left: 6%;
+    bottom: 72px;
+  }
+  .customer_review-sec .owl-theme .owl-dots .owl-dot span{
+    background: #ffffff !important;
+    border-radius:50% !important;
+
+  }
+
+
+  .customer_review-sec .owl-theme .owl-dots .owl-dot.active span{
+    background:#000000 !important;
+    border: 1px solid #ffffff !important;
+    border-radius:50% !important;
+  }
+    @media screen and (min-width:1900px) {
+    .review_slide .slide-text #review {
+    	font-size:52px;
+    }
+  }
+  @media screen and (min-width:2300px) {
+    .review_slide .slide-text #review {
+    	font-size:74px;
+    }
+  }
+  @media screen and (max-width: 600px)
+  {
+    .review_slide .slide-text #review{
+      font-size: 15px!important;
+    }
+    .review_slide .slide-text p{
+      font-size: 12px;
+    }
+    .review_slide{
+      height: 308px;
+    }
+  }
+  @media screen and (max-width: 1000px)
+  {
+    .review_slide .slide-text #review{
+      font-size: 22px;
+    }
+    #new_carousel_design_homepage .owl-dots{
+      float: none;
+    }
+  }
+  @media screen and (min-width: 1600px)
+  {
+    .review_slide{
+      height: 714px;
+      background-position: initial;
+    }
+    #new_carousel_design_homepage .owl-dots{
+      padding-left: 4%;
+    }
+  }
+    @media screen and (min-width: 1850px) {
+    .review_slide {
+      height: 824px;
+  }
+  .review_slide .slide-text p {
+      font-size:30px;
+      padding-top:10px;
+  }      
+      
+}
+
+  .review_slide .slide-text #review {
+    background-color: rgba(0,0,0,.50);
+	}
+  .customer_review-sec button.owl-next{
+    font-size: 30px !important;
+    float: right;
+  }
+
+  @media screen and (max-width: 768px)
+  {
+    .customer_review-sec button.owl-next{
+      font-size: 30px !important;
+      float: right;
+      margin-right: 0px !important;
+    }
+  }
+  .customer_review-sec {
+    background-color:#fcf9ef;
+  }
+
+</style>
+
+
+
+<section class="customer_review-sec">
+  <div class="container-fluid">
+    <div class="row m-0">
+      <div class="owl-carousel owl-theme" id="new_carousel_design_homepage">
+        {% for block in section.blocks %}
+        <div class="item">
+          <div class="review_slide" style="background-image:url({{ block.settings.Review_slider_image_rio | img_url:'master' }});">
+            <div class=" slide-image">
+            
+            <div class=" slide-text">
+              <p id="review">{{block.settings.brandtext_review}}</p>
+              <p>{{block.settings.brandtext_author}}, {{block.settings.brandtext_employee_occuplation}}</p>
+            </div>
+          </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
+
+<script>
+
+  $('#new_carousel_design_homepage').owlCarousel({
+	item: 1,
+    loop:true,
+    margin:0,
+    nav:false,
+    navText: ["&#10094;","&#10095;"],
+    dots:true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:1
+      },
+      1000:{
+        items:1
+      }
+    }
+  });
+  
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Review Slider section",
+  "settings": [],
+ "blocks": [
+    {
+      "type": "select",
+      "name": "Review",
+      "settings": [
+        {
+          "id": "Review_slider_image_rio",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "brandtext_review",
+          "type": "textarea",
+          "label": "Add Review"
+        },
+        {
+          "id": "brandtext_author",
+          "type": "text",
+          "label": "Author Name"
+        },
+        {
+          "id": "brandtext_employee_occuplation",
+          "type": "text",
+          "label": "Occupation"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Review Slider section",
+      "category": "Review Slider Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

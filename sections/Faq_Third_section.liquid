@@ -1,0 +1,54 @@
+<div id="prdertrackingandshipping" class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>{{ section.settings.faqsec2texttitle2 }}</h1>
+  <!-- accordion -->
+  <main class="main accordion_ch_faq">
+    <div class="accordion">
+      {% for block in section.blocks %} 
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>{{ block.settings.faqsec2textquest1 }}</span>
+          <i class="fa fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+          {{ block.settings.faqsec2textanswer1 }}
+          </p>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Faq Third Section",
+    "settings": [
+      {
+          "id": "faqsec2texttitle2",
+          "type": "textarea",
+          "label": "Enter Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Question",
+      "settings": [
+        {
+          "id": "faqsec2textquest1",
+          "type": "textarea",
+          "label": "Enter Question"
+        },
+        {
+          "id": "faqsec2textanswer1",
+          "type": "textarea",
+          "label": "Enter Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

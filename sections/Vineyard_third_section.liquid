@@ -1,0 +1,80 @@
+
+        <div class="vineyard_section_3">
+            <div class="container">
+                <div class="vineyard_sec_img_desc_2">
+                    <img src="{{section.settings.vineyard_grape_image_sec_3 | img_url:'master'}}{{'del_rio_vineyard_page_img_3.png' | asset_url }}" alt="">
+                    <h1 class="Over-300000-vines-p_vineyards_del">{{section.settings.vineyard_varieties_heading_sec_3}}</h1>
+                    <p class="Over-300000-vines-p_vineyards_del_txts">{{section.settings.vineyard_varieties_desc_sec_3}}</p>
+                </div>
+                <div class="h1_text_vineyard_text_names_varieties_11">
+                    <div class="row">
+                      {% for block in section.blocks %}
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                            <div class="h1_text_vineyard_text_grape_varieties">
+                                <h1>{{block.settings.vineyard_varieties_1_sec_3}}</h1>
+                                <h1>{{block.settings.vineyard_varieties_2_sec_3}}</h1>
+                                <h1>{{block.settings.vineyard_varieties_3_sec_3}}</h1>
+                                <h1>{{block.settings.vineyard_varieties_4_sec_3}}</h1>
+                            </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="solid_border_litish_pinkish_vineyards">
+
+
+
+
+{% schema %}
+  {
+    "name": "Vineyard Third section",
+    "settings": [
+        {
+          "id": "vineyard_grape_image_sec_3",
+          "type": "image_picker",
+       	  "label": "Image"
+          },
+        {
+          "id": "vineyard_varieties_heading_sec_3",
+          "type": "textarea",
+       	  "label": "Heading"
+          },
+        {
+          "id": "vineyard_varieties_desc_sec_3",
+          "type": "textarea",
+       	  "label": "Description"
+          }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Varieties",
+      "settings": [
+        {
+          "id": "vineyard_varieties_1_sec_3",
+          "type": "text",
+       	  "label": "Variety 1"
+        },
+        {
+          "id": "vineyard_varieties_2_sec_3",
+          "type": "text",
+       	  "label": "Variety 2"
+        },
+        {
+          "id": "vineyard_varieties_3_sec_3",
+          "type": "text",
+       	  "label": "Variety 3"
+        },
+        {
+          "id": "vineyard_varieties_4_sec_3",
+          "type": "text",
+       	  "label": "Variety 4"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

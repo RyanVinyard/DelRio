@@ -1,0 +1,544 @@
+<!--=================================================================================================================
+Stylesheet
+===================================================================================================================-->
+
+<style media="screen">
+
+  /* ==== Media Queries ================================================= */
+  @media screen and (min-width: 768px) {
+    .club_grid {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .restricted-text-container {
+      max-width: min(640px, 90%);
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .club-container p, .club-container h2, .club-container ul {
+      max-width: min(640px, 90%);
+      margin: auto;
+    }
+  }
+  @media screen and (min-width: 1219px) {
+    .club-container .Button {
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 1219px) {
+    .custom-button-grid-padding {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+
+
+  /* ==== Colors ================================================= */
+  .uk-modal-dialog {
+    background-color: {{ section.settings.modal-color-bg }};
+  }
+  .club-level-card {
+    background-color: {{ section.settings.card-color-bg }};
+  }
+  
+  .club-container {
+    background-color: {{ settings.secondary_elements_background }};
+  }
+  
+  #shopify-section-page-club {
+    background-color: {{ settings.secondary_elements_background }};
+  }
+
+
+  /* ==== Buttons ================================================= */
+  .club-container .Button {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+  }
+
+
+  /* ==== Block elements ================================================= */
+  .club-container img {
+    margin-bottom: 1.4em;
+  }
+
+
+  /* ==== Margin and Padding ================================================= */
+  .custom-button-grid-padding {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+
+  /* ==== Misc ================================================= */
+
+  .level-benefits ul {
+    padding: 5px;
+    text-align: left;
+    list-style-position: outside;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+</style>
+
+<script>
+  function showOptions() {
+    document.querySelector('.showOptionsBtn').classList.add('hidden');
+    document.querySelector('.optionsContainer').classList.remove('hidden');
+  }
+</script>
+
+<!--=================================================================================================================
+Join club script: function for dynamic buttons. Supports just levels, or levels with selections.
+===================================================================================================================-->
+<script>
+  var joinClub = async function joinClub(variantId, button, checkoutOption) {
+    var container = Bloom.storefront.utilities._.closestAncestor(button, '[data-club-signup]');
+    var optionValue = container.querySelector('[name="signup[variant_id]"]').value
+    var optionName = container.querySelector('[name="signup[option_name]"]').value
+    if (!variantId) {
+      Bloom.storefront.utilities.addToCart(optionValue, 1, {'Selections': optionName }, checkoutOption)
+    }
+    else {
+      Bloom.storefront.utilities.addToCart(variantId, 1, { 'Selections': optionName }, checkoutOption)
+    }
+  }
+</script>
+
+
+
+<!--=================================================================================================================
+Club header
+===================================================================================================================-->
+<div class="container club-container" id="joinrio_club_the_pages" style="padding-bottom: 70px;">
+  <div class="uk-width-1-1  uk-text-center club_grid">
+    <div class="uk-width-1-2@m uk-margin-auto uk-margin-large-top uk-margin-large-bottom restricted-text-container">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ section.settings.heading-text }}</h1>
+      <p class="bloom-intro-text">{{ section.settings.intro-text }}</p>
+    </div>
+
+<!--=================================================================================================================
+Level description
+===================================================================================================================-->
+    <div class="uk-grid-match uk-flex-center" uk-grid>
+      {% for block in section.blocks %}
+        {% if block.settings.to-join %}
+               {% assign checkout-option =  block.settings.to-join-url %}
+        {% elsif block.settings.to-cart %}
+          {% assign checkout-option = "cart" %}
+        {% elsif block.settings.to-checkout %}
+          {%assign checkout-option = "checkout" %}
+              {% else %}
+          {%assign checkout-option = "checkout" %}
+        {% endif %}
+      <div class="uk-width-1-1 uk-width-1-2@m mobile-club-margin">
+        <div class="uk-card uk-card-default club-level-card">
+          <div class="uk-card-body uk-height-1-1">
+            <div class="uk-height-1-1 uk-flex uk-flex-column uk-flex-between uk-flex-wrap-between">
+              <div class="benefits-margin uk-margin-medium-bottom">
+                <img src="{{ block.settings.image | img_url: '1000x' }}"
+                     alt="{{ block.settings.club-level-name }}" class="uk-width-1-1">
+                <h3 class="uk-card-title Heading"><strong>{{ block.settings.club-level-name }}</strong></h3>
+
+                <div class="page-club-description-section uk-margin-bottom">
+                  <p class="uk-margin-remove-bottom">{{ block.settings.level-description }}</p>
+                </div>
+
+                {% if block.settings.level-benefits %}
+                <div class="level-benefits uk-margin-remove-bottom">
+                  <p>{{ block.settings.level-benefits }}</p>
+                </div>
+                {% endif %}
+
+              </div>
+              {% if block.settings.club-price != blank %}
+              <p class="club-price uk-margin-small-bottom">
+                <strong>{{ block.settings.club-price }}</strong>
+              </p>
+              {% endif %}
+
+<!--=================================================================================================================
+Winery Choice
+===================================================================================================================-->
+
+              {% if block.type == "winery_choice" %}
+                {% if block.settings.product-options %}
+
+                    <button class="bg_l_m text-uppercase uk-margin-bottom  w-70 m-auto button showOptionsBtn" onclick="showOptions()">Choose Options</button>
+                
+                <div class="custom-button-grid-padding hidden optionsContainer" uk-grid data-club-signup="">
+                  <div class="uk-flex uk-margin-bottom uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                    <strong>{{ block.settings.preference-dropdown-text }}</strong>
+                    <select class="uk-select uk-margin-small-bottom" name="signup[variant_id]">
+                      <option value="{{ block.settings.option-one }}">{{ block.settings.option-one-variant-label }}</option>
+                      <option value="{{ block.settings.option-two }}">{{ block.settings.option-two-variant-label }}</option>
+                      <option value="{{ block.settings.option-three }}">{{ block.settings.option-three-variant-label }}</option>
+                    </select>
+                    <strong>{{ block.settings.quantity-dropdown-text }}</strong>
+                    <select class="uk-select uk-margin-small-bottom" name="signup[option_name]">
+                      <option value="{{ block.settings.release-one }}">{{ block.settings.release-one-label }}</option>
+                      <option value="{{ block.settings.release-two }}">{{ block.settings.release-two-label }}</option>
+                      <option value="{{ block.settings.release-three }}">{{ block.settings.release-three-label }}</option>
+                    </select>
+                  </div>
+
+                  <div class="uk-flex uk-margin-bottom uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                    <button class="bg_l_m text-uppercase w-70 m-auto button"
+                        onclick="joinClub({% if block.settings.level-variant-id != blank %}'{{ block.settings.level-variant-id }}'{% else %}null{% endif %}, this, '{{ checkout-option }}')">
+                      {{ block.settings.join-button-label }}
+                    </button>
+                  </div>
+                </div>
+
+
+                {% else %}
+                <div class="custom-button-grid-padding" uk-grid>
+                  <div class="uk-flex uk-margin-bottom uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                    <button class="bg_l_m text-uppercase w-70 m-auto button"
+                            onclick="Bloom.storefront.utilities.addToCart({{ block.settings.level-variant-id }}, 1, {}, '{{checkout-option}}')">
+                      {{ block.settings.join-button-label }}
+                    </button>
+                  </div>
+
+                </div>
+                {% endif %}
+              {% endif %}
+
+<!--=================================================================================================================
+Customer Choice
+===================================================================================================================-->
+
+              {% if block.type == "customer_choice" %}
+              <div class="custom-button-grid-padding" uk-grid>
+                <div class="uk-flex uk-margin-bottom uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                  <button class="Form__Submit Button Button--primary btn btn--primary"
+                          onclick="Bloom.storefront.utilities.addToCart({{ block.settings.option-one-variant-id }}, 1, { 'Selections': '{{ block.settings.option-one }}' }, '{{checkout-option}}')">
+                    {{ block.settings.join-button-label }}
+                  </button>
+                </div>
+              </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Club Levels",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page titles"
+    },
+    {
+      "type": "text",
+      "id": "heading-text",
+      "label": "Page title"
+    },
+    {
+      "type": "richtext",
+      "id": "intro-text",
+      "label": "Intro text"
+    },
+        {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card-color-bg",
+      "label": "Club level background color"
+    },
+    {
+      "type": "color",
+      "id": "modal-color-bg",
+      "label": "Modal background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "winery_choice",
+      "name": "Winery Choice Level",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1000px wide recommended"
+        },
+        {
+          "id": "club-level-name",
+          "type": "text",
+          "label": "Club level name"
+        },
+        {
+          "id": "level-description",
+          "type": "richtext",
+          "label": "Level description"
+        },
+        {
+          "id": "level-benefits",
+          "type": "html",
+          "label": "Club level benefits",
+          "info": "Enter as HTML"
+        },
+        {
+          "id": "club-price",
+          "type": "text",
+          "label": "Price"
+        },
+        {
+          "type": "header",
+          "content": "Join flow options"
+        },
+        {
+          "id": "to-join",
+          "type": "checkbox",
+          "label": "Send customer to a join page",
+          "default": false
+        },
+        {
+          "id": "to-join-url",
+          "type": "text",
+          "label": "URL to join page",
+          "info": "Example: /pages/join-club/"
+        },
+        {
+          "id": "to-checkout",
+          "type": "checkbox",
+          "label": "Send customer directly to checkout",
+          "info": "Requires a product to be created and use the Variant ID below",
+          "default": false
+        },
+        {
+          "id": "to-cart",
+          "type": "checkbox",
+          "label": "Add membership to the shopping cart",
+          "info": "Requires a product to be created and use the Variant ID below",
+          "default": false
+        },
+        {
+          "id": "level-variant-id",
+          "type": "text",
+          "label": "Level or variant ID",
+          "info": "Note: Use this, only if this card uses one level."
+        },
+        {
+          "type": "header",
+          "content": "product options"
+        },
+        {
+          "type": "checkbox",
+          "id": "product-options",
+          "label": "Display product options",
+          "info": "Note: This will display a dropdown with product preferences",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Preference dropdown text"
+        },
+        {
+          "id": "preference-dropdown-text",
+          "type": "text",
+          "label": "Preference dropdown text",
+          "default": "Select your wine preference:"
+        },
+		{
+          "id": "quantity-dropdown-text",
+          "type": "text",
+          "label": "Quantity dropdown text",
+          "default": "Quantity:"
+        },
+        {
+          "type": "header",
+          "content": "Option 1"
+        },
+                {
+          "id": "option-one-variant-label",
+          "type": "text",
+          "label": "Option preference",
+          "info": "Member preference in dropdown."
+        },
+        {
+          "id": "option-one",
+          "type": "text",
+          "label": "Level ID"
+        },
+        {
+          "type": "header",
+          "content": "Option 2"
+        },
+        {
+          "id": "option-two-variant-label",
+          "type": "text",
+          "label": "Option preference",
+          "info": "Member preference in dropdown."
+        },
+        {
+          "id": "option-two",
+          "type": "text",
+          "label": "Level ID"
+        },
+        {
+          "type": "header",
+          "content": "Option 3"
+        },
+                {
+          "id": "option-three-variant-label",
+          "type": "text",
+          "label": "Option preference",
+          "info": "Member preference in dropdown."
+        },
+        {
+          "id": "option-three",
+          "type": "text",
+          "label": "Level ID"
+        },
+		{
+          "type": "header",
+          "content": "Release names"
+        },
+        {
+          "id": "release-one-label",
+          "type": "text",
+          "label": "Release label"
+        },
+        {
+          "id": "release-one",
+          "type": "text",
+          "label": "Release",
+		  "info": "Note: This must match the release name in Bloom"
+        },
+		{
+          "id": "release-two-label",
+          "type": "text",
+          "label": "Release label"
+        },
+        {
+          "id": "release-two",
+          "type": "text",
+          "label": "Release",
+		  "info": "Note: This must match the release name in Bloom"
+        },
+		{
+          "id": "release-three-label",
+          "type": "text",
+          "label": "Release label"
+        },
+        {
+          "id": "release-three",
+          "type": "text",
+          "label": "Release",
+		  "info": "Note: This must match the release name in Bloom"
+        },
+        {
+          "type": "header",
+          "content": "Join button label"
+        },
+        {
+          "id": "join-button-label",
+          "type": "text",
+          "label": "Join button label"
+        }
+      ]
+    },
+    {
+      "type": "customer_choice",
+      "name": "Customer Choice Level",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1000px wide recommended"
+        },
+        {
+          "id": "club-level-name",
+          "type": "text",
+          "label": "Club level name"
+        },
+        {
+          "id": "level-description",
+          "type": "richtext",
+          "label": "Level description"
+        },
+        {
+          "id": "level-benefits",
+          "type": "html",
+          "label": "Club level benefits",
+          "info": "Enter as HTML"
+        },
+        {
+          "id": "club-price",
+          "type": "text",
+          "label": "Price"
+        },
+        {
+          "type": "header",
+          "content": "Join flow options"
+        },
+        {
+          "id": "to-join",
+          "type": "checkbox",
+          "label": "Send customer to a join page",
+          "default": false
+        },
+        {
+          "id": "to-join-url",
+          "type": "text",
+          "label": "URL to join page",
+          "info": "Example: /pages/join-club/"
+        },
+        {
+          "id": "to-checkout",
+          "type": "checkbox",
+          "label": "Send customer directly to checkout",
+          "default": false
+        },
+        {
+          "id": "to-cart",
+          "type": "checkbox",
+          "label": "Add membership to the shopping cart",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Product variant and default wines"
+        },
+        {
+          "id": "option-one-variant-id",
+          "type": "text",
+          "label": "Variant id"
+        },
+        {
+          "id": "option-one",
+          "type": "text",
+          "label": "List of default options",
+          "info": "(2) Option one, (4) Option two"
+        },
+        {
+          "id": "join-button-label",
+          "type": "text",
+          "label": "Join Button label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

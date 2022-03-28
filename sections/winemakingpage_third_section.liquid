@@ -1,0 +1,72 @@
+
+<div class="bg-white padding_15_bg_wine">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="image_tom_wine_making">
+                <img src="{{section.settings.Winemaking_Section3_Image | img_url: 'grande' }}" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 classforcenteritemsallpagesflex">
+            <div class="Winemaking_Philosph_tour">
+                <div>
+                    <h1 class="Winemaking_Phlosphy">{{section.settings.Winemaking_Section3_heading}}</h1>
+                  {% for block in section.blocks %} 
+                  <div class="I-believe-that-most_wine_making">
+                        <p>{{block.settings.Winemaking_Section3__text1}}</p>
+                         
+                    </div>
+                  {% endfor%}
+                  <h3 class="Jean-Michel-Jussiaum_wine_making">{{section.settings.Winemaking_Author}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Third Section",
+    "settings": [
+ 	  {
+        "id": "Winemaking_Section3_Image",
+        "type": "image_picker",
+        "label": "Section 3 image"
+        
+      },     
+	  {
+        "id": "Winemaking_Section3_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },{
+        "id": "Winemaking_Author",
+        "type": "text",
+        "label": "Author",
+        "default": "Anonymous"
+      }
+],
+		"blocks": [
+    		{
+      			"type": "select",
+      			"name": "text",
+      			"settings": [
+        			{
+        "id": "Winemaking_Section3__text1",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+    		  ]
+    	}
+  	]
+	  
+  }
+{% endschema %}
+
+
+

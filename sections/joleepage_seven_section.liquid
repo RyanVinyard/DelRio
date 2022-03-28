@@ -1,0 +1,147 @@
+<!-- jolee section 7 -->
+
+<div class="jolee_section_7">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12">
+        <div class="winc_image">
+          <img src="{{section.settings.joleepage_image_section_7_first | img_url:'master'}}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12">
+        <div class="rose_joli_dorestop">
+          <p class="Ros-Jolee-Wines-to">Rosé Jolee Wines to your doorstep</p>
+          <h1 class="Get-Ros-Jolee-wines">{{section.settings.Jolee_sec7_Subscription_Title}}</h1>
+          <div class="vertical_line_jolee"></div>
+          <p class="How-Many-Bottles-of">How Many Bottles of Rosé Jolee Do You Like?</p>
+         <form action="" method="POST" id="myForm">
+          <div class="radio-tile-group">
+      
+           <div class="input-container">
+              <input id="bike" class="radio-button radio-button21" type="radio" name="radio_value" />
+              <div class="radio-tile">
+                <div class="icon bike-icon">
+                  <p id="mySideNav21" class="number_3_jolee">1</p>
+                </div>
+              </div>
+            </div>
+
+        
+            <div class="input-container">
+              <input id="drive" class="radio-button radio-button22" type="radio" name="radio_value" />
+              <div class="radio-tile">
+                <div class="icon car-icon">
+                  <p id="mySideNav22" class="number_3_jolee">3</p>
+                </div>
+              </div>
+            </div>
+        
+            <div class="input-container">
+              <input id="fly" class="radio-button radio-button23" type="radio" name="radio_value" />
+              <div class="radio-tile">
+                <div class="icon fly-icon">
+                 <p id="mySideNav23" class="number_3_jolee">6</p>
+                </div>
+              </div>
+            </div>
+        
+           
+        </div>
+
+
+          <p class="jolee_0-off-Ros-Jolee">{{section.settings.Jolee_sec7_price_off}} <br>
+            {{section.settings.Jolee_sec7_shipping_off}} </p>
+             <p class="Frequency_jolieee">Frequency</p>
+             <div class="checkbox_jolee d-flex justify-content-center">
+
+              <div class="RIO-CLUB_jolee_club d-flex" id="mySide24">
+                <p id="once_month">Once a month</p>
+                <label class="container_check_mark" for="month1">
+                    <input class="radio-button" type="radio" name="mothly" id="month1">
+                    <span id="checkmark1" class="checkmark"></span>
+                </label>
+             </div>
+
+              <div class="RIO-CLUB_jolee_club d-flex" id="mySide26">
+                <p id="twice_month">Twice a month</p>
+                <label class="container_check_mark" for="month2">
+                    <input class="radio-button33" type="radio" name="mothly" id="month2">
+                    <span id="checkmark2" class="checkmark"></span>
+                </label>
+             </div>
+             </div>
+
+             <div class="form_subscribing">
+              <input class="SUBSCRIBE-82_joleee" type="submit" value="{{section.settings.Jolee_sec6_Subscription_fee}}">
+             </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Joleepage Seven Section",
+  "settings": [
+        {
+        "id":"joleepage_image_section_7_first",
+        "type":"image_picker",
+        "label":"image"
+        },
+
+        {
+          "id":"Jolee_sec7_Subscription_Title",
+          "type":"textarea",
+          "label":"Subscription Title"
+        },
+        {
+          "id":"Jolee_sec7_price_off",
+          "type":"textarea",
+          "label":"Discount on order"
+        },
+        {
+          "id":"Jolee_sec7_shipping_off",
+          "type":"text",
+          "label":"Discount on shipping"
+        },
+        {
+          "id":"Jolee_sec6_Subscription_fee",
+          "type":"text",
+          "label":"Subscription Fee"
+        }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "No of bottles",
+      "settings": [
+        {
+          "id": "Jolee_sec7_bottle_amount",
+          "type": "text",
+       		"label": "Number of Bottles"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

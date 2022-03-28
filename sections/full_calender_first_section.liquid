@@ -1,0 +1,254 @@
+<div class="events_calender_view_section_2">
+  <div class="container">
+    <div class="calender_events_del_rio_page_sectioN">
+      <h1>{{ section.settings.Event_title_main }}</h1>
+      <p>{{ section.settings.Event_desc_main }}</p>
+      <div class="icons_list_events_calener_page">
+        <i id="list_style_font_icon_event_calender_1" class="fa fa-th" aria-hidden="true"></i>  
+        <i id="list_style_font_icon_event_calender_2" class="fa fa-list" aria-hidden="true"></i>  
+      </div>
+    </div>
+    <div id='calendar' class="calender_del_rio hidden"></div>
+  </div>
+</div>
+
+  {{ 'moment.min.js' | asset_url | script_tag }}
+  {{ 'FullCalendar_main1.js' | asset_url | script_tag }}
+
+<input id="frst-event" type="hidden" value ="{{ section.blocks[0].settings.event_date }}">
+
+<script>
+
+   // full calendar js events
+// {{ section.settings.Event_desc_initialdate }}
+var eventCalendatHeight = 0; 
+
+document.addEventListener('DOMContentLoaded', function() {
+//     const manth_return = () => {
+//       var d = new Date();
+//     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//   	console.log(months[d.getMonth()]);
+//   }
+    var calendarEl = document.getElementById('calendar');
+    var firstEvent = document.getElementById('frst-event').value;
+// 	var dayBefore =  firstEvent.split('-');
+//     dayBefore[2] = dayBefore[2] - 1; 
+ 
+  
+  console.log(firstEvent);
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'prev',
+        center: 'title',
+        right:'next,dayGridMonth,listMonth'
+      },
+      fixedWeekCount:false,
+	  initialDate: firstEvent,
+      editable: true,
+      selectable: true,
+      month: 'short',
+      height: 'auto',
+      initialView:'listMonth',
+//       defaultView: 'listMonth',
+      events: [
+        {% for block in section.blocks %}  
+        {
+          title:  '{{ block.settings.event_title }}',
+          start:  '{{ block.settings.event_date }}',
+          description: '{{ block.settings.event_desc }}',
+          startTimes : '{{ block.settings.event_time }}',
+          endTimes1 : '{{ block.settings.list_one }}',
+          endTimes2 : '{{ block.settings.list_two }}',
+          endTimes3 : '{{ block.settings.list_three }}',
+          endTimes4 : '{{ block.settings.list_four }}',
+          link_text : '{{ block.settings.link_text }}',
+          link_url  : '{{ block.settings.link_url }}',          
+        },
+        {% endfor %}        
+
+      ],
+      select: function(info) {
+//         alert('selected ' + info.startStr + ' to ' + info.endStr);
+        $("#list_style_font_icon_event_calender_2").click();
+      },
+      eventDidMount: function(info) {
+//         console.log(info.el,info.event);
+        let eventListHtml = '\
+          <td class="date_month_listview_month_event_page col-sm-12 col-12">\
+          <div class="listview_month_event_page_end_enter">\
+                <p>'+moment(info.event.startStr).format('MMM')+'<p>\
+                <h1>'+moment(info.event.startStr).format('DD')+'</h1>\
+          </div>\
+          </td>\
+          <td class="date_month_listview_month_event__next_laps_2  col-sm-12 col-12"  colspan="2">\
+            <table width="100%">\
+              <tr>\
+                <td class="padding-top_zero_event_page_list_699">\
+                  <p class="tirle_header_top_12_event_page_h1">\
+                  '+info.event.title+'\
+                  </p>\
+                </td>\
+              </tr>\
+              <tr>\
+                <td class="for_padding_us_event_pae_js_me">\
+                <div class="clock_icon-css_event_page_list d-flex">\
+                  <a href="#"><svg height="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="16px" y="16px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M256,0C114.845,0,0,114.839,0,256s114.845,256,256,256c141.161,0,256-114.839,256-256S397.155,0,256,0z M256,474.628 C135.45,474.628,37.372,376.55,37.372,256S135.45,37.372,256,37.372s218.628,98.077,218.628,218.622 C474.628,376.55,376.55,474.628,256,474.628z"/></g></g><g><g><path d="M343.202,256h-80.973V143.883c0-10.321-8.365-18.686-18.686-18.686s-18.686,8.365-18.686,18.686v130.803	c0,10.321,8.365,18.686,18.686,18.686h99.659c10.321,0,18.686-8.365,18.686-18.686S353.523,256,343.202,256z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></a>\
+                  <p>'+info.event.extendedProps.startTimes+'</p>\
+                 </div>\
+                </td>\
+              </tr>\
+              <tr>\
+                <td>\
+                  <p class="descriptioN-off_events_67_p_list">\
+                    '+info.event.extendedProps.description+'\
+                  </p>\
+                        <ul class="padding_del_rio">\
+                                '+info.event.extendedProps.endTimes1+'\
+                                '+info.event.extendedProps.endTimes2+'\
+                                '+info.event.extendedProps.endTimes3+'\
+                                '+info.event.extendedProps.endTimes4+'\
+                        </ul>\
+                  <a href='+info.event.extendedProps.link_url+'>\
+                      <p class="descriptioN-off_events_67_p_list">\
+                        '+info.event.extendedProps.link_text+'\
+                      </p>\
+  				  </a>\
+                </td>\
+              </tr>\
+            </table>\
+            </td>\
+          </div>\
+        ';
+
+        if (info.view.type == 'listMonth') {
+          eventCalendatHeight = jQuery('fc-view-harness').height();
+          console.log(eventCalendatHeight);
+          jQuery(info.el).prev().remove();
+          jQuery(info.el).html(eventListHtml);
+
+        }
+      }
+
+    });
+
+    calendar.render();
+
+});
+  $(document).ready(function(){
+    function myfunci() {
+    $(".fc-daygrid-body-natural").click(function(){
+      $("#list_style_font_icon_event_calender_2").click();
+    });
+  }
+  $(".fc-daygrid-body-natural").click(function(){
+    $("#list_style_font_icon_event_calender_2").click();
+  });
+  $("#list_style_font_icon_event_calender_1").click(function(){
+    setTimeout(function(){ myfunci(); }, 1000);
+  });
+  });
+
+  
+</script>
+<style>
+  .fc-event-title.fc-sticky {
+	position:relative;
+    z-index:-20;
+}
+</style>  
+{% schema %}
+{
+  "settings": [
+    {
+      "id": "Event_title_main",
+      "type": "text",
+      "label": "Title",
+      "default": "Title"
+    },
+    {
+      "id": "Event_desc_main",
+      "type": "textarea",
+      "label": "Main Description"
+    },
+    {
+      "id": "Event_desc_initialdate",
+      "type": "text",
+      "label": "Enter Map Initial Date"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Event",
+      "settings": [
+        {
+        "id": "event_title",
+        "type": "text",
+        "label": "Event Title",
+        "default": "Dinner Under the Stars"
+        },
+        {
+        "id": "event_date",
+        "type": "text",
+        "label": "Event Date",
+        "default": "2020-09-30"
+        },
+                {
+        "id": "event_desc",
+        "type": "textarea",
+        "label": "Event Description"
+        },
+        {
+        "id": "event_time",
+        "type": "text",
+        "label": "Event Time",
+        "default": "01:00 PM"
+        },
+        {
+        "id": "list_one",
+        "type": "text",
+        "label": "Enter List 1"
+        },
+        {
+        "id": "list_two",
+        "type": "text",
+        "label": "Enter List 2"
+        },
+        {
+        "id": "list_three",
+        "type": "text",
+        "label": "Enter List 3"
+        },
+        {
+        "id": "list_four",
+        "type": "text",
+        "label": "Enter List 4"
+        },
+        {
+        "id": "link_text",
+        "type": "text",
+        "label": "Enter Link Text"
+        },
+        {
+        "id": "link_url",
+        "type": "url",
+        "label": "Enter Link Url"
+        }
+	  ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% comment %}
+<tr>\
+  <td>\
+    <divc class="sold_out_botton_7_event_page_list">\
+      <button>Sold Out</button>\
+      <a><i class="fa fa-upload"></i></a>\
+      <a class="Join-our-waiting-lis">Join Our Waiting List</a>\
+      </div>\
+  </td>\
+</tr>\
+{% endcomment %}

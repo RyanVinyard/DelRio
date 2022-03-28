@@ -1,0 +1,214 @@
+<style>
+
+  .product-wrapper_shop_all img {
+    max-width: -webkit-fill-available;
+  }
+  .height_new_aspected {
+    height:200px !important;
+  }
+
+</style>  
+
+<div class="shop_all_section_2">
+  <div class="container">
+    <div class="row pt-0  zero_bot_pad_trade_shop_all tabcontent_shop_all_tabs" id="category_shop_ass2_1">
+      {% if  collection.products.size > 0 %}              
+      {% paginate collection.products by 20 %}
+      {% if  collection.url == '/collections/best-selling' %}
+      {% assign collectionallproducts = collection.products | sort:'best-selling' | reverse  %}
+      {% else %}
+      {% assign collectionallproducts = collection.products | sort:'best-selling' %}
+      {% endif %}
+      {% for product in collectionallproducts limit:  section.settings.number3   %}
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 text-center">
+        <a href="{{ product.url }}">
+          <div class="product-wrapper_shop_all">
+            
+            {% for image in product.images limit:1 %}
+            <img {% if image.aspect_ratio > 1 %}
+                 class="height_new_aspected" 
+                 {% endif %}
+                 src="{% if product.featured_image.size > 0 %}
+                      {{ product.featured_image | product_img_url: 'master' }}
+                      {% else %}
+                      {{ 'no_image.png' | asset_url }}
+                      {% endif %}"
+                 >
+            {% endfor %}    
+          </div>
+        </a>  
+        <div class="product-info_shop_all Factsheet-Shelftalke_trade_shop_all">
+          <div>
+            <div class="cabrenet_shop_all_sec">
+              <div class="franc_all_shop">
+                <a href="{{ product.url }}"> <p>{{product.title}}</p> </a>
+<!--                 <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="description-shop_all_ss">
+          <!--                   <p>{{product.description}}</p>  -->
+        </div>
+      </div>  
+      {% include 'products-modal-cart',product %}
+      {% endfor %}
+
+      {%- if paginate.pages > 1 -%}
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 navigation_shop_all_1">
+        <nav role="navigation" class="d-flex justify-content-center align-items-center">
+          <ol class="pagination">
+            {%- if paginate.previous-%}
+            <li class="pagination_sha1">
+              <a href="{{ paginate.previous.url }}">
+                <!--                           <span aria-hidden="true">&laquo;</span> -->
+                Previous <span class="visuallyhidden">page</span>
+              </a>
+            </li>
+            {%- else -%}
+            <li class="disabled pagination_sha1">
+              <!--                         <span aria-hidden="true">&laquo;</span> -->
+              Previous <span class="visuallyhidden">page</span>
+            </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+            <li class="pagination_sha1">
+              <a href="{{ part.url }}">
+                <span class="visuallyhidden">page</span> {{ part.title }}
+              </a>
+            </li>
+            {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+            <li class="active pagination_sha1" aria-current="page">
+              <span class="visuallyhidden">page</span> {{ part.title }}
+            </li>
+            {%- else -%}
+            <li class="pagination_sha1">
+              <span class="visuallyhidden">page</span> {{ part.title }}
+            </li>
+            {%- endif -%}
+            {%- endif -%}
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+            <li class="pagination_sha1 next_pagi_aah">
+              <a href="{{ paginate.next.url }}">
+                Next <span class="visuallyhidden">page</span>
+                <!--                           <span aria-hidden="true">&raquo;</span> -->
+              </a>
+            </li>
+            {%- else -%}
+            <li class="disabled pagination_sha1">
+              Next <span class="visuallyhidden">page</span>
+              <!--                         <span aria-hidden="true">&raquo;</span> -->
+            </li>
+            {%- endif -%}
+          </ol>
+        </nav>
+      </div>
+      {%- endif -%}
+      {% endpaginate %}
+      {% else %}
+      <h1 class="no_product_available_shop_sec_2_all">No Product Available</h1>
+      {% endif %} 
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Shop-All second section",
+    "tag": "section",
+    "class": "featured-collection",
+    "settings": [
+     
+    ],
+    "presets": [
+      {
+        "name": "Featured collection",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% stylesheet %}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+  
+.pagination li {
+  display: inline; 
+  margin: 0 5px;
+}
+
+
+li.current-page.active {
+    display: none;
+}
+<!-- pagination number css -->
+
+{% endstylesheet %}
+
+<style>
+  .navigation_shop_all_1 {
+    padding-top: 70px;
+    padding-bottom: 35px;
+  }
+  .pagination li{
+    font-family: Apercu;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2e4433;
+    padding: 0 7px;
+  }
+  .pagination_sha1 a:hover {
+    color:#2e4433;
+    text-decoration: underline;
+  }
+
+  #carousel_shop_all29999   img {
+    width: auto;
+    display: inherit;
+  }
+  .owl-prev {
+    left: -5%; 
+  }
+  .owl-next {
+    right: -5%; 
+  }
+  .owl-prev,.owl-next {
+    position: absolute;
+    top: 40%;  
+  }
+  .fa.fa-angle-left,.fa.fa-angle-right {
+    font-size:44px;
+    font-weight:800;  
+  }
+
+  @media screen and (max-width:500px) {
+    .owl-prev {
+      left: -7%;
+    }
+  }
+  .current-page.active {
+	display:none;
+}
+</style>  
+
+<script>
+  console.log({{ collections | json }});
+  console.log({{  collection.products | json }}); 
+</script>

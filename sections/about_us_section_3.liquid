@@ -1,0 +1,126 @@
+<style>
+  @media screen and (max-width:1200px) {
+    .image_tom_wine_making.text-center img {
+      min-width: inherit;
+      width:300px;
+    }   
+  }
+    @media screen and (max-width:1100px) {
+    .image_tom_wine_making.text-center img {
+      width:310px;
+    }   
+  }
+  @media screen and (max-width: 991px) {
+    .image_tom_wine_making.text-center img {
+      width: 250px;
+      height: 380px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .image_tom_wine_making.text-center img {
+      width: 240px;
+      height: 360px;
+    }
+  }
+
+</style>
+
+<div class="section_3_about">
+        <div class="container">
+            <div class="padding_about_us_bg_wine">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <div class="about_us_story_tour">
+                            <div>
+                                <h1 class="about_us_story">{{section.settings.Aboutus_Section3_heading}}</h1>
+                              
+                              {% for block in section.blocks %} 
+                              <div class="our_mission_about_us">
+                                    <p>{{block.settings.Aboutus_Section3_text1}}</p>
+                               </div>
+                              {% endfor %}
+                            
+                          </div>
+<!--                            <div class="row padding_35_about">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="sig_about_us sig_about_us1"> -->
+<!--                                             <img src="{{section.settings.Aboutus_section3_Sign1 | img_url:'master' }}" alt=""> -->
+<!--                                            <p>{{section.settings.Aboutus_Section3_Name1}}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="d-flex justify-content-center align-items-center height_100_about">
+                                        <div class="sig_about_us margi_about_up"> -->
+<!--                                             <img src="{{section.settings.Aboutus_section3_Sign2 | img_url:'master' }}" alt=""> -->
+                               <!--             <p>{{section.settings.Aboutus_Section3_Name2}}</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>  -->
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 classforcenteritemsallpagesflex">
+                        <div class="image_tom_wine_making text-center padleftfprsec4abotus">
+                            <img src="{{section.settings.Aboutus_section3_Image | img_url:'master' }}" alt="">
+                        </div>
+                    </div>            
+                </div>
+              </div>
+        </div>
+    </div>
+
+{% schema %}
+  {
+    "name": " Third Section",
+    "settings": [
+      {
+        "id": "Aboutus_Section3_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },
+ {
+        "id": "Aboutus_section3_Image",
+        "type": "image_picker",
+        "label": "Section3 image"
+        
+      },
+{
+        "id": "Aboutus_Section3_Name1",
+        "type": "text",
+        "label": "Name1",
+        "default": "Name"
+      },
+{
+        "id": "Aboutus_Section3_Name2",
+        "type": "text",
+        "label": "Name2",
+        "default": "Name"
+      }
+      
+    ],
+"blocks": [
+    		{
+      			"type": "select",
+      			"name": "text",
+      			"settings": [
+        			{
+        "id": "Aboutus_Section3_text1",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+    		  ]
+    	}
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

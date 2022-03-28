@@ -1,0 +1,152 @@
+<div class="rp_section_5">
+  <div class="container">
+    <h1 class="Exploring-with-Rock_rp">{{section.settings.Rockpoint_sec6_heading}}</h1>
+    <p class="We-love-this-wild-an_rp">{{section.settings.Rockpoint_sec6_Description}}</p>
+
+
+    <div class="padd-30_rr_rp">
+
+    <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <div class="width_set_rp">
+          <img src="{{section.settings.Rockpoint_sec6_leftblog_image | img_url:'master' }}" alt="">
+          <p class="Explore-Rogue-River_rp">{{section.settings.Rockpoint_sec6_leftblog_name}}</p>
+          <p class="This-is-a-trail-that_rp">{{section.settings.Rockpoint_sec6_leftblog_description}}</p>
+          <a href="{{section.settings.Rockpoint_sec6_leftblog_url}}"><p class="LEARN-MORE rp_LEARN-MORE1">{{section.settings.Rockpoint_sec6_leftblog_text}}</p></a>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+
+        <div class="dash_width_rp mar_top_30_for_mobile">
+          <img src="{{section.settings.Rockpoint_sec6_rightfirst_blog_image | img_url:'master' }}" alt="">
+          <p class="Explore-Rogue-River_rp zerp_10_mar_rp">{{section.settings.Rockpoint_sec6_rightfirst_name}}</p>
+          <p class="This-is-a-trail-that_rp p_mm_rp">{{section.settings.Rockpoint_sec6_rightfirst_description}} </p>
+          <a href="{{section.settings.Rockpoint_sec6_rightfirst_url}}"><p class="LEARN-MORE rp_LEARN-MORE1">{{section.settings.Rockpoint_ss_smm}}</p></a>
+        </div>
+
+        <div class="dash_width_rp mar_top_30_for_mobile">
+          <div class="padding_set_text_rp">
+            <img src="{{section.settings.Rockpoint_sec6_rightsecond_blog_image | img_url:'master' }}" alt="">
+          </div>
+          <p class="Explore-Rogue-River_rp">{{section.settings.Rockpoint_sec6_rightsecond_name}}</p>
+          <p class="This-is-a-trail-that_rp p_mm_rp ss_16_mar_rp">{{section.settings.Rockpoint_sec6_rightsecond_description}}</p>
+          <a href="{{section.settings.Rockpoint_sec6_rightsecond_url}}"><p class="LEARN-MORE rp_LEARN-MORE1">{{section.settings.Rockpoint_sec6_rightsecond_link}}</p></a>
+        </div>
+
+      </div>
+    </div>
+  </div>      
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": " Rockpoint-Sixth Section",
+    "settings": [
+      {
+        "id": "Rockpoint_sec6_heading",
+        "type": "text",
+        "label": "Add Heading",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Rockpoint_sec6_Description",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+      {
+        "id": "Rockpoint_sec6_leftblog_image",
+        "type": "image_picker",
+        "label": "Left Blog Image"
+		
+      },
+
+      {
+        "id": "Rockpoint_sec6_leftblog_name",
+        "type": "text",
+        "label": "Enter Campaign Name",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Rockpoint_sec6_leftblog_description",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+	  {
+        "id":"Rockpoint_sec6_leftblog_text",
+        "type":"text",
+        "label":"Button Text"
+      },
+      {
+        "id":"Rockpoint_sec6_leftblog_url",
+        "type":"url",
+        "label":"Button Url"
+      },
+
+
+      {
+        "id": "Rockpoint_sec6_rightfirst_blog_image",
+        "type": "image_picker",
+        "label": "Left Blog Image"
+		
+      },
+      {
+        "id": "Rockpoint_sec6_rightfirst_name",
+        "type": "text",
+        "label": "Enter Campaign Name Name",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Rockpoint_sec6_rightfirst_description",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+	 {
+		"id":"Rockpoint_ss_smm",
+		"type":"text",
+		"label":"Enter button text"
+},
+      {
+        "id":"Rockpoint_sec6_rightfirst_url",
+        "type":"url",
+        "label":"Button Url"
+      },
+
+	  
+{
+        "id": "Rockpoint_sec6_rightsecond_blog_image",
+        "type": "image_picker",
+        "label": "Left Blog Image"
+		
+      },
+      {
+        "id": "Rockpoint_sec6_rightsecond_name",
+        "type": "text",
+        "label": "Enter Campaign Name",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Rockpoint_sec6_rightsecond_description",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+	  {
+        "id":"Rockpoint_sec6_rightsecond_link",
+        "type":"text",
+        "label":"Button Text"
+      },
+      {
+        "id":"Rockpoint_sec6_rightsecond_url",
+        "type":"url",
+        "label":"Button Url"
+      }
+	  
+	  
+    ]
+  }
+{% endschema %}

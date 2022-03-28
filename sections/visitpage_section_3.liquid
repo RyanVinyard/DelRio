@@ -1,0 +1,120 @@
+<div class="tour_section_3">
+    <div class="container">
+        <div class="testing_tour_2  bg-white animatioN-on_scroll_margin_top" id="tastingroom1">
+            <div>
+                <h1 class="Tasting-Room_tour">
+                    {{section.settings.visitpage_sec3_Heading1}}
+                </h1>
+            </div>
+            <div class="Located-at-the-entra_tour">
+                <p>{{section.settings.visitpage_sec3_text1}}</p>
+                <p>{{section.settings.visitpage_sec3_text2}}</p>
+                <p>{{section.settings.visitpage_sec3_text3}}</p>
+            </div>
+            <div>
+                <h1 class="Tasting-Room_tour visitor_mm_to">
+                   {{section.settings.visitpage_sec3_Heading2}} 
+                </h1>
+                <div class="covid_19_your">
+                    <p>{{section.settings.visitpage_sec3_covid}}</p>
+                </div>
+                <div class="Our-tasting-room-wil_tor">
+                    <p>{{section.settings.visitpage_sec3_covid_desc}}</p>
+                </div>
+            </div>
+
+            <div class="maxi_visitor_tour">
+                <ul>
+                  
+                  {% for block in section.blocks %}  
+                      <li>{{block.settings.visitpage_sec3_list_text}}</li>
+                  {% endfor %}
+                  
+                </ul>
+            </div>
+            <h1 class="Tasting-Room_tour visitor_mm_to">
+               {{section.settings.visitpage_sec3_address_heading}}
+            </h1>
+            <div class="solid_tour_s">
+                <p>Tasting Room Address:<br><span>{{section.settings.visitpage_sec3_address}}<br> <a href="#visitpage_sec3_list_link_s">{{section.settings.visitpage_sec3_direction_text}}</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Visitpage Three Section",
+    "settings": [
+      {
+      "id":"visitpage_sec3_Heading1",
+      "type":"text",
+      "label":"Header 1"
+      },
+      {
+      "id":"visitpage_sec3_text1",
+      "type":"textarea",
+      "label":"Text 1"
+      },
+      {
+      "id":"visitpage_sec3_text2",
+      "type":"textarea",
+      "label":"Text 2"
+      },
+      {
+      "id":"visitpage_sec3_text3",
+      "type":"textarea",
+      "label":"Text 3"
+      },
+      {
+      "id":"visitpage_sec3_Heading2",
+      "type":"text",
+      "label":"Header 2"
+      },
+      {
+      "id":"visitpage_sec3_covid",
+      "type":"textarea",
+      "label":"tasting Text"
+      },
+      {
+      "id":"visitpage_sec3_covid_desc",
+      "type":"textarea",
+      "label":"Description"
+      },
+      {
+      "id":"visitpage_sec3_address_heading",
+      "type":"text",
+      "label":"Address Heading"
+      },
+      {
+      "id":"visitpage_sec3_address",
+      "type":"textarea",
+      "label":"Address"
+      },
+      {
+      "id":"visitpage_sec3_direction_text",
+      "type":"text",
+      "label":"Direction Text"
+      }
+    ],
+      "blocks":[
+    {
+      "type": "select",
+      "name": "Tasting Room Experience",
+      "settings": [
+        {
+        "id":"visitpage_sec3_list_text",
+        "type":"textarea",
+        "label":"Text"
+        }
+     ]
+    }
+  ]
+
+}
+{% endschema %}

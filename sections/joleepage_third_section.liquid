@@ -1,0 +1,24 @@
+<!-- jolee section 3 -->
+
+
+<div class="jolee_section_3">
+    <div class="container-fluid">
+        <img src="{{section.settings.Jolee_sec3_Image | img_url:'master'}}" alt="">
+    </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "jolee Third Section",
+    "settings": [
+        {
+        "id":"Jolee_sec3_Image",
+        "type":"image_picker",
+        "label":"Image"
+        }
+      ]
+  }
+{% endschema %}

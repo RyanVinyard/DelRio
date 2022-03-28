@@ -1,0 +1,208 @@
+<style>
+  .Homepage_subscribe_section h2{
+    font-family: 'Butler';
+    font-size: 34px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Homepage_subscribe_section p{
+    font-family: Apercu;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #291f1f;
+  }
+  .Homepage_subscribe_section .email_box_subscription_homepage form{
+    display: flex;
+  }
+  .Homepage_subscribe_section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .listfor10percentsale p {
+    margin-bottom:0px;
+  }
+  .input_fieldforsubscription input {
+    width: 314px;
+    right: -5px;
+    border: 2px solid rgba(23, 31, 21, 0.6);
+    position: relative;
+    padding-top: 1.3%;
+    border-right: 0px;
+    padding-left: 2%;
+    padding-bottom: 2.9%;
+    outline: 0px;
+  }
+  .input_fieldforsubscription {
+    width: 100%;	
+  }
+  .input_fieldforsubscription button{
+    padding: 7px;
+    font-family: Apercu Pro;
+    border: solid 1px #2e4433;
+    background-color: #2e4433;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f5f5f3;
+    padding-top: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 3%;
+  }
+  .input_fieldforsubscription input::placeholder{
+    font-family: Apercu Pro;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #2e4433;
+  }
+  @media screen and (max-width:1050px) {
+    .Homepage_subscribe_section h2 {
+      font-size: 28px;
+    }
+    .Homepage_subscribe_section p {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .input_fieldforsubscription button{
+      width: 100%!important;
+      margin-top:6px!important;
+    }
+    .input_fieldforsubscription {
+      display: block!important;
+      text-align: center;
+      width: 100%;
+    }
+    .input_fieldforsubscription input {
+      width: 100%!important;
+      right: 0;
+      border-right: 2px solid rgba(23, 31, 21, 0.6);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .input_fieldforsubscription {
+      text-align: center;
+      width: 100%;
+    }
+    .input_fieldforsubscription input{
+      right: -4;
+    }
+    .Homepage_subscribe_section {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    .input_fieldforsubscription {
+      text-align: center;
+    }
+    .input_fieldforsubscription input {
+      width: 250px;
+    }
+    .Homepage_subscribe_section h2 {
+	font-size:32px;
+}
+  }
+  @media screen and (max-width: 1159px) {
+      .Homepage_subscribe_section h2 {
+	font-size:32px;
+}
+}
+
+  @media screen and (max-width: 1199px) and (min-width: 1000px) {
+    .input_fieldforsubscription {
+      text-align: center;
+      display: flex;
+    }
+    .input_fieldforsubscription button {
+      margin-top: 00px!important;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .input_fieldforsubscription input {
+      width: 50%;
+      padding-top: 1.9%;
+      border-right: 2px solid rgba(23, 31, 21, 0.6);
+    }
+    .listfor10percentsale {
+      text-align:center;
+    }
+    .input_fieldforsubscription {
+      margin-top: 35px;	
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .input_fieldforsubscription input {
+      padding-top: 1.5%;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .Homepage_subscribe_section h2{
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width:350px) {
+    .Homepage_subscribe_section p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+
+<div class="Homepage_subscribe_section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-12 col-lg-7 col-sm-12 col-12">
+        <div class="listfor10percentsale">
+          <h2>Join the list and get 10% off your first order!</h2>
+          <p>No Spam, ever. Don’t miss latest promotions, exclusive offers, and fresh inspiration.</p>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-5 col-sm-12 col-12">
+        <div class="email_box_subscription_homepage">
+          <div class="klaviyo-form-XnDbBF"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(window).bind("load", function() { 
+    var form_klaviyo = jQuery(".klaviyo-form-XnDbBF").hasClass("form-version-cid-1");
+    if (form_klaviyo) {
+      console.log("Hello");
+    } else if (!form_klaviyo) {
+      jQuery(".Homepage_subscribe_section").attr("style","display:none");
+    } 
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Subscription Form section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Home page Subscription Form",
+      "category": "Subscription Form"
+    }
+  ]
+}
+{% endschema %}

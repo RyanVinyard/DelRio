@@ -1,0 +1,163 @@
+
+<style>
+
+.footer-lst{
+background-color: #171f15;
+padding: 90px 45px;
+margin-top: -7px;
+}
+#footer-para .par1 {
+font-family: Apercu Pro;
+font-size: 17px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.2;
+letter-spacing: normal;
+text-align: center;
+color: #ffffff;
+margin-bottom: 18px;
+}
+
+#footer-para .par2 {
+
+font-family: Apercu Pro;
+font-size: 12px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: 2px;
+text-align: center;
+color: #ffffff;
+margin-bottom: 11px;
+}
+#footer-para .par3{
+font-family: Apercu Pro;
+font-size: 12px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: 2px;
+color: #ffffff;
+text-align: center !important;
+padding-left: 5px;
+padding-top: 2.5px;
+margin-bottom: 0px;
+}
+
+.par3-icon i {
+color:#ffffff;
+display: flex;
+margin-bottom: 0px;
+
+}
+
+.par3-icon{
+padding-left: 5px;
+padding-top: 6px;
+justify-content: center;
+}
+
+@media screen and (max-width:767px){
+.delrio-foter-par{
+margin-bottom : 30px;
+}
+}
+
+
+@media screen and (max-width:400px){
+.footer-lst{padding: 90px 15px;
+}
+}
+
+
+@media screen and (max-width:1024px)
+{#footer-para .par2{font-size: 10px;
+margin-bottom: 3px;}
+#footer-para .par3{font-size: 10px;}
+#footer-para .par1{font-size: 14px;
+}
+}
+
+
+@media screen and (max-width:991px){
+#footer-para .par2{font-size: 9px;}
+#footer-para .par3{font-size: 9px;}
+#footer-para .par1{font-size: 12px;}
+.footer-lst {padding: 90px 30px;
+}
+}
+
+
+</style>
+
+
+
+<section class="footer-lst">
+<div class="container ">
+<div class="row">
+  
+  {% for block in section.blocks %}
+<div class="col-lg-4 col-md-4 col-sm-12 col-12" id="footer-para">
+<div class="delrio-foter-par">
+<p class="par1">"{{ block.settings.Reviewtext }}"
+</p>
+<p class="par2">{{ block.settings.AuthorName }}</p>
+
+  {% if block.settings.Verified_txt == true  %}
+  <div class="par3-icon d-flex">
+  <i class="fa fa-check-circle" aria-hidden="true"></i>
+  <p class="par3">VERIFIED BUYER</p>
+</div>
+  {% endif %}
+</div>
+</div>
+{% endfor %}
+  
+  
+
+</div>
+</div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Verified buyer Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Buyers",
+      "settings": [
+        {
+          "id": "Reviewtext",
+          "type": "textarea",
+          "label": "Add Review text"
+        },
+        {
+          "id": "AuthorName",
+          "type": "text",
+          "label": "Add Author Name"
+        },
+        {
+          "id": "Verified_txt",
+          "type": "checkbox",
+          "label": "Check if Verified Buyer",
+		  "default": false
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

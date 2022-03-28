@@ -1,0 +1,392 @@
+<style media="screen">
+  
+/* ==== Media Queries ================================================= */
+  
+@media screen and (min-width: 768px) {
+  .club_grid {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .restricted-text-container {
+    max-width: min(640px, 80%);
+    margin: auto;
+  }
+}
+  
+@media screen and (max-width: 768px) {
+  .mobile-club-margin {
+    margin-bottom: 40px;
+  }
+  .club-container p, .club-container h2, .club-container ul {
+    max-width: min(640px, 90%);
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1219px) {
+  .club-container .Button {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+  }
+}
+  
+@media screen and (max-width: 1219px) {
+  .club-price {
+    margin-bottom: 12px !important;
+  }
+  .custom-button-grid-padding {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+    
+@media screen and (max-width: 768px) {
+  .uk-card-body {
+    padding:0px
+  }
+
+  
+/* ==== Modals ================================================= */
+  
+.uk-modal-dialog {
+  background-color: {{ section.settings['bg-color--modal'] }} !important;
+}
+
+  
+  
+/* ==== Buttons ================================================= */  
+  
+.club-container .Button {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+  
+/* ==== Block elements ================================================= */  
+
+.ply-list-divider li {
+  border-color: #626160 !important;
+}
+
+.club-container img {
+  margin-bottom: 1.4em;
+}
+
+.page_club_description_section p {
+  margin-bottom: 0;
+}
+  
+
+
+/* ==== Margin and Padding ================================================= */ 
+
+.custom-button-grid-padding {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.wine-benefits {
+  margin-bottom: 0;
+}
+
+.benefits_margin {
+  margin-bottom: 20px;
+}
+  .uk-margin-bottom_tab{
+	margin-bottom:20px !important;    
+}
+}
+</style>
+{% if page.content %}
+<div class="container club-container">
+  <div class="uk-width-1-1 uk-margin-large-bottom uk-text-center club_grid uk-height-match">
+    <div class="uk-width-1-2@m uk-margin-auto uk-margin-large-top uk-margin-large-bottom restricted-text-container" style="margin-bottom: 10px;">
+      {% comment %}<h1 class="Section--spacingNormal Heading u-h1" style="margin-bottom: 46px;">{{ page.title }}</h1>{% endcomment %}
+      <div class="uk-margin-bottom" style="text-align: left">{{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="page-width page-content container club-container" id="joinrio_club_the_pages">
+  <div class="uk-width-1-1 uk-margin-large-bottom uk-text-center page-width club_grid">
+
+          <div class="uk-grid uk-grid-match">
+            {% for block in section.blocks %}
+              {% assign root_index = forloop.index %}
+              {% if block.type == "product_card" %}
+                <div class="uk-width-1-1 uk-width-1-2@m mobile-club-margin" style="height:100%">
+
+                  <div class="uk-card uk-card-default">
+                    <div class="uk-card-body uk-height-1-1">
+                      <div class="uk-height-1-1 uk-flex uk-flex-column uk-flex-between uk-flex-wrap-between">
+                        <div class="benefits_margin">
+                          <img src="{{ block.settings.image | img_url: '1000x' }}"
+                            alt="{{ block.settings.club-level-name }}" class="uk-width-1-1">
+                          <h3 class="uk-card-title Heading"><strong>{{ block.settings.club-level-name }}</strong></h3>
+
+                          <div class="page_club_description_section">
+                              <p>{{ block.settings.description }}</p>
+                          </div>
+							
+                          {% if block.settings.wine-benefits != blank %}
+                            <div class="">
+                              <p class="wine-benefits">{{ block.settings.wine-benefits }}</p>
+                            </div>
+                          {% endif %}
+                          
+                        </div>
+                        <p class="club-price">
+                          <strong class="ply-text-dark ply-text-small Heading Text--subdued" style="text-transform: none;">
+                            {{ block.settings.club-price }}
+                          </strong>
+                        </p>
+                        {% if block.settings.getbuttonvalue == 'yes' %}
+                        
+                        {% assign no_labels_entered = false %} 
+                        {% if
+                            	block.settings.button-one == blank 
+                        		and block.settings.button-two == blank
+                        		and block.settings.button-three == blank
+                        %}
+                        {% assign no_labels_entered = true %} 
+                        {% endif%}
+                        {% if
+                            	block.settings.option-one-variant-label == blank 
+                        		and block.settings.option-two-variant-label == blank
+                        %}
+                        {% assign no_variant_labels_entered = true %} 
+                        {% endif %}
+                        
+                        {% unless no_variant_labels_entered and no_labels_entered %}
+	                         <input type="button" class="box button text-uppercase" value="Choose options">
+						{% endunless %}
+
+                        
+                        <div class="uk-grid custom-button-grid-padding" id="data_bottom" data-club-signup="" {% unless no_variant_labels_entered and no_labels_entered %} style="display:none; {% endunless %}">
+                           <!-- BLOCK SETTINGS: {{block.settings}}-->
+							<!--no_labels_entered: {{no_labels_entered}} -->
+                          	<div class="uk-flex uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                              
+                              {% unless no_variant_labels_entered %} 
+                                <p>Quantity:</p>
+                                <select class="uk-select" name="signup[variant_id]">
+                                  <option value="{{ block.settings.option-one-variant-id }}">{{ block.settings.option-one-variant-label }}</option>
+                                  <option value="{{ block.settings.option-two-variant-id }}">{{ block.settings.option-two-variant-label }}</option>
+                                  <option value="{{ block.settings.option-three-variant-id }}">{{ block.settings.option-three-variant-label }}</option>
+                                </select>
+                              {% else %}
+                          		<input type="hidden" name="signup[variant_id]" value="{{ block.settings.option-one-variant-id }}" />
+	                          {% endunless %}
+                            <!-- NO_OPTIONS: {{no_labels_entered}}-->
+                              {% unless no_labels_entered %}
+                            	<p style="padding-top: 30px;">Preference:</p>
+                              	<select class="uk-select" name="signup[option_name]">
+                                  <option value="{{ block.settings.option-one }}">{{ block.settings.button-one }}</option>
+                                  <option value="{{ block.settings.option-two }}">{{ block.settings.button-two }}</option>
+<!--                                   <option value="{{ block.settings.option-three }}">{{ block.settings.button-three }}</option> -->
+                              </select>                          
+                              {% else %}
+                          		<input type="hidden" name="signup[option_name]" value="{{ block.settings.option-one }}" />
+	                          {% endunless %}
+                          </div>
+
+<!--                           <div class="uk-flex uk-margin-bottom uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                              <button class="bg_l_m text-uppercase w-70 m-auto button my_joincart123" onclick="joinClub(this)">
+                                    Join
+                              </button>
+                          </div> -->
+                          
+                          <div class="uk-flex uk-flex-column uk-width-1-1 uk-width-xlarge-1-2">
+                              <button class="bg_l_m uk-margin-bottom_tab text-uppercase w-70 m-auto button my_joincart123" onclick="joinClub(this)">
+                                    Join
+                              </button>
+                          </div>
+                        </div>
+                        
+						<!-- onclick="joinClub(this)" -->
+                        
+                        {% else %}
+                        
+                              <button class="bg_l_m text-uppercase w-70 m-auto button my_joincart123" onclick="joinClub(this)">
+                                    Join
+                              </button>
+                        
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+      </div>
+  </div>
+</div>
+
+<div class="container club-container">
+  <div class="uk-width-1-1 uk-margin-large-bottom uk-text-center club_grid uk-height-match">
+    <div class="uk-width-1-2@m uk-margin-auto uk-margin-large-top uk-margin-large-bottom restricted-text-container" style="margin-bottom: 10px;">
+      <p>{{ section.settings['selection_intro_text'] }}</p>
+      </div>
+    </div>
+</div>
+
+
+<script>
+    var joinClub = async function joinClub(button) {
+      var container = Bloom.storefront.utilities._.closestAncestor(button, '[data-club-signup]');
+      var variantId = container.querySelector('[name="signup[variant_id]"]').value
+      var optionName = container.querySelector('[name="signup[option_name]"]').value
+      Bloom.storefront.utilities.addToCart(variantId, 1, { 'Selections': optionName }, 'ajax_cart');
+      
+    }
+  
+  jQuery('body').on('added',function(){
+	updateCartHtml();
+});
+//   console.log({{ block.id | json }});
+//   jQuery(document).on('click', '.my_joincart123', function () {  
+//     document.getElementById("menubtn").click();
+//   });
+  
+</script>
+
+{% schema %}
+{
+  "name": "Wine club levels",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Page content"
+    },
+    {
+      "type": "html",
+      "id": "selection_intro_text",
+      "label": "Footer text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Club Level",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1000px wide recommended"
+        },
+        {
+          "id": "club-level-name",
+          "type": "text",
+          "label": "Club level name"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Level description"
+        },
+        {
+          "id": "wine-benefits",
+          "type": "html",
+          "label": "Club level benefits",
+          "info": "Enter as HTML"
+        },
+        {
+          "id": "club-price",
+          "type": "text",
+          "label": "Price"
+        },
+        {
+          "id": "getbuttonvalue",
+          "type": "text",
+          "label": "button require yes or not"
+        },
+        {
+          "type": "header",
+          "content": "Wine option 1"
+        },
+		{
+          "id": "option-one-variant-id",
+          "type": "text",
+          "label": "Variant id"
+        },
+		{
+          "id": "option-one-variant-label",
+          "type": "text",
+          "label": "Variant label"
+        },
+        {
+          "id": "option-one",
+          "type": "text",
+          "label": "Wine option name",
+          "info": " Must be named the same as in the Bloom release."
+        },
+        {
+          "id": "button-one",
+          "type": "text",
+          "label": "Button label"
+        },
+        {
+          "type": "header",
+          "content": "Wine option 2"
+        },
+          {
+          "id": "option-two-variant-id",
+          "type": "text",
+          "label": "Variant id"
+        },
+		{
+          "id": "option-two-variant-label",
+          "type": "text",
+          "label": "Variant label"
+        },
+        {
+          "id": "option-two",
+          "type": "text",
+          "label": "Wine option name",
+          "info": " Must be named the same as in the Bloom release."
+        },
+        {
+          "id": "button-two",
+          "type": "text",
+          "label": "Button label"
+		},
+        {
+          "type": "header",
+          "content": "Wine option 3"
+        },
+          {
+          "id": "option-three-variant-id",
+          "type": "text",
+          "label": "Variant id"
+        },
+		{
+          "id": "option-three-variant-label",
+          "type": "text",
+          "label": "Variant label"
+        },
+        {
+          "id": "option-three",
+          "type": "text",
+          "label": "Wine option name",
+          "info": " Must be named the same as in the Bloom release."
+        },
+        {
+          "id": "button-three",
+          "type": "text",
+          "label": "Button label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

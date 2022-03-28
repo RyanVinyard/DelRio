@@ -1,0 +1,107 @@
+<style>
+@media screen and (max-width:1050px) {
+    img.standing_girl_img_roc_po {
+      width: 100%;
+      height: 321px;
+  }
+}
+  @media screen and (max-width: 991px) {
+ img.standing_girl_img_roc_po {
+    height: 211px;
+}
+  }
+@media screen and (max-width:800px) {
+  img.standing_girl_img_roc_po {
+    width: auto;
+    height: 240px;
+}
+}
+  .Purchased_2019_rp a{
+    margin-left: 10px;
+  }
+</style>  
+<div class="rp_section_4">
+    <div class="container">
+        <div class="rp_our_wine">
+            <h1>{{section.settings.Rockpoint_Sec5_heading}}</h1>
+        </div>
+
+
+        <div id="carousel_rp_id" class="carousel_rp">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="rp_width_100">
+                        <img class="standing_girl_img_roc_po" src="{{ section.settings.Rockpoint_Sec4_Sliderimage | img_url:'master' }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		
+                    <div class="owl-carousel owl-theme" id="carousel_rockpoint">
+                      {% for block in section.blocks %}
+                        <div class="margin_rp_2019_z">
+                            <p class="A-relaxing-and-invit_rpr">{{block.settings.Rockpoint_Sec5_review}}</p>
+                            <p class="stars_rating_rp star_5_rp">★★★★★</p>
+                            <p class="Meghann-Erickson_rp">{{block.settings.Rockpoint_Sec5_name}}</p>
+                            <p class="Purchased_2019_rp">Purchased:<a href="{{block.settings.Rockpoint_Sec5_producturl}}">{{block.settings.Rockpoint_Sec5_productname}}</a></p>
+                            <span></span><span class="Pinot-Noir_2019_rp"></span>
+                        </div>
+                       {% endfor %}
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": " Rockpoint-Fifth Section",
+    "settings": [
+      {
+        "id":"Rockpoint_Sec5_heading",
+        "type":"text",
+        "label":"Enter Heading"
+      },
+{
+        "id":"Rockpoint_Sec4_Sliderimage",
+        "type":"image_picker",
+        "label":"image"
+        }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Review",
+      "settings": [
+        
+        {
+        "id":"Rockpoint_Sec5_review",
+        "type":"textarea",
+        "label":"Add Review"
+        },
+		{
+        "id":"Rockpoint_Sec5_name",
+        "type":"text",
+        "label":"Enter Customer Name"
+        },
+        {
+        "id":"Rockpoint_Sec5_productname",
+        "type":"text",
+        "label":"Enter Product Name"
+        },
+        {
+        "id":"Rockpoint_Sec5_producturl",
+        "type":"url",
+        "label":"Button Url"
+        }
+     ]
+}
+]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

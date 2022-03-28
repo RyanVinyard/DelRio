@@ -1,0 +1,88 @@
+    <div class="section_3_about">
+        <div class="container">
+            <div class="padding_about_us_bg_wine bg-white">
+                <div class="create_wines_with_a_purpose_about">
+                    <h1>{{section.settings.Aboutus_section4_Heading}}</h1>
+                    <div>
+                        <p class="a_purpose_about">{{section.settings.First_para_heading}}</p>
+                        <p class="Our-mission-is-to-cr">{{section.settings.Aboutus_Section4__text1}}</p>
+                    </div>
+                    <div>
+                        <p class="a_purpose_about">{{section.settings.Second_para_heading}}</p>
+                        <p class="Our-mission-is-to-cr">{{section.setting.Aboutus_Section4__text2}}</p>
+                        <p class="Our-mission-is-to-cr">{{section.setting.Aboutus_Section4__text3}}</p>   
+                    </div>
+                    <div class="text-center">
+                        <img src="{{section.settings.Aboutus_section4_Image1 | img_url:'master' }}" alt="">
+                    </div>
+                    <div class="vineyard_about__9 text-center">
+                        <img src="{{section.settings.Aboutus_section4_Image2 | img_url:'master' }}" alt="">
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+{% schema %}
+  {
+    "name": "Fourth Section",
+    "settings": [
+ 	  {
+        "id": "Aboutus_section4_Heading",
+        "type": "text",
+        "label": "Main Section Heading"
+        
+      },
+ {
+        "id": "First_para_heading",
+        "type": "text",
+        "label": "Enter Heading"
+        
+      },
+ {
+        "id": "Aboutus_Section4__text1",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      },
+ {
+        "id": "Second_para_heading",
+        "type": "text",
+        "label": "Enter Heading"
+        
+      },
+ {
+        "id": "Aboutus_Section4__text2",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      },
+{
+        "id": "Aboutus_Section4__text3",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      },
+ {
+        "id": "Aboutus_section4_Image1",
+        "type": "image_picker",
+        "label": "Section4 image"
+        
+      },
+ {
+        "id": "Aboutus_section4_Image2",
+        "type": "image_picker",
+        "label": "sign image"
+        
+      }
+
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

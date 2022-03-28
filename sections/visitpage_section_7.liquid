@@ -1,0 +1,79 @@
+<div class="tour_section_7 animatioN-on_scroll_margin_top" id="visitpage_sec3_list_link_s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="come_visit_us_tour">
+          <h1>{{section.settings.visitpage_sec7_Heading}}</h1>
+          <p>{{section.settings.visitpage_sec7_address}}</p>
+          <p class="-N-River-Road-Gol_tors">Hours of Operation: <br>
+         {{section.settings.visitpage_sec7_text2}}</p>
+          <p class="Winter-Hours-11-5PM_tour">{{section.settings.visitpage_sec7_opening_text}}<br>
+        {{section.settings.visitpage_sec7_opening_text2}}<br>
+         {{section.settings.visitpage_sec7_Closing_information}}    <br> {{section.settings.visitpage_sec7_closing_days}}</p>
+            <div class="map_before_tour">
+              <img src="{{section.settings.visitpage_sec3_Proudly_logo | img_url:'master' }}" alt="">
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+       {{section.settings.visitpage_sec3_map_iframe}} 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Visitpage seven Section",
+    "settings": [
+      {
+      "id":"visitpage_sec7_Heading",
+      "type":"text",
+      "label":"Heading"
+      },
+      {
+      "id":"visitpage_sec7_address",
+      "type":"textarea",
+      "label":"Address"
+      },
+      {
+      "id":"visitpage_sec7_text2",
+      "type":"textarea",
+      "label":"Operation hours"
+      },
+      {
+      "id":"visitpage_sec7_opening_text",
+      "type":"textarea",
+      "label":"season 1 Opening Time"
+      },
+      {
+      "id":"visitpage_sec7_opening_text2",
+      "type":"textarea",
+      "label":"season 2 Opening Time"
+      },
+      {
+      "id":"visitpage_sec7_Closing_information",
+      "type":"textarea",
+      "label":"Closing Info"
+      },
+      {
+      "id":"visitpage_sec7_closing_days",
+      "type":"textarea",
+      "label":"Closing Days"
+      },
+      {
+      "id":"visitpage_sec3_Proudly_logo",
+      "type":"image_picker",
+      "label":"Logo Image"
+      },
+      {
+      "id":"visitpage_sec3_map_iframe",
+      "type":"textarea",
+      "label":"Map Iframe"
+      }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,283 @@
+<style>
+  @media (max-width: 400px) and (min-width: 320px){
+    .inner-section-4th {
+    max-width: 300px !important;
+    text-align: center;
+    max-height: 1460px;
+}
+    .first-image img{
+    width:290px;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+       width: 290px;
+    text-align: justify;
+    padding: 10px;
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .row.iframe-row {
+    width: 300px;
+    display: inline;
+}
+    .second-col-text {
+    margin: 56px 0px;
+    text-align: center;
+}
+  }
+  
+  @media (max-width: 550px) and (min-width: 401px){
+    .first-image img{
+    max-width:400px;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+        width: 400px;
+    padding: 20px;
+    text-align: justify;
+      
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .inner-section-4th {
+    max-width: 410px;
+    text-align: center;
+    max-height: 1550px;
+}
+  }
+  @media (max-width: 650px) and (min-width: 550px){
+    .first-image img{
+    max-width:100%;
+      /*height:auto;*/
+    }
+    .Keeping-our-Trails-O{
+        max-width: 530px;
+    padding: 20px;
+    text-align: justify;
+      
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .inner-section-4th{
+    max-width:530px;
+    text-align:center;
+    }
+    
+  }
+  @media (max-width: 750px) and (min-width: 650px){
+    .first-image img{
+    max-width:100%;
+      /*height:auto;*/
+    }
+    .Keeping-our-Trails-O {
+    max-width: 630px;
+    padding: 20px;
+    text-align: justify;
+}
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    font-size:12px;
+    }
+    .inner-section-4th{
+    max-width:630px;
+    text-align:center;
+    }
+    .second-col-text {
+    margin-top: 26px;
+}
+  }
+  @media (max-width: 768px) and (min-width: 750px){
+    .first-image img{
+    max-width:100%;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+        max-width: 630px;
+    padding: 20px;
+    text-align: justify;
+      
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .inner-section-4th{
+    width: 730px;
+    text-align: center;
+    }
+    .second-col-text{
+    margin-top:25px;
+    }
+    .second-col-text h2{
+    max-width:100px;
+    }
+    .Keeping-our-Trails-O p{
+      font-size:10px;
+          font-weight: bolder;
+    
+    }
+  }
+  @media (max-width: 900px) and (min-width: 768px){
+    .first-image img{
+    max-width:100%;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+        max-width: 350px;
+    padding: 20px;
+    text-align: justify;
+      
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .inner-section-4th{
+    width: 730px;
+    text-align: center;
+    }
+    .second-col-text{
+    margin-top:25px;
+    }
+    .second-col-text h2{
+    max-width: 750px;
+    }
+    .Keeping-our-Trails-O p{
+      font-size:10px;
+          font-weight: bolder;
+    
+    }
+  }
+  @media (max-width: 1024px) and (min-width: 900px){
+    .first-image img{
+    max-width:100%;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+        max-width: 350px;
+    padding: 20px;
+    text-align: justify;
+      
+    }
+    .Keeping-our-Trails-O p{
+    margin:0px;
+    }
+    .inner-section-4th{
+    max-width: 880px;
+    max-height: 810px;
+    }
+    .second-col-text{
+    margin-top:56px;
+    }
+    .second-col-text h2{
+    max-width: 750px;
+    }
+    .Keeping-our-Trails-O p{
+      font-size:10px;
+          font-weight: bolder;
+    
+    }
+  }
+  @media (max-width: 1200px) and (min-width: 1024px){
+    .first-image img{
+    max-width:100%;
+      height:auto;
+    }
+    .Keeping-our-Trails-O{
+        max-width: 400px;
+    padding: 20px;
+    text-align: justify;
+    }
+    .inner-section-4th{
+    max-width: 980px;
+    }
+    .second-col-text{
+    margin-top:56px;
+      padding-left: 20px;
+    }
+    .second-col-text h2{
+    max-width:1000px;
+    }
+    .Keeping-our-Trails-O p{
+      font-size:12px !important;
+    }
+  }
+  @media (max-width: 1440px) and (min-width: 1200px){
+    .inner-section-4th{
+    max-width:1150px;
+    }
+    .Keeping-our-Trails-O p{
+      font-size:14px !important;
+    }
+  }
+</style>
+<!--trail-section-->
+    <div class="second-sec-bg-color inner-section-4th rtl-auto second-col-section">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              {% for block in section.blocks %}
+                <div class="first-image"><img src="{{ block.settings.product-image | img_url: 'master' }}" alt=""></div>
+            </div>
+          {% endfor %}
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="second-col-text">
+                <h2>{{ section.settings.title }}</h2>
+              </div>
+                <div class="Keeping-our-Trails-O">
+                    <p>
+                        {{ section.settings.text }}
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    <!--trail-section-end-->
+{% schema %}
+  {
+    "name": "Troops",
+    "settings": [
+        {
+        "id": "title",
+        "type": "text",
+        "label": "Add custom text below"
+      },
+        {
+        "id": "text",
+        "type": "html",
+        "label": "Add custom text below"
+      }
+   ],
+
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Add image",
+      "settings": [
+        {
+          "id": "product",
+          "type": "url",
+       		"label": "add image"
+        },
+        {
+          "id": "product-image",
+          "type": "image_picker",
+          "label": "image picker"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Troops",
+      "category": "images-slider"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,345 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+
+<style>
+@media (min-width: 768px) {
+  .modal-dialog {
+    margin: 30px auto !important;
+}    
+  }
+  .container-fluid.trade-media {
+    padding-top:80px;         
+  }
+  .mycontainer{max-width: 850px;margin:auto;}
+  .underline{text-decoration: underline;}
+  .section-heading h2 {     padding-bottom: 4%; font-family: 'Butler';  font-size: 48px;  font-weight: 300;  font-stretch: normal;  font-style: normal;  line-height: 1.17;  letter-spacing: normal; color: #171f15;}
+  .section-text p{ font-family: Apercu;  font-size: 14.7px;  font-weight: normal;  font-stretch: normal;  font-style: normal;  line-height: 1.43;  letter-spacing: normal;  color: #171f15;}
+  .pb-4{padding-bottom: 4%}
+
+  .trade-media .content-box{background-color: #fcfcf5;}
+  /* .top-section-trade .row{padding:5% 0;} */
+
+
+
+
+  .my-seperator{  background-color: #171f15;width: 100%; height: 1px;opacity: 0.2	;}
+  .section-main-header{    background: linear-gradient(to bottom, #fcfcf5, #ffffff);}
+  .section-main-header  .row{padding: 5% 0 4%;}
+  .section-main-header .logo-container{text-align: center;}
+  .section-main-header .content-box{align-items: center;}
+  .section-main-header h4{  font-family: Apercu Pro;  font-size: 24px;  font-weight: bold;  font-stretch: normal;  font-style: normal;  line-height: 1.33;  letter-spacing: normal;  color: #171f15;}
+
+  .section-main-header .download-btn {width: 90%;    border: solid 1px #2e4433;    padding: 10px 0;    float: right;}
+  .section-main-header .ovrly-content{background:rgba(46, 68, 51, 0.72); opacity: 0;  position: absolute;  top: 50%;  left: 50%;  width: 100%;  height: 100%;  transform: translate(-50%, -50%);  -ms-transform: translate(-50%, -50%);  text-align: center;padding: 0 5px;background-clip: content-box !important;}
+  .section-main-header .img-container {margin:5px 0;position: relative;background-size: cover !important;background-repeat: no-repeat !important;   padding: 0 5px;min-height: 190px; background-clip: content-box !important;}
+  .section-main-header .img-container:hover .ovrly-content {  	opacity: 1;    align-items: center;    justify-content: center;    display: flex;}
+  .section-main-header .ovrly-content p{color:#fff; font-size: 24px;}
+  .section-main-header .ovrly-content p i {padding:0 10px;}
+  .section-main-header .product-wrapper{ background-color: #faf7f5; padding: 40px 10px ;}
+  .section-main-header  .product-info{padding:20px 0;}
+  .section-main-header  .product-info h5{  font-family: Apercu Pro;  font-size: 14px;  font-weight: 500;  font-stretch: normal;  font-style: normal; text-transform: uppercase; line-height: 1.43;  letter-spacing: 0.5px;  text-align: center;  color: #2e4433;}
+  .text-center{text-align: center;}
+  .sale-media {padding:6% 0;}
+  .sale-media p{   font-family: Apercu;  font-size: 14px;  font-weight: bold;  font-stretch: normal;  font-style: normal;  line-height: 1.43;  letter-spacing: normal;  color: #171f15;}
+  .sale-media .person-name{  font-family: Apercu Pro;  font-size: 17px;  font-weight: bold;  font-stretch: normal;  font-style: normal;  text-transform: uppercase;  line-height: 1.71;  letter-spacing: 1px;  text-align: center;  color: #171f15;margin-bottom: 10px;}
+  .sale-media .content-wrapper img{width: 100%;padding-bottom: 8%;}
+  .sale-media .content-wrapper .person-desig{color: #171f15; font-family: Apercu;  font-size: 15px;  font-weight: normal;  font-stretch: normal;  font-style: normal;  margin-bottom: 10px;  line-height: 1.43;  letter-spacing: normal;  text-align: center}
+  .sale-media .content-wrapper .person-contact{color: #2e4433; font-family: Apercu;  font-size: 15px;  font-weight: normal;  font-stretch: normal;  font-style: normal;  line-height: 1.43;  letter-spacing: normal;  text-align: center}
+  .customers-section{padding:6% 0;}
+  .distributor-section{padding:6% 0;}
+  .distributor-section .hdng p{font-weight: bold; text-transform: uppercase;font-family: Apercu Pro;}
+  .trade-sidebar{background:#f3f5eb; padding: 50px 30px;}
+  .trade-sidebar ul{list-style-type: none;}
+  .trade-sidebar ul li a{ padding:15px 0px;display:block; font-family: Apercu;  font-size: 14px;  font-weight: bold;  font-stretch: normal;  text-transform: uppercase;  font-style: normal;  line-height: 1.43;  letter-spacing: 2px;  color: #2e4433;}
+  /* .trade-sidebar ul li ul li a{ padding:10px 0px; display:block;  font-family: Apercu; text-transform: capitalize; font-size: 14px;  font-weight: normal;  font-stretch: normal;  font-style: normal;  line-height: 1.43;  letter-spacing: normal;  color: #2e4433;} */
+  html{scroll-behavior: smooth;}
+  /* afzaal changes 3_9_2020 */
+
+  .pad_30_trade {
+    padding-left: 10px;
+  }
+  .pad_30_trade li a {
+    padding-left: 10px;
+  }
+
+  .pad_30_trade li {
+
+    padding-bottom: 5px;
+
+  }
+  .trade-sidebar ul li ul li a {
+    display: block;
+    font-family: Apercu;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #2e4433;
+    padding: 0;
+    padding-left: 10px;
+    margin: 10px 0;
+  }
+  .trade-sidebar ul li ul li a:hover {
+    border-left: 3px solid;
+    padding-left: 7px;
+  }
+  .top-section-trade .row {
+    padding: 6% 0 17%;
+  }
+  .section_h3_brand_trade {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .drage_kit_sm span {
+    color: rgba(46, 68, 51, 0.6);
+  }
+  .section-text p.dedicated_traade_kit {
+    font-size: 15.4px;
+    padding-bottom: 20px;
+  }
+  .Factsheet-Shelftalke_trade p{
+    font-family: Apercu Pro;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: center;
+    color: #2e4433;
+  }
+  .zero_bot_pad_trade {
+    padding-bottom: 0 !important;
+  }
+  .abs_pad_trade_1 {
+    padding: 40px 0 0;
+  }
+  .Wonderland-Distribut_down_sec_trade p {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #2e4433;
+    margin: 0;
+    padding: 8px 0;
+  }
+
+  .container-fluid.trade-media .row:first-child {
+    margin:0;
+  }
+  .abs_pad_trade_3 {
+    padding-top:40px;
+  }
+  #bag path{
+        fill: #5b564c00;
+  }
+/*   .nav-link g#Rectangle {
+     color: white !important;
+  } */
+     
+  }
+  @media screen and (max-width: 768px){
+
+    .mycontainer { max-width: 650px;}
+
+    .trade-sidebar {
+      background: #f3f5eb;
+      padding: 22px 15px;
+    }
+    .trade-sidebar ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    .trade-sidebar ul li a {
+      padding: 10px 0px;
+      font-size: 12px;
+    }
+    .trade-sidebar ul li ul li a {
+      font-size: 11px !important;
+      margin: 7px 0 !important;
+    }
+    .top-section-trade .row {
+      padding: 6% 0 8%;
+    }
+    .section-text p {
+      font-size: 12.7px;
+    }
+    .section-heading h2 {
+      padding-bottom: 2%;
+      font-size: 39px;
+    }
+    .section-main-header h4 {
+      font-size: 20px;
+    }
+    .drage_kit_sm {
+      font-size: 13px;
+    }
+    .section-main-header .download-btn {
+      width: 100%;
+    }
+    .section-text p.dedicated_traade_kit {
+      font-size: 12px;
+    }
+    .product-wrapper img {
+      width: 25%;
+    }
+    .section-main-header .product-info h5 {
+      font-size: 11px;
+    }
+    .Factsheet-Shelftalke_trade p {
+      font-size: 12px;
+    }
+    .merlot_poduud {
+      padding-bottom: 25px !important;
+    }
+    .abs_pad_trade_1 img {
+      width: 50%;
+    }
+    .section-text p.dedicated_traade_kit {
+      font-size: 12px;
+    }
+    .sale-media .content-wrapper .person-contact {
+      font-size: 10px;
+    }
+    .sale-media .person-name {
+      font-size: 12px;
+    }
+    .sale-media .content-wrapper .person-desig {
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+    .Wonderland-Distribut_down_sec_trade p {
+      font-size: 9px !important;
+    }
+
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .sale-media .content-wrapper img {
+      width: 35%;
+      padding-bottom: 8%;
+    }
+    .section-main-header .product-wrapper {
+      width: 60%;
+      margin: 0 auto;
+    }
+    #distrbtr .mycontainer {
+      text-align: center;
+    }
+    .section-main-header .download-btn {
+      width: 53%;
+      margin: 0 auto;
+      float: left;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .section-main-header .download-btn {width: 100%; font-size:13px;    border: solid 1px #2e4433;    padding: 7px 0; margin:auto;   float: none;}
+    .section-main-header .btn-box{text-align:center}
+
+
+    .mycontainer {
+      text-align: center;
+    }
+    .section-text p {
+      font-size: 14px;
+    }
+    .logo-container img {
+      width: 50%;
+    }
+    .drage_kit_sm {
+      text-align: left;
+    } 
+    .download-btn {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .section-text p.dedicated_traade_kit {
+      font-size: 14px !important;
+    }
+    .section-main-header .product-wrapper {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .section-main-header .product-info h5 {
+      font-size: 15px;
+    }
+    .sale-media .content-wrapper img {
+      width: 50%;
+    }
+    .Wonderland-Distribut_down_sec_trade p {
+      font-size: 11px !important;
+    }
+
+  }
+
+  @media screen and (max-width:400px) {
+    .section-text p.dedicated_traade_kit {
+      font-size: 13px !important;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .section-text p.dedicated_traade_kit {
+      font-size: 11px !important;
+    }
+    .sale-media p {
+      font-size: 10px;
+    }
+    .section-heading h2 {
+      padding-bottom: 2%;
+      font-size: 30px;
+    }
+    .section-text p {
+      font-size: 12px;
+    }
+  }
+  a.underline_under_trade_and_media_88 {
+    text-decoration:none;
+  }
+
+</style>
+
+
+
+
+
+
+<div class="container-fluid trade-media">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12 trade-sidebar">
+      <div class="side-nav">
+        <ul>
+          <li><a href="#trdptnr">Trade Partners</a></li>
+          <li><a href="#brnds">Brands</a>
+            <ul class="pad_30_trade">
+              <li><a href="#delrio">Del Rio</a></li>
+              <li><a href="#rckpnt">Rock Point</a></li>
+              <li><a href="#jolee">Jolee</a></li>
+            </ul>
+          </li>
+          <li><a href="#cntctsales">Contact Sales</a></li>
+          <li><a href="#rtlcustomer">Retail Customers</a></li>
+          <li><a href="#distrbtr">Distributors</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 content-box p-0">
+      {% section 'TradeAndMedia_first_section' %}
+      {% section 'TradeAndMedia_second_section' %}
+      {% section 'TradeAndMedia_third_section' %}
+      {% section 'TradeAndMedia_fourth_section' %}
+      {% section 'TradeAndMedia_fifth_section' %}
+      {% section 'TradeAndMedia_sixth_section' %}
+      {% section 'TradeAndMedia_seventh_section' %}
+      {% section 'TradeAndMedia_eight_section' %}
+    </div>
+  </div>
+</div>
+

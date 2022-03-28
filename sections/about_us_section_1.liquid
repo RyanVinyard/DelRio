@@ -1,0 +1,36 @@
+
+<div class="section_1_about">
+        <div class="container">
+            <div class="about_us_header">
+                <p class="About-Us_text">{{section.settings.Aboutus_Section1_heading}}</p>
+                <h1> {{section.settings.Aboutus_Section1_text}}</h1>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+  {
+    "name": " First Section",
+    "settings": [
+      {
+        "id": "Aboutus_Section1_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "id": "Aboutus_Section1_text",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+      
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

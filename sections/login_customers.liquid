@@ -1,0 +1,326 @@
+<style>
+  .login{
+    display:none;
+  }
+  #customer_recover h3.h3.text-center {
+    font-size: 23px;
+    font-family: 'Apercu Pro';
+  }
+  #customer_recover .text-muted.text-center.mb-4 {
+    font-size: 16px;
+    font-family: 'Apercu';
+  }
+</style>  
+
+<!-- Quick Order Modal -->
+  
+  {% include 'quick_order_popup'  %}
+  
+
+<div class="modal_login_remove modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <h4 class="modal-title w-100 Log-In">Log In</h4>
+         {% form 'customer_login' %}
+              {{ form.errors | default_errors }}
+        <input type="hidden" name="return_to" value="/cart">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-3">
+            <input
+                   type="email"
+                   name="customer[email]"
+                   id="defaultForm-email"
+                   class="form-control validate Enter-Email form-control"
+                   spellcheck="false" 
+                   autocomplete="off" 
+                   autocapitalize="off" 
+                   autofocus 
+                   required
+                   placeholder="Enter Email"
+				   aria-label="{{ 'customer.login.email' | t }}"
+                   >
+          </div>
+          {% if form.password_needed %}
+          <div class="md-form mb-3">
+            <input 
+                   type="password"
+                   name="customer[password]" 
+                   id="defaultForm-pass"
+                   class="form-control validate Enter-Email form-control"
+                   spellcheck="false" 
+                   autocomplete="off" 
+                   autocapitalize="off" 
+                   required
+                   placeholder="{{ 'customer.login.password' | t }}"
+                   aria-label="{{ 'customer.login.password' | t }}"
+                   >
+          </div>
+          {% endif %}
+          
+          <div class="md-form mb-5">
+            <input type="submit" value="LOG IN" id="login-button" onclick="submit()" class="form-control validate Enter-Email">
+          </div>
+       
+          {% if form.password_needed %}
+            <a class="nav-link theme-link-color" id="hover_recoveraccountprogetacc" href="#recover" role="button"><p class="Forgot-Password">Forgot Password?</p></a>
+          {% endif %} 
+
+          {% endform %}
+          
+          
+      {% form 'recover_customer_password', id: 'customer_recover', style: 'display: none' %}
+
+      <h1 class="h3 text-center">{{ 'customer.recover_password.title' | t }}</h1>
+      <p class="text-muted text-center mb-4">{{ 'customer.recover_password.subtext' | t }}</p>
+
+      {% if form.posted_successfully? %}
+        <div id="recover-success-hidden" class="d-none">
+          <p class="alert alert-success" role="alert">
+            {{ 'customer.recover_password.success' | t }}
+          </p>
+        </div>
+      {% endif %}
+
+      {{ form.errors | default_errors }}
+
+      <div class="form-group">
+        <input 
+          type="email" 
+          name="email" 
+          id="RecoverEmail" 
+          class="form-control" 
+          spellcheck="false" 
+          autofocus 
+          autocomplete="off" 
+          autocapitalize="off" 
+          required
+          placeholder="{{ 'customer.recover_password.email' | t }}"
+          aria-label="{{ 'customer.recover_password.email' | t }}"
+        >
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="form-control validate Enter-Email" value="{{ 'customer.recover_password.submit' | t }}">
+      </div>
+
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#login" role="button">{{ 'customer.recover_password.cancel' | t }}</a>
+        </li>
+      </ul>
+          
+    {% endform %}
+          
+          <p class="Dont-have-an-accoun">Don’t have an account? <a href="/account/register">Sign up</a> </p>
+         <p class="Dont-have-an-accoun Pointer_cus_create_acc" data-toggle="modal" data-target="#modalCreateAccountForm" id="already-have-an-id_acc">Create New Account   <span class="sr-only">(current)</span> </p>          
+        </div>
+      </div>
+    </div>
+   
+   <div class="login" id="afzaal">
+   {% form 'customer_login' %}
+
+      <div class="form-group">
+        <input 
+          type="email" 
+          name="customer[email]" 
+          id="CustomerEmail" 
+          class="form-control" 
+          spellcheck="false" 
+          autocomplete="off" 
+          autocapitalize="off" 
+          autofocus 
+          required
+          placeholder="{{ 'customer.login.email' | t }}"
+          aria-label="{{ 'customer.login.email' | t }}"
+        >
+      </div>
+
+        <div class="form-group">
+          <input 
+            type="password" 
+            name="customer[password]" 
+            id="CustomerPassword" 
+            class="form-control" 
+            spellcheck="false" 
+            autocomplete="off" 
+            autocapitalize="off" 
+            required
+            placeholder="{{ 'customer.login.password' | t }}"
+            aria-label="{{ 'customer.login.password' | t }}"
+          >
+        </div>
+   
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-block" id="login_hidden"  value="{{ 'customer.login.sign_in' | t }}">
+      </div>
+
+    {% endform %}
+   </div>
+  
+</div>
+
+<!-- create account pop up -->
+
+<div class="modal fade modal_create_acc_remove" id="modalCreateAccountForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog create_account_modal_dilog" role="document">
+    <div class="modal-content create_account_modal_content_n">
+      <div class="modal-header create_account_modal_header_n text-center">
+        <button type="button" class="close create_acc_close_btn_mc" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <h4 class="modal-title w-100 create_acc_modal_title">Create Account</h4>
+
+      {% form 'create_customer' %}
+
+      {{ form.errors | default_errors }}           
+
+      <div class="modal-body mx-3">
+        <div class="md-form mb-3">
+          <input
+                 type="text"
+                 name="customer[first_name]" 
+                 class="form-control create_account_modal_form_control validate Enter-Email_create_acc_modl form-control"
+                 autofocus 
+                 placeholder="First name"
+                 {% if form.first_name %}
+                 value="{{ form.first_name }}"
+                 {% endif %}
+                 aria-label="{{ 'customer.register.first_name' | t }}"
+                 required
+                 >
+        </div>
+        <div class="md-form mb-3">
+          <input
+                 type="text" 
+                 name="customer[last_name]" 
+                 id="defaultForm-Last-name"
+                 class="form-control create_account_modal_form_control validate Enter-Email_create_acc_modl form-control"
+                 placeholder="Last name"
+                 {% if form.last_name %}
+                 value="{{ form.last_name }}"
+                 {% endif %}
+                 aria-label="{{ 'customer.register.last_name' | t }}"
+                 required
+                 >
+        </div>
+        <div class="md-form mb-3">
+          <input 
+                 type="email"
+                 name="customer[email]" 
+                 id="defaultForm-email"
+                 class="form-control  create_account_modal_form_control validate Enter-Email_create_acc_modl form-control {% if form.errors contains 'email' %}is-invalid{% endif %}"
+                 placeholder="Email"
+                 spellcheck="false" 
+                 autocomplete="off" 
+                 autocapitalize="off"
+                 aria-label="{{ 'customer.register.email' | t }}" 
+                 required
+                 >
+        </div>
+        <div class="md-form mb-3">
+          <input 
+                 type="password"
+                 name="customer[password]" 
+                 id="defaultForm-pass"
+                 class="form-control create_account_modal_form_control validate Enter-Email_create_acc_modl form-control {% if form.errors contains 'password' %}is-invalid{% endif %}"
+                 placeholder="Password"
+                 required
+                 aria-label="{{ 'customer.register.password' | t }}"
+                 >
+        </div>
+        <div class="md-form mb-5">
+          <input type="submit" value="CREATE ACCOUNT" class="form-control create_account_modal_form_control validate Enter-Email_create_acc_modl Enter-Email_create_acc_mc">
+        </div>     
+
+        {% endform %}
+
+        <a class="forgot_pass_create_acc" href="javaScript:void(0)"><p class="Forgot-Password_create_acc">Forgot Password?</p></a>
+        <p class="already-have-an-accoun_mc" >Already have an account? 
+          <a href="#"  id="modal_lf33" data-toggle="modal" data-target="#modalLoginForm">Log in</a>  
+        </p>
+      </div>
+    </div>
+  </div>          
+</div>
+
+<!-- checkout popup -->
+
+ <div class="modal fade" id="checkoutpopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog checkout-modal-dialog" role="document">
+      <div class="modal-content checkout_popup">
+        <div class="modal-header text-center">
+        </div>
+        <h4 class="modal-title w-100 Log-In">Are you 21 or older?</h4>
+	      <div class="modal-body mx-3">
+          <div class="md-form mb-3">
+            <p class="text-checkout-popup">You must be of legal age to purchase any Del Rio products. </p>
+          </div>
+          <div class="md-form mb-5">
+            <button   class="form-control validate Enter-Email checkout-popup" id="checkoutyes"> Yes </button>
+            <button   class="form-control validate Enter-Email checkout-popup" id="checkoutno"> No </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+//   jQuery( document ).ready(function() {
+//   jQuery("#login-button").click(function() {
+//     var email = $('#defaultForm-email').val();
+//      var password = $('#defaultForm-pass').val();
+//     alert(email);
+//     alert(password);
+// });
+  function submit(){
+  document.getElementById("CustomerEmail").value = document.getElementById("defaultForm-email").value;
+  document.getElementById("CustomerPassword").value = document.getElementById("defaultForm-pass").value;
+  //document.getElementById("login_hidden").submit();
+    document.getElementById("login_hidden").click();
+      }
+ function login(email, password) {  
+  var data = {
+    'customer[email]': email,
+    'customer[password]': password,
+    form_type: 'customer_login',
+    utf8: '✓'
+  };
+  var promise = $.ajax({
+    url: '/account/login',
+    method: 'post',
+    data: data,
+    dataType: 'html',
+    async: true
+  });
+
+   console.log(promise);
+  return promise;
+}
+  jQuery("#hover_recoveraccountprogetacc").click(function(){
+   jQuery("#customer_recover").toggle();
+  });
+  
+  </script>
+
+
+{% schema %}
+  {
+    "name": "Quick Order",
+    "settings": [
+      {
+        "id": "collection_handle",
+        "type": "collection",
+        "label": "Add Quick Order Collection"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,140 @@
+<style>
+  /*.video_button_789 img {
+    position: absolute;
+    left: 48%;
+    top: 180%;
+    width: 60px;
+    height: 60px;
+  }
+  @media screen and (max-width: 2600px){
+.video_button_789 img {
+    top: 600px;
+}
+  }
+  @media screen and (max-width: 767px) {
+.video_button_789 img {
+    top: 580px;
+}
+  }
+@media screen and (max-width: 570px) {
+.video_button_789 img {
+    top: 550px;
+    left: 47%;
+
+}
+  }
+  @media screen and (max-width: 450px) {
+.video_button_789 img {
+    top: 590px;
+}
+  }
+  @media screen and (max-width: 400px) {
+.video_button_789 img {
+    top: 570px;
+    left: 44%;
+}
+  }*/
+  @media screen and (max-width:350px) {
+/*.video_button_789 img {
+    top: 475px;
+}*/
+.winemaking_section_1 {
+    padding: 30px 15px 60px;
+}
+
+}
+
+.videoplayer_img_container{
+	display: flex;
+    /*height: 50vh;*/
+    background-image: url("{{section.settings.Winemaking_Section1_Image | img_url:'master' }}");
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    max-height: 500px;
+    padding: 15% 0;
+    background-size: contain;
+}
+
+</style>  
+<div class="winemaking_section_1">
+    <div class="container">
+        <div class="Representing-our-ori_ginal_wine text-center">
+            <div class="set_width_winemakeing">
+                <h1>
+                   {{section.settings.Winemaking_Section1_heading}}
+                </h1>
+                <p>{{section.settings.Winemaking_Section1_text}}</p>    
+            </div>
+            <div class="videoplayer_img_container">
+<!--           <img src="{{section.settings.Winemaking_Section1_Image | img_url:'master' }}" alt="">  -->
+          <a  href="javascript:void(0)" class="video_button_789" id="video_button">
+                           <img src="{{'perk_red_7.png'| asset_url }}" alt="">
+             </a>
+			</div>
+<!--            <div class="d-flex justify-content-center Share_social_winemake">
+               <div>
+                   <a href="#"><i class="fa fa-facebook"></i><span>Share</span></a>
+               </div>
+               <div>
+                   <a href="#"><i class="fa fa-twitter"></i><span>Tweet</span></a>
+               </div>
+           </div> -->
+        </div>
+    </div>
+</div>
+
+
+
+<!-- popup video -->
+
+ <div class="modal fade" id="videopopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog-video" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" id="checkout_close" data-dismiss="modal" aria-label="Close">            
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+        <div style="padding:56.25% 0 0 0;position:relative;"> <iframe src="https://player.vimeo.com/video/492272640" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+{% schema %}
+  {
+    "name": " First Section",
+    "settings": [
+      {
+        "id": "Winemaking_Section1_heading",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "id": "Winemaking_Section1_text",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Winemaking_Section1_Image",
+        "type": "image_picker",
+        "label": "Winemaking image"
+        
+      }
+      
+    ]
+  }
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,151 @@
+<div>
+<!--   <label for="SortBy">Sort by</label> -->
+  <!--     <select name="SortBy" id="SortBy">
+
+{% for option in collection.sort_options %}
+<option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>     
+{% endfor %}   
+<option value="best-selling"><a href="/collections/best-selling">Best selling</a></option>
+</select>   -->
+
+<!--   <select name="SortBy" id="SortBy">
+
+    <option value="best-selling"><a href="/collections/best-selling">Best selling</a></option>     
+
+    <option value="title-ascending"><a href="/collections/all?sort_by=title-ascending">Alphabetically, A-Z</a></option>     
+
+    <option value="title-descending"><a href="/collections/all?sort_by=title-descending">Alphabetically, Z-A</a></option>     
+
+    <option value="price-ascending"><a href="/collections/all?sort_by=price-ascending">Price, low to high</a></option>   
+
+    <option value="price-descending"><a href="/collections/all?sort_by=price-descending">Price, high to low</a></option>     
+
+    <option value="created-ascending"><a href="/collections/all?sort_by=created-ascending">Date, old to new</a></option>     
+
+    <option value="created-descending"><a href="/collections/all?sort_by=created-descending">Date, new to old</a></option>     
+
+  </select>
+ -->
+  <div class="dropdown">
+    <div class="drop-txt"><p>Sort by</p>
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span>Best selling </span><i class="fas fa-angle-down"></i>
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a href="/collections/best-selling">Best selling</a>  
+
+        <a href="/collections/all?sort_by=title-ascending">Alphabetically, A-Z</a>    
+
+        <a href="/collections/all?sort_by=title-descending">Alphabetically, Z-A</a>    
+
+        <a href="/collections/all?sort_by=price-ascending">Price, low to high</a>
+
+        <a href="/collections/all?sort_by=price-descending">Price, high to low</a>    
+
+        <a href="/collections/all?sort_by=created-ascending">Date, old to new</a>     
+
+        <a href="/collections/all?sort_by=created-descending">Date, new to old</a>  
+
+      </div>
+    </div>
+  </div>
+
+
+</div> 
+
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<style>
+  .drop-txt{
+    float: right;	
+    display:flex; 
+    justify-content: end;
+    align-items: center;
+    width:100%;
+  }
+
+  .drop-txt .fa-angle-down{
+    float:right;
+    margin-top: 4px;
+  }
+  .drop-txt p{
+    margin-right: 6px;
+    margin-bottom: 0px; 
+  }
+
+  #dropdownMenuButton{
+    color: black;
+    border-radius: 2px;
+    text-align: left;
+    background: white;
+    padding: 2px 10px 2px 10px;
+    width: 16%;
+  }
+  .dropdown-menu.show {
+    display: grid;
+    padding:10px;
+  }
+  .dropdown-menu.show a:hover{
+    color:#000000;
+    text-decoration: none;
+  }
+  @media screen and (max-width:1000px){
+    #dropdownMenuButton{
+    width: auto;
+  }
+  }
+
+</style>
+
+
+<script>
+
+if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=title-ascending")
+{
+ jQuery("#dropdownMenuButton span").html("Alphabetically, A-Z");
+}
+  if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=title-descending")
+{
+ jQuery("#dropdownMenuButton span").html("Alphabetically, Z-A");
+}
+  if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=price-ascending")
+{
+ jQuery("#dropdownMenuButton span").html("Price, low to high");
+}
+  if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=title-descending")
+{
+ jQuery("#dropdownMenuButton span").html("Price, low to high");
+}
+  if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=created-ascending")
+{
+ jQuery("#dropdownMenuButton span").html("Date, old to new");
+}
+  if(window.location.href =="https://delriovineyards.com/collections/all?sort_by=created-descending")
+{
+ jQuery("#dropdownMenuButton span").html("Date, new to old");
+}
+
+</script>
+
+
+
+<!-- <script>   
+// Save existing sort parameters
+Shopify.queryParams = {};
+if(location.search.length) {
+for(var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+aKeyValue = aCouples[i].split('=');
+if (aKeyValue.length > 1) {
+Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+}
+}
+}
+
+// Add existing sort parameters to current URL
+document.querySelector('#SortBy').addEventListener('change', function(e) {
+var value = e.currentTarget.value;
+Shopify.queryParams.sort_by = value;  
+location.search = new URLSearchParams(Shopify.queryParams).toString();
+});
+
+</script> -->

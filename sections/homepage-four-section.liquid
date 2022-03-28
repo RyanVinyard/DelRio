@@ -1,0 +1,162 @@
+<style>
+@media screen and (max-width:400px){.img_border_round_323 img{height:140px}}@media screen and (max-width:350px){.img_border_round_323 img{height:110px}}
+
+.bottle_img img
+  {height: 220px; margin-top: 10%;}
+.border_round
+  {padding-bottom: 0px;}
+.red_btn.text-center
+  {margin: 20px;}
+.explore
+  {padding-top: 30px;}
+.section_4 #parent_shop_bar
+  {display:flex;}  
+  #shop_bar
+  {
+    height: 1px;
+    background: rgba(46, 68, 51, 0.32);
+    width: 82%;
+  }
+  @media screen and (max-width:768px)
+  {.section_4 #parent_shop_bar
+    {
+      display:grid;
+      text-align:center;
+          margin-bottom: 33px;
+    }
+    #shop_bar{
+     width: 82%;
+     margin: auto;
+    }
+  }
+  @media screen and (max-width: 650px)
+  {
+  .row.explore a p {
+     background:#2e443300;
+    color:#000000;
+   }  
+   .explore hr{
+     height: 0px;
+    width: 8%!important;
+    background: #2e4433;
+   }
+  }
+  #my_shop{
+    padding:0px;
+    border:0px;
+    margin-bottom: -8px!important;
+  }
+  .explore{
+    padding-top: 38px;
+  }
+   .explore hr{
+     height: 0px;
+    width: 28%;
+    background: #2e4433;
+   }
+  .section_4 {
+    padding-top:60px;
+  }
+  @media screen and (max-width: 450px) {
+    .img_border_round_323 img {
+      height: 170px;
+    }
+  }
+  @media screen and (max-width: 400px){
+    .img_border_round_323 img {
+      height: 140px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .img_border_round_323 img {
+      height: 100px;
+    }
+    .red_btn .shop_btn {
+   	 font-size: 10px;
+    }
+    .red.text-center p {
+    	font-size: 11px;
+    }
+  }
+</style>
+<div class="section_4">
+    <div class="container">
+      <div class="row">
+       <div class="col-lg-12 col-md-12 col-sm-12" id="parent_shop_bar">
+         <p class="Best-Wines-for-Summe">Shop by Category</p><hr id="shop_bar">
+       </div>
+<!--        <div class="col-lg-6 col-md-6 col-sm-12 d_none_mble_del_del">
+         <a href="/collections/all"><p class=" Shop-All-Wines">Shop All Wines</p></a>
+       </div> -->
+      </div>
+      <div class="row section_4_justofY_content_us_00">
+        {% for block in section.blocks %} 
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 col-xs-4">
+              <a class="remove_text_decs_round_link_hopage_4" href="{{block.settings.wine_section_url_top_shop_categories}}" onclick="getURL();">
+                <div class="text-center border_round img_border_round_323 bottle_img">
+                <img src="{{block.settings.image_wine_selection | img_url : 'master' }}" alt="">
+                </div>
+                <div class="red text-center">
+                <p>{{block.settings.imagetext}}</p>
+                </div>
+                <div class="red_btn text-center">
+                  <button class="shop_btn" >SHOP NOW</button>
+                </div>
+              </a>  
+            </div>
+         {% endfor %}
+      </div>
+      <div class="row explore">
+       <a href="{{section.settings.Section4_link}}"><p class="LEARN-MORE" id="my_shop">{{ section.settings.Section4_linktext}}</p>
+        <hr>
+        </a>
+      </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage Four Section",
+  "settings": [
+     {
+      "id": "Section4_linktext",
+      "type": "text",
+      "label": "Button text",
+      "default": "Explore All Wines"
+      },{
+      "id": "Section4_link",
+      "type": "url",
+      "label": "Button link"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Product",
+      "settings": [
+        {
+          "id": "image_wine_selection",
+          "type": "image_picker",
+       		"label": "Wine Image"
+        },
+        {
+          "id": "imagetext",
+          "type": "text",
+          "label": "Wine Label"
+        },
+        {
+          "id": "wine_section_url_top_shop_categories",
+          "type": "url",
+          "label": "Category Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

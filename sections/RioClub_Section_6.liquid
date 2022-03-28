@@ -1,0 +1,138 @@
+<div class="perl_section_6">
+              <div class="container">
+                  <h1 class="FAQs_perk">{{section.settings.Rioclub_Sec6_heading}}</h1>
+
+                 <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="perk_footer_9">
+                            <img src="{{section.settings.Rioclub_Sec6_Image | img_url:'grande' }}" alt="">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="perk_footer_text">
+                            <div class="All-Del-Rio-Wines-av_perk">
+                                <p class="All-Del-Rio-Wines_perk">{{section.settings.Rioclub_Sec6_subheading}}</p>
+                            </div>
+
+                            <main class="main">
+                                 
+                              <div class="accordion">
+                                {% for block in section.blocks%} 
+                                    <div class="accordion-item">
+                                      <h3 class="title">
+                                        <span>{{block.settings.Rioclub_Sec6_question}}</span>
+                                        <i class="fa fa-chevron-down"></i>
+                                      </h3>
+                                      <p class="paragraph">
+                                       {{block.settings.Rioclub_Sec6_answer}}
+                                      </p>
+                                    </div>
+<!--                                     <div class="accordion-item">
+                                      <h3 class="title">
+                                        <span>Are there any States in the US that you cannot ship to?</span>
+                                        <i class="fa fa-chevron-down"></i>
+                                      </h3>
+                                      <p class="paragraph">
+                                        All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.                                      </p>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h3 class="title">
+                                        <span>Are you able to ship Internationally?</span>
+                                        <i class="fa fa-chevron-down"></i>
+                                      </h3>
+                                      <p class="paragraph">
+                                        All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.                                      </p>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="title">
+                                          <span>Do I need an adult signature for my delivery of wines?</span>
+                                          <i class="fa fa-chevron-down"></i>
+                                        </h3>
+                                        <p class="paragraph">
+                                            All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.                                        </p>
+                                      </div>
+                                      <div class="accordion-item">
+                                        <h3 class="title">
+                                          <span>Can I ship to a work address or PO Box?</span>
+                                          <i class="fa fa-chevron-down"></i>
+                                        </h3>
+                                        <p class="paragraph">
+                                            All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.                                        </p>
+                                      </div>
+                                      <div class="accordion-item">
+                                        <h3 class="title">
+                                          <span>Do you have a minimum for membership orders?</span>
+                                          <i class="fa fa-chevron-down"></i>
+                                        </h3>
+                                        <p class="paragraph">
+                                            All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.                                        </p>
+                                      </div> -->
+                                {% endfor%}
+                                  </div>
+                              </main>
+
+
+                        </div>
+                      </div>
+                  </div>
+
+<div class="image_perk_jolle text-center">
+    <img src="{{section.settings.Rioclub_Sec6_LastImage | img_url:'grande' }}" alt="">
+</div>
+
+              </div>
+          </div>
+
+{% schema %}
+  {
+    "name": " Rioclub-Sixth Section",
+    "settings": [
+      {
+        "id":"Rioclub_Sec6_heading",
+        "type":"text",
+        "label":"Enter Heading"
+      },
+{
+        "id":"Rioclub_Sec6_Image",
+        "type":"image_picker",
+        "label":"image"
+        },
+{
+        "id":"Rioclub_Sec6_subheading",
+        "type":"textarea",
+        "label":"Sub Heading"
+      },
+{
+        "id":"Rioclub_Sec6_LastImage",
+        "type":"image_picker",
+        "label":"Bottom Image"
+        }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "FAQ",
+      "settings": [
+        
+        {
+        "id":"Rioclub_Sec6_question",
+        "type":"textarea",
+        "label":"Question"
+        },
+		{
+        "id":"Rioclub_Sec6_answer",
+        "type":"textarea",
+        "label":"Answer"
+        }
+]
+}
+]
+  }
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

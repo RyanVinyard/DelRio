@@ -1,0 +1,1400 @@
+{% case section.settings.navbar_expand %}
+{% when 'navbar-expand-sm' %}
+{% assign collapseOrder = 'order-sm-0' %}
+{% assign navbarIconsFlex = 'flex-sm-grow-0' %}
+{% when 'navbar-expand-md' %}
+{% assign collapseOrder = 'order-md-0' %}
+{% assign navbarIconsFlex = 'flex-md-grow-0' %}
+{% when 'navbar-expand-lg' %}
+{% assign collapseOrder = 'order-lg-0' %}
+{% assign navbarIconsFlex = 'flex-lg-grow-0' %}
+{% when 'navbar-expand-xl' %}
+{% assign collapseOrder = 'order-xl-0' %}
+{% assign navbarIconsFlex = 'flex-xl-grow-0' %}
+{% else %}
+{% assign collapseOrder = '' %}
+{% assign navbarIconsFlex = '' %}
+{% endcase %}
+    
+<style>
+  .aa_ckground_overlay_announcemnet_bar ul{list-style:none;position:absolute;top:0;transition:all .5s ease;margin:0;width:100%;text-align:center;padding:0}.aa_ckground_overlay_announcemnet_bar ul li{height:30px;color:{{ section.settings.color_heading }};font-family:Apercu}.container_bg_announcemnet_bar{background:#000;position:relative}.aa_ckground_overlay_announcemnet_bar{height:20px;overflow:hidden;display:inline-block;position:relative;width:85%;margin:auto}.background_overlay_announcemnet_bar{height:15px;position:relative;background-color:#000;z-index:9}.announcement-bar__close{background:0 0;border:0;position:relative;right:30px}path.annuncemnet_cancelbutton{fill:#fff}.flex-announcement_bar{display:flex;padding:12px 0}.hide8800{display:none}@media screen and (max-width:450px){.announcement-bar__close{right:15px}.aa_ckground_overlay_announcemnet_bar ul li{font-size:13px}}@media screen and (max-width:400px){.aa_ckground_overlay_announcemnet_bar ul li{font-size:12px}}@media screen and (max-width:350px){.aa_ckground_overlay_announcemnet_bar ul li{font-size:11px}.aa_ckground_overlay_announcemnet_bar{width:95%}.announcement-bar__close{right:5px}}path{fill:context-stroke!important}
+  .navbar-light .navbar-toggler {
+    border:0px;   
+  }
+  {% if template == 'index' %}
+  #navbarSupportedContent.newclassesigndupport .nav-item a {
+    color:white !important;
+  }
+  p.navbar-toggler-text_8900 {
+    color:white !important;
+  }
+  .thisisnewdesignnav {
+    position:relative;
+  }
+  .section.section_fix .navbar.navbar-expand-lg.navbar-light {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: fill-available;
+  }
+  hr.break_hr.hr_newdesign_index-page {
+    float: none;
+  }
+  @media screen and (max-width:767px) {
+    .section.section_fix .navbar.navbar-expand-lg.navbar-light {
+      width:100%;
+    }
+  }
+  .ul_announcemnet_bar_088 a:hover {
+  	text-decoration:none;
+  }
+
+  /*   menu css new design */
+
+  {% endif %}
+
+  .Trade-Media.btn_awards_homepage {
+    font-family: 'Canela';
+    text-transform: capitalize;
+    padding-bottom: 0px;
+    font-size:26px;
+  }
+  .btn_awards_homepage {
+    justify-content: end;
+  }
+  .mega-menu.mega_bottlesec.dropdown-menu .img_mega.img_mega_remov_padding_home ul a {
+    padding:8px 0;
+  }
+  .mega-menu .container.cf {
+    justify-content: end !important;
+  }
+  .div_bg_newdesign_hr {
+    background-color: rgba(23, 31, 21, 0.08);
+    width: 1px;
+    height: revert;
+    min-height: 226px;
+    margin: 0px 55px 0 30px;
+  }
+  .img_mega.img_mega_remov_padding_home.col-lg-3.col-md-12.col-sm-12.col-xs-6 {
+    padding-left:0px;
+  }
+  ul.Events__tour_text_awards_homepage_se .btn_awards_homepage::before {
+    display:none;
+  }
+  ul.Events__tour_text_awards_homepage_se .btn_awards_homepage::after {
+    width: 100%;
+    right: 0px;
+  }
+  ul.Events__tour_text_awards_homepage_se .btn_awards_homepage:hover::after {
+    width: 84%;
+    margin-left: 0px;
+  }  
+  .new_bestsellersdesign {
+    width: 58%;
+    padding-top: 2.2%;
+  }
+  .new_bestsellersdesign h1 {
+    font-family: Canela;
+    font-size: 40px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .new_bestsellersdesign p {
+    font-family: Apercu;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #291f1f;
+    width:72%;
+  }
+  .mega-menu.dropdown-menu.set_menu_design_del_rio {
+    padding-bottom: 40px;
+  }
+  @media screen and (max-width:1200px) {
+    .div_bg_newdesign_hr {
+      margin: 0px 45px 0 20px;
+    }
+    .Trade-Media.btn_awards_homepage {
+      font-size:21px;
+    }
+  }
+
+  
+  
+
+
+/* butler font */
+
+
+@font-face {
+    font-family: 'Butler';
+  src: url({{ 'Butler-UltraLight.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-UltraLight.woff' | asset_url }}) format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler-Medium.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-Medium.woff' | asset_url }}) format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler-Light.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-Light.woff' | asset_url }}) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler-Black.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-Black.woff' | asset_url }}) format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler-Bold.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-Bold.woff' | asset_url }}) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler-ExtraBold.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler-ExtraBold.woff' | asset_url }}) format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url({{'Butler.woff2' | asset_url }}) format('woff2'),
+        url({{'Butler.woff' | asset_url }}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  .A-new-layer-of-compl.new-layer-of-complh1tag {
+  	font-family: 'Butler' !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+  }
+  .fixed_body_1 {
+	position:fixed;
+}
+#mySideNav2 {
+    margin-left: -800px;
+    z-index: 20;
+}   
+.btn.quick_order.mble_menu {
+    font-size: 36px;
+    line-height: 1.22222;
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: Butler;
+    color: #000;
+    margin: 0;
+}  
+  @media screen and (max-width:500px) {
+  .btn.quick_order.mble_menu {
+      padding-left: 0;
+  }  
+ }
+</style>
+
+<script>
+  $(document).ready( () => {
+  $("button#menubtn2").click( () => {
+     $("body").addClass("fixed_body_1");
+  $(".section.section_fix").attr("style","position:fixed !important");	
+  });
+  $("#closebutton2").click( () => {
+     $("body").removeClass("fixed_body_1");
+  });
+});
+</script>  
+
+{% comment %}
+{% if section.settings.announcement_enabled %}
+{% if section.settings.announcement_homepage == false or template.name == 'index' %}
+<div id="announcement-bar" class="py-2 text-center font-italic small {{ section.settings.announcement_color }}" role="alert">
+  <div class="container">
+    <p class="mb-0">
+      {{ section.settings.announcement_text | escape }}
+      {% if section.settings.announcement_link_url != blank %}
+      <a  href="{{ section.settings.announcement_link_url }}">
+        {{ section.settings.announcement_link_text | escape }}
+      </a>
+      {% endif %}
+    </p>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+{% endcomment %}
+
+    <!-- mobile left menu -->
+    <div id="mySideNav2" class="mySideNav3 sidenav small_mbl d_tab_desktop">
+      <div id="make_padding2">
+        <div class="mr21-auto_pad">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item droppable dropabble1">
+              <div class="d-flex justify-content-between">
+                <a href="#" class="s-heading">Shop</a>
+                <a href="#" class="closebtn" id="closebutton2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 12 12">
+                  <path fill-rule="evenodd" d="M9.89949494 0l1.41421356 1.41421356L7.071 5.657l4.2427085 4.24249494-1.41421356 1.41421356L5.657 7.071l-4.24278644 4.2427085L0 9.89949494 4.243 5.657 0 1.41421356 1.41421356 0 5.657 4.243 9.89949494 0z"></path>
+                  </svg></a>
+              </div>
+              <a href="{{ shop.secure_url | append: "/collections/red-wine" }}" ><p class="button-text_top">REDS</p></a>
+              <a href="{{ shop.secure_url | append: "/collections/whites" }}" ><p class="button-text_top">WHITES</p></a>
+              <a href="/pages/rock-point"><p class="button-text_top">ROCK POINT</p></a>                
+              <a href="/pages/Jolee"><p class="button-text_top">JOLEE</p></a>                
+              <a href="/pages/wine-club"><p class="button-text_top">RIO CLUB</p></a>
+              <a class="shop_all" href="{{ shop.secure_url | append: "/collections/all" }}"><p class="Reds_mega Reds_mega_shop_all_he_class">SHOP ALL</p> <hr class="break_hr22"> </a>
+              <a href="/pages/wine-club" class="Rio-Club s-heading">Rio Club<span class="sr-only">(current)</span></a>
+              <a href="/pages/events" class="Rio-Club s-heading">Events</a>
+              {% if customer %}
+              <a class="s-heading" href="/account" id="modal_lf22">                 
+                ACCOUNT
+              </a>
+              {% else %}
+              <a class="s-heading" href="javascript:void(0)" id="modal_lf22" data-toggle="modal" data-target="#modalLoginForm">
+                Login
+                <span class="sr-only">(current)</span></a>
+              {% endif %}
+
+              <a class="dropdown-toggle s-heading" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class='mega_bottlesecdd dropdown-menu'>
+                <a href="/pages/vineyard"><p class="button-text_top">VINEYARD</p></a>
+                <a href="/pages/wine-making"><p class="button-text_top">WINEMAKING</p></a>
+                <a href="/pages/visit"><p class="button-text_top">VISIT</p></a>
+                <a href="/pages/about-us"><p class="button-text_top">ABOUT US</p></a>
+                <a href="/pages/history"><p class="button-text_top">OUR HISTORY</p></a>
+
+                <hr class="border_greish_ss">
+                <ul class="blog_award">
+                  <a href="/blogs/all"><li class="button-text_top">BLOG</li></a>
+                  <a href="/pages/newsletter"><li class="button-text_top">NEWSLETTERS</li></a>
+                  <a href="/pages/media-and-trade"><li class="button-text_top">TRADE & MEDIA</li></a>
+                  <a href="/pages/giving-back"><li class="button-text_top">GIVING BACK</li></a>
+                  <a href="/pages/Awards"><li class="button-text_top">AWARDS & ACCOLADES</li></a>
+                  <a href="/pages/contact-us"><li class="button-text_top">CONTACT US</li></a>
+                </ul>
+              </div>
+              <button type="button" class="btn quick_order mble_menu" data-toggle="modal" data-target="#exampleModal">Quick Order</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- end mobile left menu  -->
+
+
+
+<div class="section section_fix">
+  {% if section.settings.message %}
+  {% if section.settings.home_page_only == false or template.name == 'index' %}
+
+  <div class="container_bg_announcemnet_bar announcement_bar_headertop hide8800 {{ section.settings.announcement_color }}" id="anouncmnt_bar">
+    <div class="flex-announcement_bar">
+      <div class="background_overlay_announcemnet_bar"></div>
+      <div class="aa_ckground_overlay_announcemnet_bar">
+        <ul class="ul_announcemnet_bar_088">
+
+          {% for block in section.blocks %} 
+          <a href="{{ block.settings.link_for_announcementbars11 }}"><li  class="announcementtextss{{ forloop.index }}">{{block.settings.announcement_text}}</li></a>
+          {% endfor %}
+        </ul>
+      </div>
+      <button id="dismiss" class="announcement-bar__close" data-js-announcement-close="">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+          <path class="annuncemnet_cancelbutton" fill-rule="evenodd" d="M9.89949494 0l1.41421356 1.41421356L7.071 5.657l4.2427085 4.24249494-1.41421356 1.41421356L5.657 7.071l-4.24278644 4.2427085L0 9.89949494 4.243 5.657 0 1.41421356 1.41421356 0 5.657 4.243 9.89949494 0z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {% endif %}
+  {% endif %}
+
+
+  <nav class="navbar navbar-expand-lg navbar-light thisisnewdesignnav" id="Thisis_nav_21">     
+    <button class="navbar-toggler" type="button" id="menubtn2" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <p class="navbar-toggler-text_8900">MENU</p>   
+      <!--  <span class="navbar-toggler-icon">
+</span> -->
+    </button>
+    <div class="brand_img_1">
+      {% if template == 'index' %}
+      <a href="/"><img src={{ 'del-rio-v-ineyards-logo.png' | asset_url }} class="new_image_design_logo_234" alt="brand_logo"></a> 
+      {% else %}
+      <a href="/"><img src="{{'logo1.png' | asset_url }}" alt="brand_logo"></a>
+      {% endif %}
+    </div>
+    <!-- mobile cart -->
+    <a class="nav-link d_none_desktop cart_open_right" id="menubtn1" href="javascript:void(0)"><?xml version="1.0" encoding="utf-8"?>
+      <svg width="20px" height="23px" viewBox="0 0 20 23" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <desc>Created with Lunacy</desc>
+        <defs>
+          <path d="M-1.94844e-13 0L18 0L18 17L-1.94844e-13 17L-1.94844e-13 0Z" transform="translate(0 4)" id="path_1" />
+          <clipPath id="clip_1">
+            <use xlink:href="#path_1" />
+          </clipPath>
+        </defs>
+        <g id="bag" transform="translate(1 1)">
+          <path d="M0 11L0 3.999Q0 3.80254 0.0192563 3.60703Q0.0385126 3.41152 0.0768396 3.21883Q0.115167 3.02615 0.172196 2.83815Q0.229224 2.65015 0.304406 2.46865Q0.379587 2.28715 0.472197 2.11388Q0.564807 1.94062 0.673953 1.77727Q0.783099 1.61393 0.907731 1.46206Q1.03236 1.3102 1.17128 1.17128Q1.3102 1.03236 1.46206 0.907731Q1.61393 0.783099 1.77727 0.673953Q1.94062 0.564807 2.11388 0.472197Q2.28715 0.379587 2.46865 0.304406Q2.65015 0.229224 2.83815 0.172196Q3.02615 0.115167 3.21883 0.0768396Q3.41152 0.0385126 3.60703 0.0192563Q3.80254 0 3.999 0L4.001 0Q4.19746 0 4.39297 0.0192563Q4.58848 0.0385126 4.78117 0.0768396Q4.97385 0.115167 5.16185 0.172196Q5.34985 0.229224 5.53135 0.304406Q5.71285 0.379587 5.88612 0.472197Q6.05938 0.564807 6.22272 0.673953Q6.38607 0.783099 6.53794 0.907731Q6.6898 1.03236 6.82872 1.17128Q6.96764 1.3102 7.09227 1.46206Q7.2169 1.61393 7.32605 1.77727Q7.43519 1.94062 7.5278 2.11388Q7.62041 2.28715 7.69559 2.46865Q7.77078 2.65015 7.8278 2.83815Q7.88483 3.02615 7.92316 3.21883Q7.96149 3.41152 7.98074 3.60703Q8 3.80254 8 3.999L8 11" transform="translate(5 0)" id="Path" fill="none" {% if template == 'index' %} stroke="white" {% else %} stroke="#000000" {% endif %} stroke-width="2" />
+          <g id="Rectangle">
+            <g clip-path="url(#clip_1)">
+              <use class="use_svg_tag_newdesign" xlink:href="#path_1" fill="none" {% if template == 'index' %} stroke="white" {% else %} stroke="#000000" {% endif %} stroke-width="4" />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span id="cart-icon-count">({{ cart.item_count }})</span>
+    </a>
+    <!-- end mobile cart -->
+
+    <div class="collapse navbar-collapse newclassesigndupport" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown droppable">
+          <a class="nav-link dropdown-toggle shop" href="javascript:void(0)" id="navbarDropdown">
+            SHOP<i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+
+          <div class='mega-menu dropdown-menu set_menu_design_del_rio'>
+            <div class="container">
+              <div class="d-flex">
+                <div class="new_bestsellersdesign">
+                  <h1>Shop</h1>
+                  <p>With every bottle of Del Rio wine we seek to capture the essence of our history and dedication to excellence.</p>
+                </div>
+                <div class="container cf header_menu_collections_products">
+
+                  <!--               <div class="img_mega col-lg-3 col-md-4 col-sm-6 text-center">
+                  <a href="{{ shop.secure_url | append: "/collections/red-wine" }}" id="reds" ><img src="{{'mega_bottle1.png' | asset_url }}" alt=""> 
+                  <p class="Reds_mega">REDS</p></a>
+                  </div> -->
+
+                  <div class="img_mega col-lg-3 col-md-4 col-sm-6">
+                    <a href="{{ shop.secure_url | append: "/collections/best-selling" }}" id="whites" ><img src="{{'shop_best_sellers_image_1.png' | asset_url }}" alt=""> 
+                      <p class="Reds_mega">BEST SELLERS</p></a>
+                  </div>
+
+                  <div class="img_mega col-lg-3 col-md-4 col-sm-6">
+                    <!--                   <a href="/pages/shop-all#rock-point" id="rock-point" onclick="openCategoryShopAll('category_shop_ass2_5')"><img src="{{'mega_bottle122.png' | asset_url }}" alt="">  -->
+                    <a href="{{ shop.secure_url | append: "/collections/all" }}"><img src="{{'shop_best_sellers_image_2.png' | asset_url }}" alt=""> 
+                      <p class="Reds_mega">ALL WINES</p></a>
+                  </div>
+                  <div class="img_mega col-lg-3 col-md-4 col-sm-6">
+                    <!--                   <a href="/pages/shop-all#Jolee" id="Jolee" onclick="openCategoryShopAll('category_shop_ass2_4')"><img src="{{'mega_bottle4.png' | asset_url }}" alt="">  -->
+                    <a href="/collections/gifts"><img src="{{'shop_best_sellers_image_3.png' | asset_url }}" alt=""> 
+                      <p class="Reds_mega">GIFTS</p></a>
+                  </div>
+
+                  <div class="img_mega col-lg-3 col-md-4 col-sm-6">
+                    <a href="/pages/wine-club"><img src="{{'Rectangle_join_rio_clubhomepage.png' | asset_url }}" alt=""> 
+                      <p class="Reds_mega">JOIN RIO CLUB</p></a>
+                  </div>
+
+                  <!--               <a class="shop_all" href="{{ shop.secure_url | append: "/collections/all" }}">
+                  <p class="Reds_mega">SHOP ALL</p>
+                  <hr class="break_hr hr_newdesign_index-page">
+                  </a>    -->
+                </div><!-- .container -->
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link Rio-Club" href="/pages/wine-club">RIO CLUB <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link Rio-Club" href="/pages/about-us">OUR STORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link Rio-Club" href="/pages/events">EVENTS</a>
+        </li>
+
+      </ul>
+      <div class="brand_img">
+        {% if template == 'index' %}
+        <a href="/" class="afza"><img src="{{ 'del-rio-v-ineyards-logo.png' | asset_url }}" alt="brand_logo"></a> 
+        {% else %}
+        <a href="/"><img src="{{ 'logo1.png' | asset_url }}" alt="brand_logo"></a> 
+        {% endif %}
+      </div>
+
+
+
+      <ul class="navbar-nav mr-auto del_rio">
+
+		<!--    quick order modal      -->
+        <style>
+          .quick_order {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            {% if template == 'index' %}
+            color: white;
+            {% else %}
+            color: #171f15;
+            {% endif %}
+            padding-top: 1.5px;
+          }
+          .quick_order:hover {
+            {% if template == 'index' %}
+            color: white;
+            {% else %}
+            color: #171f15;
+            {% endif %}
+          }
+          .quick_order:focus, .quick_order.focus {
+            outline: 0;
+            box-shadow: 0 0 0 0 rgb(25 118 210 / 25%);
+          }
+          .modal-backdrop {
+          	    z-index: 0;
+          }
+          .brand_img {
+            left: 10px;
+          } 
+          @media screen and (max-width:1050px) {
+            .brand_img {
+              left: 8px;
+            }
+          }
+        </style>  
+        <!-- Button trigger modal -->
+        <button type="button" class="nav-item btn quick_order" data-toggle="modal" data-target="#exampleModal">
+          <a>QUICK ORDER</a>
+        </button>
+        
+        
+        
+        <li class="nav-item dropdown droppable">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+            MORE<i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <div class='mega-menu mega_bottlesec dropdown-menu'>
+            <div class="container container_2 cf">
+
+              <div class="img_mega col-lg-2 col-md-6 col-sm-6  col-xs-6">
+                <div class="mega_more_center">
+                  <a class="mega_pad" href="/pages/vineyard"><img src="{{'more_mega1.png' | asset_url }}" alt=""> 
+                    <p class="Reds_mega Reds_mega_vin">VINEYARD</p></a>
+                </div>
+              </div>
+
+              <div class="img_mega col-lg-2 col-md-6 col-sm-6  col-xs-6">
+                <div class="mega_more_center">
+                  <a class="mega_pad" href="/pages/wine-making"><img src="{{'more_mega2.png' | asset_url }}" alt=""> 
+                    <p class="Reds_mega Reds_mega_vin">WINEMAKING</p></a>
+                </div>
+              </div>
+              <div class="img_mega col-lg-2 col-md-6 col-sm-6  col-xs-6">
+                <div class="mega_more_center">
+                  <a  class="mega_pad" href="/pages/visit"><img src="{{'more_mega3.png' | asset_url }}" alt=""> 
+                    <p class="Reds_mega Reds_mega_vin">VISIT</p></a>
+                </div>
+              </div>                
+              <!--               <div class="img_mega col-lg-2 col-md-6 col-sm-6  col-xs-6">
+<div class="mega_more_center">
+<a  class="mega_pad" href="/pages/about-us"><img src="{{'more_mega4.png' | asset_url }}" alt=""> 
+<p class="Reds_mega Reds_mega_vin">ABOUT US</p></a>
+</div>
+</div> -->
+              <div class="img_mega col-lg-2 col-md-6 col-sm-6  col-xs-6">
+                <div class="mega_more_center">
+                  <a  class="mega_pad" href="/pages/history"><img src="{{'more_mega_5_homepage_img_updated.png' | asset_url }}" alt=""> 
+                    <p class="Reds_mega Reds_mega_vin">OUR HISTORY</p></a>
+                </div>
+              </div>
+
+              <div class="div_bg_newdesign_hr"></div>
+              <div class="img_mega img_mega_remov_padding_home col-lg-3 col-md-12 col-sm-12  col-xs-6">
+                <ul  class="Events__tour_text_awards_homepage_se">
+                  <a href="/blogs/all"><li class="Trade-Media btn_awards_homepage btn_awards_homepage_medi ">Blog</li></a>
+                  <a href="/pages/newsletter"><li class="Trade-Media btn_awards_homepage btn_awards_homepage_medi ">Newsletters</li></a>
+                  <a href="/pages/media-and-trade"><li class="Trade-Media btn_awards_homepage">Trade & Media</li></a> 
+                  <a href="/pages/Awards"><li class="Trade-Media btn_awards_homepage btn_awards_homepage_smp">Awards & Accolades</li></a>
+                  <a href="/pages/giving-back"><li class="Trade-Media btn_awards_homepage btn_awards_homepage_smp">Giving Back</li></a>
+                  <a href="/pages/contact-us"><li class="Trade-Media btn_awards_homepage">Contact Us</li></a> 
+                </ul>
+              </div>
+            </div><!-- .container -->
+          </div>
+
+        </li>
+
+
+        <li class="nav-item">
+          {% if customer %}
+          <a class="nav-link" href="/account" id="modal_lf">
+            ACCOUNT
+          </a>
+          {% else %}
+          <a class="nav-link" href="javascript:void(0)" id="modal_lf" data-toggle="modal" data-target="#modalLoginForm">
+            LOGIN
+            <span class="sr-only">(current)</span>
+          </a>
+          {% endif %}
+        </li>
+        
+        <li class="srch_icon" id="srch_icon_upper">
+          <div class="search_icon">
+          <svg width="20px" height="23px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
+               class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" stroke="#ffffff"/></svg>
+          </div>
+        </li>
+        
+        <li class="nav-item d_none_mobile">
+          <a class="nav-link cart_open_right" id="menubtn" href="javascript:void(0)">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg width="20px" height="23px" viewBox="0 0 20 23" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <desc>Created with Lunacy</desc>
+              <defs>
+                <path d="M-1.94844e-13 0L18 0L18 17L-1.94844e-13 17L-1.94844e-13 0Z" transform="translate(0 4)" id="path_1" />
+                <clipPath id="clip_1">
+                  <use xlink:href="#path_1" />
+                </clipPath>
+              </defs>
+              <g id="bag" transform="translate(1 1)">
+                <path d="M0 11L0 3.999Q0 3.80254 0.0192563 3.60703Q0.0385126 3.41152 0.0768396 3.21883Q0.115167 3.02615 0.172196 2.83815Q0.229224 2.65015 0.304406 2.46865Q0.379587 2.28715 0.472197 2.11388Q0.564807 1.94062 0.673953 1.77727Q0.783099 1.61393 0.907731 1.46206Q1.03236 1.3102 1.17128 1.17128Q1.3102 1.03236 1.46206 0.907731Q1.61393 0.783099 1.77727 0.673953Q1.94062 0.564807 2.11388 0.472197Q2.28715 0.379587 2.46865 0.304406Q2.65015 0.229224 2.83815 0.172196Q3.02615 0.115167 3.21883 0.0768396Q3.41152 0.0385126 3.60703 0.0192563Q3.80254 0 3.999 0L4.001 0Q4.19746 0 4.39297 0.0192563Q4.58848 0.0385126 4.78117 0.0768396Q4.97385 0.115167 5.16185 0.172196Q5.34985 0.229224 5.53135 0.304406Q5.71285 0.379587 5.88612 0.472197Q6.05938 0.564807 6.22272 0.673953Q6.38607 0.783099 6.53794 0.907731Q6.6898 1.03236 6.82872 1.17128Q6.96764 1.3102 7.09227 1.46206Q7.2169 1.61393 7.32605 1.77727Q7.43519 1.94062 7.5278 2.11388Q7.62041 2.28715 7.69559 2.46865Q7.77078 2.65015 7.8278 2.83815Q7.88483 3.02615 7.92316 3.21883Q7.96149 3.41152 7.98074 3.60703Q8 3.80254 8 3.999L8 11" transform="translate(5 0)" id="Path" fill="none" {% if template == 'index' %} stroke="#ffffff" {% else %} stroke="black" {% endif %} stroke-width="2" />
+                <g id="Rectangle">
+                  <g clip-path="url(#clip_1)">
+                    <use class="use_svg_tag_newdesign" xlink:href="#path_1" fill="none" {% if template == 'index' %} stroke="#ffffff" {% else %} stroke="black"{% endif %} stroke-width="2" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span id="cart-icon-count">({{ cart.item_count }})</span>
+          </a>
+
+        </li>
+
+      </ul>
+    </div>
+      </nav>
+  
+  <div class="main_srch_form" id="main_srch_form_id" style="display: none;">
+    <div class="frm">
+    	<form method="get" action="/search">
+            <input type="text" name="q" placeholder="What can we help you with?"/>
+          	<p>Type search terms and press enter to search</p>
+            <input  type="submit" value="Search" id="srch_btn_id"/>
+        </form>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <style>
+    @media screen and (min-width:1000px) {
+      .container.modal-dialog-centered {
+        max-width: 800px;
+      }
+    }
+  </style>  
+
+  <style>
+    @media screen and (max-width:767px) {
+      #main_srch_form_id, #srch_icon_upper {
+        display:none !important;
+      }    	
+    }
+    @media screen and (min-width:1000px) {
+        .exampleModal_faded_0 .modal-dialog {
+	max-width:800px;
+	}
+}
+    .exampleModal_faded_0 img {
+    height: 260px;
+}
+
+    #main_srch_form_id {
+        position:fixed;
+        width:100%; 
+      display:none;
+    }
+
+    {% if section.settings.sticky %}
+    #shopify-section-header {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+    {% endif %}
+  </style>
+
+  {% stylesheet 'scss' %}
+  // Announcement bar
+  #announcement-bar.bg-dark,
+  #announcement-bar.bg-primary {
+  a {
+  text-decoration: underline;
+  color: white;
+  }
+  }
+  {% endstylesheet %}
+
+
+  {% javascript %}
+  jQuery(document).ready(function ($) {
+
+  // Autofocus search input
+  $('#navbar-search').on('shown.bs.dropdown', function(e) {
+  $('#navbar-search input[type=search]').focus()
+  })
+
+  })
+  {% endjavascript %}
+
+  {% schema %}
+  {
+  "name": "Header",
+  "class": "site-header",
+  "settings": [
+  {
+  "type": "header",
+  "content": "Announcement bar"
+  },
+  {
+  "type": "checkbox",
+  "id": "message",
+  "label": "Show announcement",
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "home_page_only",
+  "label": "Home page only",
+  "default": false
+  },
+  /*{
+  "type": "select",
+  "id": "announcement_color",
+  "label": "Announcement bar Color",
+  "options": [
+  {
+  "value": "bg-white text-muted", "label": "White"
+  },
+  {
+  "value": "bg-light text-muted", "label": "Light"
+  },
+  {
+  "value": "bg-dark text-light", "label": "Dark"
+  },
+  {
+  "value": "bg-primary text-light", "label": "Primary"
+  }
+  ],
+  "default": "bg-dark text-light"
+  },*/
+  {
+    "type": "text",
+    "id": "color_heading",
+    "label": "Announcement Bar Text Color",
+    "default": "#fff"
+  },
+  {
+    "type": "text",
+    "id": "announcement_color",
+    "label": "Announcement Bar Background Color",
+    "default": "#000"
+  },
+  /*{
+  "type": "url",
+  "id": "announcement_link_url",
+  "label": "Announcement link URL"
+  },
+  {
+  "type": "text",
+  "id": "announcement_link_text",
+  "label": "Announcement link text",
+  "default": "Learn more"
+  },
+  {
+  "type": "header",
+  "content": "Logo"
+  },
+  {
+  "type": "image_picker",
+  "id": "logo",
+  "label": "Logo"
+  },
+  {
+  "type": "text",
+  "id": "logo_height",
+  "label": "Logo height (px)",
+  "default": "30",
+  "info": "Recommended is 30"
+  },*/
+  {
+  "type": "header",
+  "content": "Menu"
+  },
+  {
+  "type": "link_list",
+  "id": "menu",
+  "label": "Menu",
+  "default": "main-menu"
+  }
+  /*,
+  {
+  "type": "select",
+  "id": "menu_position",
+  "label": "Menu Position",
+  "options": [
+  {
+  "value": "mr-auto", "label": "Left"
+  },
+  {
+  "value": "ml-auto", "label": "Right"
+  }
+  ]
+  },
+  {
+  "type": "header",
+  "content": "General Settings"
+  },
+  {
+  "type": "select",
+  "id": "navbar_color",
+  "label": "Navbar Color",
+  "default": "bg-white navbar-light",
+  "options": [
+  {
+  "value": "bg-white navbar-light", "label": "White"
+  },
+  {
+  "value": "bg-light navbar-light", "label": "Light"
+  },
+  {
+  "value": "bg-dark navbar-dark", "label": "Dark"
+  },
+  {
+  "value": "bg-primary navbar-dark", "label": "Primary"
+  }
+  ]
+  },
+  {
+  "type": "checkbox",
+  "id": "container",
+  "label": "Wrap in container",
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "sticky",
+  "label": "Sticky navbar",
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "shadow",
+  "label": "Shadow",
+  "default": true
+  },
+  {
+  "type": "header",
+  "content": "Advanced Settings"
+  },
+  {
+  "type": "select",
+  "id": "navbar_expand",
+  "label": "Navbar expand",
+  "info": "Responsive behaviour [Learn more](https://getbootstrap.com/docs/4.5/components/navbar/#responsive-behaviors)",
+  "options": [
+  {
+  "value": "navbar-expand-sm", "label": "Expand small (sm)"
+  },
+  {
+  "value": "navbar-expand-md", "label": "Expand medium (md)"
+  },
+  {
+  "value": "navbar-expand-lg", "label": "Expand large (lg)"
+  },
+  {
+  "value": "navbar-expand-xl", "label": "Expand extra-large (xl)"
+  },
+  {
+  "value": "", "label": "Always collapse"
+  }
+  ]
+  }*/
+  ],
+  "blocks": [
+  {
+  "type": "select",
+  "name": "Announcement text",
+  "settings": [
+  {
+  "type": "text",
+  "id": "announcement_text",
+  "label": "Announcement text",
+  "default": "Announce something important here"
+  },
+  {
+  "type": "url",
+  "id": "link_for_announcementbars11",
+  "label": "Announcement Link"
+  }
+  ]
+  }
+  ]
+  }
+  {% endschema %}
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{ shop.name }}",
+  {% if section.settings.logo %}
+    "logo": "https:{{ section.settings.logo | img_url: 'master' }}",
+  {% endif %}
+  "sameAs": [
+    "{{ settings.social_twitter_link }}",
+    "{{ settings.social_facebook_link }}",
+    "{{ settings.social_pinterest_link }}",
+    "{{ settings.social_instagram_link }}",
+    "{{ settings.social_tumblr_link }}",
+    "{{ settings.social_snapchat_link }}",
+    "{{ settings.social_youtube_link }}",
+    "{{ settings.social_vimeo_link }}"
+  ],
+  "url": "{{ shop.url }}{{ page.url }}"
+}
+  </script>
+  {% if template.name == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  </script>
+  {% endif %}
+
+
+  <script>
+
+    jQuery(document).ready(function()  {
+
+      if (jQuery("li").hasClass("announcementtextss2")) {
+
+        function scrollTxt(el, heightTxt) {
+          let v = jQuery(el).css('top');
+          if (v != heightTxt) {
+            jQuery(el).css({
+              'transition':'all 0.5s ease',
+              '-webkit-transition':'all 0.5s ease',
+              '-o-transition':'all 0.5s ease',
+              'top':heightTxt
+            });
+            jQuery(el).children('.ul_announcemnet_bar_088 li').first().clone().appendTo(el);
+          }
+          else {
+            jQuery(el).children('.ul_announcemnet_bar_088 li').first().remove();
+            jQuery(el).css({
+              'transition':'none',
+              '-webkit-transition':'none',
+              '-o-transition':'none',
+              'top':'0'
+            });
+          }
+        }
+        const size = jQuery('ul.ul_announcemnet_bar_088').children('.ul_announcemnet_bar_088 li').height();
+        window.setInterval(() => {
+                           scrollTxt('ul.ul_announcemnet_bar_088', -size+'px')}, 2000);
+    }
+                           });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let dismissed = sessionStorage.getItem("dismissed");
+      let alertDiv = document.getElementById("anouncmnt_bar");
+      let navdiv_1 = document.getElementById("Thisis_nav_21");
+      let dismissButton = document.getElementById("dismiss");
+      if(!dismissed) {
+        alertDiv.classList.remove("hide8800");
+
+      }
+      jQuery(".announcement-bar__close").click(function() {
+        alertDiv.classList.add("hide8800");
+
+        sessionStorage.setItem("dismissed", true);
+        jQuery("#site-main").css('padding-top', '0px');    
+      });
+    });  
+    
+//     $(document).ready(function(){
+//       jQuery(".announcement-bar__close").click(function() {
+//         document.getElementById("Thisis_nav_21").classList.remove("scrollremove");
+//       });
+//     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% if template == 'index' %}
+
+    $(".nav-item.dropdown.droppable").hover(function() {
+      $(".navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav").addClass("bg-nurse");
+      jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+      jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+      jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","transition: all 0s");
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+      jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+      jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+      jQuery(".search_icon svg").attr("style","color:#171f15");
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+      jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+    }, function() {
+      $(".navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav").removeClass("bg-nurse");
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : white !important");
+      jQuery('g#bag path').attr("style","stroke:white !important");
+      jQuery(".search_icon svg").attr("style","color:White");
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:white !important");
+      jQuery('.brand_img img').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+      jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","transition: all 0.4s ease 0s");
+    });
+
+    jQuery(document).ready(function()  {
+      var $win = jQuery(window);
+
+      $win.scroll(function () {
+        if ( $win.scrollTop() == 0 )
+          console.log('');
+
+        else if ( $win.scrollTop() < 700 ) {
+          jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","background-color:transparent");
+          jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color:white !important");
+          jQuery('g#bag path').attr("style","stroke:white !important");
+          jQuery('use.use_svg_tag_newdesign').attr("style","stroke:white !important");
+          jQuery('.brand_img img').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+          jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').attr("style","position : absolute");
+          jQuery('.section_fix').attr("style","position:absolute");
+          jQuery('#cart-icon-count').attr("style","color:white");
+          jQuery('p.navbar-toggler-text_8900').attr("style","color:white !important");
+          jQuery('img.new_image_design_logo_234').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+          $(".nav-item.dropdown.droppable").hover(function(){
+            var	navii = jQuery('.navbar.navbar-expand-lg.navbar-light');
+            navii.removeClass("scrollremove");
+          },function(){
+            jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","background-color:transparent");
+            jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color:white !important");
+            jQuery('g#bag path').attr("style","stroke:white !important");
+            jQuery('use.use_svg_tag_newdesign').attr("style","stroke:white !important");
+            jQuery('.brand_img img').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').attr("style","position : absolute");
+            jQuery('.section_fix').attr("style","position:absolute");
+            jQuery('#cart-icon-count').attr("style","color:white");
+            jQuery('p.navbar-toggler-text_8900').attr("style","color:white !important");
+            jQuery('img.new_image_design_logo_234').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+            var	navii_22 = jQuery('.navbar.navbar-expand-lg.navbar-light');
+            navii_22.removeClass("scrollremove");
+          });
+        }
+        
+        
+        
+
+        //      if announcement bar cancelled
+
+        if(!$('#anouncmnt_bar').hasClass('hide8800'))  {
+          if ( $win.scrollTop() == 0 ) { 
+            
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').addClass("margin_top_100px_header_newdesign");
+            jQuery('.navbar.navbar-expand-lg.navbar-light').addClass("scrollremove");
+          }            
+          else if ( $win.scrollTop() > 700 ) {
+            jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+            jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+            jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+            jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').removeClass("margin_top_100px_header_newdesign");
+            jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+            jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+            $(".nav-item.dropdown.droppable").hover(function(){
+            jQuery('.navbar.navbar-expand-lg.navbar-light').addClass("scrollremove");
+            },function(){                                     
+              jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+              jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+              jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+              jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+              jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').removeClass("margin_top_100px_header_newdesign");
+              jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+              jQuery('.navbar.navbar-expand-lg.navbar-light').addClass("scrollremove");
+            });
+            console.log('');
+
+            jQuery('#cart-icon-count').attr("style","color:black");
+            'use strict';
+            var css, currentScrollTopss = 700,
+                navbarss = jQuery('.navbar.navbar-expand-lg.navbar-light');
+
+            jQuery(window).scroll(function () {
+              var ass = jQuery(window).scrollTop() + 700;
+              var bss = navbarss.height();
+              currentScrollTopss = ass;
+              if (css < currentScrollTopss && ass > bss + 700) {
+                navbarss.addClass("scroll_default");
+              } else if (css > currentScrollTopss && !(ass <= 700)) {
+                navbarss.removeClass("scroll_default");
+              }
+              css = currentScrollTopss;                         
+            });
+          }
+        }  
+        
+        //      if announcement bar cancelled
+// Our work is in this
+        if ( jQuery("#anouncmnt_bar").hasClass("hide8800") ) {
+          
+//           if ( $win.scrollTop() == 0 ) {
+//                       jQuery('.navbar.navbar-expand-lg.navbar-light').removeClass("scrollremove");          
+//           }
+         if ( $win.scrollTop() > 700 ) {
+            jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+            jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+            jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+            jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+            jQuery('#cart-icon-count').attr("style","color:black");
+            jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+            jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+            $(".nav-item.dropdown.droppable").hover(function(){
+            jQuery('.navbar.navbar-expand-lg.navbar-light').removeClass("scrollremove");
+            },function(){
+              jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+              jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+              jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+              jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+              jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').removeClass("margin_top_100px_header_newdesign");
+              jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+              jQuery('.navbar.navbar-expand-lg.navbar-light').removeClass("scrollremove");
+            });
+            
+            
+            
+            
+            'use strict';
+            var cs, currentScrollTops = 700,
+                navbars = jQuery('.navbar.navbar-expand-lg.navbar-light');
+            jQuery(window).scroll(function () {
+              var as = jQuery(window).scrollTop() + 700;
+              var bs = navbars.height();
+              currentScrollTops = as;
+              if (cs < currentScrollTops && as > bs + 700) {
+                navbars.addClass("scrollUp");
+              } else if (cs > currentScrollTops && !(as <= 700)) {
+                navbars.removeClass("scrollUp");
+              }
+              cs = currentScrollTops;                         
+            });
+          }
+        }
+        
+        
+        
+        
+        else {
+          if ( $win.scrollTop() == 0 ) {
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').addClass("margin_top_100px_header_newdesign");
+          }            
+          else if ( $win.scrollTop() > 700 ) {
+            jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+            jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+            jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+            jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+            jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').removeClass("margin_top_100px_header_newdesign");	
+            jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+            jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+            jQuery('#cart-icon-count').attr("style","color:black");
+            $(".nav-item.dropdown.droppable").hover(function(){
+              var	navii_31 = jQuery('.navbar.navbar-expand-lg.navbar-light');
+              navii_31.addClass("scrollremove");              
+            },function(){
+              jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+              jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+              jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+              jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+              jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('img.new_image_design_logo_234').attr("src","{{'logo1.png' | asset_url }}");
+              jQuery('p.navbar-toggler-text_8900').attr("style","color:black !important");
+              var	navii_32 = jQuery('.navbar.navbar-expand-lg.navbar-light');
+              navii_32.addClass("scrollremove");
+            });                      
+            'use strict';
+            var cs, currentScrollTops = 700,
+                navbars = jQuery('.navbar.navbar-expand-lg.navbar-light');
+            jQuery(window).scroll(function () {
+              var as = jQuery(window).scrollTop() + 700;
+              var bs = navbars.height();
+              currentScrollTops = as;
+              if (cs < currentScrollTops && as > bs + 700) {
+                navbars.removeClass("scrollremove");
+              } else if (cs > currentScrollTops && !(as <= 700)) {
+                navbars.addClass("scrollremove");
+              }
+              cs = currentScrollTops;                         
+            });
+          }
+        }
+      });
+    });
+
+
+
+
+    {% endif %}
+
+
+
+
+
+
+
+
+  </script>  
+
+
+
+  <style>
+    .scrollUp {
+      transform: translateY(-130px)    
+    }
+    .scroll_default {
+      transform: translateY(-150px);
+    }
+    .scrollremove {
+      transform: translateY(-50px);
+    }
+    .margin_top_100px_header_newdesign {
+      margin-top:50px;
+    }
+    .section.section_fix .navbar.navbar-expand-lg.navbar-light {
+      transition: all 0.4s;
+    }
+    .section_transition {
+      transition: all 0.9s;
+    }
+    .bg-nurse {
+      background-color: #ffffff !important;
+    }
+    
+    .srch_icon {color: white; display: flex; align-items: center; justify-content: center; margin-left: 5px;margin-right: 6px;}
+    .main_srch_form .frm {padding: 3% 0; background: white;}
+    .main_srch_form .frm form input {width: 100%; height: 65px; font-size: 35px; color: #3e3b3b; text-align: center; border: none;     font-family: 'Butler' !important; font-weight: 300;}
+    .main_srch_form .frm form input:focus {border: none; outline: none;}
+    .main_srch_form .frm form p {background: white; text-align: center; height: 30px; font-family: 'Apercu Pro'; color: #656161;}
+    .main_srch_form .frm form #srch_btn_id {display: none;}
+    
+  </style>
+  
+  <script>
+
+    $(document).mouseup(function(e){
+      var container = $("#main_srch_form_id");
+
+      // If the target of the click isn't the container
+      if(!container.is(e.target) && container.has(e.target).length === 0){
+        container.hide();
+        {% if template == 'index' %}                                                                 
+        jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : white !important");
+        jQuery('g#bag path').attr("style","stroke:white !important");
+        jQuery('use.use_svg_tag_newdesign').attr("style","stroke:white !important");
+        jQuery('.brand_img img').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+        jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","transition: all 0.4s ease 0s");
+        jQuery(".search_icon svg").attr("style", "color: white;");
+        {% endif %}
+        $('.nav-item.dropdown.droppable').removeClass("iam_zeggi");
+        $("#main_srch_form_id").fadeOut(100);
+      }
+    });
+
+
+    // afii js
+    {% if template == 'index' %}                           
+    var nav_3 = true;
+    function openNav_3() {
+      //       $('#main_srch_form_id').slideDown('slow');
+      jQuery('g#bag path').attr("style","stroke:#171f15 !important"); 
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+      jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}"); 
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+      jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","transition: all 0s");
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : #171f15 !important");
+      jQuery('.navbar.navbar-expand-lg.navbar-light.thisisnewdesignnav').css({'position':'fixed', 'background-color':'white'});
+      jQuery('g#bag path').attr("style","stroke:#171f15 !important");
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:#171f15 !important");
+      jQuery('.brand_img img').attr("src","{{'logo1.png' | asset_url }}");
+      jQuery(".search_icon svg").attr("style", "color: black;");
+      $('.nav-item.dropdown.droppable').addClass("iam_zeggi");
+      $("#main_srch_form_id").fadeIn(200);
+      nav_3 = false;
+    }
+    function closeNav_3() {
+      //       $('#main_srch_form_id').slideUp(800);
+      jQuery('#navbarSupportedContent.newclassesigndupport .nav-item a').attr("style","color : white !important");
+      jQuery('g#bag path').attr("style","stroke:white !important");
+      jQuery('use.use_svg_tag_newdesign').attr("style","stroke:white !important");
+      jQuery('.brand_img img').attr("src","{{ 'del-rio-v-ineyards-logo.png' | asset_url }}");
+      jQuery('.section.section_fix .navbar.navbar-expand-lg.navbar-light').attr("style","transition: all 0.4s ease 0s");
+      jQuery(".search_icon svg").attr("style", "color: white;");
+      $('.nav-item.dropdown.droppable').removeClass("iam_zeggi");
+      $("#main_srch_form_id").fadeOut(100);
+      nav_3 = true;
+    }
+    $("#srch_icon_upper").click(function(){
+      nav_3 ? openNav_3() : closeNav_3() ;
+	});
+//     function toggleNavset_3() {
+//       nav_3 ? openNav_3() : closeNav_3() ;
+//     }   
+    
+    $(window).scroll(function() {
+      if( $(window).scrollTop() > 120 ) {
+        closeNav_3();
+        jQuery(".search_icon svg").attr("style", "color: black");
+        jQuery(".search_icon svg").addClass("search_icon_00");
+      }
+      else if( $(window).scrollTop() < 120 ) {
+        jQuery(".search_icon svg").attr("style", "color: white;");
+        jQuery(".search_icon svg").removeClass("search_icon_00");
+      }
+    });   
+    
+    $(document).ready(function() {
+      if ($(".container_bg_announcemnet_bar.announcement_bar_headertop").hasClass("hide8800")) {
+        $("#main_srch_form_id").attr("style","top:80px");
+      }
+      else {
+        $("#main_srch_form_id").attr("style","top:129px");
+        $(window).scroll(function() {
+          if( $(window).scrollTop() > 10 ) {
+            jQuery(".frm").attr("style", "margin-top: -50px;");
+          }
+          else if( $(window).scrollTop() < 10 ) {
+            jQuery(".frm").attr("style", "margin-top: 0px;");
+          }
+        });      
+      }
+    });
+    
+    {% else %} 
+    var nav_3 = true;
+    function openNav_3() {
+      $('.nav-item.dropdown.droppable').addClass("iam_zeggi");
+      $("#main_srch_form_id").fadeIn(200);
+      nav_3 = false;
+    }
+    function closeNav_3() {
+      $('.nav-item.dropdown.droppable').removeClass("iam_zeggi");
+      $("#main_srch_form_id").fadeOut(100);
+      nav_3 = true;
+    }
+    $("#srch_icon_upper").click(function(){
+      nav_3 ? openNav_3() : closeNav_3() ;
+	});
+//     function toggleNavset_3() {
+//       nav_3 ? openNav_3() : closeNav_3() ;
+//     }
+    $(window).scroll(function() {
+      if( $(window).scrollTop() > 10 ) {
+        closeNav_3();
+      }
+    });
+    
+    
+    $(document).ready(function() {
+      if ($(".container_bg_announcemnet_bar.announcement_bar_headertop").hasClass("hide8800")) {
+        $("#main_srch_form_id").attr("style","top:80px");
+      }
+      else {
+        $("#main_srch_form_id").attr("style","top:129px");
+      }
+    });
+    jQuery(".search_icon svg").attr("style", "color: black;");
+    {% endif %}
+
+
+//  override click       
+    $('.nav-item.dropdown.droppable').off('click').on('click', function(e) {
+      e.preventDefault();
+    });
+    $(".mega-menu.dropdown-menu.set_menu_design_del_rio , .mega-menu.mega_bottlesec.dropdown-menu").click(function(event){
+      event.stopPropagation();
+    });
+  </script>
+
+  <style>
+    .iam_zeggi {
+      pointer-events: none;  
+    }
+    #srch_icon_upper {
+      cursor: pointer;
+    }
+    .search_icon_00 {
+	color:black !important;
+}
+  </style>  

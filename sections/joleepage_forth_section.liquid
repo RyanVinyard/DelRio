@@ -1,0 +1,191 @@
+<style>
+  p.SHOP_joleee.shop_joliee:hover {
+    background-color:#8f4b33;
+    color:white;
+  }
+  
+</style>
+
+<!-- jolee section 4 -->
+
+<div class="jolee_section_4 animatioN-on_scroll_margin_top" id="jolee_sec1_button_url_00">
+    <div class="container">
+        <h1 class="Jolee-Wines-captures_jole">{{section.settings.jolee_sec4_heading}}<span>{{section.settings.jolee_sec4_wine_name}}</span></h1>
+        <div class="row justify_jolie">
+            <div class="owl-carousel owl-theme" id="carousel_shop_all299">
+            {% assign collectionallproducts = collections['jolee'].products  |  sort: 'price' | reverse %}
+              {% for product in collectionallproducts %}
+                  <div class="col-lg-4 col-md-6 col-sm-12 flower_jolee_red_34 rpnt_max_width_100">
+                        <div class="text-center png_carbernet_jolie product-url"  data-product-url="{{product.url}}"  style="cursor: pointer;">
+                          <a href="{{ product.url }}"><img class="displaY_me_inerhit_789444" src="{% if product.featured_image.size > 0 %}{{ product.featured_image | product_img_url: 'master' }}{% else %}{{ 'no_image1.png' | asset_url }}{% endif %}" alt=""> </a>
+                          <a href="javascript:void(0)"
+                             data-product-id="{{ product.id }}"
+                             class="add-to-cart-custom{% if product.available == true %} add-to-cart-blur{% endif %}"
+                             data-product-id="{{ product.id }}"
+                             {% if product.available == false %}disabled {% endif %}
+                          >
+                            <p class="SHOP_joleee shop_joliee" > {% if product.available == false %}SOLD OUT {% else %} ADD TO CART - {{product.price|money}} {% endif %} </p>
+                          </a>
+
+                        </div>
+                        <div class="text_below_jolee">
+                            <a href="{{ product.url }}"><p class="Ros-Jolee_jolie">{{product.title}}</p></a>
+                            <p class="Sweet-Bubbly_jolee Sweet-Bubbly_j00_jole_pgi">{{block.settings.jolee_sec4_Wine_Taste2}}</p>
+                            <div class="d-flex justify-content-center">
+        <!--                         <p class="class-star_rating_jile">★★★★★</p>
+                                <p class="-Reviews_jolie">{{block.settings.jolee_sec4_rating2}}</p> -->
+                            </div>
+<!--                             <p class="Perfect-companions-d_jolie">{{product.description}}</p> -->
+<!--                           <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span> -->
+                        </div>
+                    {% include 'products-modal-cart',product %}    
+                 </div>           
+              {% endfor %}
+          </div>
+        </div>
+    </div>
+</div>
+
+
+{% stylesheet %}
+.png_carbernet_jolie img {
+    width:auto !important;
+    display: inherit !important;
+}
+.displaY_me_inerhit_789444 {
+    display: inherit !important;
+}
+ #carousel_shop_all23 img {
+    width: auto;
+    display: inherit;
+}
+  #carousel_shop_all24 {
+   max-width:100%;
+  }
+   .owl-prev {
+    left: -3%; 
+    }
+  .owl-next {
+    right: -3%; 
+    }
+  .owl-prev,.owl-next {
+    position: absolute;
+    top: 40%;  
+  }
+  .fa.fa-angle-left,.fa.fa-angle-right {
+     font-size:44px;
+     font-weight:800;  
+  }
+  @media screen and (max-width:500px) {
+  .owl-prev {
+    left: 2%;
+  }
+  .owl-next {
+    right: 2%; 
+    }
+  .owl-prev,.owl-next {
+    top: 47%;  
+  }
+
+.png_carbernet_jolie {
+        width: 80%;
+        margin: auto;
+    }
+}
+@media screen and (max-width:400px) {
+.owl-carousel .owl-item img {
+    height: 260px;
+}
+.owl-prev, .owl-next {
+    top: 25%;
+}
+}
+@media screen and (max-width:350px) {
+.owl-carousel .owl-item img {
+    height: 250px;
+}
+}
+
+{% endstylesheet %}
+
+
+{% javascript %}
+
+      jQuery(document).ready(function () {
+      jQuery('#carousel_shop_all299').owlCarousel({
+          item: 3,
+          loop: false,
+          nav: true,
+          navText: [
+            "<span><i class='fa fa-angle-left'></i></span>",
+            "<span><i class='fa fa-angle-right'></i></span>"
+          ],
+          dots: false,
+          responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 2
+            },
+            1000: {
+              items: 3
+            }
+          }
+        })
+    });
+
+ jQuery('.product-url').on('click',function(e){
+	e.preventDefault();
+	var productURL = jQuery(this).attr('data-product-url');
+	window.location.href = productURL;
+	e.stopPropagation();
+});				
+
+
+  jQuery('.add-to-cart-custom').on('click', function(e){
+    e.preventDefault();
+	//jQuery("#site-main").addClass("blur");
+    var productID = jQuery(this).attr('data-product-id');
+    jQuery('#product_form_'+productID).find('button').click();
+	e.stopPropagation();
+  });
+
+
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "jolee fourth section",
+    "settings": [
+      {
+        "id":"jolee_sec4_heading",
+        "type":"textarea",
+        "label":"Heading"
+      },
+      {
+        "id":"jolee_sec4_wine_name",
+        "type":"text",
+        "label":"Wine Names"
+      }
+  ],
+  "blocks": [
+     {
+      "type": "select",
+      "name": "Add Button",
+      "settings": [
+        {
+        "id":"jolee_sec4_bg_image",
+        "type":"image_picker",
+        "label":"Background image"
+        },
+        {
+        "id":"jolee_sec4_Wine_Taste2",
+        "type":"text",
+        "label":"Wine Taste"
+        }
+     ]
+    }
+   ]
+  }
+{% endschema %}

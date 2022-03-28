@@ -1,0 +1,478 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+<style>
+
+  .my_account_page_section_1 {
+    padding: 150px 45px 0px;
+  }
+  h1.Hi-Lindsey_my_account {
+    font-family: 'Butler';
+    font-size: 32px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #171f15;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #bcc3bd;
+  }
+  .address_of_my_account {
+    font-family: Apercu;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2e4433;
+    padding-bottom: 4px;
+  }
+  p.address_of_my_account:hover  {
+    font-weight: bold;
+    border-bottom: 2px solid #2e4433;
+    width: fit-content;
+  }
+
+  .or_his_my_account {
+    padding-top: 30px;
+  }
+  .history_my_account_txt a {
+    text-decoration: none;
+  }
+  .history_my_account_txt_1 p {
+    font-family: Apercu Pro;
+    font-size: 23px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.5px;
+    color: #171f15;
+    margin-bottom: 24px;
+  }
+  a.add_adderess_new_my_acc {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: #2e4433;
+    border: solid 1px #2e4433;
+    padding: 16px 18px 16px 14px;
+    text-decoration: none;
+  }
+  .add_adderess_new_my_acc i {
+    margin-right: 10px;
+  }
+
+  /* section 2 css */
+
+  .border_one_pix_my_account {
+    border: solid 1px #2e4433;
+    padding: 33px 30px;
+    margin-top: 50px;
+    width: 60%;
+  }
+
+  .Create-an-Account_join_my_account {
+    font-family: Apercu Pro;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.5px;
+    color: #171f15;
+    margin-bottom: 25px;
+  }
+
+  .pad_3_club_form_my_account {
+    padding-bottom: 30px;
+  }
+  .FIRST-NAME_join_my_account label {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: #171f15;
+    text-transform: uppercase;
+  }
+  .Callie_my_account input {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #171f15;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #2e4433;
+    padding-left: 15px;
+    background: transparent;
+  }
+  .container_check_mark_my_account {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .container_check_mark_my_account input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark_my_account {
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: 1px solid;
+  }
+  .I-have-read-and-agre_my_account {
+    font-family: Apercu;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    padding-left: 10px;
+    margin-left: 30px;
+  }
+  .I-have-read-and-agre_my_account a {
+    font-weight: bold;
+    color: #2e4433;
+  }
+  input[type="submit"] {
+    background-color: #2e4433;
+    color: white;
+    letter-spacing: 2.5px;
+    border: 0px;
+
+  }
+  .SHOP-WINES_continue_club_my_account {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2e4433;
+    padding: 13px 11.5%;
+    margin-top: 20px;
+  }
+  .container_check_mark_my_account input:checked ~ .checkmark_my_account {
+    background-color: white;
+    border: 1px solid;
+  }
+  .checkmark_my_account:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .container_check_mark_my_account .checkmark_my_account:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #2e4433;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .container_check_mark_my_account input:checked ~ .checkmark_my_account:after {
+    display: block;
+  }
+  .Set-as-default-addre_my_account_my_account {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .SHOP-WINES_continue_club_my_account {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f5f5f3;
+  }
+  .my-account_submiteed_my_account {
+    justify-content: space-between;
+  }
+  .my-account_submiteed_my_account a {
+    text-decoration: none;
+    border: solid 1px #2e4433;
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #2e4433;
+    background-color: #ffffff;
+    margin-top: 20px;
+    width: 200px;
+    padding: 13px 0px;
+  }
+  .my-account_submiteed_my_account a:hover {
+    color: #2e4433;
+  }
+
+
+  @media screen and (max-width:1200px) {
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 8.5%;
+    }
+    .my-account_submiteed_my_account a {
+      width:161px;
+    }
+    .FIRST-NAME_join_my_account label {
+      font-size: 11px;
+    }
+    .Callie_my_account input {
+      font-size: 12px;
+    }
+    .Create-an-Account_join_my_account {
+      font-size: 21px;
+    }
+
+  }  
+
+  @media screen and (max-width:1100px) {
+    .Callie_my_account input {
+      height: 34px;
+    }
+    .FIRST-NAME_join_my_account label {
+      font-size: 10px;
+    }
+    .my-account_submiteed_my_account a {
+      width: 150px;
+    }
+
+  }
+  @media screen and (max-width:991px) {
+    .border_one_pix_my_account {
+      width: 100%;
+    }
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 11.5%;
+    }
+    .my-account_submiteed_my_account a {
+      width: 46.5%;
+    }
+
+  }
+
+  @media screen and (max-width: 650px) {
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 9.5%;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .my_account_page_section_1 {
+      padding: 150px 15px 0px;
+    } 
+    .input_form_join_my_account.FIRST-NAME_join_my_account.Callie_my_account {
+      padding-top:30px;
+    } 
+  }
+  @media screen and (max-width:450px) {
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 6.5%;
+    }
+
+  }
+  @media screen and (max-width:400px) {
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 6.5%;
+    }
+    .SHOP-WINES_continue_club_my_account {
+      font-size: 9px;
+    }
+    .my-account_submiteed_my_account a {
+      font-size: 9px;
+    }
+  }
+  @media screen and (max-width:350px) { 
+    .border_one_pix_my_account {
+      padding: 20px 15px;
+    }
+    .Create-an-Account_join_my_account {
+      font-size: 17px;
+    }
+    .SHOP-WINES_continue_club_my_account {
+      padding: 13px 5.5%;
+    }
+  }
+
+
+
+</style>  
+
+
+
+
+
+<div class="my_account_page_section_1">
+  <div class="container">
+    <h1 class="Hi-Lindsey_my_account">Hi, Lindsey!</h1>
+
+    <div class="or_his_my_account">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+          <div class="history_my_account_txt">
+            <a href="#"><p class="address_of_my_account">Order History</p></a>
+            <a href="#"><p class="address_of_my_account">Address</p></a>
+            <a href="#"><p class="address_of_my_account">Logout</p></a> 
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+          <div class="my_account_hist_22">
+            <div class="history_my_account_txt_1">
+              <p>Your Addresses</p>
+            </div>
+            <div class="btn_add_new">
+              <a href="#" class="add_adderess_new_my_acc"><i class="fa fa-plus"></i> ADD A NEW ADDRESS</a> 
+            </div>
+          </div>
+
+          <div class="border_one_pix_my_account">
+            <h1 class="Create-an-Account_join_my_account">Add a New Address</h1>
+
+            <div class="login_dorm_club_my_account">
+              <form action="" method="POST">
+                <div class="Callie_my_account FIRST-NAME_join_my_account">
+                  <div class="pad_3_club_form_my_account">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <label for="Lindsey">FIRST NAME</label>
+                        <br>
+                        <input type="text" name="" id="Lindsey" placeholder="Lindsey">
+                      </div>
+                      <div class="col-lg-6 col-md-6 input_form_join_my_account FIRST-NAME_join_my_account Callie_my_account">
+                        <label for="last_name">LAST NAME</label>
+                        <br>
+                        <input type="text" name="" id="last_name" placeholder="Last name">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pad_3_club_form_my_account">
+                    <label for="Enter_company_name">Company</label>
+                    <br>
+                    <input type="text" name="" id="Enter_company_name" placeholder="Enter company name">
+                  </div>
+                  <div class="pad_3_club_form_my_account">
+                    <label for="Enter_address_1">Address 1</label>
+                    <br>
+                    <input type="text" name="" id="Enter_address_1" placeholder="Enter address 1">
+                  </div>
+                  <div class="pad_3_club_form_my_account">
+                    <label for="Enter_address_2">Address 2</label>
+                    <br>
+                    <input type="text" name="" id="Enter_address_2" placeholder="Enter address 2">
+                  </div>
+
+
+                  <div class="pad_3_club_form_my_account">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <label for="City">City</label>
+                        <br>
+                        <input type="text" name="" id="City" placeholder="- -">
+                      </div>
+                      <div class="col-lg-6 col-md-6 input_form_join_my_account FIRST-NAME_join_my_account Callie_my_account">
+                        <label for="Country">Country</label>
+                        <br>
+                        <input type="text" name="" id="Country" placeholder="United States">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pad_3_club_form_my_account">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <label for="state">State/Province</label>
+                        <br>
+                        <input type="text" name="" id="state" placeholder="- -">
+                      </div>
+                      <div class="col-lg-6 col-md-6 input_form_join_my_account FIRST-NAME_join_my_account Callie_my_account">
+                        <label for="zip_code">Zip/Postal Code</label>
+                        <br>
+                        <input type="text" name="" id="zip_code" placeholder="- -">
+                      </div>
+                    </div>
+                  </div>                           
+
+                  <div class="pad_3_club_form_my_account">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <label for="phone_number">Phone</label>
+                        <br>
+                        <input type="text" name="" id="phone_number" placeholder="- -">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="container_check_mark_my_account">
+                    <input type="checkbox">
+                    <span class="checkmark_my_account"></span>
+                  </label>
+                  <span class="I-have-read-and-agre_my_account Set-as-default-addre_my_account">Set as default address</span>
+                </div>
+
+
+                <div class="d-flex my-account_submiteed_my_account">
+                  <input class="SHOP-WINES_continue_club_my_account" type="submit" value="ADD ADDRESS">
+                  <a href="#">CANCEL</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<style>
+  #add_classonmobleaboutus {
+    margin-bottom:30px;
+    text-align:center;
+  }
+  @media screen and (max-width:991px) and (min-width:767px) {
+    .Lee_Traynham_section_owner {
+      justify-content: space-evenly;
+    }
+    .Lee_Traynham_section_owner .w-20 {
+      margin-right: 0px;
+    }
+  }
+
+  @media screen and (max-width:767px) {
+    #add_classonmobleaboutus {
+      text-align:center;
+    }
+    #add_classonmobleaboutus img {
+      width:100%;
+    }
+  }
+  
+  
+/*  image  resizing  */
+  
+  .for_overflow_hid_11 {
+    overflow: hidden;
+    width: 208px;
+  }
+  .for_overflow_hid_11 img {
+    height: 288px;
+  }
+  @media screen and (max-width:500px) {
+    .for_overflow_hid_11 {
+      width: 167px;
+    }
+    .for_overflow_hid_11 img {
+      height: 232px;
+    }
+  }
+    @media screen and (max-width:400px) {
+    .for_overflow_hid_11 {
+      width: 142px;
+    }
+    .for_overflow_hid_11 img {
+      height: 197px;
+    }
+  }
+    @media screen and (max-width:370px) {
+    .for_overflow_hid_11 {
+      width: 115px;
+    }
+    .for_overflow_hid_11 img {
+      height: 160px;
+    }
+  }
+</style>  
+<div class="section_5_about">
+  <div class="container">
+    <div class="del_rio_about_family">
+      <h1>{{section.settings.Aboutus_section6_heading}}</h1>
+      <p class="del_vin_about">{{section.settings.Aboutus_section6_text}}</p>
+      <div class="Lee_Traynham_section_owner row">
+        {% for block in section.blocks%}
+        <div class="w-20 add_classonmoble{{forloop.index}} add_classonmobleaboutus" id="add_classonmobleaboutus">
+          <div class="for_overflow_hid_11">
+          	<img src="{{block.settings.Aboutus_section6_family_img | img_url:'450x450', crop: 'center' }}" alt="">
+          </div>
+          <div class="Lee_aynham_about">
+            <p>{{ block.settings.Aboutus_section6_family_name}}</p>
+            <p>{{block.settings.Aboutus_section6_family_designation}}</p>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+    </div>
+  </div>
+</div>      
+
+<script>
+  jQuery(window).resize(function() {
+    if (jQuery(window).width() < 767) {
+      jQuery(".add_classonmobleaboutus").removeClass('w-20');
+      jQuery(".add_classonmobleaboutus").addClass('col-6');
+    } else {
+      jQuery(".add_classonmobleaboutus").removeClass('col-6');
+      jQuery(".add_classonmobleaboutus").addClass('w-20');
+    }
+  }).resize();    
+</script>
+
+{% schema %}
+    {
+      "name": "Sixth name",
+      "settings": [
+      {
+        "id": "Aboutus_section6_heading",
+        "type": "text",
+        "label": "Enter Heading"
+      },
+      {
+        "id": "Aboutus_section6_text",
+        "type": "textarea",
+        "label": "Add custom text below",
+        "default": "Enter text here"
+      }
+      ],
+      "blocks": [
+        {
+          "type": "select",
+          "name": "Family",
+        "settings": [
+        {
+          "id": "Aboutus_section6_family_img",
+          "type": "image_picker",
+          "label": "Member Image"
+        },
+        {
+          "id": "Aboutus_section6_family_name",
+          "type": "text",
+          "label": "Enter Name"
+        },
+        {
+          "id": "Aboutus_section6_family_designation",
+          "type": "text",
+          "label": "Enter Designation"
+        }
+        ]
+        }
+      ]
+    }
+{% endschema %}

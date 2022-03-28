@@ -1,0 +1,20 @@
+<div class="vintners_s_section_1">
+  <div class="container-fluid">
+    <div class="img_sec_fluid_vintners">
+      <img src="{{section.settings.vintner_pag_image_sec_1 | img_url:'master'}}{{'vintners__page_s_img_1.png' | asset_url }}" alt="">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vintners First section",
+  "settings": [
+     {
+      "id": "vintner_pag_image_sec_1",
+      "type": "image_picker",
+      "label": "Image"
+      }
+]
+}
+{% endschema %}

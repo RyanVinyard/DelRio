@@ -1,0 +1,59 @@
+<!-- section 4 -->
+
+<div class="section_4_history">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row">
+          {% for block in section.blocks %}
+          <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+            <div class="sec_4_imag_last">
+              <img src="{{block.settings.his_pg_section_7_image_1 | img_url: 'master'}}{{'history_page_imag_6.png' | asset_url }}" alt="">
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="section_end_txt_history">
+          <h1>{{section.settings.his_pg_section_7_heading_1}}</h1>
+          <p>{{section.settings.his_pg_section_7_desc_1}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "settings": [
+     {
+      "id": "his_pg_section_7_heading_1",
+      "type": "textarea",
+      "label": "Heading"
+      },{
+      "id": "his_pg_section_7_desc_1",
+      "type": "textarea",
+      "label": "Description"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Image",
+      "settings": [
+        {
+          "id": "his_pg_section_7_image_1",
+          "type": "image_picker",
+       		"label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

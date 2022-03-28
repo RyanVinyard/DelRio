@@ -1,0 +1,39 @@
+        <!-- section 2 -->
+
+        <div class="section_2_history">
+            <div class="container">
+                <div class="del_rio_estate_history">
+                    <h1 class="History-of-Del-Rio-V_his">{{section.settings.His_pg_heading_sec_2}}</h1>
+                    <div class="history_page_imag_1_his text-center">
+                        <img class="w-100" src="{{ section.settings.His_pg_image_sec_2 | img_url: 'master' }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+{% schema %}
+  {
+    "name": "History second section",
+    "settings": [
+     {
+      "id": "His_pg_heading_sec_2",
+      "type": "textarea",
+      "label": "Heading"
+       },
+     {
+      "id": "His_pg_image_sec_2",
+      "type": "image_picker",
+      "label": "image"
+      }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

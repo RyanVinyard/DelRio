@@ -1,0 +1,155 @@
+
+<style>
+  
+    .vintners_s_section_4 {
+      padding: 100px 45px;
+      background-color: #fcf9ef;
+  }
+p.get_in_touch_vintners {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1px;
+    color: #171f15;
+    margin-bottom: 8px;
+}
+    
+
+p.email_address_vintners_ee {
+    font-family: Apercu Pro;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.5px;
+    color: #2e4433;
+  }
+  @media screen and (max-width:1200px) {
+      .vintners_s_section_4 {
+        padding: 80px 45px;
+    }
+  
+      .last_sec_tex_vintner h1 {
+        font-size: 33px;
+    }
+       p.email_address_vintners_ee {
+        font-size: 20px;
+    }
+ 
+  }
+  .last_sec_tex_vintner h1 {
+        font-family: 'Butler';
+        font-size: 40px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        color: #171f15;
+        margin-bottom: 40px;
+}
+
+  .last_sec_tex_vintner.text-center {
+      width: 70%;
+      margin: 0 auto;
+  }
+
+  
+  
+  @media screen and (max-width: 991px) {
+      .last_sec_tex_vintner h1 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+        p.get_in_touch_vintners {
+        font-size: 12px;
+    }    
+    
+    p.email_address_vintners_ee {
+        font-size: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+      .last_sec_tex_vintner h1 {
+        font-size: 23px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+      .last_sec_tex_vintner.text-center {
+        width: 87%;
+        margin: 0 auto;
+    }
+  }
+  @media screen and (max-width:500px) {
+      .last_sec_tex_vintner.text-center {
+        width: 100%;
+    }
+      .last_sec_tex_vintner h1 {
+        font-size: 27px;
+    }
+        .vintners_s_section_4 {
+        padding: 50px 15px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 400px) {
+    .last_sec_tex_vintner h1 {
+      font-size: 23px;
+    }
+    p.email_address_vintners_ee {
+    font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .last_sec_tex_vintner h1 {
+        font-size: 20px;
+    }
+    p.get_in_touch_vintners {
+    margin: 5px;
+    }
+    .last_sec_tex_vintner h1 {
+    font-size: 20px;
+    }
+  }
+  
+</style>  
+
+
+
+        <div class="vintners_s_section_4">
+            <div class="container">
+                <div class="last_sec_tex_vintner text-center">
+                    <h1>{{section.settings.vintner_Winemakers_interested_11}}</h1>
+                    <p class="get_in_touch_vintners">Get In Touch</p>
+                  <a class="text-decoration_none_as_homepage_123" href="mailto:{{section.settings.vintner_Winemakers_email}}"><p class="email_address_vintners_ee">{{section.settings.vintner_Winemakers_email}}</p></a>
+                </div>
+            </div>
+        </div>
+
+
+
+{% schema %}
+  {
+    "name": "Get In Touch",
+    "settings": [
+     {
+      "id": "vintner_Winemakers_interested_11",
+      "type": "textarea",
+      "label": "Contact Description"
+       },
+     {
+      "id": "vintner_Winemakers_email",
+      "type": "textarea",
+      "label": "Email Address"
+       }
+
+]
+  }
+{% endschema %}
+

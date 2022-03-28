@@ -1,0 +1,30 @@
+<section class="top-section-trade">
+  <div class="mycontainer container trade-content">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="section-heading"><h2>{{section.settings.trade_Section_1_heading}}</h2></div>
+        <div class="section-text"><p> {{section.settings.trade_Section_desc_1}}</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="my-seperator" ></div>
+
+{% schema %}
+  {
+    "name": "Trade first Section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "trade_Section_1_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "trade_Section_desc_1",
+        "label": "Description"
+      }
+    ]
+  }
+{% endschema %} 

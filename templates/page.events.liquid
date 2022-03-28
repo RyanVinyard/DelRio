@@ -1,0 +1,687 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+{{ 'FullCalendar_main.css' | asset_url | stylesheet_tag }}
+
+<style>
+  
+  .calender_events_del_rio_page_sectioN h1 {
+    font-family: 'Butler';
+    font-size: 48px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+    margin-bottom: 16px;
+  }
+  .calender_events_del_rio_page_sectioN p {
+    font-family: Apercu;
+    font-size: 13.3px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(23, 31, 21, 0.87);
+    width: 50%;
+    margin: auto;
+    margin-bottom: 24px;
+}
+.icons_list_events_calener_page i {
+    background-color: rgba(46, 68, 51, 0.16);
+    padding: 9px;
+    font-size: 20px;
+    color: rgba(46, 68, 51, 0.32);
+    cursor: pointer;
+}
+.icons_list_events_calener_page i:hover {
+    background-color: #2e4433;
+    color: white;
+}
+.icons_list_events_calener_page {
+    text-align: right;
+    width: 74%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+#calendar.calender_del_rio {
+    max-width: 74%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+  #calendar.calender_del_rio a.fc-col-header-cell-cushion  {
+    font-size: 15px;
+    color: rgba(46, 68, 51, 0.72);
+    font-family: Apercu;
+    font-weight: 100;
+  }
+  #calendar.calender_del_rio .fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-draggable.fc-event-resizable.fc-event-start.fc-event-end.fc-event-past {
+    color: rgba(46, 68, 51, 0.72);
+    font-family: Apercu;
+  }
+  #calendar.calender_del_rio .fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-draggable.fc-event-resizable.fc-event-start.fc-event-end.fc-event-past .fc-daygrid-event-dot {
+  visibility: hidden;  
+}
+#calendar.calender_del_rio a.fc-daygrid-day-number {
+    color: rgba(46, 68, 51, 1);
+    font-family: Apercu;
+    font-size: 12.5px;
+}
+  #calendar.calender_del_rio a:hover {
+  text-decoration: none;
+  }
+  .events_calender_view_section_2 {
+    background-color: #fcfcf5;
+    padding: 60px 45px 120px;
+}
+
+   .fc .fc-daygrid-day-top {
+    flex-direction: row !important;
+}
+#calendar.calender_del_rio tr th.fc-col-header-cell {
+    border-left: 0px solid #ddd;
+    border-right: 0px solid #ddd;
+    padding: 5px 0;
+}
+
+.fc .fc-button .fc-icon {
+    font-size: 40px !important;
+    color: #2e4433;
+}
+.fc .fc-button:not(:disabled) {
+    background-color: white;
+    border: 0px;
+}
+.fc .fc-button-primary:hover {
+    color: #2e4433 !important;
+    color: var(--fc-button-text-color,#2e4433) !important;
+    background-color: white !important;
+    background-color: var(--fc-button-hover-bg-color,white) !important;
+    border-color: white !important;
+    border-color: var(--fc-button-hover-border-color,white) !important;
+}
+.fc-theme-standard td, .fc-theme-standard th {
+    border: 1px solid #bcc3bd;
+}
+.fc .fc-button-primary:focus {
+    box-shadow: 0 0 0 0 rgba(76, 91, 106, 0) !important;
+}
+
+.fc .fc-toolbar-title {
+    margin: 0;
+    font-family: 'Butler';
+    font-size: 28px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0em;
+    border: 1px solid #bcc3bd;
+}
+.fc .fc-highlight {
+    background: rgba(243,245,235,0.7);
+}
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #f3f5eb;
+}
+.fc-h-event .fc-event-main {
+        font-family: Apercu Pro;
+        font-size: 12.5px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.14;
+        letter-spacing: normal;
+        color: #2e4433;
+}
+.fc-h-event {
+    display: block;
+    background-color: transparent;
+    border-color: transparent;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    padding: 6px 0;
+}
+.fc-daygrid-block-event .fc-event-time, .fc-daygrid-block-event .fc-event-title {
+    padding: 1px;
+    margin-top: -7px;
+    white-space: break-spaces;
+}
+.fc .fc-day-other .fc-daygrid-day-top {
+    opacity: 0.5;
+}
+.fc-dayGridMonth-button,.fc-listMonth-button {
+    display:none !important;
+  }
+
+/* section nav css*/
+
+.nav_event_section_1_awards {
+    padding: 112px 15px 32px;
+    background-color: #f3f5eb;
+}
+.event_calendar_view_nav_awards ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.event_calendar_view_nav_awards li {
+    padding: 30px;
+}
+    .event_calendar_view_btn_awards {
+    border-bottom: 2px solid #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+    display: none;
+}
+.event_calendar_view_btn_awards {
+    display: flex;
+}
+.event_calendar_view_text_awards li a {
+    font-family: Apercu pro;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: 1.71px;
+    text-align: center;
+    color: #2e4433;
+    text-decoration: none;
+    padding-bottom: 3px;
+}
+.event_calendar_view_btn_awards::after {
+    width: 200px;
+    height: 50px;
+    right: -1px;
+}
+.event_calendar_view_btn_awards::before {
+    height: 50px;
+    width: 200px;
+    left: 0;
+    margin-left: -1px;
+}
+.event_calendar_view_btn_awards::before, .event_calendar_view_btn_awards::after {
+    position: absolute;
+    background: #f3f5eb;
+    z-index: -1;
+    transition: 0.3s;
+    content: '';
+    border-radius: 0;
+}
+.event_calendar_view_btn_awards:hover::after, .event_calendar_view_btn_awards:hover::before {
+    width: 48px;
+    margin-left: -1px;
+}
+.event_calendar_view_77_event_awards li a {
+    text-transform: uppercase;
+    color: rgba(46, 68, 51, 0.6);
+}
+.event_calendar_view_77_event_awards li a:hover {
+    color: rgba(46, 68, 51, 1);
+}
+.event_calendar_view_text_awards li {
+    padding: 0 30px;
+}
+
+.event_calendar_view_btn1_8:hover::before {
+    width: 35px;
+    margin-left: -1px !important;
+}
+.event_calendar_view_btn1_8:hover::after {
+    width: 39px;
+    margin-right: -1px !important;
+}
+@media screen and (max-width:991px) {
+    .event_calendar_view_text_awards li {
+        padding: 0px 37px;
+    }
+    .event_calendar_view_text_awards li a {
+        font-size: 11px;
+        line-height: 1;
+    }
+    .event_calendar_view_btn_awards::after {
+        width: 165px;
+    }
+    .event_calendar_view_btn1_8:hover::before,.event_calendar_view_btn1_8:hover::after {
+        width: 52px;
+    } 
+    .event_calendar_view_btn_awards:hover::after, .event_calendar_view_btn_awards:hover::before {
+        width: 59px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .event_calendar_view_nav_awards ul {
+        display: block;
+    }
+    .event_calendar_view_btn_awards::before, .event_calendar_view_btn_awards::after {
+        margin-left: -1px;
+    }
+    .event_calendar_view_text_awards li {
+        padding: 7.9px 37px;
+        margin-bottom: 9px;
+    }
+    .event_calendar_view_btn_awards::before, .event_calendar_view_btn_awards::after {
+        height: 39px;
+        margin-top: 2px;
+    }
+    .event_calendar_view_btn_awards::after,.event_calendar_view_btn_awards::before {
+        width: 51%;
+    }
+    .event_calendar_view_btn_awards:hover::after, .event_calendar_view_btn_awards:hover::before {
+        width: 40%;
+    }
+    .event_calendar_view_btn1_8:hover::after, .event_calendar_view_btn1_8:hover::before {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+.event_calendar_view_btn_awards:hover::after, .event_calendar_view_btn_awards:hover::before {
+    width: 34%;
+}
+.event_calendar_view_btn1_8:hover::after, .event_calendar_view_btn1_8:hover::before {
+    width: 47%;
+}
+}
+@media screen and (max-width: 400px)  {
+    .event_calendar_view_btn1_8:hover::after, .event_calendar_view_btn1_8:hover::before {
+        width: 46%;
+    }
+}
+
+/* responsive section */
+@media screen and (max-width:1150px) {
+    .calender_events_del_rio_page_sectioN h1 {
+        font-size: 42px;
+    }
+    .calender_events_del_rio_page_sectioN p {
+        font-size: 12.3px;
+    }
+}
+@media screen and (max-width:991px) { 
+    .calender_events_del_rio_page_sectioN p {
+        font-size: 12.5px;
+        width: 65%;
+    }
+    #calendar.calender_del_rio {
+        max-width: 85%;
+    }
+    .fc-h-event .fc-event-main {
+        font-size: 11px;
+    }
+    #calendar.calender_del_rio a.fc-col-header-cell-cushion {
+        font-size: 14px;
+    }
+    #calendar.calender_del_rio a.fc-daygrid-day-number {
+        font-size: 11px;
+    }
+    .events_calender_view_section_2 {
+        padding: 60px 30px 120px;
+    }
+    .calender_events_del_rio_page_sectioN p {
+        font-size: 12.5px;
+        width: 75%;
+    }
+    .events_calender_view_section_2 {
+        padding: 45px 30px 100px;
+    }
+    .icons_list_events_calener_page {
+        width: 85%;
+    }
+        
+}
+@media screen and (max-width: 767px) {
+#calendar.calender_del_rio {
+    max-width: 100%;
+}
+.fc-h-event .fc-event-main {
+    font-size: 10.5px;
+}
+.icons_list_events_calener_page {
+    width: 100%;
+}
+.calender_events_del_rio_page_sectioN p {
+    width: 95%;
+}
+.fc .fc-button .fc-icon {
+    font-size: 34px !important;
+}
+}
+@media screen and (max-width: 600px) {
+#calendar.calender_del_rio {
+    max-width: 100%;
+}
+.icons_list_events_calener_page {
+    width: 100%;
+}
+.events_calender_view_section_2 {
+    padding: 40px 15px 90px;
+}
+.calender_events_del_rio_page_sectioN p {
+    width: 100%;
+}
+.listview_month_event_page_end_enter {
+    width: 100% !important;
+}
+}
+
+@media screen and (max-width: 400px) {
+.calender_events_del_rio_page_sectioN p {
+    font-size: 12.5px;
+}
+.fc .fc-toolbar-title {
+    font-size: 24px;
+}
+.fc .fc-button .fc-icon {
+    font-size: 27px !important;
+}
+.events_calender_view_section_2 {
+    padding: 40px 0px 90px;
+}
+}
+@media screen and (max-width: 350px) {
+    .fc-h-event .fc-event-main {
+        font-size: 9.5px;
+    }
+}
+
+.icons_list_events_calener_page i:first-child {
+    margin-right: 3px;
+}
+
+
+
+/* design for view list */
+
+.fc-list-sticky .fc-scroller .fc-list-table .fc-list-event .fc-list-event-title a {
+        font-family: Apercu Pro;
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: -0.5px;
+        color: #171f15;
+}
+.fc-list-event-graphic span.fc-list-event-dot {
+    display: none;
+}
+.listview_month_event_page_end_enter p{
+        font-family: Apercu Pro;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: 2px;
+        text-align: center;
+        color: #2e4433;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+} 
+.listview_month_event_page_end_enter h1 {
+        font-family:'Butler' ;
+        font-size: 48px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #2e4433;}
+.listview_month_event_page_end_enter {
+    background-color: #EDEDED;
+    border: 1px solid #2e4433;
+    padding: 16px 24px;
+    width: 75%;
+    margin: 0 auto;
+}
+.date_month_listview_month_event__next_laps_2 {
+    width:77%;
+}
+.date_month_listview_month_event__next_laps_2 tr td {
+    border:0px; 
+}
+.fc-list-event.fc-event.fc-event-start.fc-event-end.fc-event-past {
+    border: solid 1px #bcc3bd;
+}
+
+p.tirle_header_top_12_event_page_h1 {
+    font-family: Apercu Pro;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.5px;
+    color: #171f15;
+    margin-bottom: 0px;
+}
+.clock_icon-css_event_page_list i {
+    color: #2e4433;
+}
+.clock_icon-css_event_page_list i {
+    font-family: Apercu;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: rgba(23, 31, 21, 0.87);
+  }
+  .clock_icon-css_event_page_list.d-flex a {
+      margin-right: 8px;
+      margin-bottom:4px
+  }
+  .clock_icon-css_event_page_list.d-flex p {
+    font-family: Apercu;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.2;
+    letter-spacing: normal;
+    color: rgba(23, 31, 21, 0.87);
+    margin-bottom: 0px;
+}
+p.descriptioN-off_events_67_p_list {
+        font-family: Apercu;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #171f15;
+        margin-bottom: 8px;
+}
+.sold_out_botton_7_event_page_list button {
+    opacity: 0.2;
+    border: solid 1px #2e4433;
+    background-color: #2e4433;
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f5f5f3;
+    padding: 16px 20px;
+    text-transform: uppercase;
+}
+.sold_out_botton_7_event_page_list .fa.fa-upload {
+    font-size: 24px;
+    color: #2e4433;
+    margin-left: 24px;
+    cursor: pointer;
+}
+.sold_out_botton_7_event_page_list a.Join-our-waiting-lis {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2e4433;
+    margin-left: 24px;
+    cursor: pointer;
+}
+.sold_out_botton_7_event_page_list a.Join-our-waiting-lis:hover {
+    text-decoration: underline !important;
+}
+.date_month_listview_month_event_page {
+    padding-right: 0px;
+    width:23%;
+}
+.date_month_listview_month_event__next_laps_2 tr td {
+    padding-left:0px !important;
+}
+.date_month_listview_month_event__next_laps_2,.date_month_listview_month_event_page {
+    padding-top: 40px !important;
+    padding-bottom:32px !important;
+}
+.for_padding_us_event_pae_js_me {
+    padding-top:0px !important;
+    padding-bottom: 8px !important;
+}
+td.padding-top_zero_event_page_list_699 {
+    padding-top: 0px;
+}
+.fc .fc-scroller-liquid {
+    height: auto;
+}
+.fc-list.fc-list-sticky.fc-listMonth-view.fc-view {
+    position: relative !important;
+    border: 0px;
+}
+
+@media screen and (max-width:1100px) {
+    .listview_month_event_page_end_enter {
+        padding: 16px 0px;
+    }
+}
+@media screen and (max-width:550px)    {
+    .date_month_listview_month_event__next_laps_2 {
+        width:77%;
+    }
+}
+@media screen and (max-width:350px)    {
+.listview_month_event_page_end_enter h1 {
+    font-size: 31px;
+}
+.listview_month_event_page_end_enter p {
+    font-size: 10px;
+}
+.listview_month_event_page_end_enter {
+    padding: 9px 0px;
+}
+.fc .fc-list-table td, .fc .fc-list-day-cushion {
+    padding: 8px 0px;
+}
+p.tirle_header_top_12_event_page_h1 {
+    font-size: 18px;
+}
+
+
+}
+@media screen and (max-width:550px) {
+    .padding-top_zero_event_page_list_699 {
+        padding-top: 0px !important;
+    }
+    p.descriptioN-off_events_67_p_list {
+        font-size: 12.5px;
+    }
+    .clock_icon-css_event_page_list.d-flex {
+        padding-bottom: 0px !important;
+
+    }
+    .date_month_listview_month_event__next_laps_2 {
+        padding-left:8px !important;
+    }
+    .date_month_listview_month_event_page {
+        padding: 8px 4px !important;
+        padding-top: 40px !important; 
+    }
+    .sold_out_botton_7_event_page_list a.Join-our-waiting-lis {
+        display: block;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .sold_out_botton_7_event_page_list .fa.fa-upload {
+        margin-left: 25%;
+    }
+    p.tirle_header_top_12_event_page_h1 {
+        font-size: 20px;
+    }
+    .fc .fc-list-table td, .fc .fc-list-day-cushion {
+        padding: 8px;
+    }
+    .date_month_listview_month_event_page {
+        padding: 8px !important;
+        padding-top: 40px !important;
+    }
+    .listview_month_event_page_end_enter h1 {
+        font-size: 32px;
+    }
+}
+
+  .padding_del_rio {
+  	padding-left:19px;
+  }
+  
+  
+</style>  
+
+
+
+<div class="nav_event_section_1_awards">
+  <div class="container">
+    <div class="event_calendar_view_nav_awards">
+      <ul class="event_calendar_view_text_awards">
+        <div class="event_calendar_view_77_event_awards">
+          <li class="event_calendar_view_btn_awards event_calendar_view_btn1_8"> <a class="noselect" href="/pages/visit">Visit</a> </li>
+        </div>
+        <div class="event_calendar_view_77_event_awards">
+          <li class="event_calendar_view_btn_awards"> <a class="noselect" href="/pages/events">Upcoming Events</a> </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% section 'full_calender_first_section' %}

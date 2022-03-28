@@ -1,0 +1,96 @@
+<!-- jolee section 6 -->
+
+<div class="jolee_section_6">
+    <div class="container">
+
+        <div id="game_day" class="owl-carousel owl-theme">    
+          
+     
+    {% for block in section.blocks %}  
+     
+          <div class="row or-picnic-on-the-riv_jolie">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h1 class="game_day_joli">{{block.settings.Jolee_sec6_text1}}</h1>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="text-center ladies_talking_jolie">
+                    <img src="{{block.settings.Jolee_sec6_img | img_url:'master' }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h1 class="game_day_joli1">{{block.settings.Jolee_sec6_text2}}</h1>
+            </div>
+        </div>
+    
+    {% endfor %}
+
+      </div>
+      <div class="customer_quotes_jolee">
+            <p class="WHAT-OUR-CUSTOMER-AR_jolies">{{section.settings.Jolee_sec6_customer_saying}}</p>
+            <h1 class="Rose-Jolee-is-forwa_jolies">{{section.settings.Jolee_sec6_customer_review}}</h1>
+            <p class="rating_inter_jolies">{{section.settings.Jolee_sec6_customer_rating}}</p>
+            <p class="Meghann-E_jolies">{{section.settings.Jolee_sec6_customer_name}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Joleepage Six Section",
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Gallery",
+      "settings": [
+        {
+          "id": "Jolee_sec6_text1",
+          "type": "text",
+       		"label": "First Text"
+        },
+        {
+          "id": "Jolee_sec6_text2",
+          "type": "text",
+       		"label": "Second Text"
+        },
+        {
+          "id": "Jolee_sec6_img",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+
+        {
+          "id":"Jolee_sec6_customer_saying",
+          "type":"text",
+          "label":"Saying"
+        },
+        {
+          "id":"Jolee_sec6_customer_review",
+          "type":"textarea",
+          "label":"Customer Review"
+        },
+        {
+          "id":"Jolee_sec6_customer_rating",
+          "type":"text",
+          "label":"Rating"
+        },
+        {
+          "id":"Jolee_sec6_customer_name",
+          "type":"text",
+          "label":"Customer Name"
+        }
+  ]
+}
+{% endschema %}

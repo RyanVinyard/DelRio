@@ -1,0 +1,86 @@
+<style>
+.covid_19_your p{font-family:Apercu;font-size:14px;font-weight:400;font-stretch:normal;font-style:normal;line-height:1.43;letter-spacing:normal;color:#0c6782;margin:0}.covid_19_your{background-color:#f0f8fa;border:1px solid #53768f;padding:10px 0 10px 25px;margin-bottom:0;margin-top:12px}@media screen and (max-width:1100px) and (min-width:800px){.covid_19_your p{font-size:12px}}@media screen and (max-width:500px){.covid_19_your p{font-size:11px}.covid_19_your{margin-top:20px}}
+</style>
+<div class="section_8">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-12 accolades_8_bg_del_home">
+        <div class="text-left">
+          <h1 class="text-left Layers-of-complexity">
+            {{section.settings.Section8_heading}}
+          </h1>
+        </div> 
+        <!--        covid description    -->
+        <div class="covid_19_your">
+          <p>{{section.settings.homapage_sec3_covid}}</p>
+        </div>
+        <p class="OUR-PHILOSOPHY text-left">{{section.settings.Section8_Haeding_88}}</p>
+        <div class="our_soil not_auto">
+          <p class="text-left">
+            {{section.settings.Section8_desc1}}
+          </p>
+          <p class="text-left">
+            {{section.settings.Section8_desc2}}
+          </p>
+        </div>
+        <a class="no_dec_home" href="{{section.settings.Section8__link}}"><p class="OUR-PHILOSOPHY our_story text-left">VISIT</p></a>
+        <hr class="accolades_2">
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 accolades_8_bg_del_home">
+        <div class="man_tree">
+          <div class=" text-center bus_class">
+            <img src="{{section.settings.Section8_img | img_url:'master' }}" alt="background_image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+
+{% schema %}
+  {
+    "name": "Homepage Eight Section",
+    "settings": [
+      {
+        "id": "Section8_heading",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "id": "homapage_sec3_covid",
+        "type": "textarea",
+        "label": "Covid Text"
+      },
+        {
+          "id": "Section8_Haeding_88",
+          "type": "text",
+       		"label": "Sub Heading"
+        },
+    	{
+          "id": "Section8_desc1",
+          "type": "textarea",
+       		"label": "Philosophy description 1"
+        },
+    	{
+          "id": "Section8_desc2",
+          "type": "textarea",
+       		"label": "Philosophy description 2"
+        },
+        {
+          "id": "Section8_img",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "Section8__link",
+          "type": "url",
+       		"label": "Tours and Events Link"
+        }
+      ]
+    }
+{% endschema %}

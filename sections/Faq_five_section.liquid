@@ -1,0 +1,59 @@
+<div id="giftcardsandnotes" class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>{{ section.settings.faqsec2texttitle4 }}</h1>
+
+  <!-- accordion -->
+
+  <main class="main accordion_ch_faq">
+
+    <div class="accordion">
+
+      {% for block in section.blocks %}
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>{{ block.settings.faqsec2textquest3 }}</span>
+          <i class="fa fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">{{ block.settings.faqsec2textanswer3 }}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+
+
+<div class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>More questions?</h1>
+  <p>We are here to answer them! Send us an email: <a href="mailto:taste@delriovineyards.com">taste@delriovineyards.com</a> or call us at <a href="tel: 541-855-2062"> 541-855-2062</a></p>
+</div>
+
+{% schema %}
+  {
+    "name": "Faq Five Section",
+    "settings": [
+      {
+          "id": "faqsec2texttitle4",
+          "type": "textarea",
+          "label": "Enter Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Question",
+      "settings": [
+        {
+          "id": "faqsec2textquest3",
+          "type": "textarea",
+          "label": "Enter Question"
+        },
+        {
+          "id": "faqsec2textanswer3",
+          "type": "textarea",
+          "label": "Enter Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

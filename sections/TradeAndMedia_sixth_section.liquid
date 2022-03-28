@@ -1,0 +1,143 @@
+<style>
+  a.text_none_for_trade:hover {
+     text-decoration:none;
+     color:black;    
+   }
+</style> 
+<section class="sale-media animatioN-on_scroll_margin_top" id="cntctsales">
+              <div class="mycontainer container trade-content">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="section-heading"><h2>{{ section.settings.main_heading }}</h2></div>
+                    <p >{{ section.settings.fst_desc_belo_headng }} {{ section.settings.cnt_num_frst_desc }} or email <a class="text_none_for_trade" href="mailto:{{ section.settings.email_frst_desc }}">{{ section.settings.email_frst_desc }}</a>.</p>
+                    <p class="pb-4">{{ section.settings.scnd_desc_belo_headng }}</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  {% for block in section.blocks %}
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="content-wrapper text-center">
+                      <img src="{{ block.settings.block_image | img_url: 'master' }}">
+                      <p class="person-name">{{ block.settings.person_name }}</p>
+                      <p class="person-desig">{{ block.person_title }}</p>
+                      <p class="person-contact"><a class="text_none_for_trade" href="mailto:{{ block.settings.person_email }}"><span>{{ block.settings.person_email }} </span></a><br>
+                        <a class="text_none_for_trade" href="tel:{{ block.settings.person_cntn_num_one }}"><span>	Phone: {{ block.settings.person_cntn_num_one }}</span><br></a>
+                      {% if block.settings.person_cntn_num_two != '' %}  <a class="text_none_for_trade" href="tel:{{ block.settings.person_cntn_num_two }}"><span>	Mobile: {{ block.settings.person_cntn_num_two }}</span></a></p>{% endif %}
+                    </div>						
+                  </div>
+                  {% endfor %}
+
+<!--                   <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="content-wrapper text-center">
+                      <img src="{{'Karen2.jpg' | asset_url  }}">
+                      <p class="person-name">KAREN SLIGER</p>
+                      <p class="person-desig">Regional Sales Manager</p>
+                      <p class="person-contact"><a class="text_none_for_trade" href="mailto:karen@delriovineyards.com"><span>karen@delriovineyards.com</span></a><br>
+                        <a class="text_none_for_trade" href="tel:458-292-7338"><span>Mobile: 458-292-7338</span></a>
+                      </p>
+                    </div>						
+                  </div> -->
+
+<!--                   <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="content-wrapper text-center">
+                      <img src="{{'p2.png' | asset_url  }}">
+                      <p class="person-name">ROD HOBSON</p>
+                      <p class="person-desig">Brand Development Manager</p>
+                      <p class="person-contact"><a class="text_none_for_trade" href="mailto:rhobson@delriovineyards.com"><span>rhobson@delriovineyards.com</span></a><br>
+                        <a class="text_none_for_trade" href="tel:541-944-3717"><span>Mobile: 541-944-3717</span></a>
+                      </p>
+                      
+                    </div>						
+                  </div> -->
+                </div>
+              </div>
+            </section>
+      
+      
+            <div class="my-seperator"></div>
+      
+
+
+
+
+{% schema %}
+  {
+    "name": "Sixth Section Media Page",
+    "settings": [
+			 {
+        "id": "main_heading",
+        "type": "text",
+        "label": "Section Main Heading"
+      },
+		 {
+        "id": "fst_desc_belo_headng",
+        "type": "text",
+        "label": "First Description Below Heading"
+      },
+ 	{
+        "id": "cnt_num_frst_desc",
+        "type": "text",
+        "label": "Add Contact Number In First Description"
+      },
+		{
+        "id": "email_frst_desc",
+        "type": "text",
+        "label": "Add Email In First Description"
+      },
+	{
+        "id": "scnd_desc_belo_headng",
+        "type": "text",
+        "label": "Add Second Description"
+      }
+			],
+
+	
+	"blocks": [
+    {
+      "type": "select",
+      "name": "Data For Persons",
+      "settings": [
+        {
+          "id": "block_image",
+          "type": "image_picker",
+       		"label": "Add Image"
+        },
+        {
+          "id": "person_name",
+          "type": "text",
+          "label": "Add Persong Name"
+        },
+		{
+          "id": "person_title",
+          "type": "text",
+          "label": "Add Persong Title"
+        },
+		{
+          "id": "person_email",
+          "type": "text",
+          "label": "Add Persong Email"
+        },
+		{
+          "id": "person_cntn_num_one",
+          "type": "text",
+          "label": "Add Persong Contact One"
+        },
+		{
+          "id": "person_cntn_num_two",
+          "type": "text",
+          "label": "Add Persong Contact Two"
+        }
+      ]
+    }
+  ]	
+
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

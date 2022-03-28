@@ -1,0 +1,94 @@
+<div class="section_10">
+  <div class="container">
+    <p class="Incredible-ways">{{section.settings.Section10_heading}}</p>
+
+    <div class="cabrener_pad pad_cab d_none_mble_del_del">
+      <div class="row">
+        {% for block in section.blocks %}
+        <div class="col-lg-4 col-md-4 col-sm-12 accolades_8_bg_del_home">
+          <div class="png_club la_car">
+            <h1 class="RIO-CLUB_pic">{{block.settings.Section10_imgtext}}</h1>
+            <img  class="chardo_rio" src="{{block.settings.Section10_img | img_url: 'master' }}" alt="">
+          </div>
+          <div class="padding_up">
+            <p class="own-wor own-jolee">{{block.settings.Section10_description}}</p>
+            <a href="{{block.settings.Section10__link}}"><button class="rio_wines">{{block.settings.Section10_linktext}}</button></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>     
+  </div>
+
+  <!--    mobile section 10 carousel    -->
+
+  <div class="container-fluid d_none_desk_del_del">
+    <div class="cabrener_pad">
+      <div class="owl-carousel owl-theme"  id="home_mobile1">
+        {% for block in section.blocks %}
+        <div>
+          <div class="png_club la_car">
+            <h1 class="RIO-CLUB_pic">{{block.settings.Section10_imgtext}}</h1>
+            <img  class="chardo_rio" src="{{block.settings.Section10_img | img_url: 'master' }}" alt="">
+          </div>
+          <div class="padding_up">
+            <p class="own-wor own-jolee">{{block.settings.Section10_description}}</p>
+            <a href="{{block.settings.Section10__link}}"><button class="rio_wines">{{block.settings.Section10_linktext}}</button></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div> 
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Ten Section",
+    "settings": [
+      {
+        "id": "Section10_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      }
+
+    ],
+	"blocks": [
+    {
+      "type": "select",
+      "name": "Experience Wines",
+      "settings": [
+		{
+          "id": "Section10_imgtext",
+          "type": "text",
+       		"label": "ImageText"
+        },
+        {
+          "id": "Section10_img",
+          "type": "image_picker",
+       		"label": "Experience Image"
+        },
+        {
+          "id": "Section10_description",
+          "type": "textarea",
+          "label": "Experience Description"
+        },
+ 		{
+    	  "id": "Section10_linktext",
+     	  "type": "text",
+       	  "label": "Button text",
+      	  "default": "Learn More"
+      	},
+		{
+     	  "id": "Section10__link",
+      	  "type": "url",
+      	  "label": "Button link"
+      }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+  

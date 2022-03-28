@@ -1,0 +1,274 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+<style>
+
+  /* section 1 css */
+
+  .contact_info_questions_faq p {
+    font-family: Apercu;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: rgba(23, 31, 21, 0.87);
+  }
+  .contact_info_questions_faq a {
+    text-decoration: none;
+  }
+  .faq_pg_section_1 {
+    padding: 170px 45px 100px;
+    background-color: #fcfcf5;
+  }
+  .h1_faq_ques  h1 {
+    font-family: 'Butler';
+    font-size: 40.5px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #171f15;
+    margin-bottom: 18px;
+  }
+  .h1_faq_ques p.We-are-dedicated-to_faq_tx {
+    font-family: Apercu Pro;
+    font-size: 13.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .h1_faq_ques_margin_bottom {
+    margin-bottom: 45px;
+  }
+
+  .Contact-Info_text_faq  h1 {
+    font-family: 'Butler';
+    font-size: 26px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #171f15;
+    margin-bottom: 24px;
+  }
+  .Contact-Info_text_faq p {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2e4433;
+    margin-bottom: 0;
+  }
+
+
+  /* accordion css */
+  .main.accordion_ch_faq .accordion-item {
+    padding: 16px 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    border-bottom: 1.3px solid #d4d4d4;
+  }
+  .accordion_ch_faq .accordion-item {
+    cursor: pointer;
+  }
+  .main.accordion_ch_faq .accordion-item .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    font-family: Apercu Pro;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .main.accordion_ch_faq .accordion-item .title i.fa {
+    font-size: 0.9rem;
+    color: #454545;
+    transform: translateX(-50%) rotate(0);
+    transition: transform 0.15s ease;
+  }
+  .accordion_ch_faq .accordion-item .paragraph {
+    font-family: Apercu;
+    font-size: 12.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    display: none;
+    padding: 8px 0;
+  }
+  .main.accordion_ch_faq .accordion-item.active .paragraph {
+    display: block;
+  }
+  .main.accordion_ch_faq .accordion-item:first-child {
+    padding-top: 0px;
+  }
+  .made_for_90_faq_page {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .main.accordion_ch_faq .accordion-item:last-child {
+    border-bottom: 0px solid #d4d4d4;
+  }
+  @media screen and (max-width:1100px) {
+    .h1_faq_ques h1 {
+      font-size: 37.5px;
+    }
+  }
+  @media screen and (max-width:991px) {
+    .made_for_90_faq_page {
+      width: 100%;
+    }
+    .contact_info_questions_faq p {
+      font-size: 12px;
+    }
+    .h1_faq_ques h1 {
+      font-size: 34px;
+    } 
+    .h1_faq_ques_margin_bottom {
+      margin-bottom: 35px;
+    }
+    .Contact-Info_text_faq h1 {
+      margin-bottom: 18px;
+    }      
+  }
+  @media screen and (max-width: 800px) {
+    .contact_info_questions_faq p {
+      font-size: 11px;
+    }
+    .contact_info_questions_faq {
+      margin-bottom: 30px;
+    }
+    .faq_pg_section_1 {
+      padding: 130px 30px 100px;
+    }
+    .h1_faq_ques p.We-are-dedicated-to_faq_tx {
+      font-size: 12.5px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .h1_faq_ques h1 {
+      font-size: 30px;
+    }
+    .h1_faq_ques p.We-are-dedicated-to_faq_tx {
+      font-size: 13px;
+    }
+    .faq_pg_section_1 {
+      padding: 120px 15px 80px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .h1_faq_ques h1 {
+      font-size: 25px;
+    }
+    .h1_faq_ques p.We-are-dedicated-to_faq_tx {
+      font-size: 12px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .Contact-Info_text_faq p {
+      font-size: 11px;
+    }
+    .main.accordion_ch_faq .accordion-item .title {
+      font-size: 12px;
+    }
+    .Contact-Info_text_faq h1 {
+      font-size: 22px;
+    }
+    .main.accordion_ch_faq .accordion-item {
+      padding: 12px 0;
+    }
+    .accordion_ch_faq  .accordion-item h3.title span {
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .h1_faq_ques h1 {
+      font-size: 22px;
+    }
+    .h1_faq_ques p.We-are-dedicated-to_faq_tx {
+      font-size: 10px;
+    }
+    .Contact-Info_text_faq h1 {
+      margin-bottom: 14px;
+    }
+    .main.accordion_ch_faq .accordion-item .paragraph {
+      font-size: 10.5px;
+    }
+    .main.accordion_ch_faq .accordion-item .title {
+      font-size: 11px;
+    }
+
+  }
+  .Contact-Info_text_faq p a:hover {
+    color: #2e4433;
+    text-decoration:none;
+  }
+
+  
+</style>  
+
+    <div class="faq_pg_section_1">
+        <div class="container">
+            <div class="made_for_90_faq_page">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+<!--                         <div class="contact_info_questions_faq">
+                            <a href="#contactinfo"> <p>Contact Info</p></a>   
+                            <a href="#whatinthebottle"><p>What’s in the bottle?</p></a>   
+                            <a href="#prdertrackingandshipping"> <p>Order Tracking & Shipping</p></a>  
+                            <a href="#howdoipayforgood"><p>How do I pay for the goods?</p></a>  
+                            <a href="#giftcardsandnotes"><p>Gift Cards & Gift Notes</p></a>  
+                        </div> -->
+                        <div class="contact_info_questions_faq">
+                            <a href="#contactinfo"> <p>FAQs</p></a>   
+                            <a href="#whatinthebottle"><p>Shipping</p></a>   
+                            <a href="#prdertrackingandshipping"> <p>Tasting Room Visit</p></a>  
+                            <a href="#howdoipayforgood"><p>Membership</p></a>  
+                            <a href="#giftcardsandnotes"><p>COVID-19</p></a>  
+                        </div>                      
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+                        <div class="frquently_asked_questions_faq_text_acc ">                          
+                          {% section 'faq_first_section' %}
+                          {% section 'Faq_Second_section' %}
+                          {% section 'Faq_Third_section' %}
+                          {% section 'Faq_four_section' %}
+                          {% section 'Faq_five_section' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+  $(".accordion-item p.paragraph").click(function(event){
+    event.stopPropagation();
+  });
+</script>  

@@ -1,0 +1,97 @@
+<style>
+  a.text_none_for_trade:hover {
+    text-decoration:none;
+    color:black;    
+  }
+</style> 
+<div class="newsletter_section_1" scroll="no" style="overflow: hidden">
+  <div class="row justify-content-center">
+    <div class="Vines-Wines_newsletter_txt text-center">
+      <h1>{{section.settings.newsletter_Section1_heading}}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter_section_2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="quarterly_newsletter_text_1">
+          <p>{{section.settings.newsletter_Section1_desc_1}}</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 remove_padding_0_newsletter">
+        <a class="text_none_for_trade" href="{{ section.settings.newsletter_Section1_button_link }}" target="_blank"> 
+        <div class="png_club_newsletter brown_color_bg_4_col_newsletter la_car_newsletter">
+          <div class="fall_2020_newsletter_1">
+            <h1 class="RIO-CLUB_pic_newsletter">{{section.settings.newsletter_Section1_season}}</h1>
+            <p>ISSUE NO. 64</p>
+          </div>
+          <img class="chardo_rio_newsletter" src="{{section.settings.newsletter_Section1_image | img_url:'master'}}" alt="">
+        </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div>
+          <div class="issue_64_letter_news">
+            <p class="Issue-N">{{section.settings.newsletter_Section1_issue_no}}</p>
+            <p class="In-this-issue">In this issue</p>
+            <p class="Spreading-joy-in-the_newsletter">{{section.settings.newsletter_Section1_desc_2}}</p>
+            <a class="text_none_for_trade" href="{{ section.settings.newsletter_Section1_button_link }}" target="_blank"> <p class="LEARN-MORE_newsletter_button">{{section.settings.newsletter_Section1_Button_text}}</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "Newsletter First Section",
+"settings": [
+      {
+        "id": "newsletter_Section1_heading",
+        "type": "text",
+        "label": "Heading"
+      },    
+      {
+        "id": "newsletter_Section1_season",
+        "type": "text",
+        "label": "Season"
+      },    
+	  {
+        "id": "newsletter_Section1_image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "newsletter_Section1_desc_1",
+        "type": "textarea",
+        "label": "Description 1"
+      },
+      {
+        "id": "newsletter_Section1_issue_no",
+        "type": "textarea",
+        "label": "Issue No."
+      },
+      {
+        "id": "newsletter_Section1_desc_2",
+        "type": "textarea",
+        "label": "Description 2"
+      },
+      {
+        "id": "newsletter_Section1_Button_text",
+        "type": "text",
+        "label": "Button text"
+      },
+      {
+        "id": "newsletter_Section1_button_link",
+        "type": "url",
+        "label": "Enter file link"
+      }
+]
+}
+{% endschema %}

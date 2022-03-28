@@ -1,0 +1,235 @@
+<style>
+  @media screen and (max-width:600px){.section_11 .container-fluid #carousel_mb{padding:0 30px}}@media screen and (max-width:450px){.section_11 .container-fluid #carousel_mb{padding:0 55px}}@media screen and (max-width:350px){.section_11 .container-fluid #carousel_mb{padding:0 40px}#carousel_mb .owl-next{right:0}#carousel_mb .owl-prev{left:0}}
+</style>  
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+<style>
+  .swiper-slide {
+    opacity: 0.16;
+  }
+  .swiper-slide.swiper-slide-active {
+    opacity: 1;
+  }
+  .address.fa.fa-check-circle{
+    font-family: 'FontAwesome';
+    margin-right:8px;
+  }
+  .end_margin.prev_hr {
+    margin-left:0px;
+  }
+  .end_margin.next_hr {
+    margin-right:0px;
+  }
+  .swiper-button-prev:after,.swiper-button-next:after {
+    content:''; 
+  }
+  .swiper-button-prev,.swiper-button-next {
+    margin: 0;
+    font-size: 34px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2e4433;
+    top:90%;
+  }
+  .swiper-container.swiper_slider-conatiner_1 {
+    padding-bottom: 45px;
+  }
+  .swiper-button-prev {
+    left:47%;
+  }
+  .swiper-button-next {
+    right:47%;
+  }
+  .section_11 {
+    background-color:#fcf9ef;
+    padding-top:24px;
+  }
+
+</style>
+<div class="section_11">
+  <div class="container-fluid d_none_mble_del_del">
+    <div class="d-flex">
+      <hr class="end_margin prev_hr">
+      <p class="OUR-CUSTOMER">
+        {{section.settings.Section11_heading}}
+      </p>
+      <hr class="end_margin next_hr">
+    </div>
+
+
+    <div class="swiper-container swiper_slider-conatiner_1">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %} 
+        <div class="relaxing swiper-slide">
+          <h1>{{block.settings.Section11_Quote}}</h1>
+
+          {% if block.settings.Section11_Address == true %}
+          <div class="d-flex verifiedcheck_buyer justify-content-center">
+            <i class="address fa fa-check-circle" aria-hidden="true"></i>
+            <p class="address">VERIFIED BUYER</p>
+          </div>
+          {% endif %}
+
+          <!--           <p class="address">{{block.settings.Section11_Address}} / <span> {{block.settings.Section11_name}} </span> </p> -->
+        </div>
+        {% endfor %}
+
+
+      </div>
+      <div class="swiper-button-next arrow_img_new_design">
+        <img src="{{ 'rigth_arrow_new_design.png' | asset_url }}">
+      </div>
+      <div class="swiper-button-prev arrow_img_new_design">
+        <img src="{{ 'left_arrow_new_design.png' | asset_url }}">
+      </div>
+    </div>
+    <style>
+      .swiper-button-prev.arrow_img_new_design img, .swiper-button-next.arrow_img_new_design img {
+        width:32px;
+      }
+      @media screen and (min-width:2000px) {
+        .swiper-button-prev {
+          left: 48%;
+        }
+        .swiper-button-next {
+          right: 48%;
+        }
+      }
+      @media screen and (min-width:1900px) {
+        .swiper-button-prev, .swiper-button-next {
+          top: 86%;
+        }      
+      }      
+      @media screen and (max-width:1200px) {
+        .swiper-button-prev {
+          left: 45%;
+        }
+        .swiper-button-next {
+          right: 45%;
+        }
+      }
+
+    </style>
+    <!--     
+<div class="owl-carousel owl-theme" id="carousel_1" >
+{% for block in section.blocks %} 
+<div class="relaxing ">
+<h1>{{block.settings.Section11_Quote}}</h1>
+<p class="address">{{block.settings.Section11_Address}} / <span> {{block.settings.Section11_name}} </span> </p>
+</div>
+{% endfor %}
+</div>
+-->
+
+  </div>
+
+  <div class="container-fluid d_none_desk_del_del">
+    <div class="d-flex">
+      <hr class="end_margin mar_ls">
+      <p class="OUR-CUSTOMER">
+        {{section.settings.Section11_heading}}
+      </p>
+      <hr class="end_margin mar_rs">
+    </div>
+    <div class="owl-carousel owl-theme" id="carousel_mb">
+      {% for block in section.blocks %} 
+      <div class="relaxing ">
+        <h1>{{block.settings.Section11_Quote}}</h1>
+        {% if block.settings.Section11_Address == true %}
+        <div class="d-flex verifiedcheck_buyer justify-content-center">
+          <i class="address fa fa-check-circle" aria-hidden="true"></i>
+          <p class="address">VERIFIED BUYER</p>
+        </div>
+        {% endif %}
+<!--         <p class="address">{{block.settings.Section11_Address}} / <span> {{block.settings.Section11_name}} </span> </p> -->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{{'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    simulateTouch: true,
+    draggable : true,
+    centeredSlides: true,
+    slidesPerView: '2',
+    coverflowEffect: {
+      rotate: -20,
+      stretch:20,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+
+  $(".swiper-container").hover(function() {
+    (this).swiper.autoplay.stop();
+  }, function() {
+    (this).swiper.autoplay.start();
+  });
+  var left_arrow = $( ".swiper-button-prev" ).html();
+//   var json_left_arrow = JSON.parse(left_arrow);
+//   console.log(json_left_arrow);
+  var right_arrow = $( ".swiper-button-next" ).html();
+//   var json_left_arrow = JSON.parse(right_arrow);
+//   console.log(json_right_arrow);
+
+</script>
+
+{% schema %}
+  {
+    "name": "Homepage Eleven Section",
+    "settings": [
+      {
+        "id": "Section11_heading",
+        "type": "text",
+        "label": "Heading"
+      }
+      ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Review",
+      "settings": [
+
+    	{
+          "id": "Section11_Quote",
+          "type": "textarea",
+       		"label": "Customer Review"
+        },
+        /* {
+          "id": "Section11_name",
+          "type": "text",
+       		"label": "Customer Name"
+        },*/
+    	{
+          "id": "Section11_Address",
+          "type": "checkbox",
+       	  "label": "Check if Verified Buyer",
+		  "default" : false
+        }
+      ]
+     }
+    ]
+ }
+{% endschema %}

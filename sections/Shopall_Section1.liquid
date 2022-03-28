@@ -1,0 +1,257 @@
+<style>
+  .navs-shop_all ul {
+    justify-content: space-between;
+  }
+  .shop_all_section_1_active{
+    color: rgba(46, 68, 51, 1) !important;
+  }
+  @media screen and (min-width:767px) {
+    .diplay_008_shopalls {
+      display:none;
+    }
+  }
+  @media screen and (max-width:800px) {
+    .btn_shop_all {
+      border-bottom:0px;
+    }
+    .btn_shop_all::before, .btn_shop_all::after {
+      position:unset;
+    }
+  }
+  @media screen and (max-width:767px) {
+    #displaynoneatmbleshopall045 {
+      display:none;
+    }
+  }
+  #dropdownbtnonshopalllsec1 button.btn.dropdown-toggle {
+    border: 1px solid;
+    border-radius: 0px;
+    font-family: 'Apercu';
+  }
+  #dropdownbtnonshopalllsec1 ul.dropdown-menu {
+    border-radius: 0px;
+  }
+  #dropdownbtnonshopalllsec1 ul li a {
+    font-family: Apercu;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #2e4433;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(46, 68, 51, 0.6);
+    letter-spacing: 1.71px;
+  }
+  #dropdownbtnonshopalllsec1 ul li {
+    text-align:center;
+  }
+  #dropdownbtnonshopalllsec1 ul li a:hover {
+    color: rgba(46, 68, 51, 1);
+  }
+
+  #dropdownbtnonshopalllsec1 .btn-check:focus+.btn,#dropdownbtnonshopalllsec1 .btn:focus {
+    box-shadow: 0 0 0 0rem rgba(13,110,253,.25);
+  }
+  .diplay_008_shopalls {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .btn_shop_all.btn_wednesday::after {
+    width: 60px;
+  }
+  .btn_shop_all.btn_wednesday::before {
+    width: 65px;
+  }
+  .btn_shop_all:hover::before {
+    width: 2px;
+  }  
+  .btn_shop_all.btn_wednesday:hover::after {
+    width: 0px;
+  }
+  .btn_shop_all.btn_wednesday:hover::before {
+    width: 0px;
+  }
+  .btn_shop_all {
+    border-bottom: 0px solid #333 !important; 
+  }
+  .btn_shop_all_activity {
+    border-bottom: 2px solid #333 !important;
+  }
+  .btn_shop_all_active {
+    border-bottom: 2px solid #333 !important;
+    position: unset !important;
+  }
+  .btn_shop_all::before, .btn_shop_all::after {
+    height: 0px !important;
+    width: 0px !important;
+    position:unset !important;
+  }
+
+</style>
+
+
+<div class="shop_all_section_1">
+  <div class="container">
+    <div class="row shop_all_row">
+      <div class="col-lg-6 col-md-4 col-sm-12">
+        <h1 class="shop-all_header">Shop All</h1>
+      </div>
+
+      <div class="col-lg-6 col-md-8 col-sm-12" id="displaynoneatmbleshopall045">
+        <div class="navs-shop_all">
+          <ul class="Events__tour_text shop_all_nav_items">
+            {% for block in section.blocks %}
+            <div class="tour_event_shop_all">
+              <li class="{% if collection.url == block.settings.link %} btn_shop_all_activity {% endif %}  btn_shop_all click007 shop_all_filter_category"  id="defaultOpen_shop_all_cate"> 
+                <a class="noselect zmsPros" id="btn33_all" href="{{ block.settings.link }}">
+                  {{ block.settings.linktext }}
+                </a>
+               </li>
+            </div>            
+            {% endfor %}
+          </ul>   
+        </div>
+      </div>
+
+
+      <div class="diplay_008_shopalls">
+        <div class="container">
+
+
+          <div class="dropdown text-center" id="dropdownbtnonshopalllsec1">
+            <button  type="button" class="btn dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+              Select Collection <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              {% for block in section.blocks %}
+              <li>
+                <a  id="btn33_all" href="{{ block.settings.link }}">{{ block.settings.linktext }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        </div>
+      </div> 
+      <div class="col-lg-12 col-md-12 col-sm-12 text-right">
+        {% include 'collection-sorting' %}
+      </div>
+    </div>
+  </div>
+</div>    
+
+
+
+<!-- CSS only -->
+
+
+
+<script>
+
+  console.log({{collections | json}});
+if($('#SortBy option:nth-child(1)').val()  == 'manual') {
+$('#SortBy option:nth-child(1)').remove();
+}
+  
+  $("#SortBy option").click(function(){
+    if($(this).val()  == 'best-selling') {
+   window.location.href = "/collections/best-selling";
+} 
+});
+  
+  
+ 
+  
+</script>
+
+{% javascript %}
+
+jQuery( document ).ready(function() {
+var  hreLink = window.location.href;
+var allwine = hreLink.indexOf("all");
+if (allwine > 0 ) {
+jQuery(".shop-all_header").html("Shop All");
+jQuery("#btn33_all").addClass("shop_all_section_1_active");
+jQuery("#defaultOpen_shop_all_cate").addClass("btn_shop_all_active");
+}
+var redwine = hreLink.indexOf("red-wine");
+if (redwine > 0 ) {
+jQuery(".shop-all_header").html("Shop Reds");
+jQuery("#btn33_reds").addClass("shop_all_section_1_active");
+jQuery("#redswine1").addClass("btn_shop_all_active");
+}
+var white = hreLink.indexOf("whites");
+if (white > 0) {
+jQuery(".shop-all_header").html("Shop whites");
+jQuery("#btn33_whites").addClass("shop_all_section_1_active");
+jQuery("#whiteswine1").addClass("btn_shop_all_active");
+}
+var rpwine = hreLink.indexOf("rock-point");
+if (rpwine > 0) {
+jQuery(".shop-all_header").html("Shop Rock Point");
+jQuery("#btn33_rockpoint").addClass("shop_all_section_1_active");
+jQuery("#rock-pointwine1").addClass("btn_shop_all_active");
+}
+var jole = hreLink.indexOf("jolee");
+if (jole > 0) {
+jQuery(".shop-all_header").html("Shop Jolee");
+jQuery("#btn33_jolee").addClass("shop_all_section_1_active");
+jQuery("#Joleewine1").addClass("btn_shop_all_active");
+}
+var gif = hreLink.indexOf("gifts");
+if (gif > 0) {
+jQuery(".shop-all_header").html("Shop Gifts");
+jQuery("#btn33_gifts").addClass("shop_all_section_1_active");
+jQuery("#giftswine1").addClass("btn_shop_all_active");
+}
+var gears = hreLink.indexOf("gear");
+if (gears > 0) {
+jQuery(".shop-all_header").html("Shop Gear");
+jQuery("#btn33_gear").addClass("shop_all_section_1_active");
+jQuery("#gearwine1").addClass("btn_shop_all_active");
+}
+
+var wednesday = hreLink.indexOf("wine-wednesday");
+if (wednesday > 0) {
+jQuery(".shop-all_header").html("Wine Wednesday");
+jQuery("#wine_wednesday").addClass("shop_all_section_1_active");
+jQuery("#btn33_wine_wednesday").addClass("btn_shop_all_active");
+}
+
+});
+
+{% endjavascript %}
+
+
+
+
+{% schema %}
+{
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Collection Tab",
+      "settings": [
+        {
+          "id": "linktext",
+          "type": "text",
+          "label": "Collection Text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+       		"label": "Collection Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

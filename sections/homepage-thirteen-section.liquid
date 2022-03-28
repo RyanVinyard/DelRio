@@ -1,0 +1,34 @@
+<div class="section_13">
+  <div class="container-fluid">
+    <div class="carousel_img owl-carousel owl-theme" id="carousel_2">
+      {% for block in section.blocks %} 
+      <div>
+        <img src="{{block.settings.Section13_img | img_url:'master'}}" alt="">
+      </div>
+      {% endfor %}
+      <div>
+        <img src="{{'insta4.png' | asset_url }}" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Thirteen Section",
+    "settings": [],
+      "blocks": [
+        {
+          "type": "select",
+          "name": "Image",
+          "settings": [
+          {
+          "id": "Section13_img",
+          "type": "image_picker",
+          "label": "Image"
+        }
+        ]
+      }
+      ]
+    }
+{% endschema %}

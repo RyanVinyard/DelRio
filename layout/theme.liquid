@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>{% render 'pagefly-head' %}
+    {% include 'kiwiSizing' %}
+    {% include 'taginstall-head' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+    {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+    &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+    &ndash; {{ shop.name }}
+    {%- endunless -%}
+    {%- endcapture -%}
+    <title>{{ seo_title | strip }}</title>
+
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% include 'social-meta-tags' %}
+    
+        {% include 'css-variables' %}
+    <link rel="stylesheet" href="{{ 'bloom-custom.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% comment %} {{ 'fontawesome.min.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'theme.min.css' | asset_url | stylesheet_tag }}
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'owl.theme.default.min.css' | asset_url }}">
+ 
+    
+    {% comment %}  {{ 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'  | stylesheet_tag }}  {% endcomment %}
+    {{ 'jquery-3.5.1.min.js' | asset_url | script_tag }}  
+    {{ 'bootstrap.bundle.min.js' | asset_url | script_tag }}
+    {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+    <link rel="stylesheet" href="{{ 'bloom-custom.scss.css' | asset_url }}">
+    {{ content_for_header }}
+    {% include 'vitals-loader' %}
+
+    {% include 'bloom' %}
+
+    <!-- Get data for product specs ========================= -->
+    <script>
+      window.Bloom = window.Bloom || {};            
+      Bloom.data = Bloom.data || {};
+      Bloom.data.products = {};
+      {% if product.metafields.bloom['bloomfields'] %}
+      Bloom.data.products[{{ product.id }}] = {
+        bloomfields: {{ product.metafields.bloom['bloomfields'] | json }}
+      };
+        {% endif %}
+    </script>
+
+    {% render 'bloom-header' %}
+    
+
+
+  
+  {% render 'shogun-head' %}
+</head>
+  <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} {{ settings.color_primary }}">
+    <a class="sr-only sr-only-focusable" href="#site-main">{{ 'accessibility.skip_to_content' | t }}</a>
+    <a class="sr-only sr-only-focusable" href="#site-footer">{{ 'accessibility.skip_to_footer' | t }}</a>
+
+    {% section 'header' %}
+    {% section 'login_customers' %}
+    {% section 'cart_popup' %}
+
+    <div id="cart-toast" class="toast toast-bottom-right hide" data-delay="20000" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="mr-auto">{{ 'product.added_to_cart' | t }}</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="{{ 'misc.close' | t }}">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        <!-- Content filled via ajax -->
+      </div>
+    </div>
+
+    <main id="site-main" class="mb-8">
+ {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+    <script>
+      //console.log({{cart.items|json}});
+      cartItem = JSON.stringify({{cart.items|json}});
+      assetFolderUrl = "{{'no_image.png'|asset_img_url:'80x'}}";
+
+    </script>
+    {% comment %} 
+    {{ 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'  | script_tag  }}
+    {{ 'moment.min.js' | asset_url | script_tag }}
+    {% endcomment %}
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+    {{ 'theme.min.js' | asset_url | script_tag }}
+    {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+    {{ 'homepage_css.js' | asset_url | script_tag }}
+    {{ 'js-file-downloader.min.js' | asset_url | script_tag }}
+    {{ 'lazysizes.min.js' | asset_url | script_tag }}
+     <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YddGGA"></script>
+    {% include 'smile-initializer' %}
+    {% comment %}Bloom age gate snippet{% endcomment %}
+    {% section 'bloom-age-gate-section' %}   
+    {% comment %}Bloom cart attributes snippet for gift messages{% endcomment %}
+    {% render 'bloom-cart-attributes' %}
+   
+    <script>
+      Shopify.money_format = {{ shop.money_format | json }}
+    </script>
+
+    
+
+    {% include 'taginstall-body' %}
+
+    <!-- **BEGIN** Hextom QAB Integration // Main Include - DO NOT MODIFY -->
+    {% render 'hextom_qab_main', product: product, customer: customer %}
+    <!-- **END** Hextom QAB Integration // Main Include - DO NOT MODIFY -->
+
+       
+  </body>
+</html>

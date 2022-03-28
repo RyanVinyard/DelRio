@@ -1,0 +1,552 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+
+
+
+<style>
+  
+.contact_us_page_section_1 {
+    background-color: #fcfcf5;
+    padding: 170px 45px 90px;
+}
+h1.Wed-love-to-hear-fr_contact_us {
+    font-family: 'Butler';
+    font-size: 48px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+    margin-bottom: 70px;
+  }
+.contact_title_text_about_us p {
+    margin-bottom: 0;
+}
+.contact_title_text_about_us {
+    margin-bottom: 60px;
+}
+.contact_title_text_about_us:last-child {
+    margin-bottom: 30px;
+}
+
+p.General-Questions_contact_us {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #171f15;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+ p.hellodelriovineyard_contact_us {
+    font-family: Apercu Pro;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2e4433;
+}
+
+p.Like-Follow-Share_contact_us {
+    font-family: Apercu Pro;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #171f15;
+    margin: 35px 0 20px;
+}
+  .social_icons_contact_us i {
+        font-size: 24px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #2e4433; 
+}
+.social_icons_contact_us {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+.like_follow_share_contact_us {
+    width: 16%;
+    margin: 0 auto;
+}
+
+/* section 2 css */
+
+h1.Frequently-Asked-Que_text_contact_us {
+    font-family: 'Butler';
+    font-size: 44px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+    margin: 0px;
+}
+  .contact_us_page_section_2 {
+    background-color: #fcfcf5;
+    padding: 80px 45px 100px;
+}
+p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    font-family: Apercu Pro;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+    width: 74%;
+    margin: 40px auto 60px;
+}
+hr.pixel_1_hr_contact_us {
+    border: 0px;
+    border-top:1px solid #bcc3bd;
+    margin: 0;
+}
+
+
+/* accordian css */
+
+.Whats-in-the-bottle_contact_us {
+    padding-top: 12px;
+}
+.Whats-in-the-bottle_contact_us p {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: rgba(46, 68, 51, 0.87);
+    cursor: pointer;
+  }
+  .Whats-in-the-bottle_contact_us a:hover {
+      text-decoration: none;
+  }
+  .Whats-in-the-bottle_contact_us p:hover {
+    color: rgba(46, 68, 51, 1);
+    font-family: Apercu pro;
+  }
+  .maer_top_75_contact_us_sm {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .contact_us_page_lady_img img {
+      height: 200px;
+  }
+
+
+
+  .accordian_text_contact_us .accordian_contact_us h3 {
+    font-family: Apercu Pro;
+    font-size: 14.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #171f15;
+    cursor: pointer;
+    margin: 0;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us ul ul {
+    display: none;
+    height: 100%;
+    margin-bottom: -7px;
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    display: none;
+    padding: 11px 0 0px;
+    margin: 0;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us ul ul li p {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translatey(-20px);
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us ul ul.open p {
+    opacity: 1;
+    transform: translatey(0px);
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us .arrow {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid #171f15;
+    border-right: 2px solid #171f15;
+    transform: rotate(135deg);
+    transform-origin: center;
+    float: right;
+    margin-right: 8px;
+    transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us .arrow.closed {
+    margin-top: 4px;
+    transform: rotate(-45deg);
+}
+.accordian_text_contact_us .main_contact_us .accordion-item_contact_us {
+    padding: 12px 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    outline: none;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us ul {
+    padding: 0;
+    margin: 0;
+}
+.Whats-in-the-bottle_contact_us p {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: rgba(46, 68, 51, 0.87);
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us {
+    border-bottom: 1px solid #2e4433;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us:last-child {
+    border-bottom: 0px;
+}
+
+
+
+
+
+
+  @media screen and (max-width:1100px) {
+    .contact_us_page_section_1 {
+        padding: 140px 45px 80px;
+    }
+    h1.Wed-love-to-hear-fr_contact_us {
+        font-size: 44px;
+    }
+    p.General-Questions_contact_us {
+        font-size: 12px;
+    }
+    p.hellodelriovineyard_contact_us {
+        font-size: 29px;
+        margin-bottom: 60px;
+    }
+    .like_follow_share_contact_us {
+        width: 20%;
+    }
+    p.All-Del-Rio-Wines-av_text_desc_contact_us {
+        font-size: 16px;
+    }
+    h1.Frequently-Asked-Que_text_contact_us {
+        font-size: 38px;
+    }
+    .maer_top_75_contact_us_sm {
+        width: 82%;
+    }
+
+    .accordian_text_contact_us .main_contact_us .accordian_contact_us ul ul {
+        font-size: 13px;
+    }
+
+
+  }
+
+  @media screen and (max-width: 991px) {
+  p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    width: 85%;
+    font-size: 14px;
+    margin: 30px auto 40px;
+}
+h1.Frequently-Asked-Que_text_contact_us {
+    font-size: 33px;
+}
+.main_contact_us .accordion-item_contact_us .title {
+    font-size: 11.5px;
+}
+.Whats-in-the-bottle_contact_us p {
+    font-size: 11px;
+    margin-bottom: 13px;
+}
+.main_contact_us .accordion-item_contact_us.active .paragraph {
+    font-size: 11px;
+}
+.like_follow_share_contact_us {
+    width: 26%;
+}
+h1.Wed-love-to-hear-fr_contact_us {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+p.hellodelriovineyard_contact_us {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+p.General-Questions_contact_us {
+    font-size: 10px;
+}
+.contact_title_text_about_us {
+    margin-bottom: 40px;
+}
+.accordian_text_contact_us .accordian_contact_us h3 {
+    font-size: 12.5px;
+}
+.Whats-in-the-bottle_contact_us {
+    padding-top: 21px;
+}
+.accordian_text_contact_us .main_contact_us .accordian_contact_us ul ul {
+    font-size: 12.5px;
+}
+
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .contact_us_page_section_1 {
+        padding: 140px 15px 80px;
+    }
+    h1.Wed-love-to-hear-fr_contact_us {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+    .maer_top_75_contact_us_sm {
+        width: 100%;
+    }
+    p.All-Del-Rio-Wines-av_text_desc_contact_us {
+        width: 100%;
+    }
+    }
+
+@media screen and (max-width: 800px) {
+.like_follow_share_contact_us {
+    width: 28%;
+}
+p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    width: 94%;
+}
+
+}
+@media screen and (max-width:767px) {
+    .Whats-in-the-bottle_contact_us p {
+        font-size: 13px;
+    }
+    p.All-Del-Rio-Wines-av_text_desc_contact_us {
+        width: 100%;
+    }
+    .Whats-in-the-bottle_contact_us {
+        padding-top: 21px;
+        padding: 30px 0 0px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    p.hellodelriovineyard_contact_us {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .like_follow_share_contact_us {
+        width: 50%;
+    }
+.contact_us_page_section_2 {
+    background-color: #fcfcf5;
+    padding: 80px 15px 100px;
+}
+h1.Frequently-Asked-Que_text_contact_us {
+    font-size: 27px;
+}
+p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    margin-bottom: 0;
+}
+}
+
+@media screen and (max-width: 400px) {
+p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    font-size: 12px;
+}
+.like_follow_share_contact_us {
+    width: 57%;
+}
+.contact_us_page_lady_img img {
+    height: 150px;
+}
+}
+@media screen and (max-width: 350px) {
+h1.Wed-love-to-hear-fr_contact_us {
+    font-size: 22px;
+    margin-bottom: 50px;
+}
+p.hellodelriovineyard_contact_us {
+    font-size: 17px;
+}
+h1.Frequently-Asked-Que_text_contact_us {
+    font-size: 22px;
+}
+p.All-Del-Rio-Wines-av_text_desc_contact_us {
+    font-size: 11px;
+}
+.like_follow_share_contact_us {
+    width: 69%;
+}
+}
+
+
+  
+</style>  
+
+
+
+
+
+{% section 'contactus_first_section' %}
+ 
+
+<!--     <hr class="pixel_1_hr_contact_us">
+
+    <div class="contact_us_page_section_2">
+        <div class="container">
+            <div class="Frequently_Asked_Questions_so_contact_us">
+                <h1 class="Frequently-Asked-Que_text_contact_us">Frequently Asked Questions</h1>
+                <p class="All-Del-Rio-Wines-av_text_desc_contact_us">All Del Rio Wines available at an extra 20% discount off of retail three bottles of Del Rio wine selected specifically for our wine club members.</p>
+            </div>
+
+
+            <div class="maer_top_75_contact_us_sm">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="Whats-in-the-bottle_contact_us">
+                           <a href="/pages/faqs#whatinthebottle"><p>What’s in the bottle?</p></a> 
+                           <a href="/pages/faqs#prdertrackingandshipping"><p>Order Tracking & Shipping Info</p></a> 
+                           <a href="/pages/faqs#howdoipayforgood"><p>How do I pay for the goods?</p></a>
+                           <a href="/pages/faqs#giftcardsandnotes"><p>Gift Cards & Gift Notes</p></a>  
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="accordian_text_contact_us">
+
+                            <div class="main_contact_us">
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span>What does shipping cost for the 3, 6 and 12 bottle options?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span>How long will it take to receive my package?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span> Are you able to ship Internationally?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span>  Do I need an adult signature for my delivery of wines?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span>  Can I ship to a work address or PO Box?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="accordian_contact_us">
+                                    <ul>
+                                        <li class="accordion-item_contact_us">
+                                            <h3>
+                                                <span class="arrow"></span>  Do you have a minimum for membership orders?
+                                            </h3>
+                                            <ul>
+                                                All wines are shipped UPS and require an adult signature. We recommend using your work address if you are away from home during the day. As an option, your shipments can be picked up directly from our tasting room.
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+ -->
+
+
+
+
+

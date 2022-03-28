@@ -1,0 +1,148 @@
+<style>
+  .d_none_mble_del_del.w-100{margin-bottom:10px}.d-flex.social_footer_icons{justify-content:center}.social_footer_icons a{margin:0 30px}
+
+          .quest_devlivery a {
+            font-family: Apercu;
+            font-size: 14px;
+            font-weight: 400;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: normal;
+            color: #fff;
+            margin: 0;
+          }
+          .quest_devlivery a:hover {
+            text-decoration:none;
+          }
+          .quest_devlivery {
+            text-align: center;
+            width:60%;
+            margin:auto;
+            margin-top: 15px;
+          }
+          @media screen and (max-width:991px) {
+            .quest_devlivery {
+              width:100%;
+            }      
+
+          }
+  @media screen and (max-width:767px) {
+    .quest_devlivery {
+      display:block;
+    }
+    .quest_devlivery .margin_set_sims {
+    	margin:5px 0;
+    }
+  }
+
+</style>
+
+        {% capture my_variable %}
+
+        <div class="container">
+          <div class="quest_devlivery">
+            <div class="col-lg-4 col-md-4 col-sm-12 margin_set_sims">
+              <a href="/pages/faqs">FAQs</a>                
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 margin_set_sims">
+              <a href="/pages/shipping-delivery">Shipping & Delivery</a>              
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 margin_set_sims">
+              <a href="/pages/terms-condition">Terms & Conditions</a>              
+            </div>
+          </div>
+        </div>
+
+        {% endcapture %}
+
+<footer class="section_14">
+  <div class="conatiner">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-6">
+        <ul class="footer_wine">
+          <li class="wine_shop explore">SHOP</li>
+          <li class="wine_shop"><a href="/collections/all">All Wines</a></li>
+          <li class="wine_shop"><a href="/collections/all">Del Rio</a></li>
+          <li class="wine_shop"><a href="/pages/rock-point">Rock Point</a></li>
+          <li class="wine_shop"><a href="/pages/jolee">Jolee</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 footer_logo d_none_mble_del_del">
+        <a href="/"><img src="{{'wines-landing-delrio-fit.png' | asset_url }}" alt=""></a>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-6">
+        <ul class="footer_wine">
+          <li class="wine_shop explore">EXPLORE</li>
+          <a href="/pages/history"><li class="wine_shop">Our Story</li></a>
+          <a href="/pages/wine-club"><li class="wine_shop">Rio Club</li></a>
+          <a href="/pages/visit"><li class="wine_shop">Visit</li></a>
+          <a href="/blogs/all"><li class="wine_shop">Blog</li></a>
+        </ul>
+      </div>
+      <div class="d_none_desk_del_del w-100">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-12 footer_logo   text-center">
+          <a href="/"><img src="{{'wines-landing-delrio-fit.png' | asset_url }}" alt=""></a>
+        </div>
+        <div class="d-flex social_footer_icons">
+          <a href="https://instagram.com/delriovineyards"><i class="fa fa-instagram"></i></a>
+          <a href="https://facebook.com/delriovineyards"><i class="fa fa-facebook"></i></a>
+          <a href="mailto:hello@delriovineyards.com"> <i class="fa fa-at"></i></a>
+        </div>
+        {{ my_variable }}
+      </div>
+      <div class=" d_none_mble_del_del w-100 ">        
+        <div class="w-100 w_1933">
+          <div class="d-flex social_footer_icons">
+            <a href="https://instagram.com/delriovineyards"><i class="fa fa-instagram"></i></a>
+            <a href="https://facebook.com/delriovineyards"><i class="fa fa-facebook"></i></a>
+            <a href="mailto:taste@delriovineyards.com"> <i class="fa fa-at"></i></a>
+          </div>  
+        </div>
+
+        {{ my_variable }}
+
+
+      </div>
+      <div class="w-100">
+      </div>
+      <p class="Shipping-Delivery_2">
+        <a class="d_none_for_mobile_footer_quest_smm"> © Copyright 2020 Del Rio Vineyards</a>
+        <a class="d_none_for_desktop_footer_quest_smm"> <br> © Copyright 2020 Del Rio Vineyards</a>
+      </p>
+      {% if section.settings.powered_by_bloom %}
+      <div class="Bloom__Powered-by-bloom" style="max-width: 200px; padding-top: 15px; margin: auto;">
+        <div style="display:flex; flex-direction:row; align-items:end; justify-content: center;display: -webkit-box;">
+          <p style="margin-top:4px; margin-right:6px; font-size:12px; color: white;">Powered by</p>
+          <img src="{{ section.settings.bloom_logo | img_url: 'x40' }}" width="81" height="20" 
+               alt="Bloom logo" style="vertical-align:middle; margin-right: 2px; margin-top: 3px;">
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Powered by Bloom",
+        "info": "Display the Powered by Bloom stamp in the footer."
+      },
+      {
+        "type": "checkbox",
+        "id": "powered_by_bloom",
+        "label": "Show Powered by Bloom",
+        "default": false
+      },
+      {
+       "type": "image_picker",
+       "id": "bloom_logo",
+       "label": "Bloom Logo"
+      }
+	]
+  }
+{% endschema %}

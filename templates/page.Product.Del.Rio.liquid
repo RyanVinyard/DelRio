@@ -1,0 +1,2212 @@
+{% comment %}
+<article class="pt-6">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</article>
+{% endcomment %}
+  
+
+
+
+<style>
+  
+    /* product page css */
+  .product_section_1 {
+    padding-top: 56px;
+  }
+  
+.product_section_1 {
+    padding-top: 80px;
+  }
+  /* product page css */
+
+  .inherit_width .col-lg-8 {
+    max-width: 64.5%;
+  }
+
+  .inherit_width {
+    width: inherit;
+  }
+  .padding_left_zero {
+    padding-right: 40px;
+    padding-left: 0;
+}
+  .best_wine img {
+    width: 100%;
+  }
+  .best_wine {
+    background-color: #fcf9ef;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+  .owl-theme .owl-dots .owl-dot span {
+    background: #523e3e !important;
+    border-radius: 0px !important;
+  }
+  .posi_ab1 .fa-angle-left,
+  .posi_ab1 .fa-angle-right {
+    font-weight: 900;
+    color: #2e4433;
+  }
+ 
+  .jolle_rose {
+    padding: 30px 25px;
+  }
+ 
+.posi_ab1 {
+  position: absolute;
+  top: 37%;
+  right: 80px;
+  color: #2e4433;
+}
+span.navtext {
+  font-size: 35px;
+  color: rgba(82, 62, 62, 0.22);
+}
+.posib_ab1 {
+  left: 80px;
+  right: unset;
+}
+
+.owl-carousel .owl-item img {
+  width: 76% !important;
+  margin: 0 auto !important;
+}
+#best_wine.owl-carousel .owl-item img {
+    width: 73% !important;
+    margin: 0 auto !important;
+}
+  .jolle_rose {
+    padding: 30px;
+    border: 1px solid #2e4433;
+    margin-top: 75px;
+  }
+  .JOLEE {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.72);
+  }
+  .Rose-Jolee {
+    font-family: Apercu Pro;
+    font-size: 19px;
+    margin-bottom: 2px;
+  }
+
+  .Rose-Jolee {
+    font-family: Apercu Pro;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+
+  
+.Sweet-Bubbly {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 1px;
+    color: #2e4433;
+    margin-bottom: 8px;
+  }
+  .The-deep-and-bright {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #171f15;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(46, 68, 51, 0.32);
+  }
+
+  .The-deep-and-bright_testing {
+    font-family: Apercu;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #171f15;
+  }
+  .star_product {
+    padding-bottom: 15px;
+    padding-top: 0px;
+    margin-right: 6px;
+}
+  .star_product {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #2e4433;
+  }
+  .dollar_15 {
+    font-family: Apercu;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .sup_00 {
+    font-family: Apercu;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.3;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .margin_30 {
+    justify-content: space-between;
+  }
+  .margin_30 {
+    margin-top: 20px;
+  }
+
+  /* number form button */
+
+.value_btn {
+    width: fit-content;
+  }
+  
+  .value-button {
+    display: inline-block;
+    margin: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: bold;
+  }
+  
+  .value-button:hover {
+    cursor: pointer;
+  }
+  
+  form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  input#number {
+    text-align: center;
+    border: none;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .val_btn1 {
+    width: 37px !important;
+  }
+  .val_btn {
+    border: solid 0.8px #2e4433;
+    margin-top: 0;
+    margin-right: 15px;
+  }
+  .val_btn.val_btn_product {
+    margin-right: 0;
+  }  
+  .shop_continue1 {
+    border: 1px solid #2e4433;
+    padding: 11px 9px;
+  }
+  .text-decrotaioN_none_pro_star_detail {
+    border-bottom:0px solid !important;
+  }
+  .shop_continue1 {
+    border: 1px solid #2e4433;
+    padding: 11px 27px;
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2e4433;
+  }
+  .Continue-Shopping {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2e4433;
+    border:1px solid #2e4433;
+}
+.Continue-Shopping:hover {
+  color: #ffffff;
+}
+.mt_up {
+    margin-top: 22px;
+  }  
+  .mt_up {
+    margin-top: 22px;
+  }
+  .Order-as-gift-at-che {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #171f15;
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  .click_change {
+    width: 12px;
+    height: 4px;
+    background-color: rgba(46, 68, 51, 0.32);
+  }
+  .green_click {
+    width: 12px;
+    height: 4px;
+    background-color: #2e4433;
+    margin-left: 5px;
+  }
+  .Cabernet-Sauvig_pro_del {
+    font-family: 'Butler';
+    font-size: 26px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #171f15;
+  }
+  .Reviews_pro_del {
+    font-family: Apercu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #2e4433;
+  }
+  .Quantity_pro_del {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1px;
+    color: #2e4433;
+    text-transform: uppercase;
+  }
+/* radio css */
+.radio-tile-group {
+  display: flex;
+  justify-content: center;
+}
+.radio-tile-group .input-container {
+  position: relative;
+  height: 2.5rem;
+  width: 3rem;
+  margin-right: 0.5rem;
+}
+.radio-tile-group .input-container .radio-button {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.radio-tile-group .input-container .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: solid 1px rgba(46, 68, 51, 0.32);
+  padding: 1rem;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .icon svg,.radio-tile-group .input-container .radio-button:checked + .radio-tile .radio-tile-label,.radio-tile-group .input-container .radio-button:checked + .radio-tile {
+  background-color: #2e4433;
+  transition: background-color 500ms ease;
+}
+
+.number_3_jolee {
+    font-family: Apercu;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(23, 31, 21, 0.6);
+}
+p.number_3_jolee {
+  margin-bottom: 0;
+}
+.jolee_0-off-Ros-Jolee {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f07769;
+  padding-top: 15px;
+}
+.Frequency_jolieee {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #e06364;
+  text-transform: uppercase;
+}
+
+input:checked ~ .checkmark {
+  background-color: red;
+}
+.For-when-you-have-fr_pro_del {
+  font-family: Apercu Pro;
+  font-size: 10px;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: normal;
+  color: rgba(23, 31, 21, 0.6);
+}
+.border_gerish_pro_del {
+  padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(46, 68, 51, 0.32);
+}
+.form_subscribing input {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f5f5f3;
+  width: 100%;
+  background-color: #2e4433;
+  padding: 8px;
+  outline: 0px;
+  border: 0px;
+}
+.form_subscribing input.SUBSCRIBE-82_delrio {
+  margin: 15px 0 7px;
+}
+.form_subscribing input.SUBSCRIBE-82_delrio1 {
+  color:#2e4433;
+  border: solid 1px #2e4433;
+  background-color: #ffffff;
+}
+.Buy-3-bottles-and-sa_pro_del {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgba(23, 31, 21, 0.6);
+  margin: 0;
+  padding-top: 8px;
+}
+.fa.fa-gift {
+  font-size: 24px;
+}
+.owl-theme .owl-nav {
+  margin-top: -10px !important;
+}
+#best_wine button:focus {
+  outline: 1px solid #523e3e;
+}
+/* section 16 */
+.Estate-Grown-Rougue_del_pro {
+  font-family: 'Butler';
+  font-size: 27px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #171f15;
+  margin: 0;
+}
+.del_rio_pro_tag {
+  height: 100%;
+}
+.section_16 {
+  padding:80px 45px;
+}
+.del_rio_pro_tag img {
+  margin-right: 15px;
+}
+
+/* section 17 css */
+
+.Estate-Grown-Rougue {
+  font-family: 'Butler';
+  font-size: 48px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #171f15;
+  padding-bottom: 45px;
+}
+
+.section_17 {
+  padding: 80px 45px;
+  background-color: #fcfcf5;
+}
+.Rock-Point-Pino {
+  font-family: Apercu;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #171f15;
+  
+}
+.Rock-Point-Pino span {
+  font-weight: bold;
+}
+.Tasting-notes_test {
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #171f15;
+}
+.The-deep-and-bright_testing {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #171f15;
+}
+.padding_15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.pad_up_15 {
+  padding-top: 15px;
+}
+.rose_product_img_pro_del {
+  background-color: white;
+  padding: 35px;
+  text-align: center;
+  width: 90%;
+}
+hr.hr_gre445 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid #2e4433;
+}
+.Cases-Produced-pH-T_row {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  line-height: 2.29;
+  color: #171f15;
+}
+.padding_15 table {
+  width: 100%;
+}
+.Cases-Produced-pH-T_row td:first-child {
+  width: 48%;
+}
+.Cases-Produced-pH-T_row {
+  border-bottom: 1px solid rgba(23, 31, 21, 0.12);
+}
+tr.no_border_pro_del {
+  border-bottom: 0px;
+}
+
+/* section 18 css */
+
+.section_18 {
+  padding: 60px 45px;
+  background-color: #2e4433;
+}
+.Del-Rio-Club-Members_pro_del {
+  font-family: 'Butler';
+  font-size: 45px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.The-Rio-Club-provide_pro_del {
+  font-family: Apercu;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #fcf9ef;
+  margin-bottom: 1.5rem;
+}
+.Learn-More_proo_del {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+a:hover {
+  text-decoration: none;
+}
+hr.hr_break_pro_del {
+    width: 3.75rem;
+    height: 2px;
+    background-color: #ffffff;
+    margin-left: 1rem;
+    margin-top: 10px;
+}
+
+.Bottle-Shipping-Di_pro_del {
+  font-family: Apercu Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 2px;
+  color: #fcf9ef;
+  text-transform: uppercase;
+  margin-bottom:8px;
+}
+.shipping_discount_pro_del .row {
+  margin-bottom: 16px;
+} 
+.Bottle-Shipping-Di_pro_del1 {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.membership_pro_del {
+  width: 90%;
+}
+.twenty_discount_pro {
+  text-align: center;
+}
+.bottle_diamond_pro.d-flex {
+  width: 93%;
+  margin: 0 auto;
+}
+.twenty_discount_del_rios {
+  margin-top: 20px;
+}
+
+/* section 19 css */
+.section_19 { 
+  background-color: #fcfcf5;
+  padding: 100px 45px;
+
+}
+.section_19 select {
+  width: 48%;
+  color: #2e4433;
+  font-size: 12px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #2e4433;
+  background-color: #fcfcf5;
+  font-family: apercu pro;
+}
+.margin_15_select {
+  margin-right: 14px;
+}
+.Lucinda-H {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #171f15;
+  margin-bottom: 2px;
+}
+.Verified-Buyer {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #2e4433;
+}
+.Absolutely-awesome-w {
+  font-family: Apercu;
+  font-size: 14.8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #171f15;
+}
+.four_star_product {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #2e4433;
+}
+  .star_pro_del {
+  margin-top:15px;
+  }
+.Taste-Profile-Sweet {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(23, 31, 21, 0.6);
+  margin-bottom: 0;
+}
+.Lucinda {
+  padding: 30px 0;
+  border-bottom:1px solid rgba(46, 68, 51, 0.16);
+}
+.margin_lucinda_pro {
+  margin-top: 30px;
+}
+.margin_lucinda_pro_del {
+  margin-bottom:30px;
+}
+.next_signs {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+  .num_one_to li {
+  list-style: none;
+}
+.num_one_to li a {
+  text-decoration: underline;
+  color: black;
+}
+.num_one_to li a {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e4433;
+  padding: 0 7px;
+}
+.num_one_to a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+/* section 20 css */
+.section_20 {
+  background-color: #ffffff;
+  padding: 60px 45px 0;
+}
+.Best-Wines-for-Summe {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+.Best-Wines-for-Summe {
+  letter-spacing: 2px;
+  color: #171f15;
+  font-stretch: normal;
+  font-style: normal;
+  font-family: Apercu Pro;
+}
+.Shop-All-Wines {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: right;
+  text-decoration: underline;
+}
+.Shop-All-Wines, .Best-Wines-for-Summe {
+  letter-spacing: 2px;
+  color: #171f15;
+  font-stretch: normal;
+  font-style: normal;
+  font-family: Apercu Pro;
+}
+.cabrener_pad {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.png_carbernet {
+  background-color: #faf7f5;
+  padding: 40px 10px 15px;
+}
+.ADD-TO-CART {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #2e4433;
+  width: 100%;
+  border: solid 1px #2e4433;
+  padding: 10px;
+  margin: 0;
+  margin-top: 40px;
+  background-color: white;
+}
+a {
+  color: #000000;
+}
+.padding_up {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.Chardonnay_1 {
+    font-family: Apercu Pro;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #171f15;
+    margin: 0;
+}
+.Bright-Elegant {
+  font-family: Apercu Pro;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #2e4433;
+  margin-bottom: 9px;
+}
+.stars_rating {
+  width: 84px;
+  height: 16px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #2e4433;
+  text-align: center;
+}
+.Reviews {
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #2e4433;
+}
+
+
+
+  
+/*  rating css  */
+      .bar-container_pro_del {
+      width: 70%;
+      background-color: #f1f1f1;
+      text-align: center;
+      color: white;
+      height: fit-content;
+      margin-bottom: 0;
+      border:1px solid #171f15;
+      border-left: 0px;
+      display: inline-table;
+  }
+
+  .bar-4_pro_del {
+    width: 80%;
+    height: 16px;
+    background-color: #171f15;
+}
+p.star_Rating_pro_web {
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+.thirteen_hundred_pro {
+  font-family: Apercu;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #2e4433;
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+.Estate-Grown-Rougue {
+  padding-bottom: 30px;
+}
+.margin_bottom_16_shop {
+  margin-bottom: 15px;
+}
+
+.star_Rating_pro_web_16 {
+  width: 1.5rem;
+}
+.star_Rating_pro_web_12 {
+  width: 0.75rem;
+
+}
+.star_Rating_pro_web_5 {
+  width: 0.5rem;
+
+}
+.star_Rating_pro_web_2 {
+  width: 0.2rem;
+
+}
+.View-all-1544-review_pro_del {
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #2e4433;
+  text-decoration: underline;
+  padding-top: 15px;
+}
+/* end rating css */
+
+
+
+  @media screen and (min-width: 1600px) {
+    /* product page css */
+    .product_container {
+      margin-left: auto !important;
+    }
+    .val_btn.val_btn_product {
+      margin-right: 1px;
+    }
+  }
+  /* product page css */
+  
+  @media screen and (min-width: 1300px) and (max-width: 1500px) {
+    .product_container {
+      max-width: 100% !important;
+      margin-left: 0;
+    }
+    .inherit_width .col-lg-8 {
+      max-width: 64.5%;
+    }
+    .The-deep-and-bright {
+      font-size: 15px;
+    }
+    .For-when-you-have-fr_pro_del {
+      font-size: 13px;
+    }  
+  }
+  @media (min-width: 1200px) {
+    /* product page css */
+  
+    .product_container {
+      max-width: 1236px;
+      margin-left: 0;
+    }
+
+  }
+  @media screen and (max-width: 1150px) {
+  .value-button {
+    width: 17px;
+  }
+  /* section 18 css */
+  .Del-Rio-Club-Members_pro_del {
+    font-size: 37px;
+  }
+  .The-Rio-Club-provide_pro_del {
+    font-size: 13px;
+  }
+  .Bottle-Shipping-Di_pro_del1 {
+    font-size: 12px;
+  }
+  .Bottle-Shipping-Di_pro_del {
+    font-size: 11px;
+  }
+  .twenty_discount_del_rios {
+    margin-top: 15px;
+}
+  }
+  @media screen and (max-width: 1150px) and (min-width: 1000px) {
+
+    .carousel_right .owl-carousel {
+      display: flex;
+    }
+    
+    .carousel_right .owl-carousel .Chardonnay_2018 {
+      margin-right: 10px;
+    }
+    .Cabernet-Sauvig_pro_del {
+      font-size: 20px;
+    }
+    .star_product {
+      padding-bottom: 0px;
+  }
+  .The-deep-and-bright {
+    font-size: 9px;
+  }
+  .radio-tile-group .input-container {
+    height: 1.5rem;
+    width: 2.5rem;
+    margin-right: 5px;
+}
+.Buy-3-bottles-and-sa_pro_del {
+  font-size: 8px;
+}
+.posi_ab1 {
+  position: absolute;
+  top: 41%;
+}
+.Estate-Grown-Rougue_del_pro {
+  font-size: 22px;
+}      
+/* section 17 css */
+
+.Rock-Point-Pino {
+  font-size: 19.5px;
+}
+.The-deep-and-bright_testing {
+  font-size: 12.2px;
+}
+.rose_product_img_pro_del img {
+  width: 33%;
+}
+.padding_15 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* section 19 css */
+.Absolutely-awesome-w {
+  font-size: 12px;
+}
+
+    .container.product_container {
+    margin-left:0;
+    }
+    
+    
+/*   rating css   */
+  .bar-container_pro_del {
+    width: 62%;
+  }
+
+    }
+  @media screen and (max-width: 991px) and (min-width: 768px) {
+  
+  .best_wine img {
+    width: 100%;
+  }
+  .best_wine {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
+    padding-bottom: 27%;
+  }
+  .Estate-Grown-Rougue_del_pro {
+    font-size: 16px;
+  }
+
+  .posi_ab1 {
+    right: 8%;
+}
+.posib_ab1 {
+  left: 7%;
+  right: unset;
+}
+  .jolle_rose {
+    padding: 15px 15px;
+    margin-top: 80px;
+  }
+  .The-deep-and-bright {
+    font-size: 12px;
+}
+.Cabernet-Sauvig_pro_del {
+  font-size: 22px;
+}
+  .The-deep-and-bright_testing,
+  .Cases-Produced-pH-T_row {
+    font-size: 10px;
+  }
+  .margin_30 {
+    margin-top: 7px;
+  }
+  .val_btn_product {
+    margin-right: 0px;
+  }
+  .val_btn1 {
+    width: 28px !important;
+  }
+  .shop_continue1 {
+    padding: 15px 5px 11px;
+    font-size: 9px;
+  }
+  .Order-as-gift-at-che {
+    font-size: 11px;
+  }
+  /* section 17 css */
+  .The-deep-and-bright_testing {
+    font-size: 11px;
+  }
+  .rose_product_img_pro_del img {
+    width: 33%;
+  }
+  .padding_15 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Rock-Point-Pino {
+    font-size: 15px;
+  }
+  .section_17 {
+    padding: 80px 30px;
+}
+/* section 18 css */
+.section_18 {
+  padding: 60px 30px;
+}
+.Del-Rio-Club-Members_pro_del {
+  font-size: 27px;
+}
+.Bottle-Shipping-Di_pro_del1 {
+  font-size: 10px;
+}
+/* section 19 css */
+.section_19 select {
+  width: 47%;
+}
+.Lucinda-H {
+  font-size: 14px;
+}
+.Verified-Buyer {
+    font-family: Apercu;
+    font-size: 12px;
+}
+.Absolutely-awesome-w {
+  font-size: 10px;
+}
+.posi_ab1 {
+  top: 28%;
+}
+
+  }
+
+@media screen and (max-width:850px) and (min-width:768px) {
+  .Cabernet-Sauvig_pro_del {
+    font-size: 16px;
+}
+.Reviews_pro_del {
+  font-size: 12px;
+}
+.star_product {
+  font-size: 13px;
+}
+.The-deep-and-bright {
+  font-size: 10px;
+}
+.mt_up {
+  margin-top: 12px;
+}
+.d-flex.border_gerish_pro_del {
+  display: block !important;
+}
+.For-when-you-have-fr_pro_del {
+  padding-top: 20px;
+}
+.form_subscribing input {
+    font-size: 9px;
+}
+.best_wine {
+  padding-bottom: 69%;
+}
+.container.product_container {
+  margin-left: 0;
+}
+.Buy-3-bottles-and-sa_pro_del {
+  font-size: 9px;
+}
+
+
+/*  rating css  */
+.bar-container_pro_del {
+      width: 50%;
+}
+  
+}
+
+
+  @media screen and (max-width: 450px) {
+
+  .best_wine img {
+    width: 100%;
+  }
+  .jolle_rose {
+    margin-top: 30px;
+  }
+  .value_btn1 {
+    margin-left: 0 !important;
+  }
+  .value_btn {
+    margin-left: -27px;
+  }
+  .row.inherit_width {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.inherit_width .col-lg-8 {
+  max-width: 100%;
+}
+.padding_left_zero {
+  padding-right: 15px;
+}
+.padding_left_zero {
+  padding-left: 15px;
+}
+.best_wine {
+  padding: 0;
+}
+.del_rio_pro_tag.justify-content-center {
+  justify-content: unset !important;
+}
+.section_16 {
+  padding: 60px 15px;
+}
+.del_rio_pro_tag {
+  padding-top: 25px;
+}
+.posi_ab1 {
+  top: 40%;
+  right: 2%;
+}
+.posib_ab1 {
+  left: 2%;
+  right: unset;
+}
+/* section 17 css */
+.section_17 {
+  padding: 60px 15px;
+}
+.rose_product_img_pro_del img {
+  width: 30%;
+}
+.rose_product_img_pro_del {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.padding_15 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.Rock-Point-Pino {
+  font-size: 16px;
+}
+.The-deep-and-bright_testing {
+  font-size: 11px;
+}
+/* section 18 css */
+.section_18 {
+  padding: 60px 15px;
+}
+.twenty_discount_pro_del p {
+  text-align: center;
+}
+.twenty_discount_pro_del {
+  padding-top: 30px;
+}
+.shipping_discount_pro_del {
+  margin-top: 50px;
+}
+/* section 19 css */
+.section_19 {
+  padding: 60px 15px;
+}
+.section_19 select {
+  width: 47%;
+}
+.Estate-Grown-Rougue {
+  padding-bottom: 30px;
+}
+.Absolutely-awesome-w {
+  font-size: 13px;
+}
+.section_20 {
+  padding: 30px 15px 0;
+}
+.Shop-All-Wines, .Best-Wines-for-Summe {
+  text-align: center;
+}
+.text-center.png_carbernet img {
+  width: 20%;
+}
+.Chardonnay_1 {
+  font-size: 20px;
+}
+
+.product_section_1 {
+  padding-top: 120px;
+}
+/*   rating css   */
+    
+    .bar-container_pro_del {
+    width: 66%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+
+  .value_btn {
+    width: fit-content;
+    margin-left: 20px;
+  }
+  .Estate-Grown-Rougue_del_pro {
+    font-size: 26px;
+  }
+  .The-deep-and-bright {
+    font-size: 11px;
+  }
+  .Cabernet-Sauvig_pro_del {
+    font-size: 22px;
+  }
+  .Rock-Point-Pino {
+    font-size: 15px;
+}
+.Absolutely-awesome-w {
+  font-size: 12px;
+}
+
+/* rating css */
+.bar-container_pro_del {
+    width: 59%;
+}
+    
+
+}
+
+  @media screen and (max-width: 350px) {
+      .Estate-Grown-Rougue_del_pro {
+        font-size: 21px;
+    }
+    .form_subscribing input {
+      font-size: 10px;
+    }  
+    .d-flex.border_gerish_pro_del {
+      display: block !important;
+    }
+    .For-when-you-have-fr_pro_del {
+      padding-top: 20px;
+    }
+    .Cabernet-Sauvig_pro_del {
+      font-size: 17px;
+  }
+  .The-deep-and-bright_testing {
+    font-size: 10px;
+}
+.Rock-Point-Pino {
+  font-size: 12px;
+}
+/* section 18 css */
+.Del-Rio-Club-Members_pro_del {
+  font-size: 33px;
+}
+.membership_pro_del {
+  width: 100%;
+}
+.The-Rio-Club-provide_pro_del {
+  font-size: 12px;
+}
+/* section 19 css */
+
+.Absolutely-awesome-w {
+  font-size: 10.7px;
+}
+.section_19 select {
+  width: 46%;
+}
+
+/*   rating css   */
+.bar-container_pro_del {
+    width: 52%;
+}
+}
+  
+  @media screen and (max-width:600px) and (min-width:460px) {
+    .row.inherit_width {
+    width: inherit;
+    margin: 0;
+    }
+    .inherit_width .col-lg-8 {
+    max-width: 100%;
+    padding: 0;
+}
+    .posi_ab1 {
+    top: 38%;
+      right:7%;
+    }
+    .Rock-Point-Pino {
+    font-size: 16px;
+}
+.posib_ab1 {
+    left: 6%;
+    right: unset;
+}   
+    .section_19 select {
+    width: 46%;
+    }
+
+    .footer_logo.text-center img {
+    width:30%;
+    }
+    
+        .footer_logo.text-center {
+        margin:20px;
+        }
+  }
+    .text-center.png_carbernet.product-url a img {
+     height:300px;
+  }
+  @media screen and (max-width:1150px) {
+  .text-center.png_carbernet.product-url a img {
+    height: 240px;
+}
+  }
+  @media screen and (max-width:450px) {
+  .text-center.png_carbernet.product-url a img {
+    height: 240px;
+    width: auto;
+}
+  }
+</style>  
+
+
+
+<!-- scetion 15 -->
+
+
+<div class="product_section_1 section_15">
+    <div class="container product_container">
+        <div class="row inherit_width">
+          <div class="col-lg-8 col-md-8 col-sm-12 padding_left_zero">
+              <div id="best_wine" class="best_wine owl-carousel owl-theme">
+                
+                  <div class="product_img_slider">
+                    <img src="{{'del_rio_pro_1.png' | asset_url }}" alt="">
+                  </div>
+                  <div class="product_img_slider">
+                    <img src="{{'del_rio_pro_1.png' | asset_url }}" alt="">
+                  </div>
+                  <div class="product_img_slider">
+                    <img src="{{'del_rio_pro_1.png' | asset_url }}" alt="">
+                  </div>
+                  <div class="product_img_slider">
+                    <img src="{{'del_rio_pro_1.png' | asset_url }}" alt="">
+                  </div>
+                  <div class="product_img_slider">
+                    <img src="{{'del_rio_pro_1.png' | asset_url }}" alt="">
+                  </div>
+             
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="jolli">
+                  <div class="jolle_rose">
+                      <p class="JOLEE">DEL RIO</p>
+                      <h1 class="Cabernet-Sauvig_pro_del">2017 Cabernet Sauvignon</h1>
+                      <div class="d-flex">
+                        <p class="star_product text-decrotaioN_none_pro_star_detail">★★★★★</p>
+                        <p class="Reviews_pro_del">544 Reviews</p>
+                       </div>
+                      <p class="Sweet-Bubbly">Bright and Elegant</p>
+                      <p class="The-deep-and-bright">The deep and bright color of our Cabernet Sauvignon is a reflection of its youth and richness. The flavors recall ripe fruits of strawberry, cherry with hints of leather, dry herbs and chocolate.</p>                 
+                      <p class="Quantity_pro_del">Quantity</p>
+
+
+
+                      <form action="" method="POST" id="myForm">
+                        <div class="d-flex border_gerish_pro_del">
+                        <div class="radio-tile-group">
+                    
+                          <div class="input-container">
+                            <input id="bike" class="radio-button radio-button24" type="radio" name="radio_value" />
+                            <div class="radio-tile">
+                              <div class="icon bike-icon">
+                                <p id="mySideNav24" class="number_3_jolee">1</p>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <div class="input-container">
+                            <input id="drive" class="radio-button radio-button25" type="radio" name="radio_value" />
+                            <div class="radio-tile">
+                              <div class="icon car-icon">
+                                <p id="mySideNav25" class="number_3_jolee">3</p>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <div class="input-container">
+                            <input id="fly" class="radio-button radio-button26" type="radio" name="radio_value" />
+                            <div class="radio-tile">
+                              <div class="icon fly-icon">
+                               <p id="mySideNav26" class="number_3_jolee">6</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="For-when-you-have-fr_pro_del">For when you have friends over</p>
+                      </div>
+                           <div class="form_subscribing">
+                            <input class="SUBSCRIBE-82_delrio" type="submit" value="ADD TO CART – $64">
+                            <input class="SUBSCRIBE-82_delrio1" type="submit" value="MEMBERS – $52">
+                           </div>
+                      </form>
+                      <p class="Buy-3-bottles-and-sa_pro_del">Buy 3 bottles and save 15%, buy 6 bottles and save 20%.</p>
+
+               
+                      </div>
+              </div>
+              <div class="d-flex justify-content-between mt_up">
+                  <div class="d-flex">
+                      <i class="fa fa-gift"></i> <p class="Order-as-gift-at-che">Order as gift at checkout</p>
+                  </div>
+                  <div class="float-right icon_down d-flex align-items-center">
+                  <div class="click_change"></div>
+                  <div class="green_click"></div>
+                  </div>
+              </div>                
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section_16">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <h1 class="del_rio_pro_tag Estate-Grown-Rougue_del_pro">Estate Grown <br>
+        {{page.metafields.del_rio.state_grown}}</h1>
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="del_rio_pro_tag d-flex align-items-center">
+        <img src="{{'del_rio_pro_2.png' | asset_url }}" alt="">
+        <h1 class="Estate-Grown-Rougue_del_pro">Bottled on {{page.metafields.bottled_date.Bottled_on}}</h1>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="del_rio_pro_tag d-flex align-items-center">
+        <img src="{{'del_rio_pro_3.png' | asset_url }}" alt="">
+        <h1 class="Estate-Grown-Rougue_del_pro">{{page.metafields.no_of_bottle_produce.produced_cases}} cases produced</h1>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!-- section 17 -->
+<div class="section_17">
+    <div class="container">
+            <h1 class="Estate-Grown-Rougue">Factsheet</h1>
+
+            <div class="pro_sec_up_pro_del">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="rose_product_img_pro_del">
+                    <img src="{{'del_rio_pro_4.png' | asset_url }}" alt="">    
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="rock_point">
+                    <div class="padding_15">
+                        
+                      <p class="Rock-Point-Pino"><span class="text-style-1">{{ page.metafields.wine_cabernet.wine_variety }}–</span>  {{ page.metafields.about_wine.Wine_description }}</p>
+                      <div class="pad_up_15">
+                        <p class="Tasting-notes_test">Tasting notes</p>
+                        <p class="The-deep-and-bright_testing">{{ page.metafields.note_for_wine.Tasting_notes }}</p>  
+                      </div>
+                      <div class="pad_up_15">
+                        <p class="Tasting-notes_test">Winemaking</p>
+                        <p class="The-deep-and-bright_testing">{{ page.metafields.desc_Winemaking.about_Winemaking }}</p>  
+                      </div>
+                      <div class="pad_up_15">
+                        <p class="Tasting-notes_test">Vineyard</p>
+                        <p class="The-deep-and-bright_testing">{{ page.metafields.desc_Vineyard.about_Vineyard }}</p>  
+                      </div>
+                      <div class="pad_up_15">
+                        <p class="Tasting-notes_test">Food pairing</p>
+                        <p class="The-deep-and-bright_testing">{{ page.metafields.desc_about_pairing.Food_pairing }}</p>  
+                      </div>
+                      <p class="Tasting-notes_test">Wine stats</p>
+                      <hr class="hr_gre445">
+                      <table>
+                        <tr class="Cases-Produced-pH-T_row">
+                          <td>Cases Produced</td>
+                          <td>990</td>
+                        </tr>
+                        <tr class="Cases-Produced-pH-T_row">
+                          <td>pH</td>
+                          <td>3.56</td>
+                        </tr>
+                        <tr class="Cases-Produced-pH-T_row">
+                          <td>T.A.</td>
+                          <td>5.3</td>
+                        </tr>
+                        <tr class="Cases-Produced-pH-T_row">
+                          <td>Alcohol</td>
+                          <td>13.7%</td>
+                        </tr>
+                        <tr class="Cases-Produced-pH-T_row no_border_pro_del">
+                          <td>Bottled</td>
+                          <td>April 2019</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+
+<!-- section 18 -->
+  <div class="section_18">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="membership_pro_del">
+            <h1 class="Del-Rio-Club-Members_pro_del">Del Rio Club Membership</h1>
+            <p class="The-Rio-Club-provide_pro_del">The Rio Club provides Del Rio’s friends and loyal customers our best wines at the best price.</p>
+            <a href="/pages/the-rio-club"><p class="Learn-More_proo_del">Learn More</p></a>
+            <hr class="hr_break_pro_del">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="shipping_discount_pro_del">
+
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-12">
+                <div class="twenty_discount_pro">
+                  <img src="{{'del_rio_pro_5.png' | asset_url }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-10 col-md-9 col-sm-12">
+                <div class="twenty_discount_pro_del">
+                  <p class="Bottle-Shipping-Di_pro_del">Bottle & Shipping Discounts</p>
+                  <p class="Bottle-Shipping-Di_pro_del1">20% discount off of retail three bottles of Del Rio wine and 15% off shipping costs.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-12">
+                <div class="twenty_discount_pro twenty_discount_del_rios">
+                  <img src="{{'del_rio_pro_6.png' | asset_url }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-10 col-md-9 col-sm-12">
+                <div class="twenty_discount_pro_del">
+                  <p class="Bottle-Shipping-Di_pro_del">Exclusive events & VIP Invites</p>
+                  <p class="Bottle-Shipping-Di_pro_del1">V.I.P. invitation to winery events including wine dinners, preview tasting, and pick up parties, free winery tour and tastings to club members and guest, and many more.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-12">
+                <div class="twenty_discount_pro twenty_discount_del_rios">
+                  <img src="{{'del_rio_pro_7.png' | asset_url }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-10 col-md-9 col-sm-12">
+                <div class="twenty_discount_pro_del">
+                  <p class="Bottle-Shipping-Di_pro_del">No membership fee to join!</p>
+                  <p class="Bottle-Shipping-Di_pro_del1">V.I.P. invitation to winery events including wine dinners, preview tasting, and pick up parties, free winery tour and tastings to club members and guest, and many more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- section 19 -->
+
+<div class="section_19">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12">
+      <h1 class="Estate-Grown-Rougue">Reviews</h1>
+        
+<!--     rating code     -->
+        
+        
+              <div class="d-flex align-items-center margin_bottom_16_shop">
+        <p class="four_star_product star_Rating_pro_web">★★★★★</p>
+        <div class="bar-container_pro_del">
+          <div class="bar-4_pro_del"></div>
+        </div>
+        <p class="thirteen_hundred_pro">(1381)</p>
+      </div>
+
+      <div class="d-flex align-items-center margin_bottom_16_shop">
+        <p class="four_star_product star_Rating_pro_web">★★★★★</p>
+        <div class="bar-container_pro_del">
+          <div class="bar-4_pro_del star_Rating_pro_web_16"></div>
+        </div>
+        <p class="thirteen_hundred_pro">(136)</p>
+      </div>
+
+      <div class="d-flex align-items-center margin_bottom_16_shop">
+        <p class="four_star_product star_Rating_pro_web">★★★★★</p>
+        <div class="bar-container_pro_del">
+          <div class="bar-4_pro_del star_Rating_pro_web_12"></div>
+        </div>
+        <p class="thirteen_hundred_pro">(21)</p>
+      </div>
+
+      <div class="d-flex align-items-center margin_bottom_16_shop">
+        <p class="four_star_product star_Rating_pro_web">★★★★★</p>
+        <div class="bar-container_pro_del">
+          <div class="bar-4_pro_del star_Rating_pro_web_5"></div>
+        </div>
+        <p class="thirteen_hundred_pro">(4)</p>
+      </div>
+
+      <div class="d-flex align-items-center margin_bottom_16_shop">
+        <p class="four_star_product star_Rating_pro_web">★★★★★</p>
+        <div class="bar-container_pro_del">
+          <div class="bar-4_pro_del star_Rating_pro_web_2"></div>
+        </div>
+        <p class="thirteen_hundred_pro">(2)</p>
+      </div>
+
+      <a href="#"><p class="View-all-1544-review_pro_del">View all 1544 reviews</p></a>
+        
+        
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12">
+        <p class="Tasting-notes_test">Filter Reviews</p>
+            <select class="margin_15_select">
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+              <option value="">RECENT</option>
+            </select>
+            <select>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+              <option value="">RATING</option>
+            </select>
+
+          <div id="page_del_rios">
+            <!-- 1st page -->
+              <div class="Lucinda margin_lucinda_pro list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (4)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (8)</p>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="Lucinda margin_lucinda_pro_del list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                  </div>
+                </div>
+              </div>  
+
+
+              <!-- 2 page -->
+                <div class="Lucinda margin_lucinda_pro list-group_pro_del_88">
+                  <div class="row active">
+                    <div class="col-lg-3 col-md-3">
+                        <p class="Lucinda-H">Lucinda H.</p>
+                        <p class="Verified-Buyer">Verified Buyer</p>
+                        <p class="four_star_product">★★★★★</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p class="Lucinda-H">Awesome Wine</p>
+                        <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                        <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                        <p class="Taste-Profile-Sweet float-right">Helpful (4)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="Lucinda list-group_pro_del_88">
+                  <div class="row active">
+                    <div class="col-lg-3 col-md-3">
+                        <p class="Lucinda-H">Lucinda H.</p>
+                        <p class="Verified-Buyer">Verified Buyer</p>
+                        <p class="four_star_product">★★★★★</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p class="Lucinda-H">This winery has a great vibe</p>
+                        <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                        <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                        <p class="Taste-Profile-Sweet float-right">Helpful (8)</p>
+                    </div>
+    
+                  </div>
+                </div>
+                <div class="Lucinda list-group_pro_del_88">
+                  <div class="row active">
+                    <div class="col-lg-3 col-md-3">
+                        <p class="Lucinda-H">Lucinda H.</p>
+                        <p class="Verified-Buyer">Verified Buyer</p>
+                        <p class="four_star_product">★★★★★</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p class="Lucinda-H">Awesome Wine</p>
+                        <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                        <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                        <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="Lucinda margin_lucinda_pro_del list-group_pro_del_88">
+                  <div class="row active">
+                    <div class="col-lg-3 col-md-3">
+                        <p class="Lucinda-H">Lucinda H.</p>
+                        <p class="Verified-Buyer">Verified Buyer</p>
+                        <p class="four_star_product">★★★★★</p>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <p class="Lucinda-H">This winery has a great vibe</p>
+                        <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                        <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                        <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                      <p>2</p>
+                    </div>
+                  </div>
+                </div>  
+
+
+                                    <!-- 3 page -->
+              <div class="Lucinda margin_lucinda_pro list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (4)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (8)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda margin_lucinda_pro_del list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                                          <p>3</p>
+
+                  </div>
+                </div>
+              </div>  
+
+
+                <!-- 4 page -->
+                  <div class="Lucinda margin_lucinda_pro list-group_pro_del_88">
+                    <div class="row active">
+                      <div class="col-lg-3 col-md-3">
+                          <p class="Lucinda-H">Lucinda H.</p>
+                          <p class="Verified-Buyer">Verified Buyer</p>
+                          <p class="four_star_product">★★★★★</p>
+                      </div>
+                      <div class="col-lg-9 col-md-9">
+                          <p class="Lucinda-H">Awesome Wine</p>
+                          <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                          <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                          <p class="Taste-Profile-Sweet float-right">Helpful (4)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Lucinda list-group_pro_del_88">
+                    <div class="row active">
+                      <div class="col-lg-3 col-md-3">
+                          <p class="Lucinda-H">Lucinda H.</p>
+                          <p class="Verified-Buyer">Verified Buyer</p>
+                          <p class="four_star_product">★★★★★</p>
+                      </div>
+                      <div class="col-lg-9 col-md-9">
+                          <p class="Lucinda-H">This winery has a great vibe</p>
+                          <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                          <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                          <p class="Taste-Profile-Sweet float-right">Helpful (8)</p>
+                      </div>
+      
+                    </div>
+                  </div>
+                  <div class="Lucinda list-group_pro_del_88">
+                    <div class="row active">
+                      <div class="col-lg-3 col-md-3">
+                          <p class="Lucinda-H">Lucinda H.</p>
+                          <p class="Verified-Buyer">Verified Buyer</p>
+                          <p class="four_star_product">★★★★★</p>
+                      </div>
+                      <div class="col-lg-9 col-md-9">
+                          <p class="Lucinda-H">Awesome Wine</p>
+                          <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                          <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                          <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                      </div>
+      
+                    </div>
+                  </div>
+                  <div class="Lucinda margin_lucinda_pro_del list-group_pro_del_88">
+                    <div class="row active">
+                      <div class="col-lg-3 col-md-3">
+                          <p class="Lucinda-H">Lucinda H.</p>
+                          <p class="Verified-Buyer">Verified Buyer</p>
+                          <p class="four_star_product">★★★★★</p>
+                      </div>
+                      <div class="col-lg-9 col-md-9">
+                          <p class="Lucinda-H">This winery has a great vibe</p>
+                          <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                          <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                          <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                           <p>4</p>
+
+                      </div>
+                    </div>
+                  </div>  
+
+
+                                    <!-- 5 page -->
+              <div class="Lucinda margin_lucinda_pro list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (4)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (8)</p>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="Lucinda list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">Awesome Wine</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Absolutely awesome wine, tasting room and super friendly wine host named Heather! So many awesome bold dry reds plus a great rose!!</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="Lucinda margin_lucinda_pro_del list-group_pro_del_88">
+                <div class="row active">
+                  <div class="col-lg-3 col-md-3">
+                      <p class="Lucinda-H">Lucinda H.</p>
+                      <p class="Verified-Buyer">Verified Buyer</p>
+                      <p class="four_star_product">★★★★★</p>
+                  </div>
+                  <div class="col-lg-9 col-md-9">
+                      <p class="Lucinda-H">This winery has a great vibe</p>
+                      <p class="Verified-Buyer padding-bot">Posted on January 12, 2019</p>
+                      <p class="Absolutely-awesome-w">Del Rio Vineyards knows what they're doing. I used to live in Napa and went wine tasting regularly, and this winery has a great vibe. Little store inside with candles, jewelry, wine accessories, and local souvenirs.  Wine flights are reasonable too. Can take your wine outside on the little porch or inside with brown leather couches and rustic interior.</p>
+                      <p class="Taste-Profile-Sweet float-right">Helpful (0)</p>
+                                          <p>5</p>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+
+            <div class="next_signs num_one_to d-flex justify-content-center align-items-center pagination_del_rio_product"> 
+            <li class="d-none" id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li> 
+            </div>
+            
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- section 20 -->
+
+<div class="section_20">
+  <div class="container">
+        <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12">
+           <p class="Best-Wines-for-Summe">Best Wines for Summer</p>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+           <a href="/collections/all"><p class=" Shop-All-Wines">Shop All Wines</p></a>
+         </div>      
+        </div>
+        <div class="cabrener_pad">
+          <div class="row">
+       {% assign collectionallproducts = collections['jolee'].products  |  sort: 'price' | reverse %}
+              {% for product in collectionallproducts %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="text-center png_carbernet product-url"  data-product-url="{{product.url}}"  style="cursor: pointer;">
+                <a href="{{ product.url }}"> <img src="{% if product.featured_image.size > 0 %}{{ product.featured_image | product_img_url: 'master' }}{% else %}{{ 'no_image.png' | asset_url }}{% endif %}" alt=""></a>
+                <a href="javascript:void(0)"
+                   class="add-to-cart-custom{% if product.available == true %} add-to-cart-blur{% endif %}"
+                   data-product-id="{{ product.id }}"
+                   {% if product.available == false %}disabled {% endif %}
+                   >
+                  <p class="ADD-TO-CART"> {% if product.available == false %}SOLD OUT {% else %} ADD TO CART - {{product.price|money}} {% endif %} </p>
+                </a>
+              </div>
+              <div class="padding_up">
+                <a href="{{ product.url }}"><p class="Chardonnay_1">{{product.title}}</p></a>
+<!--                    <p class="Bright-Elegant">RICH & REFRESHING</p> -->
+<!--                    <div class="d-flex justify-content-center"><p class="stars_rating">★★★★★</p><p class="Reviews">544 Reviews</p></div> -->
+              </div>
+                    {% include 'products-modal-cart',product %}  
+            </div>
+<!--             <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="text-center png_carbernet">
+              <img src="{{'del_rio_pro_9.png' | asset_url }}" alt="">
+              <a href="#"> <p class="ADD-TO-CART"> SHOP </p></a>
+              </div>
+              <div class="padding_up">
+                <p class="Chardonnay_1">2017 Cabernet Sauvignon</p>
+                <p class="Bright-Elegant">BRIGHT & ELEGANT</p>
+                <div class="d-flex justify-content-center"><p class="stars_rating">★★★★★</p><p class="Reviews">458 Reviews</p></div>
+           </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="text-center png_carbernet">
+               <img src="{{'del_rio_pro_10.png' | asset_url }}" alt="">
+               <a href="#"> <p class="ADD-TO-CART"> SHOP </p></a>
+              </div>
+              <div class="padding_up">
+                <p class="Chardonnay_1">2019 Grenache Rosé</p>
+                <p class="Bright-Elegant">BRIGHT & VIBRANT</p>
+                <div class="d-flex  justify-content-center"><p class="stars_rating">★★★★★</p><p class="Reviews">364 Reviews</p></div>
+             </div>
+            </div> -->
+           {% endfor %}
+          </div>
+        </div>
+  </div>
+</div>
+
+
+  <!-- section 21 -->
+
+{% section 'product_detail_page_section_21' %}
+
+
+
+

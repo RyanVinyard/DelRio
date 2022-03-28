@@ -1,0 +1,47 @@
+<!-- jolee section 9 -->
+
+<div class="jolee_section_9">
+  <div class="container">
+      <div class="row or-picnic-on-the-riv_jolie">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <h1 class="game_day_joli">{{section.settings.joleepage_sec9_text1}}</h1>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="jolie_center text-center">
+                <img src="{{section.settings.joleepage_sec9_img | img_url:'master' }}" alt="">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <h1 class="game_day_joli1">{{section.settings.joleepage_sec9_text2}}</h1>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "joleepage nine section",
+    "settings": [
+        {
+          "id":"joleepage_sec9_text1",
+          "type":"textarea",
+          "label":"Text 1",
+          "default":"Add text"
+         },
+        {
+          "id":"joleepage_sec9_img",
+          "type":"image_picker",
+          "label":"Image"
+         },
+        {
+          "id":"joleepage_sec9_text2",
+          "type":"textarea",
+          "label":"Text 2",
+          "default":"Add text"
+         }
+        ]
+  }
+{% endschema %}

@@ -1,0 +1,65 @@
+<div class="padding-4_perk">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="perk_6_img">
+        <div class="perk_7">
+          <img src="{{'history_page_imag_3.png' | asset_url }}" alt="">
+          <p class="On-February-8-1865_history_2 desc_his_2">New Rock Point Bridge completed construction in 1912</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="perk_6_text perk_7_his">
+        <div class="perk_vip_text">
+          <h1 class="year_in_history_page">1870s</h1>
+          <p class="On-February-8-1865_history_1">Birth of a Community</p>
+          <p class="On-February-8-1865_history_2">During the rest of the decade the small community of Rock Point began to flourish. Joining the hotel, and the post office, were homes, Abram Schuly’s blacksmith shop, Hoymond and White’s store, a saloon and a school. The record books from the Stage Company verify the regular use of the Rock Point Hotel as a stage stop.</p>
+          <p class="On-February-8-1865_history_2">But with the passage of time, things changed. Ten years after the platting of Rock Point in 1871, and final survey, the Railroad prepared a right of way through the property of L.J. White. He was not pleased by this course of events. J.B. White sold his interest in his store and moved to Nevada County, California. Lytte White died on October 28, 1878 and his sons and wife continued to run the stage stop at Rock Point. His son Henry bought out his mother and brothers and renovated the old hotel in 1887. But, by the turn of the century the hotel had closed and Henry had returned to farming.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+{% schema %}
+  {
+    "name": "History Fourth section",
+    "settings": [
+     {
+      "id": "his_pg_section_3_image_2",
+      "type": "image_picker",
+      "label": "image"
+       },
+     {
+      "id": "his_pg_section_3_image_details_2",
+      "type": "text",
+      "label": "Image Details"
+      },
+     {
+      "id": "his_pg_section_3_year_2",
+      "type": "text",
+      "label": "Year"
+      },
+     {
+      "id": "his_pg_section_3_sub_heading_2",
+      "type": "textarea",
+      "label": "Sub Heading"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Description",
+      "settings": [
+        {
+          "id": "his_pg_section_3_Description_2",
+          "type": "textarea",
+       	  "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

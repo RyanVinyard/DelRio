@@ -1,0 +1,59 @@
+<style>
+  .Events__tour_text {
+     justify-content: space-around;
+  }
+</style>  
+
+<div class="tour_section_1">
+    <div class="container">
+        <div class="tour_nav">
+            <ul class="Events__tour_text">
+                <div class="tour_event">
+                    <li class="btn"> <a class="noselect" href="#tastingroom1">{{section.settings.visitpage_sec1_text1}}</a> </li>
+                </div>
+                <div class="tour_event btn33">
+                    <li class="btn btn2"> <a class="noselect" href="#toursandlargegroups">{{section.settings.visitpage_sec1_text2}}</a> </li>
+                </div>
+<!--             <div class="tour_event" >
+                    <li class="btn btn1"> <a class="noselect" href="#eventsandclubs">{{section.settings.visitpage_sec1_text3}}</a> </li>
+                 </div> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Visitpage First Section",
+    "settings": [
+      {
+      "id":"visitpage_sec1_text1",
+      "type":"text",
+      "label":"Header text 1",
+      "default":"add text" 
+      },
+      {
+      "id":"visitpage_sec1_text2",
+      "type":"text",
+      "label":"Header text 2",
+      "default":"add text" 
+      },
+      {
+      "id":"visitpage_sec1_text3",
+      "type":"text",
+      "label":"Header text 3",
+      "default":"add text" 
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

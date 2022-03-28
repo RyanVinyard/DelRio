@@ -1,0 +1,60 @@
+<div class="perl_section_5">
+  <div class="container">
+    <div class="d-flex">
+      <hr class="end_margin">
+      <p class="OUR-CUSTOMER">{{section.settings.Rioclub_Sec5_heading}}</p>
+      <hr class="end_margin">
+    </div>
+    <div class="owl-carousel owl-theme" id="carousel_1">
+      {% for block in section.blocks %}
+      <div class="relaxing">
+        <h1>{{block.settings.Rioclub_Sec5_review}}</h1>
+        <p class="address">{{block.settings.Rioclub_Sec5_name}}  /  <span>{{block.settings.Rioclub_Sec5_Place}}</span></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": " Rioclub-Fifth Section",
+    "settings": [
+      {
+        "id":"Rioclub_Sec5_heading",
+        "type":"text",
+        "label":"Enter Heading"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Review",
+      "settings": [
+        
+        {
+        "id":"Rioclub_Sec5_review",
+        "type":"textarea",
+        "label":"Add Review"
+        },
+		{
+        "id":"Rioclub_Sec5_name",
+        "type":"text",
+        "label":"Name"
+        },
+        {
+        "id":"Rioclub_Sec5_Place",
+        "type":"text",
+        "label":"Address"
+        }
+     ]
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,107 @@
+<style>
+  @media screen and (max-width:767px) {
+    .our-para-sec66 {
+      padding-left:0px;
+      width: 80%;
+      margin: auto;
+    }  
+    .our-para-sec66 .Layers-of-complexity,.our-para-sec66 .our_soil,.our-para-sec66 .our_soil p,a.no_dec_home p.OUR-PHILOSOPHY.our_story {
+      width:100%;
+      text-align:center;
+    }
+    .our-para-sec66 hr.break_hr {
+      float: initial;
+    }
+    .our-para-sec66 .Layers-of-complexity {
+      padding-top:0px;
+    }
+    .our-para-sec66 .text-center.Layers-of_center {
+      padding-top:30px;
+    }
+  }
+  @media screen and (max-width: 570px) {
+    .our-para-sec66 {
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .our-para-sec66 {
+      width: 100%;
+    }
+  }
+</style>  
+
+
+<div class="section_6">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 cap_man_putting_del_home">
+          <div class="man_tree">
+            <div class="man_images text-center">
+              <img src="{{section.settings.Section6_img | img_url:'master'}}" alt="background_image">
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 accolades_8_bg_del_home">
+          <div class="our-para-sec66">
+          <div class="text-center Layers-of_center">
+            <h1 class="Layers-of-complexity">
+              {{section.settings.Section6_heading}}</h1>
+          </div>
+          <!--<p class="OUR-PHILOSOPHY">OUR PHILOSOPHY</p> -->
+          <div class="our_soil">
+          <p>{{section.settings.Section6_desc}}</p>
+          <p>
+          {{section.settings.Section6_philosophy}}</p>
+        </div>
+          <a class="no_dec_home" href="{{section.settings.Section6_story_link}}"><p class="OUR-PHILOSOPHY our_story">OUR STORY</p></a>
+        <hr class="break_hr">
+        </div>
+        </div>
+                
+<!--         
+        <div class="col-lg-6 col-md-6 col-sm-12 cap_man_putting_del_home">
+            <div class="man_tree">
+              <div class="man_images text-center">
+                <img src="{{section.settings.Section6_img | img_url:'master'}}" alt="background_image">
+              </div>
+            </div>
+        </div> -->
+      </div>
+    </div>  
+  </div>
+{% schema %}
+  {
+    "name": "Homepage six Section",
+    "settings": [
+      {
+        "id": "Section6_heading",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Title"
+      },
+    	{
+          "id": "Section6_desc",
+          "type": "textarea",
+       		"label": "philosophy description 1"
+        },
+    	{
+          "id": "Section6_philosophy",
+          "type": "textarea",
+       		"label": "philosophyText description 2"
+        },
+        {
+          "id": "Section6_img",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "Section6_story_link",
+          "type": "url",
+       		"label": "Our Story Link"
+        }
+      ]
+    }
+{% endschema %}

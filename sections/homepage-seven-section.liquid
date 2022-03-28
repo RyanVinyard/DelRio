@@ -1,0 +1,122 @@
+{% comment %}
+
+<div class="section_7">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-6 col-md-6 col-sm-12 roundman">
+          <div class="man_tree">
+            <div class="man_images text-center">
+              <img class="man_image_size" src="{{section.settings.Section7_img | img_url:'master'}}" alt="background_image">
+              <a href="javascript:void(0)" id="video_button">
+              <div class="play_button">
+                <img src="{{ 'perk_red_7.png' | asset_url }}" alt="play video">
+              </div>
+              </a>
+            </div>
+          </div>
+      </div>
+  
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="text-center Layers-of_center">
+            <h1 class="Layers-of-complexity"> {{section.settings.Section7_heading}}</h1>
+          </div>   
+          <hr class="break_hr_1">        
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 history">
+              <p class="OUR-PHILOSOPHY our_story">WINEMAKING</p>
+              <div class="rolling_hills">
+                <p>{{section.settings.Section7_desc}}</p>
+              </div>
+            </div>
+          </div>
+          <a class="no_dec_home"  href="{{section.settings.Section7_story_link}}"><p class="OUR-PHILOSOPHY our_story">MEET THE WINEMAKERS</p></a>
+           <hr class="accolades">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 roundman1">
+          <div class="man_tree">
+            <div class="man_images text-center">
+              <img src="{{section.settings.Section7_img | img_url:'master'}}">
+              <a href="javascript:void(0)" id="video_button_66">
+              <div class="play_button">
+                <img src="{{ 'perk_red_7.png' | asset_url }}" alt="play video">
+              </div>
+              </a>     
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<!-- popup video -->
+<!-- checkout popup -->
+
+ <div class="modal fade" id="videopopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog-video" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" id="checkout_close" data-dismiss="modal" aria-label="Close">            
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          
+          <iframe src="https://player.vimeo.com/video/492272640" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- video for mobile  -->
+
+ <div class="modal fade" id="videopopup_990" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog login-modal-dialog-video" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" id="checkout_close" data-dismiss="modal" aria-label="Close">            
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/474928899" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+{% schema %}
+  {
+    "name": "Homepage Seven Section",
+    "settings": [
+      {
+        "id": "Section7_heading",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Title"
+      },
+    	{
+          "id": "Section7_desc",
+          "type": "textarea",
+       		"label": "History description"
+        },
+    	{
+          "id": "Section7_philosophy",
+          "type": "textarea",
+       		"label": "Award description"
+        },
+        {
+          "id": "Section7_img",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "Section7_story_link",
+          "type": "url",
+       		"label": "Awards and Accolades Link"
+        }
+      ]
+    }
+{% endschema %}
+{% endcomment %}

@@ -1,0 +1,129 @@
+<style>
+  .add-to-cart-btn.set_styling_btn_del-rio {
+    opacity: 1;
+    background-color: #2e4433 !important;
+    color: white;
+    font-family: 'Apercu Pro';
+    text-transform: uppercase;
+    outline: 0;
+    border: 0px;
+    width: 100%;
+    padding: 12px;
+  }
+  .add-to-cart-btn.set_styling_btn_del-rio {
+    font-size:14px;
+    letter-spacing: 1.5px;
+  }
+  .rc_container {
+  	margin-top:15px;
+    display: block;
+    font-family: 'Apercu';
+  }
+  .rc_widget__option__plans__dropdown {
+    padding: 10px;
+    outline: 0;
+  }
+  @media screen and (max-width:1200px) {
+  .jolle_rose {
+    padding: 30px 20px 40px;
+  }    
+}
+  @media screen and (max-width:1200px) and (min-width:767px) {
+      .rc_widget__option__label,.rc_popup__hover {
+    	font-size:12px;
+    }  
+  }
+    @media screen and (max-width:400px) {
+      .rc_widget__option__label,.rc_popup__hover {
+    	font-size:12px;
+    }  
+  }
+
+</style>
+
+<!-- Form Start -->
+  {% form 'product', product, data-productid: product.id, class: 'mb-3 '  %}
+  
+      <select name="id" data-productid="{{ product.id }}" id="{{ product.id | prepend: 'featured-collection-variant-' }}" class="custom-select mb-3 {% if product.has_only_default_variant %}d-none{% endif %}">
+        {% for variant in product.variants %}
+          <option 
+            {% unless variant.available %}disabled{% endunless %}
+            value="{{ variant.id }}"
+          >
+            {{ variant.title }} - {{ variant.price | money }}
+          </option>
+        {% endfor %}
+      </select>  
+        <input type="number" class="This_is_new_del_from form-control w-auto mr-2 d-none" style="max-width: 80px;" size="20" name="quantity" value="1" min="1" aria-label="{{ 'product.quantity' | t }}">
+        <button
+        class="add-to-cart-btn set_styling_btn_del-rio"
+        type="submit"
+        name="add"
+        data-loading-text="{{ 'misc.loading' | t }}"
+        data-add-to-cart-text="{{ 'product.add_to_cart' | t }}"
+        data-view-cart-text="{{ 'product.view_cart' | t }}"
+        aria-controls="cart-toast-wrapper"
+      >
+        <div class="d-none bs-spinner spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></div>
+        <span> {% if product.available %} ADD TO CART - {{ product.price | money }}  {% else %} SOLD OUT {% endif %}</span>
+      </button>
+
+  {% endform %}
+
+<!-- Form End -->
+            <script>
+  
+              window.addEventListener('DOMContentLoaded', () => {
+                jQuery(document).ready(function ($) {
+  
+                  // Initialize multi selector for product
+                  {% unless product.has_only_default_variant %}
+                    new Shopify.OptionSelectors("{{ product.id | prepend: 'featured-collection-variant-' }}", {
+                      product: {{ product | json }},
+                      onVariantSelected: function(variant, selector) {
+
+                        let modalId = $(`#product_form_${selector.product.id}`)
+
+                        if (variant) {
+                          if (variant.available) {
+                            modalId.find(':input[type="number"]').prop("disabled", false).fadeTo(200, 1)
+                            modalId.find('.add-to-cart-btn').prop("disabled", false).find('span').html("{{ 'product.add_to_cart' | t }}").fadeTo(200, 1)
+                          }
+                          else {
+                            modalId.find(':input[type="number"]').prop("disabled", true).fadeTo(200, 0.5)
+                            modalId.find('.add-to-cart-btn').prop("disabled", true).find('span').html("{{ 'product.sold_out' | t }}").fadeTo(200, 0.5)
+                           }
+
+                          if (variant.compare_at_price > variant.price) {
+                            // {{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | money_without_currency | times: 100 | remove: '.0' | prepend: '-' | append: '%' }}
+
+                            modalId.find('.product-discount-badge')
+                              .removeClass('d-none')
+                              .addClass('d-block')
+                              .html(`-${Math.round((variant.compare_at_price - variant.price) / variant.compare_at_price * 100)}%`)
+                            modalId.find('.product-price').html(`
+                                <span class="sr-only">{{ 'product.regular_price' | t }}</span>
+                                <s class="text-muted opacity-75 mr-2">
+                                  ${Shopify.formatMoney(variant.compare_at_price, "")}
+                                </s>
+                                <span>${Shopify.formatMoney(variant.price, "")}</span>
+                              `)
+                          } else {
+                            modalId.find('.product-discount-badge').removeClass('d-block').addClass('d-none')
+                            modalId.find('.product-price').html('<span>'+ Shopify.formatMoney(variant.price, "") + '</span>' )
+                          }
+                          /*
+                          if (variant.featured_image)
+                            handleProductImageGallery($(`a#product-image-${variant.featured_image.id}`))
+                          else
+                            handleProductImageGallery($('a#product-image-{{ product.featured_image.id }}'))
+                          */
+                        }
+                      },
+                      enableHistoryState: false
+                    })
+                  {% endunless %}
+
+                })
+              })
+            </script>

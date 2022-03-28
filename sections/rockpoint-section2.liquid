@@ -1,0 +1,73 @@
+<div class="rp_section_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="rp_created">
+                        <h1 class="Rock-Point-wines-are_rp">{{section.settings.Section2_heading}}</h1>
+                    <div class="rp_img_5">
+                        <img src="{{section.settings.Image2_Section_2 | img_url: 'master'}}" alt="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="rp_created_65">
+                    <div class="rp_img_5 d_none_rp_mbl">
+                        <img src="{{section.settings.Image1_Section_2 | img_url: 'master'}}" alt="">
+                    </div>
+                    <div class="They-are-perfect-after_rp">
+                        <p>{{section.settings.Section2_text1}}</p>
+                        <p>{{section.settings.Section2_text2}}</p>
+                    </div>
+                    <div class="rp_img_5 d_none_rp_desktop">
+                        <img src="{{section.settings.Image1_Section_2 | img_url: 'master'}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": " Rockpoint-Second Section",
+    "settings": [
+      {
+        "id": "Section2_heading",
+        "type": "text",
+        "label": "Enter Heading",
+        "default": "Title"
+      },
+      {
+        "id": "Section2_text1",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+{
+        "id": "Section2_text2",
+        "type": "textarea",
+        "label": "Add Description",
+		"default": "Enter text here"
+      },
+	  {
+        "id": "Image1_Section_2",
+        "type": "image_picker",
+        "label": "Section 1 image Left"
+        
+      },
+	  {
+        "id": "Image2_Section_2",
+        "type": "image_picker",
+        "label": "Section 1 image Right"
+        
+      }
+      
+    ]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

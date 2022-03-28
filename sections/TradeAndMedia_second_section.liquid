@@ -1,0 +1,31 @@
+<section class="section_h3_brand_trade">
+  <div class="mycontainer container trade-content" >
+    <div class="row animatioN-on_scroll_margin_top" id="brnds">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="section-heading"><h2>{{section.settings.trade_Section_2_heading}}</h2></div>
+      </div>	
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="section-text"><p>{{section.settings.trade_Section_desc_2}}</p></div>
+      </div>	
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Trade second Section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "trade_Section_2_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "trade_Section_desc_2",
+        "label": "Description"
+      }
+    ]
+  }
+{% endschema %} 

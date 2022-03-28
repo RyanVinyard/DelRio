@@ -1,0 +1,54 @@
+ <div class="perl_section_4">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                          <div class="absolutely_perk_23">
+                              <div class="awesome_wine_perk">
+                                <h1>{{section.settings.Rioclub_Sec4_heading}}</h1>
+                                <p>{{section.settings.Rioclub_Sec4_Text}}</p>  
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                          <div class="blnde_perk">
+                              <a href="{{section.settings.Rioclub_Sec3_Buttonurl}}"><img src="" alt=""></a>
+                              <img class="aby_top_perk" src="{{section.settings.Rioclub_Sec4_Image | img_url:'master' }}" alt="">
+                          </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+{% schema %}
+  {
+    "name": " Rioclub-Fourth Section",
+    "settings": [
+       {
+        "id":"Rioclub_Sec4_heading",
+        "type":"text",
+        "label":"Enter Heading"
+      },
+        {
+        "id":"Rioclub_Sec4_Text",
+        "type":"textarea",
+        "label":"Description"
+        },
+{
+        "id":"Rioclub_Sec4_Image",
+        "type":"image_picker",
+        "label":"image"
+        },
+        {
+        "id":"Rioclub_Sec3_Buttonurl",
+        "type":"url",
+        "label":"Button Url"
+        }
+      
+    ]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

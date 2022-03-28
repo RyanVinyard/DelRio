@@ -1,0 +1,35 @@
+{% comment %}
+This shop uses Bloom, a growth platform for modern wineries.
+You SHOULD NOT modify the contents of this file.
+It is automatically generated and your changes will be overwritten.
+These features and content can be managed within the Bloom app or the Shopify customizer.
+
+Bloom (www.bloom.wine)
+{% endcomment %}
+
+{% assign should_initialize_product_form = false %}
+{% if section.settings.enabled and product != blank %}
+  {% assign should_initialize_product_form = true %}
+{% endif %}
+
+<div data-bloom-product-form-config='{{ section.settings | json }}'
+     data-bloom-product-id="{{product.id}}"
+     data-bloom-product-price="{{product.price}}"
+></div>
+
+<style>
+</style>
+
+<script>
+  function initializeBloomProductForm() {
+    var config = JSON.parse(document.querySelector("[data-bloom-product-form-config]").dataset["bloomProductFormConfig"])
+    bloom.storage().setItem('productForm', config)
+  }
+  document.addEventListener('shopify:section:load', initializeBloomProductForm);
+  initializeBloomProductForm()
+
+</script>
+
+{% schema %}
+{"name":"Bloom Product Form","settings":[{"type":"header","content":"General settings"},{"type":"checkbox","id":"enabled","label":"Enable product selector","default":false},{"type":"select","id":"selector_type","label":"Product selector type","default":"none","options":[{"value":"none","label":"None"},{"value":"ledge","label":"Ledge"}]},{"type":"color","id":"background_color","label":"Background color","default":"#FFFFFF"},{"type":"color","id":"compare_at_color","label":"Compare at color","default":"#808080"},{"type":"range","id":"button_border_width","label":"Button border width","default":1,"min":1,"max":10,"step":1},{"type":"header","content":"🍷"},{"type":"paragraph","content":"Made by Bloom"}]}
+{% endschema %}

@@ -1,0 +1,146 @@
+
+
+<div class="blog_post_posts_main">
+<div class=" container">
+  <div class="">
+    <div class="blog_post_page_section_1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="img_blog_post_88 text-center">
+                      <img src="{{ article.image.src | img_url: 'master' }}" alt="" />
+                  </div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="blog_post_center_justify_content_1">
+						<div class="text_desc_blog_post_1">
+							<h1 class="If-You-Like-Wine-and_blog_post_1">{{ article.title}}</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text_you_like_blog_post_kitzhaber">
+      <p>{{article.author}} | {{ article.created_at | date: "%a, %b %d, %y" }} </p>
+      <p>{{article.tags}}</p>
+      {{ article.content }}
+        </div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts custom",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    }
+  ]
+}
+{% endschema %}
+
+
+<style>
+  .blog_post_posts_main {
+     padding-top:150px;
+  }
+  .img_blog_post_88 img {
+    height:260px;
+  }
+
+  
+  h1.If-You-Like-Wine-and_blog_post_1 {
+    font-family: 'Butler';
+    font-size: 44px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #171f15;
+    margin: 39px 0;
+}
+  
+.blog_post_center_justify_content_1 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text_you_like_blog_post_kitzhaber {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+  .text_you_like_blog_post_kitzhaber p {
+    font-family: Apercu;
+    font-size: 16.1px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #171f15;
+}
+  @media screen and (max-width:1050px) {
+  h1.If-You-Like-Wine-and_blog_post_1 {
+    font-size: 41px;
+  }
+    .img_blog_post_88 img {
+    height: 220px;
+  }
+  }
+  @media screen and (max-width: 991px) {
+.img_blog_post_88 img {
+    height: 180px;
+}
+    .img_blog_post_88 {
+      text-align:left !important;
+    }
+    h1.If-You-Like-Wine-and_blog_post_1 {
+    font-size: 27px;
+   }
+   .text_you_like_blog_post_kitzhaber {
+    width: 85%;
+   }
+    .text_you_like_blog_post_kitzhaber p {
+    font-size: 14.1px;
+    }
+  }
+    @media screen and (max-width: 767px) {
+    .img_blog_post_88 {
+      text-align:center !important;
+    }
+      h1.If-You-Like-Wine-and_blog_post_1 {
+       margin-bottom:0px;
+      }
+      .text_you_like_blog_post_kitzhaber {
+    width: 100%;
+     }
+
+    }
+     @media screen and (max-width: 500px) {
+  .img_blog_post_88 img {
+    height: auto !important;
+    width:100%;
+     }    
+    .blog_post_posts_main {
+    padding-top: 125px;
+     }
+
+     }
+  @media screen and (max-width: 350px) {
+h1.If-You-Like-Wine-and_blog_post_1 {
+    font-size: 23px;
+}
+
+  }
+
+</style>  

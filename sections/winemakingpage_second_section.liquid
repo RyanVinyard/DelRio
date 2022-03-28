@@ -1,0 +1,70 @@
+<div class="winemaking_section_2">
+    <div class="container">
+        <div class="WINEMAKING-PHILOSOPH_tour">
+            <h1>{{section.settings.Winemaking_Section2_heading}}</h1>
+        </div>
+        <div class="Expressing-the-viney_up_wine">
+            <div class="row">
+              {% for block in section.blocks%}
+                <div class="col-lg-4 col-md-4 col-sm-12 ">
+                    <div class="img_width_100_percent">
+                        <div class="Expressing_the_essense_winemake text-center">
+                            <img src="{{block.settings.Winemaking_Section2_Image | img_url:'master' }}" alt="">
+                        </div>
+                        <p class="Expressing-the-viney_winemaking">{{block.settings.Winemaking_Section2_Imagetext}}</p>
+                    </div>
+                </div>
+              {% endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Second Section",
+  "settings": [
+     {
+        "id": "Winemaking_Section2_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Image",
+      "settings": [
+        {
+          "id": "Winemaking_Section2_Image",
+          "type": "image_picker",
+       		"label": "Winemaking Image"
+        },
+        {
+          "id": "Winemaking_Section2_Imagetext",
+          "type": "text",
+          "label": "Winemaking image text "
+        }
+      ]
+    }
+  ],
+"settings": [
+     {
+        "id": "Winemaking_Section2_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Something"
+      }]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+

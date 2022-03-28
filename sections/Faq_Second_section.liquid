@@ -1,0 +1,74 @@
+<style>
+  .unserlimned_222 {
+  	text-decoration: underline;
+  }
+</style>  
+
+<div id="contactinfo"  class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>{{ section.settings.faqsec2texttitle1 }}</h1>
+
+  <!-- accordion -->
+
+  <main class="main accordion_ch_faq">
+
+    <div class="accordion">
+    {% for block in section.blocks %} 
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>{{ block.settings.faqsec2textquest }}</span>
+          <i class="fa fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+          {{ block.settings.faqsec2textanswer }}            
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+
+<div id="whatinthebottle" class="animatioN-on_scroll_margin_top Contact-Info_text_faq h1_faq_ques_margin_bottom">
+  <h1>Shipping</h1>
+  <p>Check out our <a class="unserlimned_222" href="/pages/shipping-delivery">shipping policy</a> </p>
+</div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Faq Second Section",
+    "settings": [
+      {
+          "id": "faqsec2texttitle1",
+          "type": "textarea",
+          "label": "Enter Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Question",
+      "settings": [
+        {
+          "id": "faqsec2textquest",
+          "type": "textarea",
+          "label": "Enter Question"
+        },
+        {
+          "id": "faqsec2textanswer",
+          "type": "textarea",
+          "label": "Enter Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

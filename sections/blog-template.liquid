@@ -1,0 +1,630 @@
+<style>
+  a:hover{text-decoration:none;}
+  .v-center{align-items:center;display:flex;}
+  .latest_blog{margin-top:90px;min-height:400px;background-color: #fcf9ef;}
+  .jstfy-cntnt-cntr{align-items:center; justify-content:center;display:flex;}
+/*   .latest_blog .img_article img{width:100%;height:100%; object-fit:cover;} */
+ .latest_blog .img_article img {max-height: 745px; object-fit: cover; height: 68vh; width:100%;}
+  .row_custom_equal {    display: flex;    display: -webkit-flex;    flex-wrap: wrap;    display: flexbox;}
+  .latest_blog .text_desc .sub-text{ font-family: Apercu Pro;  font-size: 16px;    line-height: 1.5;    color: #2e4433;}
+  .latest_blog .text_desc .article-title{ font-family: 'Butler';
+    font-size: 48px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    max-width:250px;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #171f15;}
+  .left_col{padding:30px 20px;}
+  .blog_category_nav_btn_li {
+    border-bottom: 2px solid #333;
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+    display: flex;
+  }
+  .blog_category_nav_text_zero li a {
+    font-family: Apercu pro;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: 1.71px;
+    text-align: center;
+    color: #2e4433;
+    text-decoration: none;
+    padding-bottom: 3px;
+    color: rgba(46, 68, 51, 0.6);
+    text-transform: uppercase;
+  }
+  .blog_category_section_2 {
+    padding: 56px 45px;
+  }
+  .blog_category_nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .blog_category_nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .blog_category_nav li {
+    padding: 0 24px;
+  }
+  .blog_category_nav_btn_li::before {
+    height: 50px;
+    width: 90px;
+    left: 0;
+    margin-left: -1px;
+  }
+  .blog_category_nav_btn_li::before, .blog_category_nav_btn_li::after {
+    position: absolute;
+    background: #ffffff;
+    z-index: -1;
+    transition: 0.3s;
+    content: '';
+    border-radius: 0;
+  }
+  .blog_category_nav_btn_li:hover::after, .blog_category_nav_btn_li:hover::before {
+    width: 50px;
+    margin-left: -1px;
+  }
+  .blog_category_nav_text_zero li a:hover {
+    color: #2e4433;
+  }
+  .blog_category_nav_btn_li::before, .blog_category_nav_btn_li::after {
+    position: absolute;
+    background: #ffffff;
+    z-index: -1;
+    transition: 0.3s;
+    content: '';
+    border-radius: 0;
+  }
+  .blog_category_nav_btn_li::after {
+    width: 90px;
+    height: 50px;
+    right: -1px;
+  }
+
+  .article-title-single{
+
+    font-family: 'Butler';
+    font-size: 32px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #2e4433;}
+  .wid-80{width:80%; margin:30px auto;}
+
+  
+  @media only screen and (max-width:1170px){
+  .latest_blog .img_article img{height:100%;}
+    .latest_blog{
+    min-height:auto;}
+    
+  }
+
+  @media only screen and (max-width:1166px) and (min-width:992px){
+  
+   .res-sizing{
+   font-size:38px !important;
+   }
+  }
+    @media only screen and (max-width:991px) and (min-width:768px){
+  
+   .res-sizing{
+   font-size:35px !important;
+   }
+  }
+    @media only screen and (max-width:767px){
+  
+   .res-sizing{
+   font-size:28px !important;
+   }
+  }
+  
+  @media only screen and (max-width:767px){
+
+    .blog_category_nav {
+      width: 100%;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    .blog_category_nav ul {
+      list-style: none;
+
+      display: inline-block;
+      justify-content: center;
+      padding: 0;
+      margin: auto;
+    }
+    .blog_category_nav_btn_li{display:inline-block;}
+    .blog_category_nav_text_one{text-align:center;}
+  }
+ 
+  .no-padd-ds{
+    padding:0px;
+  }    
+</style>
+
+<div class="latest_blog" >
+  <div class="container-fluid">
+
+    <div class="row row_custom_equal m-0">
+      {% for article in blog.articles limit:1 %}
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 jstfy-cntnt-cntr">
+        <div class="left_col ">
+          <div class="text_desc">
+            <p class="sub-text">The Del Rio Vineyard Estate Blog</p>
+            <a href="{{ article.url }}" class="blog-link"><h1 class="article-title res-sizing">{{ article.title }}</h1></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 no-padd-ds">
+        <div class="img_article">
+          <img src="{{ article.image.src | img_url: 'master' }}" alt="">
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+<div class="blog_category_section_2  desktop">
+  <div class="container">
+    <div class="blog_category_nav">
+      <ul class="blog_category_nav_text_zero">
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li btn1_blog_category"> <a class="noselect" href="/blogs/all">All</a> </li>
+        </div>
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li"> <a class="noselect" href="/blogs/from-the-winery">From the Winery</a> </li>
+        </div>
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li"> <a class="noselect" href="/blogs/wine-guide">Wine Guide</a> </li>
+        </div>
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li"> <a class="noselect" href="/blogs/jolee-kitchen">Jolee's Kitchen</a> </li>
+        </div>
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li"> <a class="noselect" href="/blogs/explore-del-rio">Explore Del Rio</a> </li>
+        </div>
+        <div class="blog_category_nav_text_one">
+          <li class="blog_category_nav_btn_li"> <a class="noselect" href="/blogs/company-news">Company News</a> </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="blog_container">
+  <div class="container">
+    {% paginate blog.articles by section.settings.results_per_page %}
+
+    <div class="row row align-items-center mb-6 row_custom_equal">
+      {% for article in blog.articles %}
+      <div class="col-md-6 v-center">
+        <div class="wid-80">
+          {% if article.image %}
+          <div class="text-center mb-3">
+            <a class="d-inline-block px-2" href="{{ article.url }}">
+              <div class="
+                          d-inline-block
+                          mx-auto
+                          position-relative
+                          overflow-hidden
+                          {% if section.settings.image_border %}img-thumbnail{% endif %}
+                          {% if section.settings.image_circle %}rounded-circle{% endif %}
+                          {{ section.settings.image_hover_effect }}
+                          ">
+                {% assign image_size = section.settings.image_width | append: 'x' | append: section.settings.image_height %}
+
+                <img
+                     class="img-fluid lazyload {% if section.settings.image_circle %}rounded-circle{% endif %}"
+                     src="{{ 'no-image.jpg' | asset_img_url: image_size, crop: 'center' }}"
+                     data-src="{{ article.image | img_url: image_size, crop: 'center'  }}"
+                     alt="{{ article.image.alt | escape }}"
+                     width="{{ section.settings.image_width }}"
+                     height="{{ section.settings.image_height }}"
+                     loading="lazy"
+                     >
+              </div>
+            </a>
+          </div>
+          {% endif %}
+
+          <h2>
+            <a href="{{ article.url }}" class="article-title-single">
+              {{ article.title }}
+            </a>
+          </h2>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+
+    {% include 'pagination' %}
+
+    {% endpaginate %}
+  </div>
+</div>
+
+
+{%comment%}
+
+<!-- ----------------------- default code ---------------------------- -->
+<div class="
+            pt-7
+            {% if section.settings.container %} 
+            container 
+            {% else %} 
+            container-fluid 
+            {% endif %}
+            ">
+  <div class="mb-4 {{ section.settings.heading_alignment }}">
+    <h1>{{ blog.title }}</h1>
+
+    {% if section.settings.show_tags and blog.all_tags.size > 0 %}
+    <ul class="list-unstyled d-inline-flex flex-wrap align-items-center mx-n1">
+
+      <p class="small text-muted px-1 mb-0 mr-1">{{ 'blog.filter_by_tag' | t }}</p>
+
+      {% for tag in blog.all_tags %}
+      {% if current_tags contains tag %}
+      <li class="active p-1" style="line-height: normal">
+        {{ link_to_remove_tag }}
+        {{ tag | link_to_remove_tag: tag | replace: 'title=', 'class="badge badge-primary" title=' | replace: '</a>', '<span class="ml-1" aria-hidden="true">&times;</span></a>'  }}
+      </li>
+      {% else %}
+      <li class="p-1" style="line-height: normal">
+        {{ tag | link_to_tag: tag | replace: 'title=', 'class="badge badge-light" title=' }}
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  {% paginate blog.articles by section.settings.results_per_page %}
+
+  {% for article in blog.articles %}
+
+  <article class="row align-items-center mb-6">
+
+    {% if article.image %}
+    <div class="col{{ section.settings.breakpoint }} text-center mb-3">
+      <a class="d-inline-block px-2" href="{{ article.url }}">
+        <div class="
+                    d-inline-block
+                    mx-auto
+                    position-relative
+                    overflow-hidden
+                    {% if section.settings.image_border %}img-thumbnail{% endif %}
+                    {% if section.settings.image_circle %}rounded-circle{% endif %}
+                    {{ section.settings.image_hover_effect }}
+                    ">
+          {% assign image_size = section.settings.image_width | append: 'x' | append: section.settings.image_height %}
+
+          <img
+               class="img-fluid lazyload {% if section.settings.image_circle %}rounded-circle{% endif %}"
+               src="{{ 'no-image.jpg' | asset_img_url: image_size, crop: 'center' }}"
+               data-src="{{ article.image | img_url: image_size, crop: 'center'  }}"
+               alt="{{ article.image.alt | escape }}"
+               width="{{ section.settings.image_width }}"
+               height="{{ section.settings.image_height }}"
+               loading="lazy"
+               >
+        </div>
+      </a>
+    </div>
+    {% endif %}
+
+    <div class="col{{ section.settings.breakpoint }}">
+
+      {% if section.settings.show_post_title %}
+      <h2 class="{{ section.settings.post_title_size }}">
+        <a href="{{ article.url }}" class="theme-link-color">
+          {{ article.title }}
+        </a>
+      </h2>
+      {% endif %}
+
+      {% if section.settings.blog_post_author or section.settings.show_post_date or section.settings.show_comments_number %}
+      <p class="text-muted opacity-75">
+        {% if section.settings.blog_post_author %}
+        {{ article.author }}
+        {% endif %}
+        {% if section.settings.blog_post_author and section.settings.show_post_date %}
+        <span class="opacity-75 mx-1"> | </span> 
+        {% endif %}
+        {% if section.settings.show_post_date %}
+        {{ article.created_at | time_tag: '%b %d, %Y' }}
+        {% endif %}
+        {% if section.settings.show_post_date and section.settings.show_comments_number %}
+        <span class="opacity-75 mx-1"> | </span> 
+        {% endif %}
+        {% if section.settings.show_comments_number %}
+        {{ 'blog.comments.with_count' | t: count: article.comments_count }}
+        {% endif %}
+      </p>
+      {% endif %}
+
+      {% if section.settings.show_post_excerpt %}
+      <div class="rte mb-4">
+        {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
+        {% else %}
+        {{ article.content | strip_html | truncate: section.settings.post_excerpt_truncate }}
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if section.settings.show_post_readmore_button %}
+      <a href="{{ article.url }}" class="mb-3 btn {{ section.settings.post_readmore_button_style }}">
+        {{ 'blog.readmore' | t }}
+      </a>
+      {% endif %}
+
+    </div>
+
+  </article>
+  {% endfor %}
+
+  {% include 'pagination' %}
+
+  {% endpaginate %}
+
+</div>
+
+{%endcomment%}
+
+
+{% schema %}
+{
+  "name": "Blogs pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap in container",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "text-center",
+      "options": [
+        {
+          "value": "text-left", "label": "Left"
+        },
+        {
+          "value": "text-center", "label": "Center"
+        },
+        {
+          "value": "text-right", "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "results_per_page",
+      "label": "Results per page",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Blog post settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_post_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "post_title_size",
+      "label": "Title Size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1", "label": "H1"
+        },
+        {
+          "value": "h2", "label": "H2"
+        },
+        {
+          "value": "h3", "label": "H3"
+        },
+        {
+          "value": "h4", "label": "H4"
+        },
+        {
+          "value": "h5", "label": "H5"
+        },
+        {
+          "value": "h6", "label": "H6"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_post_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_post_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments_number",
+      "label": "Show comments number",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_post_excerpt",
+      "label": "Show post excerpt",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "post_excerpt_truncate",
+      "label": "Post excerpt truncate",
+      "default": "200",
+      "info": "The maximum number of characters for the post excerpt"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_post_readmore_button",
+      "label": "Show readmore button",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id":  "post_readmore_button_style",
+      "label": "Readmore button style",
+      "default": "btn-outline-primary",
+      "options": [
+        {
+          "value": "btn-primary", "label": "Primary color"
+        },
+        {
+          "value": "btn-outline-primary", "label": "Outline primary"
+        },
+        {
+          "value": "btn-secondary", "label": "Secondary color"
+        },
+        {
+          "value": "btn-outline-secondary", "label": "Outline secondary"
+        },
+        {
+          "value": "btn-light", "label": "Light color"
+        },
+        {
+          "value": "btn-dark", "label": "Dark color"
+        },
+        {
+          "value": "btn-outline-dark", "label": "Outline dark"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "text",
+      "id": "image_width",
+      "label": "Post image width (px)",
+      "default": "600"
+    },
+    {
+      "type": "text",
+      "id": "image_height",
+      "label": "Post image height (px)",
+      "default": "600"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_border",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "image_circle",
+      "label": "Image as circle",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id":  "image_hover_effect",
+      "label": "Hover effect",
+      "default": "image-hover-fade-out",
+      "options": [
+        {
+          "value": "image-hover", "label": "No effect"
+        },
+        {
+          "value": "image-hover-fade-in", "label": "Fade in"
+        },
+        {
+          "value": "image-hover-fade-out", "label": "Fade out"
+        },
+        {
+          "value": "image-hover-scale-in", "label": "Scale in"
+        },
+        {
+          "value": "image-hover-scale-out", "label": "Scale out"
+        },
+        {
+          "value": "image-hover-flashing", "label": "Flashing"
+        },
+        {
+          "value": "image-hover-shine", "label": "Shine"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced settings"
+    },
+    {
+      "type": "select",
+      "id":  "breakpoint",
+      "label": "Responsive breakpoint",
+      "info": "Define at what screen size point the layout should switch from row to column. [Learn more](https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints)",
+      "default": "-lg",
+      "options": [
+        {
+          "value": "", "label": "No breakpoint"
+        },
+        {
+          "value": "-sm", "label": "Small screens (sm)"
+        },
+        {
+          "value": "-md", "label": "Medium screens (md)"
+        },
+        {
+          "value": "-lg", "label": "Large screens (lg)"
+        },
+        {
+          "value": "-xl", "label": "Extra-large screens (xl)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

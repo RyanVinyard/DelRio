@@ -1,0 +1,35 @@
+<div class="section-2_awards">
+  <div class="container">
+    <div class="d-flex">
+      <hr class="end_margin_awards">
+      <p class="OUR-CUSTOMER_awards">
+        AWARDS & ACCOLADES
+      </p>
+      <hr class="end_margin_awards">
+    </div>
+
+    <div class="text_desc_awards">
+      <h1 class="WINE-ENTHUSIAST-MAGA_awae_awards">
+        {{ section.settings.awardsheadingtext }}
+      </h1>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+"name": "Awards Second Section",
+"settings": [
+	 {
+      "id": "awardsheadingtext",
+      "type": "textarea",
+      "label": "Enter Description"
+     }
+	]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+<style>
+  a.text_none_for_trade:hover {
+    text-decoration:none;
+    color:black;    
+  }
+</style>  
+
+<div class="newsletter_section_3">
+  <div class="container">
+    <h1 class="PAST-ISSUES_newsletter">PAST ISSUES</h1>
+    <div class="cabrener_pad_newsletter_css_txt pad_cab_newsletter_css_txt">
+      <div class="row"  id="page_newsletter_1">
+        {% for block in section.blocks %}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <a class="text_none_for_trade" href="{{block.settings.newsletter_Section1_button_link}}" target="_blank">
+          <div class="png_club_newsletter_css_txt la_car_newsletter_css_txt" style="background-color:{{block.settings.newsletter_Section1_issue_bg}}">
+            <h1 class="RIO-CLUB_pic_newsletter_css_txt">{{block.settings.newsletter_Section1_season}}</h1>
+            <img class="chardo_rio_newsletter_css_txt" src="{{block.settings.newsletter_Section1_image | img_url:'master'}}" alt="">
+          </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% schema %}
+  {
+  "name": "Newsletter Second Section",
+  "settings": [],
+  "blocks": [
+        {
+        "type": "select",
+        "name": "Past Issue",
+        "settings": [
+          {
+            "id": "newsletter_Section1_season",
+            "type": "text",
+            "label": "Season"
+          },    
+          {
+            "id": "newsletter_Section1_image",
+            "type": "image_picker",
+            "label": "Image"
+          },
+          {
+            "id": "newsletter_Section1_button_link",
+            "type": "url",
+            "label": "Enter file link"
+          },
+          {
+            "id": "newsletter_Section1_issue_bg",
+            "type": "text",
+            "label": "Enter Background Color"
+          }
+        ]
+      }
+    ]	
+  }
+  {% endschema %}

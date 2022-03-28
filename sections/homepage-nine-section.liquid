@@ -1,0 +1,72 @@
+<div class="section_9">
+  <div class="container">
+    <div class="bottle_2">
+      <h1 class="Our-Wine">{{section.settings.Section9_heading}}</h1>
+      <p class="With-every-bottle">{{section.settings.Section9_text}}</p>
+    </div>
+    <div class="cabrener_pad pad_cab">
+      <div class="row">
+        {% for block in section.blocks %}
+        <div class="col-lg-4 col-md-4 col-sm-12 accolades_8_bg_del_home">
+          <div class="text-center">
+            <a href="{{block.settings.Brand_link}}"><img  class="chardo_rio" src="{{block.settings.image_Brandselection | img_url: 'master' }}" alt=""></a>
+          </div>
+          <div class="padding_up text-center">
+            <p class="own-wor">{{block.settings.Brandtext}}</p>
+            <a href="{{block.settings.Brand_link}}"><button class="rio_wines">{{block.settings.Brand_linktext}}</button></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Nine Section",
+    "settings": [
+      {
+        "id": "Section9_heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "id": "Section9_text",
+        "type": "textarea",
+        "label": "Add custom text below",
+		"default": "Enter text here"
+      }
+    ],
+	"blocks": [
+    {
+      "type": "select",
+      "name": "Brands",
+      "settings": [
+        {
+          "id": "image_Brandselection",
+          "type": "image_picker",
+       		"label": "Brand Image"
+        },
+        {
+          "id": "Brandtext",
+          "type": "textarea",
+          "label": "Brand Description"
+        },
+ 		{
+    	  "id": "Brand_linktext",
+     	  "type": "text",
+       	  "label": "Button text",
+      	  "default": "Explore All Wines"
+      	},
+		{
+     	  "id": "Brand_link",
+      	  "type": "url",
+      	  "label": "Button link"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

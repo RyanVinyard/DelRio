@@ -1,0 +1,1181 @@
+<style>
+  .secton_map_for_media {
+    padding-top:50px;
+  }
+
+  @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+  .map-marker {
+    /* adjusting for the marker dimensions so that it is centered on coordinates */
+    width: 10px;
+    height: 10px;
+  }
+  .map-marker.map-clickable {
+    cursor: pointer;
+  }
+  .pulse {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #cdbc10;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #eedb22;
+    z-index: 10;
+    position: absolute;
+  }
+  .map-marker .dot {
+    border: 10px solid #15113f;
+    background: transparent;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    height: 50px;
+    width: 50px;
+    -webkit-animation: pulse 3s ease-out;
+    -moz-animation: pulse 3s ease-out;
+    animation: pulse 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: 1;
+    opacity: 0;
+  }
+  #chartdiv svg + a {
+    display: none !important;
+  }
+  .pulse {
+    width: 9px;
+    background-color: #90B3B5 !important;
+    border: 0px solid !important;
+    margin: 0 auto;
+    height: 10px;
+    width: 10px;
+    position: relative;
+    border-radius: 70px;
+    transition: all 500ms ease;
+  }
+  .pulse::before {
+    border-top: 10px solid #90B3B5;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    top: 7px;
+    left: 0;
+    margin-left: 0;
+    height: 0;
+    z-index: -1;
+  }
+  .pulse::before, .pulse::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  #chartdiv path {
+    fill: #3D3A34;
+  }
+  #chartdiv circle {
+    display: none;
+  }
+
+
+  /* new map css  */
+
+  .class_new_map_media {
+    background-color: #fcfcf5;
+  }
+  @media screen and (min-width:768px) {
+    .class_new_map_media .w-100 {
+      width:90% !important;
+    }
+    .w-100.margin_auto_setiing_map {
+      margin: auto;
+    }
+  }
+  img.height_set_class_media {
+    height: 27px;
+    position: relative;
+    z-index: 0;
+  }
+  /* tooltip */
+  .tooltip_map_trade {
+    position: absolute;
+    display: inline-block;
+  }
+
+  .margin_auto_setiing_map {
+    position: relative;
+  }
+  .tooltip_map_trade .tooltiptext_map_trade {
+    visibility: hidden;
+    width: max-content;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -53px;
+    margin-top: 10px;
+  }
+  .tooltip-bottom_map_trade::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #e2e2e2 transparent;
+  }
+
+  .tooltip_map_trade:hover .tooltiptext_map_trade {
+    visibility: visible;
+  }
+
+  .map-pin-desc-div {
+    width: 75%;
+    height: 1px;
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    margin: 0 auto;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+  .map-pin-desc {
+    text-align: center;
+    transform-origin: top;
+    background-color: #e2e2e2;
+    cursor: default;
+    border: 6px solid #e2e2e2;
+    padding: 0px;
+    border-radius: 6px;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    font-size: 10px;
+    margin: 0px;
+  }
+  .tooltip_map_trade.new_class_for_setting_1 {
+    top: 11%;
+    left: 18%;
+  }
+  .tooltip_map_trade.new_class_for_setting_2 {
+    top: 4%;
+    left: 22%;
+  }
+  .tooltip_map_trade.new_class_for_setting_3 {
+    top: 17%;
+    left: 17%;
+  }
+  .tooltip_map_trade.new_class_for_setting_4 {
+    top: 22%;
+    left: 16%;
+  }
+  .tooltip_map_trade.new_class_for_setting_5 {
+    top: 24%;
+    left: 18%;
+  }
+  .tooltip_map_trade.new_class_for_setting_6 {
+    top: 32%;
+    left: 15%;
+  }
+  .tooltip_map_trade.new_class_for_setting_7 {
+    top: 7%;
+    left: 31%;
+  }
+  .tooltip_map_trade.new_class_for_setting_8 {
+    top: 14%;
+    left: 32.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_9 {
+    top: 17%;
+    left: 26.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_10 {
+    top: 23%;
+    left: 37.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_11 {
+    top: 28%;
+    left: 53%;
+  }
+  .tooltip_map_trade.new_class_for_setting_12 {
+    top: 60%;
+    left: 48%;
+  }
+  .tooltip_map_trade.new_class_for_setting_13 {
+    top: 33%;
+    left: 58%;
+  }
+  .tooltip_map_trade.new_class_for_setting_14 {
+    top: 45%;
+    left: 57.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_15 {
+    top: 19%;
+    left: 64%;
+  }
+  .tooltip_map_trade.new_class_for_setting_16 {
+    top: 24%;
+    left: 69.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_17 {
+    top: 44%;
+    left: 72%;
+  }
+  .tooltip_map_trade.new_class_for_setting_18 {
+    top: 71%;
+    left: 80%;
+  }
+  .tooltip_map_trade.new_class_for_setting_19 {
+    top: 52%;
+    left: 78%;
+  }
+  .tooltip_map_trade.new_class_for_setting_20 {
+    top: 43%;
+    left: 80%;
+  }
+  .tooltip_map_trade.new_class_for_setting_21 {
+    top: 19%;
+    left: 76%;
+  }
+  .tooltip_map_trade.new_class_for_setting_22 {
+    top: 35%;
+    left: 81%;
+  }
+  .tooltip_map_trade.new_class_for_setting_23 {
+    top: 31%;
+    left: 83.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_24 {
+    top: 29%;
+    left: 84%;
+  }
+  .tooltip_map_trade.new_class_for_setting_25 {
+    top: 22%;
+    left: 87.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_26 {
+    top: 19%;
+    left: 83%;
+  }
+  .tooltip_map_trade.new_class_for_setting_27 {
+    top: 25%;
+    left: 85.5%;
+  }
+  .tooltip_map_trade.new_class_for_setting_28 {
+    top: 20.4%;
+    left: 89%;
+  }
+  .tooltip_map_trade.new_class_for_setting_29 {
+    top: 18.2%;
+    left: 89.2%;
+  }
+  .tooltip_map_trade.new_class_for_setting_30 {
+    top: 8%;
+    left: 83%;
+  }
+  .tooltip_map_trade.new_class_for_setting_31 {
+    top: 30%;
+    left: 30%;
+  }
+  .tooltip_map_trade.new_class_for_setting_32 {
+    top: 27%;
+    left: 26.5%;
+  }
+  @media screen and (max-width:991px) {
+    img.height_set_class_media {
+      height: 18px;
+    }
+  }
+  @media screen and (max-width:550px) {
+    img.height_set_class_media {
+      height: 13px;
+    }
+    .set_relatve_mble_trade {
+      position: relative;
+      top: 6px;
+    }
+  }
+  .scroll_trademedia_settings {
+    scroll-margin-top:150px;
+  }
+  .padding-zero_trademedia_999 {
+    padding-left:0px;
+  }
+  .padding-zero_trademedia_9900 {
+    padding-left:8px;
+  }
+  #Wonderland_Distribut {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+</style>  
+
+
+
+
+
+
+
+
+<section class="secton_map_for_media"> 
+  <div class="container">
+
+    <div class="w-100 margin_auto_setiing_map">
+      <img class="w-100 set_relatve_mble_trade" src="{{ 'InkedDel-rio_map1_LI.png' | asset_url }}" alt="">
+      <div>
+        <div class="tooltip_map_trade new_class_for_setting_1">
+          <a href="#faq2_trade_media_1" onClick="highlight($('#faq2_trade_media_1'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Columbia Distributing
+              <div class="map-pin-desc-div"></div
+                >Oregon
+              <div class="map-pin-desc-div"></div>
+              (888) 417-5001
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_2">
+          <a href="#faq2_trade_media_2" onClick="highlight($('#faq2_trade_media_2'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Columbia Distributing
+              <div class="map-pin-desc-div"></div
+                >Washington
+              <div class="map-pin-desc-div"></div>
+              (800) 949-5997
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_3">
+          <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              We are here
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_4">
+          <a href="#Wonderland_Distribut" onClick="highlight($('#Wonderland_Distribut'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Wonderland Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >California
+              <div class="map-pin-desc-div">
+              </div>
+              (530) 938-3464
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_5">
+          <a href="#faq2_trade_media_4" onClick="highlight($('#faq2_trade_media_4'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Alpine Beverage
+              <div class="map-pin-desc-div">
+              </div>
+              California
+              <div class="map-pin-desc-div"></div>
+              (530) 257-4048
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_6">
+          <a href="#faq2_trade_media_5" onClick="highlight($('#faq2_trade_media_5'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Columbia Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >California
+              <div class="map-pin-desc-div">
+              </div>
+              (707) 527-3900
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_7">
+          <a href="#faq2_trade_media_7" onClick="highlight($('.faq2_trade_media_7'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Gusto Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >Montana
+              <div class="map-pin-desc-div">
+              </div>
+              (406) 727-2618
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_8">
+          <a href="#faq2_trade_media_7" onClick="highlight($('.faq2_trade_media_7'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Cardinal Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >Montana
+              <div class="map-pin-desc-div">
+              </div>
+              (406) 586-0241
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_9">
+          <a href="#faq2_trade_media_8" onClick="highlight($('#faq2_trade_media_8'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Craig Stein Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Idaho
+              <div class="map-pin-desc-div">
+              </div>
+              (208) 378-0550
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_10">
+          <a href="#faq2_trade_media_10" onClick="highlight($('#faq2_trade_media_10'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Young’s Market Company
+              <div class="map-pin-desc-div">
+              </div
+                >Wyoming
+              <div class="map-pin-desc-div">
+              </div>
+              (307) 286-1665
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_11">
+          <a href="#faq2_trade_media_11" onClick="highlight($('#faq2_trade_media_11'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Anchor Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Nebraska
+              <div class="map-pin-desc-div">
+              </div>
+              (402) 301-1735
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_12">
+          <a href="#faq2_trade_media_12" onClick="highlight($('#faq2_trade_media_12'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Mid-State Wine & Liquors
+              <div class="map-pin-desc-div">
+              </div
+                >Texas
+              <div class="map-pin-desc-div">
+              </div>
+              (425) 251-9300
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_13">
+          <a href="#faq2_trade_media_13" onClick="highlight($('#faq2_trade_media_13'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Donnewald Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >Illinois
+              <div class="map-pin-desc-div">
+              </div>
+              (618) 664-1600
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_14">
+          <a href="#faq2_trade_media_14" onClick="highlight($('.faq2_trade_media_14'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              West TN Crown Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >Memphis, Tennessee
+              <div class="map-pin-desc-div">
+              </div>
+              (713) 682-0800
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_15">
+          <a href="#faq2_trade_media_15" onClick="highlight($('#faq2_trade_media_15'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              M Shiraz/Krush Wine Co.
+              <div class="map-pin-desc-div">
+              </div
+                >Wisconsin
+              <div class="map-pin-desc-div">
+              </div>
+              (262) 235-4047
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_16">
+          <a href="#faq2_trade_media_16" onClick="highlight($('#faq2_trade_media_16'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Imperial Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Michigan
+              <div class="map-pin-desc-div">
+              </div>
+              (775) 355-4500
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_17">
+          <a href="#faq2_trade_media_14" onClick="highlight($('.faq2_trade_media_14'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Knoxville Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Knoxville, Tennessee
+              <div class="map-pin-desc-div">
+              </div>
+              (865) 637-9411
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_18">
+          <a href="#faq2_trade_media_18" onClick="highlight($('#faq2_trade_media_18'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              New World Distributors Inc.
+              <div class="map-pin-desc-div">
+              </div
+                >Florida
+              <div class="map-pin-desc-div">
+              </div>
+              (973) 712-0950
+            </div>
+          </span>
+        </div>
+
+
+        <div class="tooltip_map_trade new_class_for_setting_19">
+          <a href="#faq2_trade_media_19" onClick="highlight($('#faq2_trade_media_19'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Savannah Distributing Co.
+              <div class="map-pin-desc-div">
+              </div
+                >Georgia
+              <div class="map-pin-desc-div">
+              </div>
+              (678) 427-6152
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_20">
+          <a href="#faq2_trade_media_20" onClick="highlight($('#faq2_trade_media_20'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              17th Street Distributing
+              <div class="map-pin-desc-div">
+              </div
+                >North Carolina
+              <div class="map-pin-desc-div">
+              </div>
+              (888) 391-7108
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_21">
+          <a href="#faq2_trade_media_21" onClick="highlight($('#faq2_trade_media_21'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Nicholas Pearce Wines
+              <div class="map-pin-desc-div">
+              </div
+                >Ontario, Canada
+              <div class="map-pin-desc-div">
+              </div>
+              (647) 808-4492
+            </div>
+          </span>
+        </div>
+
+
+
+        <div class="tooltip_map_trade new_class_for_setting_22">
+          <a href="#faq2_trade_media_22" onClick="highlight($('#faq2_trade_media_22'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Hop & Wine Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Virginia
+              <div class="map-pin-desc-div">
+              </div>
+              (703) 421-2337
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_23">
+          <a href="#faq2_trade_media_23" onClick="highlight($('#faq2_trade_media_23'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Hop & Wine Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Washington D.C.
+              <div class="map-pin-desc-div">
+              </div>
+              (703) 421-2337
+            </div>
+          </span>
+        </div>
+
+
+        <div class="tooltip_map_trade new_class_for_setting_24">
+          <a href="#faq2_trade_media_24" onClick="highlight($('#faq2_trade_media_24'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              International Cellars
+              <div class="map-pin-desc-div">
+              </div
+                >Maryland
+              <div class="map-pin-desc-div">
+              </div>
+              (703) 918-6333
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_25">
+          <a href="#faq2_trade_media_25" onClick="highlight($('#faq2_trade_media_25'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Aidil Wines & Liquor
+              <div class="map-pin-desc-div">
+              </div
+                >Connecticut
+              <div class="map-pin-desc-div">
+              </div>
+              (973) 712-0950
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_26">
+          <a href="#faq2_trade_media_26" onClick="highlight($('#faq2_trade_media_26'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Aidil Wines & Liquor
+              <div class="map-pin-desc-div">
+              </div
+                >New York
+              <div class="map-pin-desc-div">
+              </div>
+              (503) 417-5035
+            </div>
+          </span>
+        </div>
+
+
+        <div class="tooltip_map_trade new_class_for_setting_27">
+          <a href="#faq2_trade_media_27" onClick="highlight($('#faq2_trade_media_27'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Aidil Wines & Liquor
+              <div class="map-pin-desc-div">
+              </div
+                >New Jersey
+              <div class="map-pin-desc-div">
+              </div>
+              (609) 345-2246
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_28">
+          <a href="#faq2_trade_media_28" onClick="highlight($('#faq2_trade_media_28'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Aidil Wines & Liquor
+              <div class="map-pin-desc-div">
+              </div
+                >Rhode Island
+              <div class="map-pin-desc-div">
+              </div>
+              (973) 712-0950
+            </div>
+          </span>
+        </div>
+
+
+        <div class="tooltip_map_trade new_class_for_setting_29">
+          <a href="#faq2_trade_media_29" onClick="highlight($('#faq2_trade_media_29'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Aidil Wines & Liquor
+              <div class="map-pin-desc-div">
+              </div
+                >Massachusetts
+              <div class="map-pin-desc-div">
+              </div>
+              (973) 712-0950
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_30">
+          <a href="#faq2_trade_media_30" onClick="highlight($('#faq2_trade_media_30'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Balkan Wines
+              <div class="map-pin-desc-div">
+              </div
+                >Quebec, Canada
+              <div class="map-pin-desc-div">
+              </div>
+              (514) 569-1432
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_31">
+          <a href="#faq2_trade_media_31" onClick="highlight($('#faq2_trade_media_31'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Young’s Market Company
+              <div class="map-pin-desc-div">
+              </div
+                >Utah
+              <div class="map-pin-desc-div">
+              </div>
+              (801) 618-9248
+            </div>
+          </span>
+        </div>
+
+        <div class="tooltip_map_trade new_class_for_setting_32">
+          <a href="#faq2_trade_media_32" onClick="highlight($('#faq2_trade_media_32'));">
+            <img class="height_set_class_media new_1_image" src="{{'pointer_location_trade_map.png' | asset_url}}" alt="">
+          </a>
+          <span class="tooltiptext_map_trade tooltip-bottom_map_trade">
+            <div class="map-pin-desc">
+              Great Basin Beverage
+              <div class="map-pin-desc-div">
+              </div
+                >Nevada
+              <div class="map-pin-desc-div">
+              </div>
+              (775) 752-3326
+            </div>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    {% comment %}
+    <div class="masp_class_distributi">
+      <div id="chartdiv"></div>         
+    </div>
+    {% endcomment %}
+  </div>
+</section>
+
+{% comment %}
+
+{{ 'core.js' | asset_url | script_tag }}
+{{ 'charts.js' | asset_url | script_tag }}
+{{ 'material.js' | asset_url | script_tag }}
+{{ 'de_DE.js' | asset_url | script_tag }}
+{{ 'usaLow.js' | asset_url | script_tag }}
+{{ 'notosans-sc.js' | asset_url | script_tag }}
+
+{{ 'jquery.min.js' | asset_url | script_tag }}
+{{ 'bootstrap.min.js' | asset_url | script_tag }}
+{{ 'ammap.js' | asset_url | script_tag }}
+{{ 'usaLow1.js' | asset_url | script_tag }}
+{{ 'export.min.js' | asset_url | script_tag }}
+{{ 'export.css' | asset_url | script_tag }}
+{{ 'light.js' | asset_url | script_tag }}
+{% endcomment %}
+
+
+<section class="distributor-section animatioN-on_scroll_margin_top" id="distrbtr">
+  <div class="mycontainer container trade-content">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="section-heading"><h2>Distributors</h2></div>
+      </div>
+    </div>		
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="hdng"><p>United States</p></div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 Wonderland-Distribut_down_sec_trade">
+        <div class="row scroll_trademedia_settings" id="Wonderland_Distribut">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Wonderland Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>California</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(530) 938-3464</p></div>
+        </div>
+
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_4">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Alpine Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>California</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(530) 257-4048</p></div>
+        </div>
+
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_5">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Columbia Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>California</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(707) 527-3900</p></div>
+        </div>	
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_25">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Aidil Wines & Liquor</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Connecticut</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(973) 712-0950</p></div>
+        </div>
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_23">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Hop & Wine Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Washington D.C.</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(703) 421-2337</p></div>
+        </div>
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_18">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>New World Distributors Inc.</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Florida	</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(973) 712-0950</p></div>
+        </div>
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_19">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Savannah Distributing Co.</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Georgia</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(678) 427-6152</p></div>
+        </div>
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_8">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Craig Stein Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Idaho</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(208) 378-0550</p></div>
+        </div>
+
+
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_13">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Donnewald Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Illinois</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(618) 664-1600</p></div>
+        </div>
+
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_24">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>International Cellars</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Maryland</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(703) 918-6333</p></div>
+        </div>
+
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_29">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Aidil Wines & Liquor</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Massachusetts</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(973) 712-0950</p></div>
+        </div>
+
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_16">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Imperial Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Michigan</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(775) 355-4500</p></div>
+        </div>
+
+
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings faq2_trade_media_7" id="faq2_trade_media_7">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Cardinal Distributing
+            Gusto Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Montana <br>
+            Montana</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(406) 586-0241 <br>
+            (406) 727-2618</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_11">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Anchor Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Nebraska</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(402) 301-1735</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_32">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Great Basin Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Nevada</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(775) 752-3326</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_27">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Aidil Wines & Liquor</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>New Jersey</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(609) 345-2246</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_26">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Aidil Wines & Liquor</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>New York</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(503) 417-5035</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_20">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>17th Street Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>North Carolina</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(888) 391-7108</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id='faq2_trade_media_1'>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Columbia Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Oregon</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(888) 417-5001</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_28">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Aidil Wines & Liquor</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Rhode Island</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(973) 712-0950</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings faq2_trade_media_14" id="faq2_trade_media_14">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Knoxville Beverage <br>
+            Tennessee Crown Distributing Co.</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Knoxville, Tennessee <br>
+            Memphis, Tennessee</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <p>
+              (865) 637-9411 
+              <br>
+              (713) 682-0800
+            </p>
+          </div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_12">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Mid-State Wine & Liquors</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Texas</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(425) 251-9300</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_31">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Young’s Market Company</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Utah</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(801) 618-9248</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_22">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Hop & Wine Beverage</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Virginia</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(703) 421-2337</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id='faq2_trade_media_2'>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Columbia Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Washington</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(800) 949-5997</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_15">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>M Shiraz/Krush Wine Co.</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Wisconsin</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(262) 235-4047</p></div>
+        </div>
+
+        <div class="my-seperator"></div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_10">
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Young’s Market Company</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>Wyoming</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-12"><p>(307) 286-1665</p></div>
+        </div>
+        <div class="my-seperator"></div>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="hdng"><p>International</p></div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 Wonderland-Distribut_down_sec_trade">
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_21">
+          <div class="col-lg-4 col-md-4 col-sm-4 padding-zero_trademedia_999"><p>Wonderland Distributing</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4 padding-zero_trademedia_9900"><p>Ontario, Canada</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>(647) 808-4492</p></div>
+        </div>
+        <div class="row scroll_trademedia_settings" id="faq2_trade_media_30">
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>Balkan Wines</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>Quebec, Canada</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>(514) 569-1432</p></div>
+        </div>
+        <div class="row scroll_trademedia_settings">
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>Syntrade Imports & Exports</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>China</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>86-188-6876-3918</p></div>
+        </div>	
+        <div class="row scroll_trademedia_settings">
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>Filcon Service Inc.,</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>Tokyo</p></div>
+          <div class="col-lg-4 col-md-4 col-sm-4"><p>070-3516-2397</p></div>
+        </div>	
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+<script>
+
+  function highlight(obj) {
+
+    var orig = obj.css("color");
+    obj.css("background-color", "black");    
+    var GrandChild = obj.children();
+    GrandChild.children().css( "color", "white" );
+
+    setTimeout(function() {
+      obj.css("background-color", "#fcfcf5");
+      GrandChild.children().css( "color", "#2e4433" ); 
+    }, 2000);
+
+  }
+
+</script>
+
+{% schema %}
+{
+"name": "Section name",
+"settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

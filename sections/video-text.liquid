@@ -1,0 +1,164 @@
+<style> 
+  
+  .bottle-text-h2{
+    max-width: 448px;
+    max-height: 80px;
+    margin: 120px 171.1px 50px 172px;
+    font-family: Canela;
+    font-size: 40px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171f15;
+  }
+  
+.rtl-auto-1{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.rtl-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.first-section-bg-color{
+    background-color: #f3f5eb;
+}
+.Rectangle {
+    max-width: 1440px;
+  }
+  .iframe-section{
+      text-align: center;
+  }
+  .row-text{
+    text-align: -webkit-center;
+    display:inline !important;
+  }
+  .ifram-video{
+   max-width:790px;
+   height:450px;
+  }
+  @media (max-width: 425px) and (min-width: 320px){
+    .ifram-video{
+     max-width: 90%;
+      height:auto;
+    }
+    .bottle-text{
+      width:auto;
+      height:auto;
+      margin:60px 0px 20px 0px;
+    }
+    .bottle-text-h2{
+    font-size: 14px !important;
+    font-weight: 800;
+     max-width:280px;
+      margin:0px;
+    }
+    .Rectangle{
+    width:auto ;
+      height:370px;
+    }
+  }
+  @media (max-width: 768px) and (min-width: 425px){
+    .ifram-video{
+      max-width:90%;
+      height:auto;
+    }
+    .bottle-text{
+      width:200px;
+      height:auto;
+      margin:60px 0px 20px 0px;
+    }
+    .bottle-text-h2{
+    font-size: 14px;
+    font-weight: 800;
+      margin:0px;
+    }
+    .Rectangle{
+    max-width:290px ;
+      height:370px;
+    }
+  }
+  @media (max-width: 1024px) and (min-width: 768px){
+    .ifram-video{
+      max-width:50%;
+      height:auto;
+    }
+    .bottle-text{
+      width:200px;
+      height:auto;
+      margin:60px 0px 20px 0px;
+    }
+    .bottle-text-h2{
+    font-size: 14px !important;
+    font-weight: 800;
+    margin: 80px 0px 0px 0px;
+    }
+    .Rectangle{
+    max-width:750px ;
+      height:370px;
+    }
+    .row.iframe-row {
+    width: 90%;
+    display: inline;
+}
+  }
+  @media (max-width: 1440px) and (min-width: 1025px){
+    .Rectangle{
+    max-width:1024px ;
+    }
+    .bottle-text-h2{
+    font-size: 40px !important;
+    font-weight: 800;
+    }
+  }
+</style>
+    <!--video-section-start-->
+    <div class="first-section-bg-color">
+        <div class="Rectangle rtl-auto">
+    <div class="row row-text">
+        <div class="col-lg-12 col-md-12 col-sm-12 rtl-auto-1 bottle-text">
+            <h2 class="bottle-text-h2">{{ section.settings.text }}</h2>
+        </div>
+    </div>
+    <div class="row iframe-row">
+        <div class="col-lg-12 col-md-12 col-sm-12 rtl-auto iframe-section">
+          <iframe src="https://player.vimeo.com/video/554451804" class="ifram-video" width="791.1px" heihgt="450px" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+    </div>
+    <!--video-section-end-->
+{% schema %}
+  {
+    "name": "video-text",
+    "settings": [
+    {
+        "id": "text",
+        "type": "html",
+        "label": "Add custom text below"
+      }
+  ],
+"blocks": [
+    {
+      "type": "select",
+      "name": "video",
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "text-section",
+      "category": "text"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

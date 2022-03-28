@@ -1,0 +1,16 @@
+<!-- Cart Attributes Snippet -->
+<!-- This code only needs to exist once within the document, positioned after all cart attribute fields -->
+<script>
+  var cartAttributeInputs = document.querySelectorAll('[name^="attributes"]');
+  Array.prototype.forEach.call(cartAttributeInputs, function(el, i){
+    el.addEventListener("change", function(event) {
+      var attributeName = event.target.getAttribute("name").substring(11, event.target.getAttribute("name").length-1);
+      var request = new XMLHttpRequest();
+      request.open('POST', '/cart/update.js', true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      var attributes = { [attributeName]: event.target.value }
+      request.send(Object.keys(attributes).map(function(key) { return `attributes[${key}]=${attributes[key].toString()}` }).join('&'));
+    });
+  });
+</script>
+<!-- /Cart Attributes Snippet -->

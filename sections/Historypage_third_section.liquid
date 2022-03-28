@@ -1,0 +1,68 @@
+
+<div class="padding-4_perk">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="perk_6_img">
+        <div class="perk_6">
+          <img src="{{section.settings.his_pg_section_3_image_1 | img_url: 'master'}}" alt="">
+          <p class="On-February-8-1865_history_2 desc_his_2">{{section.settings.his_pg_section_3_image_details_1}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="perk_6_text">
+        <div class="perk_vip_text">
+          <h1 class="year_in_history_page">{{section.settigs.his_pg_section_3_year_1}}</h1>
+          <p class="On-February-8-1865_history_1">{{section.settings.his_pg_section_3_sub_heading_1}}</p>
+        {% for block in section.blocks %} 
+          <p class="On-February-8-1865_history_2">{{block.settings.his_pg_section_3_Description}}</p>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+{% schema %}
+  {
+    "name": "History Third section",
+    "settings": [
+     {
+      "id": "his_pg_section_3_image_1",
+      "type": "image_picker",
+      "label": "image"
+       },
+     {
+      "id": "his_pg_section_3_image_details_1",
+      "type": "text",
+      "label": "Image Details"
+      },
+     {
+      "id": "his_pg_section_3_year_1",
+      "type": "text",
+      "label": "Year"
+      },
+     {
+      "id": "his_pg_section_3_sub_heading_1",
+      "type": "textarea",
+      "label": "Sub Heading"
+      }
+],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Description",
+      "settings": [
+        {
+          "id": "his_pg_section_3_Description",
+          "type": "textarea",
+       	  "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

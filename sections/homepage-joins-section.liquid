@@ -1,0 +1,100 @@
+<style>
+
+  .Tabs_pics{
+    padding-top:4%;
+    background-color: #fcf9ef;padding-bottom:4%;
+  }
+  .Tabs_pics img{
+    width: 100%;
+  }
+  .Tabs_pics p{
+    font-family: Apercu Pro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 1px;
+    color: #2e4433;
+    margin-top: 12px;
+  }
+  .text_dec_none_desig {
+   	text-decoration:none;
+  }
+  .text_dec_none_desig:hover {
+   	text-decoration:none;
+  }
+  @media screen and (max-width: 1194px) {
+    .Tabs_pics .container{
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width:767px) {
+    .row.class_tableet_newdesign .mb_at_tab_end_homepgne {
+      margin-bottom:30px;
+    }
+    .row.class_tableet_newdesign .mb_at_tab_end_homepgne:last-child {
+      margin-bottom:0px;
+    }
+  }
+</style>
+
+<section class="Tabs_pics">
+  <div class="container">
+    <div class="row class_tableet_newdesign">
+      {% for block in section.blocks %}
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb_at_tab_end_homepgne">
+        <a class="text_dec_none_desig" href="{{ block.settings.Link_for_join }}">
+        <div>
+          <img src="{{ block.settings.image_brand | img_url:'master' }}">
+          <p>{{ block.settings.imagetext_brand_comment }}</p>
+        </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homepage join section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Join Section",
+      "settings": [
+        {
+          "id": "image_brand",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "imagetext_brand_comment",
+          "type": "textarea",
+          "label": "Add Text"
+        },
+        {
+          "id": "Link_for_join",
+          "type": "url",
+          "label": "Add Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage join section",
+      "category": "join Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

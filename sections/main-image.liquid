@@ -1,0 +1,91 @@
+<style>
+  
+.main-container{
+    max-width:100%;
+}
+.main-container-img{
+   width: 100%;
+   height: 60vh;
+}
+  @media (max-width: 768px) and (min-width: 600px){  
+.main-container{
+    max-width:100%;
+}
+.main-container-img{
+   width: 100%;
+   height: 60vh!important;
+}  
+  }
+  
+  @media (max-width: 600px){  
+.main-container{
+    max-width:100%;
+}
+.main-container-img{
+   width: 100%;
+   height: 30vh!important;
+}  
+  }
+  @media (max-width: 1024px) and (min-width: 768px){  
+.main-container{
+    max-width:100%;
+}
+.main-container-img{
+   width: 100%;
+   height: 60vh;
+}  
+  }
+  @media (max-width: 1440px) and (min-width: 1024px){  
+.main-container{
+    max-width:100%;
+}
+.main-container-img{
+   width: 100%;
+   height: 60vh;
+}  
+  }
+</style>
+    <!--main-sectoin-->
+{% for block in section.blocks %}
+        <div class="main-container">
+            <img class="main-container-img" src="{{ block.settings.product-image | img_url: '1024x' }}">
+        </div>
+{% endfor %}
+    <!--video-section-end-->
+{% schema %}
+  {
+    "name": "main-image",
+    "settings": [],
+
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Add image",
+      "settings": [
+        {
+          "id": "product",
+          "type": "url",
+       		"label": "add image"
+        },
+        {
+          "id": "product-image",
+          "type": "image_picker",
+          "label": "add main image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "main-image",
+      "category": "Instagram"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

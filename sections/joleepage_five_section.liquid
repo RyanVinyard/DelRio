@@ -1,0 +1,238 @@
+
+<!-- jolee section 5 -->
+
+<style>
+
+  {% comment %}
+  {{'jolee_img_99.png' | asset_url }}
+  {% endcomment %}
+  .jolee_section_50 {
+    background-image: url({{section.settings.jolee_sec5_Image | img_url:'master' }});
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    height: 630px;
+    background-size: cover;
+  }
+
+  h3.created_in_the_Jolee_wines {
+    font-family: Apercu Pro;
+    font-size: 36.3px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.359;
+    letter-spacing: -1.25px;
+    color: #ffffff;
+    margin: 0;
+    
+    width: 57%;
+  }
+  .row_for_margin_pad_tp {
+    padding-top: 30.4%;	
+  }
+  .play_button_modal_pop_ups.text-right img {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    right: 6px;
+    top: 8px;
+  }
+  .author_name_texts_btton {
+    margin-top: 23px;
+
+  }
+
+  .author_name_texts_btton P {
+    font-family: Apercu;
+    font-size: 13.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .author_name_texts_btton_56_sm {
+    justify-content: space-between;
+  }
+
+
+  @media screen and (min-width:1400px) {
+    .jolee_section_50 {
+      background-position: inherit;
+    }
+  }
+  @media screen and (max-width:1200px) {
+    h3.created_in_the_Jolee_wines {
+      font-size: 28.7px;
+      width: 53%;
+    }
+    .row_for_margin_pad_tp { 
+      padding-top: 39.4%;
+    }
+    .author_name_texts_btton P {
+      font-size: 10.5px;
+    }
+  }
+  @media screen and (max-width:1050px) {
+    h3.created_in_the_Jolee_wines {
+      font-size: 30.7px;
+      
+    }
+      .row_for_margin_pad_tp {
+      padding-top: 31.4%;
+      }
+  }
+  @media screen and (max-width: 991px) {
+    .jolee_section_50 {
+      height: 382px;
+    }
+    h3.created_in_the_Jolee_wines {
+      font-size: 23.7px;
+
+    }
+    .row_for_margin_pad_tp {
+      padding-top: 23.4%;
+    } 
+  }
+  @media screen and (max-width: 800px){
+    .row_for_margin_pad_tp {
+      padding-top: 21%;
+    }
+    .play_button_modal_pop_ups.text-right img {
+      right: 0px;
+      top: -12px;
+    }
+    .author_name_texts_btton {
+      margin-top: 12px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    h3.created_in_the_Jolee_wines {
+      width: 69%;
+    }
+    .row_for_margin_pad_tp {
+          padding-top: 18%;
+    }
+    .play_button_modal_pop_ups.text-right img {
+      height: 50px;
+      width: 50px;
+    }
+    .play_button_modal_pop_ups.text-right img {
+      top: 9px;
+      right: 30px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    h3.created_in_the_Jolee_wines {
+      width: 75%;
+      font-size: 20.5px;
+    }
+    .row_for_margin_pad_tp {
+      padding-top: 30%;    
+    }
+    .jolee_section_50 {
+      background-position: 70% 100%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .author_name_texts_btton_56_sm.d-flex {
+      margin-top: 20px;
+    }
+    .play_button_modal_pop_ups.text-right img {
+      top: 7px;
+      right: 10px;
+    }
+  }
+  @media screen and (max-width: 350px){
+    h3.created_in_the_Jolee_wines {
+      width: 100%;
+    }
+    .row_for_margin_pad_tp {
+      padding-top: 38%;    
+    }
+  }
+  .author_name_texts_btton_9000 {
+    background-color: rgba(0,0,0,{{section.settings.text_bg_overlay_sec_4_jolee}});
+    padding:15px;
+  }
+</style>
+
+<div class="jolee_section_50">
+  <div class="container">
+    <div class="row_for_margin_pad_tp">
+      <div> 
+        <h3 class="created_in_the_Jolee_wines author_name_texts_btton_9000">{{section.settings.heading_jolee_sec_4}}</h3>   
+      </div>
+      <div class="author_name_texts_btton_56_sm d-flex">
+        <div class="author_name_texts_btton author_name_texts_btton_9000">
+          <P >{{section.settings.author_name_jolee_section_4}}</P>
+          <P>Owner / Del Rio Vineyards</P>
+        </div>
+        <a href="javascript:void(0)" id="video_button">
+          <div class="play_button_modal_pop_ups text-right"  id="video_button" >
+            <img src="{{'perk_red_7.png'| asset_url }}" alt="">
+          </div>
+        </a>           
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- popup video -->
+
+<div class="modal fade" id="videopopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog login-modal-dialog-video" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" id="checkout_close" data-dismiss="modal" aria-label="Close">            
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">        
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/506221390" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "joleepage fifth section",
+"settings": [
+{
+"id":"jolee_sec5_Image",
+"type":"image_picker",
+"label":"Background Image"
+},
+{
+"id":"heading_jolee_sec_4",
+"type":"textarea",
+"label":"Heading"
+},
+{
+"id":"author_name_jolee_section_4",
+"type":"text",
+"label":"Author Name"
+},
+{
+        "type": "range",
+        "id": "text_bg_overlay_sec_4_jolee",
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "label": "Set background opacity of text",
+        "default": 0.4
+      }
+
+]
+}
+{% endschema %}

@@ -1,0 +1,112 @@
+
+<style>
+  .brandreviews {
+    padding: 100px 45px;
+  }
+  .Featured-Del-Rio-Vin_brandcomments p {
+    margin-bottom: 32px;
+    font-family: Apercu Pro;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2e4433;
+    text-align: center;
+  }
+  @media screen and (max-width:991px) {
+    .brandreviews {
+      padding: 50px 30px;
+    }
+    .row.justify-content_centerfor_display {
+      align-items: center;
+    }
+  }
+  @media screen and (max-width:767px) {
+    .brandreviews {
+      padding: 50px 15px;
+      padding-bottom: 20px;
+    }
+    .Featured-Del-Rio-Vin_brandcomments {
+      margin-bottom: 35px;
+    }
+    .Featured-Del-Rio-Vin_brandcomments p {
+      margin-bottom: 18px;
+    }
+    .row.displynoneatmobiledlgnne {
+      display: none;
+    }
+    .text-center.d-none.displayblockon767 {
+      display: block !important;
+    }
+  }
+</style>
+
+
+<div class="brandreviews">
+  <div class="container">
+    <div class="row justify-content_centerfor_display">
+      {% for block in section.blocks %}
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+        <div class="Featured-Del-Rio-Vin_brandcomments">
+          <p>“{{ block.settings.brandtext }}”</p>
+          <div class="text-center d-none displayblockon767">
+            <img src="{{ block.settings.image_wine_brand | img_url:'master' }}{{'williams-sonoma-logo.png' | asset_url }}" alt="">
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row displynoneatmobiledlgnne">
+      {% for block in section.blocks %}
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+        <div class="text-center">
+          <img src="{{ block.settings.image_wine_brand | img_url:'master' }}" alt="">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Brand Reviews section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Brand Review",
+      "settings": [
+        {
+          "id": "brandtext",
+          "type": "text",
+          "label": "Add text "
+        },
+        {
+          "id": "image_wine_brand",
+          "type": "image_picker",
+       		"label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Brand Reviews section",
+      "category": "Brand Reviews Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

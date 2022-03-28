@@ -1,0 +1,24 @@
+{% comment %}
+This file sets up the necessary server-side Liquid variables for Bloom
+{% endcomment %}
+{% assign is_member = false %}
+
+{% if customer %}
+  {% for tag in customer.tags %}
+     {% if tag contains "CLUB-LEVEL-" %}
+        {% assign is_member = true %}
+     {% endif %}
+  {% endfor %} 
+{% endif %}
+
+{% assign is_club_members_only = false %}
+{% if product.metafields.bloom['bloomfields'].club_members_only == "1" %}
+  {% assign is_club_members_only = true %}
+{% endif %}
+
+{% comment %}Below code is display logic for theme elements and action.{% endcomment %}
+
+{% assign show_add_to_cart = true %}
+{% if is_club_members_only == true and is_member == false %}
+  {% assign show_add_to_cart = false %}
+{% endif %}

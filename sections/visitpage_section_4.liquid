@@ -1,0 +1,68 @@
+<div class="tour_section_4" style="background-image:url({{section.settings.visitpage_sec4_bg_img | img_url:'master' }})">
+    <div class="container">
+
+    </div>
+</div>
+
+
+<div class="tour_section_3 tour_pagge_section_4">
+    <div class="container">
+        <div class="testing_tour_2 testing_tour_3 bg-white animatioN-on_scroll_margin_top" id="toursandlargegroups">
+            <div>
+                <h1 class="Tasting-Room_tour">
+                   {{section.settings.visitpage_sec4_heading}} 
+                </h1>
+                <div class="covid_19_your">
+                    <p>{{section.settings.visitpage_sec4_covid}}</p>
+                </div>
+            </div>
+            <div class="Located-at-the-entra_tour at-the-entra_tour_4 ">
+                <p>{{section.settings.visitpage_sec4_covid_desc}} <span class="call_us_please_tour">Please call {{section.settings.visitpage_sec4_contact}} to arrange your tasting appointment.</span>   
+                    <br><br>
+               {{section.settings.visitpage_sec4_text3}}     
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Visitpage Four Section",
+    "settings": [
+      {
+      "id":"visitpage_sec4_bg_img",
+      "type":"image_picker",
+      "label":"Image"
+      },
+      {
+      "id":"visitpage_sec4_heading",
+      "type":"textarea",
+      "label":"Heading"
+      },
+      {
+      "id":"visitpage_sec4_covid",
+      "type":"textarea",
+      "label":"Announcement"
+      },
+      {
+      "id":"visitpage_sec4_covid_desc",
+      "type":"textarea",
+      "label":"Contact Description"
+      },
+      {
+      "id":"visitpage_sec4_contact",
+      "type":"textarea",
+      "label":"Contact Number"
+      },
+      {
+      "id":"visitpage_sec4_text3",
+      "type":"textarea",
+      "label":"Guide Text"
+      }
+  ]
+}
+{% endschema %}

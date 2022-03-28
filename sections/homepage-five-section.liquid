@@ -1,0 +1,229 @@
+<style>
+  .Best-Wines-for-Summe {
+    font-size: 21px;
+    font-weight: 500;
+    font-family: 'Butler' !important;
+    text-transform: capitalize !important;
+    font-stretch: normal !important;
+    line-height: 1.25;
+    font-weight: 500;
+    color: #2e4433 !important;
+  }
+  p.winetypevendornewhomepgde {
+    opacity: 0.6;
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 1px;
+    color: #2e4433;
+    margin-bottom:2px;
+    text-transform:uppercase;
+  }
+  .spr-badge-starrating {
+    margin: 0 0px 0 0;
+  }
+  .spr-badge[data-rating="0.0"] {
+    display: grid;
+    text-align: right;
+    font-family: Apercu Pro;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: rgba(46, 68, 51, 0.72);
+  }
+  .d-flex.padding_upspacebetweennewdesign {
+    justify-content: space-between;
+  }
+  .image_set_hright_all_screen_zsr  img {
+    height:240px;
+  }
+
+  img.bestsellerbageaddtopimg {
+    height: 55px;
+    position: absolute;
+    top: 2.2%;
+    right: 9%;
+  }
+  p.ADD-TO-CART.new_add_cart_design {
+    margin-top:0px;
+  }
+  .spr-badge {
+    display:grid;
+  }
+  .padding_up .spr-badge-caption {
+    font-size:13px !important;
+  } 
+  .padding_up .spr-badge[data-rating="0.0"] .spr-badge-caption {
+    font-size:10px !important;
+  }
+
+  @media (min-width: 1700px) {
+    .container {
+      max-width: 1380px;
+    }
+  }
+  @media screen and (max-width: 1700px) and ( min-width:1000px ) {
+    .padding_up a.added_setup_a {
+      width:60%;	            	
+    }
+  }
+    @media screen and  (max-width: 1200px) and (min-width:1000px) {
+   .padding_up .spr-badge[data-rating="5.0"] .spr-badge-starrating .spr-icon {
+    	font-size: 80% !important;
+	}
+  }
+  @media screen and (max-width:1700px) {
+    .d-flex.padding_upspacebetweennewdesign {
+	height: 60px;
+}
+}
+</style>  
+
+<div class="section_5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <p class="Best-Wines-for-Summe">{{section.settings.Home_Section_five}}</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 d_none_mble_del_del">
+        <a href="/collections/all"><p class=" Shop-All-Wines">Shop All Wines</p></a>
+      </div>
+    </div>
+
+    <div class="cabrener_pad d_none_mble_del_del">
+      <div class="row">
+
+        {% assign collectionallproducts = collections[section.settings.feature_collection_homepage_section_5].products |  sort: 'manual' | reverse %}
+        {% for product in collectionallproducts  limit:  section.settings.text3 %}
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="text-center png_carbernet image_set_hright_all_screen_zsr product-url" data-product-url="{{product.url}}" style="cursor: pointer;">
+            <a href="{{product.url}}"> 
+              <img src="{% if product.featured_image.size > 0 %}{{ product.featured_image | product_img_url: 'master' }}{% else %}{{ 'no_image.png' | asset_url }}{% endif %}" alt="{{ product.title | escape }}" />
+              {% if product.tags contains 'best-seller' %}
+              <img class="bestsellerbageaddtopimg" src="{{ 'bestsellerbadgepng.png' | asset_url }}" />
+              {% endif %}
+
+            </a>
+          </div>
+          <div class="padding_up">
+            <p class="winetypevendornewhomepgde">{{ product.collections[1].title}}</p>
+            <div class="d-flex padding_upspacebetweennewdesign">
+              <a class="added_setup_a" href="{{product.url}}"><p class="Chardonnay_1">{{product.title  | truncate: 30 }}</p></a>
+<!--               <p class="mb-0"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></p> -->
+            </div>
+            <a href="javascript:void(0)" 
+               data-product-id="{{ product.id }}"
+               class="add-to-cart-custom{% if product.available == true %} add-to-cart-blur{% endif %}" 
+               {% if product.available == false %}disabled{% endif %} 
+               ><p class="ADD-TO-CART new_add_cart_design">  {% if product.available == false %}Sold Out {% else %} ADD TO CART - {{product.price|money}} {% endif %}</p>
+            </a>
+          </div>
+          {% include 'products-modal-cart',product %}            
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!--    mobile section 5 carousel    -->
+
+  <div class="container-fluid">
+    <div class="cabrener_pad d_none_desk_del_del">
+      <div class="owl-carousel owl-theme"  id="home_mobile">
+        {% for product in collectionallproducts  limit:  section.settings.text3 %}
+        <div>
+          <div class="text-center png_carbernet">
+            <a href="{{product.url}}"> <img src="{% if product.featured_image.size > 0 %}{{ product.featured_image | product_img_url: 'master' }}{% else %}{{ 'no-image.png' | asset_url }}{% endif %}" alt=""></a>
+            <a href="javascript:void(0)" 
+               {% if product.available == false %}disabled{% endif %}
+               data-product-id="{{ product.id }}"
+               class="add-to-cart-custom add-to-cart-blur"
+               >
+              <p class="ADD-TO-CART ADD-TO-CART_mblr_home">
+                {% if product.available %} 
+                SHOP NOW
+                {% else %} 
+                {{ 'product.sold_out' | t }}
+                {% endif %}
+              </p>
+            </a>
+          </div>
+          <div class="padding_up">
+            <p class="Chardonnay_1">{{product.title}}</p>
+          </div>
+          {% include 'products-modal-cart',product %}
+
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <a class="d_none_desk_del_del" href="/pages/shop-all"><p class=" Shop-All-Wines">Shop All Wines</p></a>
+
+  </div>
+</div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Homepage Five Section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "Home_Section_five",
+        "label": "Enter Heading"
+      },
+      {
+        "type": "collection",
+        "id": "feature_collection_homepage_section_5",
+        "label": "Feature collection"
+      },
+      {
+        "type": "range",
+        "id": "text3",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "label": "products to display",
+        "default": 4
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Homepage Five Section",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %} 
+
+
+
+{% javascript %}
+ jQuery('.product-url').on('click',function(e){
+	e.preventDefault();
+	var productURL = jQuery(this).attr('data-product-url');
+	window.location.href = productURL;
+	e.stopPropagation();
+});				
+
+  jQuery('.add-to-cart-custom').on('click', function(e){
+    e.preventDefault();
+	//jQuery("#site-main").addClass("blur");
+   
+    var productID = jQuery(this).attr('data-product-id');
+    jQuery('#product_form_'+productID).find('button').click();
+	e.stopPropagation();
+  });
+{% endjavascript %}

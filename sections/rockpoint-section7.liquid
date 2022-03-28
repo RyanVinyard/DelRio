@@ -1,0 +1,69 @@
+<div class="rp_section_6">
+  <div class="container">
+    <p class="Sustainability-Res_rp">{{section.settings.Section7_banner}}</p>
+    <h1 class="Preserving-the-Wilde_rp top_suatsain_rp">{{section.settings.Section7_heading}}</h1>
+    <div class="Rock-Point-wines-are_rp_pbg">
+      <p>{{section.settings.Section7_text}}</p>
+    </div>
+
+    <div class="img_one_first_rp" id="displaycenter_forrp">
+<!--       <img src="{{section.settings.Section7_image1 | img_url:'master' }}" alt="for_the_planet_rp"> -->
+      <img src="{{section.settings.Section7_image2 | img_url:'master' }}" alt="logo_white">
+    </div>
+
+    <div class="bag_man_rp_1">
+      <img src="{{section.settings.Section7_main_image | img_url:'master' }}" alt="">
+
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Rockpoint-Seventh Section",
+    "settings": [
+{
+	"id":"Section7_banner",
+	"type":"text",
+	"label":"Enter Banner Text"
+
+},
+{
+	"id":"Section7_heading",
+	"type":"text",
+	"label":"Enter Heading"
+
+},
+{
+	"id":"Section7_text",
+	"type":"textarea",
+	"label":"Enter Description"
+
+},
+{
+	"id":"Section7_image1",
+	"type":"image_picker",
+	"label":"Left Logo"
+
+},
+{
+	"id":"Section7_image2",
+	"type":"image_picker",
+	"label":"Right Logo"
+
+},
+{
+	"id":"Section7_main_image",
+	"type":"image_picker",
+	"label":"Main Image"
+
+}
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

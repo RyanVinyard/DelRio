@@ -1,0 +1,132 @@
+<style>
+.section_2_featuredin {
+padding: 40px 45px 60px;
+background-color: #fcfcf5;
+}
+.section_2_featuredin .imagewidth100 img {
+width: 100%;
+}
+.imagewidth100 {
+text-align: center;
+}
+
+.Featured-Intextforlogossection2 p {
+    font-family: Apercu Pro;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #171f15;
+    margin-bottom: 16px;
+}
+
+
+@media screen and (max-width:991px) {
+.section_2_featuredin {
+  
+  padding: 35px 30px 30px;
+}
+}
+@media screen and (max-width:767px) {
+  .section_2_featuredin .imagewidth100 img {
+    width: 40%;
+}
+.imagewidth100 {
+  margin-bottom: 30px;
+}
+.section_2_featuredin {
+  padding: 35px 15px 30px;
+}
+
+}
+@media screen and (max-width: 570px) {
+  .section_2_featuredin .imagewidth100 img {
+    width: 70%;
+  }
+}
+</style>
+
+<div class="section_2_featuredin">
+<div class="container">
+  <div class="Featured-Intextforlogossection2">
+    <p>{{ section.settings.Feature_Title}}</p>
+  </div>
+  <div class="row align-items-center lastchildidthimage1000">
+<div class="col-lg-2 col-md-2 col-sm-6 col-6">
+<div class="imagewidth100">
+ <img src="{{ section.settings.Feature_Image_1 | img_url: 'master' }}">
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-6 col-6">
+<div class="imagewidth100">
+ <img src="{{ section.settings.Feature_Image_2 | img_url: 'master' }}">
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+<div class="imagewidth100">
+ <img src="{{ section.settings.Feature_Image_3 | img_url: 'master' }}">
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-6 col-6">
+<div class="imagewidth100">
+ <img src="{{ section.settings.Feature_Image_4 | img_url: 'master' }}">
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-6 col-6">
+<div class="imagewidth100">
+  <img src="{{ section.settings.Feature_Image_5 | img_url: 'master' }}">
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Featured In",
+  "settings": [
+     {
+      "id": "Feature_Title",
+      "type": "text",
+      "label": "Add Feature Title"
+     
+      },{
+      "id": "Feature_Image_1",
+      "type": "image_picker",
+      "label": "Image_1"
+      }
+,{
+      "id": "Feature_Image_2",
+      "type": "image_picker",
+      "label": "Image_2"
+      }
+,{
+      "id": "Feature_Image_3",
+      "type": "image_picker",
+      "label": "Image_3"
+      }
+,{
+      "id": "Feature_Image_4",
+      "type": "image_picker",
+      "label": "Image_4"
+      }
+,{
+      "id": "Feature_Image_5",
+      "type": "image_picker",
+      "label": "Image_5"
+      }
+	],"presets": [
+    {
+      "name": "Home page Featured in section",
+      "category": "Featured In"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,345 @@
+{% comment %}{% layout none %} {% endcomment %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  {{ 'vendor/qrcode.js' | shopify_asset_url | script_tag }}
+</head>
+<body>
+  
+<div class="gift_card_template__sec_1" id="div2">
+  <div class="container">
+
+      <style>
+    
+.gift_card_template__sec_1 {
+    padding: 105px 45px 0px;
+    background: #f5f5f5;
+}
+  .budget_delrio_wine {
+  	width: 50%;
+    margin: auto;
+    text-align: center;  
+  }
+  #qr-code img {
+    margin:auto;
+  }
+  a.site-header__link.site-header__logo-link {
+    color: #212121;
+    font-family:Apercu;
+  }
+  .your_gifcar {
+    font-size: 1.46667rem;
+    line-height: 1.8;
+    font-family:Apercu pro;
+  }
+  .giftcard__wrap {
+    position: relative;
+    margin: 24px;
+}
+  .giftcard__wrap::before {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDdweCIgaGVpZ2h0PSI0N3B4IiB2aWV3Qm94PSIwIDAgNDcgNDciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ3IDQ3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBvcGFjaXR5PSIwLjEiPgoJCTxwYXRoIGQ9Ik00NC41ODYsMUwxLDQ0LjU4NlYxMGMwLTQuOTYzLDQuMDM3LTksOS05SDQ0LjU4NiBNNDcsMEgxMEM0LjQ3NywwLDAsNC40NzcsMCwxMHYzN0w0NywwTDQ3LDB6Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDQuNTg2LDFMMSw0NC41ODZWMTBjMC00Ljk2Myw0LjAzNy05LDktOUg0NC41ODYiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K) 0 0 no-repeat;
+    top: -1px;
+    left: -1px;
+}
+.giftcard__wrap img {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+}
+  .giftcard__amount strong {
+    display: block;
+}
+.giftcard__code {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+    height: fit-content;
+} 
+    .giftcard__code__inner {
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 4px;
+    max-width: 450px;
+}
+  .giftcard__code__text {
+    font-weight: 400;
+    font-size: 1.875em;
+    text-transform: uppercase;
+    border: 1px dashed #999;
+    padding: 0.4em 0.5em;
+    display: inline-block;
+    vertical-align: baseline;
+    line-height: 1;
+    font-family: 'Apercu';
+}
+  .giftcard__wrap::after {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDdweCIgaGVpZ2h0PSI0N3B4IiB2aWV3Qm94PSIwIDAgNDcgNDciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ3IDQ3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBvcGFjaXR5PSIwLjEiPgoJCTxwYXRoIGQ9Ik0yLjQxNCw0Nkw0NiwyLjQxNFYzN2MwLDQuOTYzLTQuMDM3LDktOSw5SDIuNDE0IE0wLDQ3aDM3YzUuNTIzLDAsMTAtNC40NzcsMTAtMTBWMEwwLDQ3TDAsNDd6Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMi40MTQsNDZMNDYsMi40MTRWMzdjMCw0Ljk2My00LjAzNyw5LTksOUgyLjQxNCIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo=) 0 0 no-repeat;
+    bottom: -1px;
+    right: -1px;
+}
+  .h1.giftcard__amount strong {
+    text-align: center;
+    font-size: 14px;
+    font-family:Apercu;
+}
+  .h1.giftcard__amount {
+    padding-top: 30px;
+  }
+  @media screen and (max-width:1100px) {
+  .budget_delrio_wine {
+    width: 62%;
+  }
+  }
+  @media screen and (max-width:991px) {
+  .budget_delrio_wine {
+    width: 85%;
+  }
+  .giftcard__code__text {
+    font-size: 1.575em;
+  }
+}
+  @media screen and (max-width: 767px) {
+.budget_delrio_wine {
+    width: 100%;
+}
+  }
+@media screen and (max-width: 550px) {
+.giftcard__code__text {
+    font-size: 1.775em;
+}
+.gift_card_template__sec_1 {
+    padding: 105px 15px 25px;
+}
+.giftcard__wrap {
+    margin: 24px 0;
+}
+  }
+  @media screen and (max-width: 470px) {
+.giftcard__code__text {
+    font-size: 1.375em;
+}
+  }
+  @media screen and (max-width: 400px) {
+.gift_card_template__sec_1 {
+    padding: 105px 0px 25px;
+}
+.giftcard__code__text {
+    font-size: 1.175em;
+}
+  }
+  @media screen and (max-width: 350px) {
+.giftcard__code__text {
+    font-size: 1.075em;
+}
+ .giftcard__code {
+    bottom: 60px;
+ }
+ a.site-header__link.site-header__logo-link {
+    font-size: 24px;
+}
+    .your_gifcar {
+    font-size: 1.16667rem;
+    }
+ .gift_card_template__sec_1 {
+    padding: 85px 0px 25px;
+}
+  }
+  .c-btn--primary {
+    background-color: #2e4433;
+}
+  .c-btn, .c-btn:hover, .c-btn:active, .c-btn:focus, .btn, .btn:hover, .btn:active, .btn:focus {
+    opacity: 1;
+    text-decoration: none;
+    color:white;
+}
+
+.c-btn, .btn {
+    display: inline-block;
+    vertical-align: middle;
+    font: inherit;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    font-family: Karla,sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    height: auto;
+    line-height: 30px;
+    padding: 9px 30px;
+    border-radius: 0;
+  color:white;
+}
+.c-btn--grey, .c-btn--dark, .btn {
+    background-color: #222;
+    color: #fff;
+}
+  .btn_pro_giftcardss {
+    padding-top:25px;
+  }
+  p.follar_price_deo {
+    font-size: 53px;
+    margin: 0px;
+    font-family: 'Butler';
+    margin-bottom: 10px;
+  }
+    .div_copon_77 {
+       background: #f5f5f5;
+    }
+    p.pa_gift-0066 {
+      padding-bottom:25px;
+      margin-bottom:0px;
+    }
+</style>
+  <div class="budget_delrio_wine">
+    {% layout 'gift_card' %}
+{%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency -%}
+{%- assign formatted_initial_value_stripped = formatted_initial_value | strip_html -%}
+<header class="giftcard__header u-text-center" role="banner">
+  	<div class="site-header__logo h2 u-text-center" itemscope itemtype="http://schema.org/Organization">
+		<a href="{{ shop.url }}" class="site-header__link site-header__logo-link" itemprop="url">{{ shop.name }}</a>
+  	</div>
+<!-- 	<h1 class="h4">{{ 'gift_cards.issued.subtext' | t }}</h1> -->
+    <h1 class="your_gifcar">YOUR GIFT CARD</h1>
+	{% unless gift_card.enabled %}
+		<p class="giftcard__tag">{{ 'gift_cards.issued.disabled' | t }}</p>
+	{% endunless %}
+	{% assign gift_card_expiry_date = gift_card.expires_on | date: "%d/%m/%y" %}
+	{% if gift_card.expired and gift_card.enabled %}
+		<p class="giftcard__tag">{{ 'gift_cards.issued.expired' | t: expiry: gift_card_expiry_date }}</p>
+	{% endif %}
+	{% if gift_card.expired != true and gift_card.expires_on and gift_card.enabled %}
+		<p class="giftcard__tag giftcard__tag--active">{{ 'gift_cards.issued.active' | t: expiry: gift_card_expiry_date }}</p>
+	{% endif %}
+</header>
+<div class="giftcard-wrapper">
+  	<main class="giftcard" role="main">
+		<div class="giftcard__wrap">
+          {% if product.id == 4733226123369%}
+                              <p style="color:#EE7C8D; padding:10px;">Free</p>
+                              {% endif %}
+          {{ gift_card.product.variant.id}}
+          <script>
+           // console.log({{shop.money_format | json}},{{cart|json}},{{gift_card.customer.name|json}});
+            //console.log({{line_item | json}},{{gift_card.issued|json}});
+//             console.log({{gift_card.customer.orders[0].checkout_id | json}},
+//                         {{gift_card.product | json}},
+//                         {{gift_card.code|json}},
+//                         {{gift_card.customer.last_order.line_items[0].variant.id|json}},
+//                         {{gift_card.created_at|json}},
+//                         {{gift_card.properties.featuredimage|json}},
+//                        );
+          </script>
+          {% for order in gift_card.customer.orders.transactions %}
+          <script>  
+            console.log({{order|json}});
+            </script>
+        {% endfor %}
+          {% if gift_card.properties.featuredimage %}
+          	<img src="{{  gift_card.properties.featuredimage | img_url : 'master' }}" style="width: 450px;">
+		  {% else %}
+          <img src="{{  'gift_card_image_qr.png' | asset_url }}">
+<!--   			<img src="{{  gift_card.product.featured_image.src | img_url : 'master' }}"> -->
+		  {% endif %}
+          
+          {%- assign code_size = gift_card.code | format_code | size -%}
+			<div class="giftcard__code{% if code_size <= 25 %} giftcard__code--large{% elsif code_size > 25 and code_size <= 30 %} giftcard__code--medium{% else %} giftcard__code--small{% endif %}" onclick="selectText('GiftCardDigits');">
+				<div class="giftcard__code__inner">
+				  	<strong class="giftcard__code__text {% if gift_card.expired or gift_card.enabled != true %} disabled{% endif %}" id="GiftCardDigits">{{ gift_card.code | format_code }}</strong>
+				</div>
+			</div>
+          
+          {%- assign initial_value_size = formatted_initial_value | size -%}
+	  		<div class="h1 giftcard__amount{% if initial_value_size > 6 %} giftcard__amount--medium{% endif %}">
+				{% if gift_card.balance != gift_card.initial_value %}
+		 			<span class="giftcard__tooltip">
+						<span class="giftcard__tooltip-label">{{ 'gift_cards.issued.remaining_html' | t: balance: gift_card.balance | money }}</span>
+		  			</span>
+				{% endif %}
+				<strong>Use this code at checkout to redeem your {{ formatted_initial_value }} gift card</strong>
+	  		</div>
+
+		</div>
+<!-- 		<p class="u-text-center">
+	  		{{ 'gift_cards.issued.redeem_html' | t: value: formatted_initial_value_stripped }}
+		</p> -->
+		<div id="QrCode" class="giftcard__qr-code" data-identifier="{{ gift_card.qr_identifier }}"></div>
+		<div class="u-text-center">
+          <p class="follar_price_deo">{{ formatted_initial_value }}</p>
+<!--           <h1>{{gift_card.properties}}</h1> -->          
+        <div id="qr-code"></div>
+
+		  {% comment %}
+          <h1>{{gift_card.properties}}</h1>
+          {% if gift_card.pass_url %}
+          <p>
+            <a class="giftcard__apple-wallet" href="{{ gift_card.pass_url }}">
+            <img class="giftcard__apple-wallet-image" src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="{{ 'gift_cards.issued.add_to_apple_wallet' | t }}">
+            </a>
+          </p> 
+          {% endif %}
+         {% endcomment %}  
+      </div>
+  	</main>
+</div>
+    
+
+  </div>
+  
+  </div>
+
+</div>
+  <div class="div_copon_77 text-center">
+  <p class="btn_pro_giftcardss"><a href="https://delriovineyards.com/collections/all" class="c-btn c-btn--primary c-btn--arrow giftcard__shop-link bg_new_color" target="_blank">START SHOPPING</a></p> 
+  <!-- 	  PRINT QR CODE		 -->
+  <p class="pa_gift-0066">
+    <button type="button" class="c-btn c-btn--grey giftcard__print-link" onclick="$('#div2').print();">
+      Print this gift card
+    </button>
+  </p>
+  </div>
+  <script>
+    new QRCode(document.getElementById("qr-code"), {
+      text: "{{ gift_card.qr_identifier }}",
+      width: 120,
+      height: 120
+    });
+     $.fn.extend({
+          print: function() {
+              var frameName = 'printIframe';
+              var doc = window.frames[frameName];
+              if (!doc) {
+                  $('<iframe>').hide().attr('name', frameName).appendTo(document.body);
+                  doc = window.frames[frameName];
+              }
+              doc.document.body.innerHTML = this.html();
+              doc.window.print();
+              return this;
+          }
+      });
+  </script>
+  <footer>
+    {% if gift_card.pass_url %}
+    <a href="{{ gift_card.pass_url }}">
+      <img id="apple-wallet-badge" src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="Add To Apple Wallet">
+    </a>
+    {% endif %}
+  </footer>
+</body>
+</html>
